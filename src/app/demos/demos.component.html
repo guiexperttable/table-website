@@ -1,0 +1,244 @@
+<div class="ge-header ge-padding">
+
+  <h1>
+    <div class="logo">
+      <guiexpert-logo [mode]="'monocolor-black'" [size]="50"></guiexpert-logo>
+    </div>
+  </h1>
+  <h1>
+    <div class="title">
+      GuiExpert Table - Demos
+    </div>
+  </h1>
+
+
+  <div class="center">
+    <h2 class="sub-title">
+      The agnostic table component for building the future
+    </h2>
+
+  </div>
+
+  <div class="gap"></div>
+</div>
+
+<div class="ge-padding min-height-content demo-welcome-content">
+
+
+  <div class="auto-grid">
+
+    <div>
+      <h2>Simple Table: Array of Array</h2>
+      An array of array data structure can be easily converted in a
+      <a [routerLink]="['/api/tsdoc','classes','TableModel.html']" href="#">TableModel</a>
+      with help of TableModelFactory
+      <a
+        href="/assets/docs/classes/TableModelFactory.html#createByArrayOfArray"
+        target="blank">.createByArrayOfArrayParams()</a>.
+
+      <br>
+      <button
+        [routerLink]="['/demo/simple']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Simple Table Demo...</button>
+    </div>
+
+    <div>
+      <h2>Object Array</h2>
+      The most common usecase: an array of business object. This array can be easily converted to a table model.
+      An array of <a
+      [routerLink]="['/api/tsdoc/interfaces/ColumnDefIf.html']"
+      href="#">ColumnDefIf</a>s is used to define which object property is displayed in which table column.
+      <br>
+      <button
+        [routerLink]="['/demo/prizes']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Object Array Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>Self-written Table Model</h2>
+      A table model does not necessarily need a data structure/object. You can write table models yourself,
+      as a developer you have full control over what is to be rendered in which cell. Here are a few examples:
+      <br>
+      <button
+        [routerLink]="['/demo/simple']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Table Model Demo...</button>
+    </div>
+
+    <div>
+      <h2>Events</h2>
+      The table can send many different events. In the following example we demonstrate listening for mouse events.
+      <br>
+      <button
+        [routerLink]="['/demo/mouseevent']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Mouse Event Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>Switching Look and Feel</h2>
+      There are many ways to change the style of the table. Here we show how to change the global style using css
+      variables.
+      <br>
+      <button
+        [routerLink]="['/demo/simple']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Switching L&F Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>Style of cells</h2>
+      The style of a table cell can be changed: by setting a cell renderer, by setting a cell class and by setting a
+      style.
+      <br>
+      <button
+        [routerLink]="['/demo/style']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Custom Renderer Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>Rowspan, Colspan</h2>
+      Row and colspan can be defined in the table body as well as in the header and footer.
+      <br>
+      <button
+        [routerLink]="['/demo/rowandcolspan']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Row/Colspan Demo...
+      </button>
+      <button
+        [routerLink]="['/demo/timetable']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Time Table Demo...
+      </button>
+      <button
+        [routerLink]="['/demo/prizes']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Nobel Prizes Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>Tree Table by Tree Model</h2>
+      There are many ways to represent data hierarchically. We show here how to build tree tables.
+      <br>
+      <button
+        [routerLink]="['/demo/treepeople']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Tree Table People Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>Tree Table by Helper Function</h2>
+      Flat data can be grouped using helper functions and displayed as a tree table.
+      <br>
+      <button
+        [routerLink]="['/demo/tree2']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Tree Table Demo...</button>
+    </div>
+
+    <div>
+      <h2>Using the Table API</h2>
+      After the first rendering of a table, a
+      <a [routerLink]="['/api/tsdoc','classes','TableApi.html']" href="#">TableApi</a>
+      service is emitted.
+      With this service you can do a lot of things: change cell values,
+      change table column widths, scroll to a specific row, trigger a repaint, etc.
+      <br>
+      <button
+        [routerLink]="['/demo/idfilter']"
+        mat-button
+        color="primary">
+        <mat-icon>chevron_right</mat-icon>
+        Filtering Demo (Slider)...
+      </button>
+      <button
+        [routerLink]="['/demo/olympic']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Filtering Demo (Input)...
+      </button>
+    </div>
+
+
+    <div>
+      <h2>Edit Table Data</h2>
+      Data can not only be displayed, but also edited by the user. We show you how to do it here:
+      <br>
+      <button
+        [routerLink]="['/demo/edit1']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Edit Demo...
+      </button>
+    </div>
+
+    <div>
+      <h2>High Performance Updating of Table Cells</h2>
+      Financial dashboard applications often display rapidly changing data.
+      We show here how to do this with a incredible performance.
+      <br>
+      <button
+        [routerLink]="['/demo/crypto']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Crypto Demo...
+      </button>
+    </div>
+
+
+    <div>
+      <h2>Sorting</h2>
+      Sorting rows by header double click. Sorting columns by drag and drop.
+      <br>
+      <button
+        [routerLink]="['/demo/headerdblclick']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Sorting Demo...
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="ge-footer">
+
+</div>
+

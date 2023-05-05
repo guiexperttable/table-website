@@ -1,0 +1,177 @@
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.ge-padding {
+  padding: 16px;
+}
+
+.ge-table-header-bg {
+  background-color: #f4f4f4;
+}
+
+.multi-line-text-cell .ge-table-label-div .ge-table-label {
+  line-height: 1.2;
+  padding-top: 9px;
+}
+
+:root {
+  --ge-table-doc-primary-color: #00ee4d;
+  --ge-table-doc-api-color: #EFF0F1;
+  --ge-table-doc-doc-color: #0035ee;
+  --ge-table-doc-demo-color: #f9ed06;
+  /*TODO red, yellow,...*/
+  --ge-table-doc-dark-color: #000;
+  --ge-table-doc-light-color: #fff;
+  --ge-table-doc-gray-color: #aaa;
+}
+
+/*TODO red, yellow,...*/
+guiexpert-table-doc-root .mat-toolbar.mat-primary,
+guiexpert-table-doc-root .ge-header,
+guiexpert-table-doc-root .ge-header-bg {
+  background: var(--ge-table-doc-primary-color);
+  color: var(--ge-table-doc-dark-color);
+}
+
+guiexpert-table-doc-root.demo .doc-content a:-webkit-any-link {
+  color: var(--ge-table-doc-primary-color) !important;
+}
+
+guiexpert-table-doc-root.api .mat-toolbar.mat-primary,
+guiexpert-table-doc-root.api .ge-header {
+  background: var(--ge-table-doc-api-color);
+  color: var(--ge-table-doc-dark-color);
+}
+
+guiexpert-table-doc-root.doc .mat-toolbar.mat-primary,
+guiexpert-table-doc-root.doc .ge-header {
+  background: var(--ge-table-doc-doc-color);
+  color: var(--ge-table-doc-light-color);
+}
+
+guiexpert-table-doc-root.demo .mat-toolbar.mat-primary,
+guiexpert-table-doc-root.demo .ge-header {
+  background: var(--ge-table-doc-demo-color);
+  color: var(--ge-table-doc-dark-color);
+}
+guiexpert-table-doc-root.demo .doc-content a:-webkit-any-link {
+  color: #002d81 !important;
+  text-decoration: none;
+}
+
+
+guiexpert-table-doc-root .mat-drawer-container {
+  background: var(--ge-table-doc-light-color);
+  color: var(--ge-table-doc-dark-color);
+}
+
+
+guiexpert-table-doc-root .mat-drawer {
+  background: var(--ge-table-doc-light-color);
+  color: var(--ge-table-doc-dark-color);
+}
+
+guiexpert-table-doc-root .ge-footer {
+  background: var(--ge-table-doc-dark-color);
+  color: var(--ge-table-doc-light-color);
+}
+
+.text-muted {
+  color: var(--ge-table-doc-gray-color);
+}
+
+.logo-fill-color-0 {
+  fill: #000;
+}
+
+.logo-fill-color-1 {
+  fill: #fff;
+}
+
+
+/* align Icons and Text in list items: */
+.mat-mdc-list-item > span,
+.mat-mdc-list-item > span > span {
+  overflow-y: visible;
+}
+
+.mat-mdc-list-item .material-icons {
+  vertical-align: middle;
+  line-height: 20px;
+}
+.mdc-button {
+
+}
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color:  rgba(249, 58, 6, 0.1) !important;
+  --mdc-filled-button-label-text-color: #000 !important;
+}
+
+.mat-mdc-outlined-button:not(:disabled) {
+  --mdc-outlined-button-label-text-color: #F93A06 !important;
+}
+
+.mat-mdc-unelevated-button,
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-raised-button, .mat-flat-button {
+  border-radius: 17px !important;
+}
+
+.ge-text-align-right,
+.ge-text-align-right > .ge-table-label-div,
+.ge-text-align-right > .ge-table-label-div > ge-table-label {
+  text-align: right;
+}
+
+.ge-font-weight-bold,
+.ge-font-weight-bold > .ge-table-label-div,
+.ge-font-weight-bold > .ge-table-label-div > ge-table-label {
+  font-weight: bold;
+}
+
+
+.green-table {
+  --ge-table-color-error-text: #e00034;
+  --ge-table-color-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-color-col-resize-handle-hover-bg: rgb(0, 255, 255);
+  --ge-table-color-drop-zone: rgba(244, 255, 242, 0.6);
+  --ge-table-color-drop-zone-bg: rgba(244, 255, 242, 0.6);
+  --ge-table-color-dragged-col-div-bg: lightcyan;
+  --ge-table-color-focus-border-bg: rgb(0, 255, 255);
+  --ge-table-color-header-bg: transparent;
+  --ge-table-color-footer-bg: transparent;
+  --ge-table-color-body-west-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-color-body-east-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-color-hover-column-bg: rgba(0, 0, 0, 0.1);
+  --ge-table-color-hover-row-bg: rgba(0, 0, 0, 0.1);
+  --ge-table-color-west-fixed-column-border-bg: #333;
+  --ge-table-color-east-fixed-column-border-bg: #333;
+  --ge-table-color-footer-border-bg: #333;
+  --ge-table-color-header-border-bg: #333;
+  --ge-table-color-row-border-bg: rgba(0, 0, 0, 0.5);
+  --ge-table-color-column-border-bg: rgba(0, 0, 0, 0.1);
+  --ge-table-color-tree-arrow-collapsed-color: #e00034;
+}
+
+.doc-content > * + *,
+.doc-content > * + * + * {
+  min-height: calc(100vh - 125px) !important;
+  width: 100%;
+  display: block;
+  overflow: clip;
+}
+
+.ge-positive-text-color {
+  color: #16c784;
+}
+
+.ge-negative-text-color {
+  color: #ea3943;
+}
+

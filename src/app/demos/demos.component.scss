@@ -1,0 +1,87 @@
+
+h1 {
+  display: flex;
+  column-gap: 40px;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    display: inline-block;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 40px;
+
+    .logo-fill-color-2 {
+      fill: rgba(0, 0, 0, 0.5)
+    }
+  }
+
+  .title {
+    font-size: 44px;
+  }
+}
+
+.sub-title {
+  margin-top: 120px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.center {
+  text-align: center;
+
+  .box {
+    max-width: 620px;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.logos-div {
+  display: flex;
+  justify-content: center;
+
+  > div {
+    width: 80px;
+    margin-right: 20px;
+  }
+}
+
+.clear-both {
+  clear: both;
+}
+
+.demo-welcome-content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.auto-grid {
+  --link-color: #002d81;
+  --min-column-size: 20rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-size), 100%), 1fr));
+
+  button {
+    //float: left;
+    margin-top: 12px;
+  }
+
+  .mat-mdc-button.mat-primary {
+    color: var(--link-color);
+    border: solid 0.6px var(--link-color);
+  }
+}
+
+.gap {
+  height: 40px;
+}
+
+.min-height-content {
+  min-height: calc(100vh - 560px);
+}
+
+

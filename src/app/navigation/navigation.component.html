@@ -1,0 +1,139 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+    class="sidenav"
+    fixedInViewport>
+    <mat-toolbar>
+      guiexpert/table
+      <!--guiexpert-logo></guiexpert-logo-->
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a href="#" mat-list-item routerLink="/welcome">
+        <mat-icon>accessibility_new</mat-icon>
+        Welcome
+      </a>
+
+      <a href="#" mat-list-item routerLink="/getstarted">
+        <mat-icon>outlined_flag</mat-icon>
+        Get Started
+      </a>
+
+      <a href="#" mat-list-item routerLink="/demo">
+        <mat-icon>filter_vintage</mat-icon>
+        Demo
+      </a>
+
+      <a href="#" mat-list-item routerLink="/doc">
+        <mat-icon>description</mat-icon>
+        Documentation
+      </a>
+
+
+      <a href="#" mat-list-item routerLink="/api">
+        <mat-icon>api</mat-icon>
+        API
+      </a>
+
+      <!-- add new main menu items here -->
+
+      <mat-divider></mat-divider>
+
+      <a
+        *ngIf="lawInSidenavVisible"
+        href="#"
+        mat-list-item routerLink="/law/imprint">
+        <mat-icon>import_contacts</mat-icon>
+        Imprint<!-- Impressum-->
+      </a>
+
+      <a
+        *ngIf="lawInSidenavVisible"
+        href="#"
+        mat-list-item
+        routerLink="/law/cou">
+        <mat-icon>gavel</mat-icon>
+        Conditions of Use<!-- Nutzungbedingungen-->
+      </a>
+
+      <a
+        *ngIf="lawInSidenavVisible"
+        href="#"
+        mat-list-item
+        routerLink="/law/privacy">
+        <mat-icon>sentiment_satisfied_alt</mat-icon>
+        Privacy Notice<!-- Datenschutz-->
+      </a>
+
+      <mat-divider></mat-divider>
+
+
+      <!-- bottom: -->
+      <div class="fixed-at-bottom-left text-muted">
+        <div>
+          <small>Version: {{ version }}</small>
+        </div>
+        <div *ngIf="commitHash">
+          <small>Commit: {{ commitHash }}</small>
+        </div>
+        <div>
+          <small>&copy; 2023 guiexpert/table</small>
+        </div>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content #matSidenavContent>
+    <mat-toolbar color="primary">
+      <button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        type="button">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span
+        [ngClass]="{ 'fade-in': fadein }"
+        class="main-header-title-span"
+        data-test-id="main-header-title-span">
+        {{ title }}
+      </span>
+
+      <span class="doc-flex-fill-space"></span>
+
+
+      <!--app-doc-logo
+        *ngIf="isHandset$ | async"
+        class="doc-float-right doc-margin-left"></app-doc-logo-->
+    </mat-toolbar>
+
+    <div class="doc-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div *ngIf="footerVisible" class="ge-footer ge-padding">
+      <a href="#" mat-list-item routerLink="/law/imprint">
+        <mat-icon>import_contacts</mat-icon>
+        Imprint<!-- Impressum-->
+      </a>
+
+      <a
+        href="#"
+        mat-list-item
+        routerLink="/law/cou">
+        <mat-icon>gavel</mat-icon>
+        Conditions of Use<!-- Nutzungbedingungen-->
+      </a>
+
+      <a href="#" mat-list-item routerLink="/law/privacy">
+        <mat-icon>sentiment_satisfied_alt</mat-icon>
+        Privacy Notice<!-- Datenschutz-->
+      </a>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

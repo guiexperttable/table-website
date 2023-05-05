@@ -1,0 +1,14 @@
+<guiexpert-table
+  (modelChanged)="onModelChanged($event)"
+  (tableReady)="onTableReady($event)"
+  [tableIf]="!!tableModel"
+  [tableModel]="tableModel"
+  [tableOptions]="tableOptions"
+></guiexpert-table>
+
+<div class="filter-div">
+  <mat-form-field appearance="fill">
+    <mat-label>Filter</mat-label>
+    <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
+  </mat-form-field>
+</div>

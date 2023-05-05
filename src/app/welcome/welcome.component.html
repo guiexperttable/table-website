@@ -1,0 +1,383 @@
+<!--div class="ge-padding logo-demo-div">
+
+  <h2>Logo Samples</h2>
+
+  <div class="logo-demo-white">
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'colored'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-white'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-black'"></guiexpert-logo>
+    </div>
+  </div>
+
+
+  <div class="logo-demo-black">
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'colored'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-white'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-black'"></guiexpert-logo>
+    </div>
+  </div>
+
+
+  <div class="logo-demo-red">
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'colored'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-white'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-black'"></guiexpert-logo>
+    </div>
+  </div>
+
+
+  <div class="logo-demo-green">
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'colored'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-white'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-black'"></guiexpert-logo>
+    </div>
+  </div>
+
+
+  <div class="logo-demo-yellow">
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'colored'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-white'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-black'"></guiexpert-logo>
+    </div>
+  </div>
+
+
+  <div class="logo-demo-blue">
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'colored'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-white'"></guiexpert-logo>
+    </div>
+    <div class="logo">
+      <guiexpert-logo [size]="logoSize" [mode]="'monocolor-black'"></guiexpert-logo>
+    </div>
+  </div>
+
+</div-->
+
+
+<div class="ge-header ge-padding">
+
+  <h1>
+    <div class="logo">
+      <guiexpert-logo [mode]="'monocolor-black'" [size]="50"></guiexpert-logo>
+    </div>
+  </h1>
+  <h1>
+    <div class="title">
+      GuiExpert Table
+    </div>
+  </h1>
+
+
+  <div class="center">
+    <h2 class="sub-title">
+      The agnostic table component for building the future
+    </h2>
+
+
+    <div class="box">
+      <p>Fully-featured and highly customizable data grid. </p>
+      <p>It delivers outstanding performance, has no third-party dependencies.</p>
+      <p>Available as Angular, Vue.js, React, Preact, Svelte, Solid, Web Component or plain JavaScript function.</p>
+
+      <div class="logos-div">
+        <div>
+          <a [routerLink]="['/getstarted','angular']" href="#">
+            <app-angular-logo />
+          </a>
+        </div>
+
+        <div>
+          <a [routerLink]="['/getstarted','vue']" href="#">
+            <app-vue-logo />
+          </a>
+        </div>
+
+        <div>
+          <a [routerLink]="['/getstarted','react']" href="#">
+            <app-react-logo />
+          </a>
+        </div>
+
+        <div>
+          <a [routerLink]="['/getstarted','preact']" href="#">
+            <app-preact-logo />
+          </a>
+        </div>
+
+        <div>
+          <div style="padding: 0 5px">
+            <a [routerLink]="['/getstarted','svelte']" href="#">
+              <app-svelte-logo />
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <a [routerLink]="['/getstarted','solid']" href="#">
+            <app-solid-logo />
+          </a>
+        </div>
+
+        <div>
+          <a [routerLink]="['/getstarted','webcomponent']" href="#">
+            <app-web-component-logo />
+          </a>
+        </div>
+
+        <div>
+          <a [routerLink]="['/getstarted','plainjs']" href="#">
+            <app-js-logo />
+          </a>
+        </div>
+      </div>
+      <div class="clear-both"></div>
+    </div>
+  </div>
+
+  <div class="gap"></div>
+</div>
+
+<div class="ge-padding">
+  <div class="flex-container">
+    <div>
+      <h2>Features</h2>
+      <ul dir="auto">
+        <li>Excellent performance for large tables by vertical and horizontal virtual scrolling</li>
+        <li>Column Interactions (resize, reorder and pin columns)</li>
+        <li>Sorting</li>
+        <li>Row, Column and Range Selection</li>
+        <li>Single and Multi Selection</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Interaction</h2>
+      <ul dir="auto">
+        <li>Tree table (Hierarchical View)</li>
+        <li>Accessibility support</li>
+        <li>Custom Filtering</li>
+        <li>In-place Cell Editing</li>
+        <li>Userdefined Key and Mouse Events</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Layout, Look & Feel</h2>
+      <ul dir="auto">
+        <li>Customizable Look & Feel (via css variables)</li>
+        <li>Customizable Cell Contents via Renderer</li>
+        <li>Row sorting)</li>
+        <li>Column Reordering (Drag and Drop)</li>
+        <li>State Persistence (Row Sorting, Column Order, Selection)</li>
+        <li><s>Keyboard Navigation</s></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Usability</h2>
+      <ul dir="auto">
+        <li><s>Copy / Paste</s></li>
+        <li>Row and Column Spanning</li>
+        <li>Fixed Columns (Left and Right)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="ge-table-header-bg">
+  <div class="ge-padding">
+    <div class="flex-container">
+      <div>
+        <h2>Demo 1</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="height-50-vh">
+  <timetable-demo class="height-50-vh"></timetable-demo>
+</div>
+<div class="ge-table-header-bg">
+  <div class="ge-padding">
+    In this demo you can see the rowspan/colspan feature in all three areas (header, body, footer), the column resize
+    feature and a cell renderer.
+    Here you can find more <a href="/demo">demos</a>.
+  </div>
+</div>
+
+
+<div class="ge-table-header-bgxxx">
+  <br>
+  <br>
+  <br>
+  <div class="ge-padding">
+    <div class="flex-container">
+      <div>
+        <h2>Demo 2</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="height-50-vh max-width-1100-px">
+  <crypto-top-100-demo [small]="true" class="height-50-vh"></crypto-top-100-demo>
+</div>
+<div class="ge-table-header-bgxxx">
+  <div class="ge-padding">
+    Example with custom cell renderer and multiple updates per second.<br>
+    Symbols (c) by coinmarketcap.com.
+  </div>
+</div>
+
+<div class="gap"></div>
+
+<div class="ge-padding">
+  <h2>Get Started</h2>
+  <div class="gap"></div>
+
+  <div class="auto-grid get-started-div">
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','angular']" href="#">
+            <app-angular-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','angular']" href="#" mat-button>Angular</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','vue']" href="#">
+            <app-vue-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','vue']" href="#" mat-button>Vue</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','react']" href="#">
+            <app-react-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','react']" href="#" mat-button>React</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','preact']" href="#">
+            <app-preact-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','preact']" href="#" mat-button>Preact</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','svelte']" href="#">
+            <app-svelte-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','svelte']" href="#" mat-button>Svelte</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','solid']" href="#">
+            <app-solid-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','solid']" href="#" mat-button>Solid</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','webcomponent']" href="#">
+            <app-web-component-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','webcomponent']" href="#" mat-button>Web Component</button>
+    </div>
+
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','plainjs']" href="#">
+            <app-js-logo />
+          </a>
+        </div>
+      </div>
+      <button [routerLink]="['/getstarted','plainjs']" href="#" mat-button>Plain JS</button>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="gap"></div>
+
+
+<!--div class="ge-header-bg green-table">
+  <div class="ge-padding">
+    <div class="flex-container">
+      <div>
+        <h2>Demo 2</h2>
+      </div>
+    </div>
+  </div>
+  <div class="height-50-vh">
+    <timetable-demo class="height-50-vh"></timetable-demo>
+  </div>
+</div-->
+
+
+<div class="ge-footer ">
+  <div class="ge-padding">
+    test welcome<br>
+    test welcome<br>
+    test welcome<br>
+    test welcome<br>
+    test welcome<br>
+  </div>
+</div>
+
