@@ -7,6 +7,7 @@ import { BidiModule } from "@angular/cdk/bidi";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { DemoSimpleComponent } from "./simple/demo-simple.component";
+import { DemoSimpleInfoComponent } from "./simple/demo-simple-info.component";
 
 const routes: Routes = [
   {
@@ -14,8 +15,16 @@ const routes: Routes = [
     component: DemosComponent
   },
   {
-    path: "simple",
+    path: "simple/run",
     component: DemoSimpleComponent
+  },
+  {
+    path: "simple/info",
+    component: DemoSimpleInfoComponent
+  },
+  {
+    path: "", loadChildren: () =>
+      import("../demos/rowandcolspan/demo-row-and-colspan.module").then(m => m.DemoRowAndColspanModule)
   },
   {
     path: "", loadChildren: () =>

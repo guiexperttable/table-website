@@ -115,6 +115,26 @@
       <router-outlet></router-outlet>
     </div>
 
+    <div
+      *ngIf="actionBarVisible"
+      class="ge-action-bar">
+      <button
+        [routerLink]="[runLink]"
+        color="primary"
+        mat-flat-button>
+        <mat-icon>directions_run</mat-icon>
+        Demo
+      </button>
+      <button
+        [routerLink]="[infoLink]"
+        color="primary"
+        mat-flat-button>
+        <mat-icon>description</mat-icon>
+        Description
+      </button>
+    </div>
+
+
     <div *ngIf="footerVisible" class="ge-footer ge-padding">
       <a href="#" mat-list-item routerLink="/law/imprint">
         <mat-icon>import_contacts</mat-icon>
@@ -137,3 +157,4 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+

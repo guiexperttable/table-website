@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay, takeWhile } from "rxjs/operators";
-import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from "@angular/router";
+import { ActivatedRoute, NavigationEnd, NavigationStart, Route, Router } from "@angular/router";
 import { MatSidenav, MatSidenavContent } from "@angular/material/sidenav";
 import { environment } from "../../environments/environment";
 
@@ -41,13 +41,18 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   version = environment.version;
   commitHash = environment.commitHash;
-  title = 'Welcome!';
+  title = "Welcome!";
   fadein = true;
   lawInSidenavVisible = true;
   footerVisible = true;
+  actionBarVisible = false;
 
+  route?: Route;
+  runLink = "";
+  infoLink = "";
+
+  protected readonly location = location;
   private alive = true;
-
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     takeWhile(() => this.alive),
     map(result => result.matches),
@@ -62,11 +67,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
   ) {
   }
 
-
   ngOnDestroy(): void {
     this.alive = false;
   }
-
 
   ngOnInit() {
     this.calcTitle(this.router.url);
@@ -83,13 +86,17 @@ export class NavigationComponent implements OnInit, OnDestroy {
           !evt.url.includes("/tsdoc")
           && !evt.url.includes("/getstarted")
           && !evt.url.includes("/demo");
+        this.actionBarVisible = evt.url.includes("/demo/");
         this.cdr.detectChanges();
+        const p = evt.url.replace("info", "").replace("run", "");
+        this.infoLink = p + "/info";
+        this.runLink = p + "/run";
       }
     });
   }
 
   calcTitle(url: string) {
-    url = url.replace(/\//g, '');
+    url = url.replace(/\//g, "");
     const routeTitles = NavigationComponent.config.routeTitles;
     const keys = Object.keys(routeTitles);
     for (const key of keys) {
@@ -99,14 +106,12 @@ export class NavigationComponent implements OnInit, OnDestroy {
         return;
       }
     }
-    this.setTitle('Welcome!');
+    this.setTitle("Welcome!");
   }
-
 
   setTitle(title: string) {
     this.title = title;
     this.fadein = NavigationComponent.config.titleFadeIn;
     this.cdr.detectChanges();
   }
-
 }
