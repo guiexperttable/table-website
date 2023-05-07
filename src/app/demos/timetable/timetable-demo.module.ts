@@ -3,23 +3,27 @@ import { CommonModule } from "@angular/common";
 import { TimetableDemoComponent } from "./timetable-demo.component";
 import { TableComponent } from "@guiexpert/angular-table";
 import { RouterModule } from "@angular/router";
+import { DemoTimetableInfoComponent } from "./info/demo-timetable-info.component";
 
 
 @NgModule({
   declarations: [
-    TimetableDemoComponent
+    TimetableDemoComponent, DemoTimetableInfoComponent
   ],
   imports: [
     CommonModule,
     TableComponent,
     RouterModule.forChild([
       {
-        path: "",
+        path: "run",
         component: TimetableDemoComponent
+      },
+      {
+        path: "info",
+        component: DemoTimetableInfoComponent
       }
     ])
   ],
-  providers: [],
   exports: [
     TimetableDemoComponent
   ]

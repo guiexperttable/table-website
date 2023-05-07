@@ -9,29 +9,31 @@ import { CommonModule } from "@angular/common";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule } from "@angular/forms";
+import { CryptoTop100InfoComponent } from "./info/crypto-top-100-info.component";
 
 @NgModule({
-  declarations: [CryptoTop100Component],
+  declarations: [CryptoTop100Component, CryptoTop100InfoComponent],
   imports: [
     HttpClientModule,
     CommonModule,
     TableComponent,
     RouterModule.forChild([
       {
-        path: "",
+        path: "run",
         component: CryptoTop100Component
+      },
+      {
+        path: "info",
+        component: CryptoTop100InfoComponent
       }
     ]),
     MatInputModule,
     MatFormFieldModule,
     FormsModule
-
   ],
   exports: [
     CryptoTop100Component
-  ],
-  providers: [],
-  bootstrap: [CryptoTop100Component]
+  ]
 })
 export class CryptoTop100Module {
 }

@@ -18,17 +18,18 @@ import { FormsModule } from "@angular/forms";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "",
+        path: "run",
+        component: TreetablePeopleComponent
+      },
+      {
+        path: "info",
         component: TreetablePeopleComponent
       }
     ]),
     MatInputModule,
     MatFormFieldModule,
     FormsModule
-
-  ],
-  providers: [],
-  bootstrap: [TreetablePeopleComponent]
+  ]
 })
 export class TreetablePeopleModule {
 }

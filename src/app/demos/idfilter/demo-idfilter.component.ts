@@ -55,6 +55,7 @@ export class DemoIdfilterComponent implements OnInit {
 
   onTableReady($event: TableApi) {
     this.tableApi = $event;
+    this.cdr.detectChanges();
   }
 
   filterValueChanged(evt: number) {

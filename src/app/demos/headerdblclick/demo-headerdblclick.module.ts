@@ -10,10 +10,12 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FriendRendererComponent } from "./renderer/friend-renderer.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { OverlayModule } from "@angular/cdk/overlay";
+import { DemoHeaderdblclickInfoComponent } from "./info/demo-headerdblclick-info.component";
 
 @NgModule({
   declarations: [
     DemoHeaderdblclickComponent,
+    DemoHeaderdblclickInfoComponent,
     FriendRendererComponent
   ],
 
@@ -23,8 +25,12 @@ import { OverlayModule } from "@angular/cdk/overlay";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "",
+        path: "run",
         component: DemoHeaderdblclickComponent
+      },
+      {
+        path: "info",
+        component: DemoHeaderdblclickInfoComponent
       }
     ]),
     MatSliderModule,
@@ -32,9 +38,7 @@ import { OverlayModule } from "@angular/cdk/overlay";
     ReactiveFormsModule,
     MatTooltipModule,
     OverlayModule
-  ],
-  providers: [],
-  bootstrap: [DemoHeaderdblclickComponent]
+  ]
 })
 export class DemoHeaderdblclickModule {
 }

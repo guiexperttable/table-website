@@ -7,25 +7,28 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { MatSliderModule } from "@angular/material/slider";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DemoIdfilterInfoComponent } from "./info/demo-idfilter-info.component";
 
 @NgModule({
-  declarations: [DemoIdfilterComponent],
+  declarations: [DemoIdfilterComponent, DemoIdfilterInfoComponent],
   imports: [
     HttpClientModule,
     CommonModule,
     TableComponent,
     RouterModule.forChild([
       {
-        path: "",
+        path: "run",
         component: DemoIdfilterComponent
+      },
+      {
+        path: "info",
+        component: DemoIdfilterInfoComponent
       }
     ]),
     MatSliderModule,
     FormsModule,
     ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [DemoIdfilterComponent]
+  ]
 })
 export class DemoIdfilterModule {
 }

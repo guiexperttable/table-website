@@ -10,7 +10,8 @@ import { PrizesInfoComponent } from "./info/prizes-info.component";
 
 @NgModule({
   declarations: [
-    PrizesDemoComponent
+    PrizesDemoComponent,
+    PrizesInfoComponent
   ],
   imports: [
     CommonModule,
@@ -29,9 +30,6 @@ import { PrizesInfoComponent } from "./info/prizes-info.component";
   ],
   providers: [
     PrizesDemoService
-  ],
-  exports: [
-    PrizesDemoComponent
   ]
 })
 export class PrizesDemoModule {
