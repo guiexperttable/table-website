@@ -23,7 +23,7 @@ import { OverlayModule } from "@angular/cdk/overlay";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "headerdblclick",
+        path: "",
         component: DemoHeaderdblclickComponent
       }
     ]),

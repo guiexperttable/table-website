@@ -9,7 +9,7 @@ import { RouterModule } from "@angular/router";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "rowandcolspan",
+        path: "",
         component: DemoRowAndColspanComponent
       }
     ])

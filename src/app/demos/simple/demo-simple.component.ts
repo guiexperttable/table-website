@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { TableModelIf } from "@guiexpert/table";
-import { TableComponent } from "@guiexpert/angular-table";
 import { generateSimpleModel } from "@guiexpert/demo-table-models";
 
 
@@ -19,11 +18,7 @@ import { generateSimpleModel } from "@guiexpert/demo-table-models";
       width: 100%;
       height: 100%;
     }
-  `],
-  imports: [
-    TableComponent
-  ],
-  standalone: true
+  `]
 })
 export class DemoSimpleComponent {
 

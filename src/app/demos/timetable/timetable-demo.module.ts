@@ -14,7 +14,7 @@ import { RouterModule } from "@angular/router";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "timetable",
+        path: "",
         component: TimetableDemoComponent
       }
     ])

@@ -18,7 +18,7 @@ import { FormsModule } from "@angular/forms";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "crypto",
+        path: "",
         component: CryptoTop100Component
       }
     ]),

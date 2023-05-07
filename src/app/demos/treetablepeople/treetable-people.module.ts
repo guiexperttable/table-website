@@ -18,7 +18,7 @@ import { FormsModule } from "@angular/forms";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "treepeople",
+        path: "",
         component: TreetablePeopleComponent
       }
     ]),

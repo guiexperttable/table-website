@@ -6,8 +6,6 @@ import { GeLogoModule } from "../ge-logo/ge-logo.module";
 import { BidiModule } from "@angular/cdk/bidi";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
-import { DemoSimpleComponent } from "./simple/demo-simple.component";
-import { DemoSimpleInfoComponent } from "./simple/demo-simple-info.component";
 
 const routes: Routes = [
   {
@@ -15,55 +13,47 @@ const routes: Routes = [
     component: DemosComponent
   },
   {
-    path: "simple/run",
-    component: DemoSimpleComponent
-  },
-  {
-    path: "simple/info",
-    component: DemoSimpleInfoComponent
-  },
-  {
-    path: "", loadChildren: () =>
+    path: "rowandcolspan", loadChildren: () =>
       import("../demos/rowandcolspan/demo-row-and-colspan.module").then(m => m.DemoRowAndColspanModule)
   },
   {
-    path: "", loadChildren: () =>
-      import("../demos/rowandcolspan/demo-row-and-colspan.module").then(m => m.DemoRowAndColspanModule)
+    path: "simple", loadChildren: () =>
+      import("../demos/simple/demo-simple.module").then(m => m.DemoSimpleModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "timetable", loadChildren: () =>
       import("../demos/timetable/timetable-demo.module").then(m => m.TimetableDemoModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "prizes", loadChildren: () =>
       import("../demos/prizesdemo/prizes-demo.module").then(m => m.PrizesDemoModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "treepeople", loadChildren: () =>
       import("../demos/treetablepeople/treetable-people.module").then(m => m.TreetablePeopleModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "mouseevent", loadChildren: () =>
       import("../demos/mouseevent/demo-mouseevent.module").then(m => m.DemoMouseeventModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "style", loadChildren: () =>
       import("../demos/style/demo-style.module").then(m => m.DemoStyleModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "idfilter", loadChildren: () =>
       import("../demos/idfilter/demo-idfilter.module").then(m => m.DemoIdfilterModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "olympic", loadChildren: () =>
       import("../demos/olympic/demo-olympic.module").then(m => m.DemoOlympicModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "headerdblclick", loadChildren: () =>
       import("../demos/headerdblclick/demo-headerdblclick.module").then(m => m.DemoHeaderdblclickModule)
   },
   {
-    path: "", loadChildren: () =>
+    path: "crypto", loadChildren: () =>
       import("../demos/cryptotop/crypto-top-100.module").then(m => m.CryptoTop100Module)
   }
 ];

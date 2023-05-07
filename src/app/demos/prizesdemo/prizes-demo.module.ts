@@ -17,7 +17,7 @@ import { RouterModule } from "@angular/router";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "prizes",
+        path: "",
         component: PrizesDemoComponent
       }
     ])

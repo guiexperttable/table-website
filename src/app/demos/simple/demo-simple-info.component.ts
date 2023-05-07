@@ -16,9 +16,7 @@ import { Component } from "@angular/core";
       width: 100%;
       height: 100%;
     }
-  `],
-  imports: [],
-  standalone: true
+  `]
 })
 export class DemoSimpleInfoComponent {
 

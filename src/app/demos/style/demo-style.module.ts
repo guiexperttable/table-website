@@ -11,7 +11,7 @@ import { DemoUltraComponent } from "./ultra/demo-ultra.component";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "style",
+        path: "simple",
         component: DemoStyleComponent
       },
       {
