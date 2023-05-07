@@ -5,6 +5,7 @@ import { PrizesDemoComponent } from "./prizes-demo.component";
 import { HttpClientModule } from "@angular/common/http";
 import { TableComponent } from "@guiexpert/angular-table";
 import { RouterModule } from "@angular/router";
+import { PrizesInfoComponent } from "./info/prizes-info.component";
 
 
 @NgModule({
@@ -17,8 +18,12 @@ import { RouterModule } from "@angular/router";
     TableComponent,
     RouterModule.forChild([
       {
-        path: "",
+        path: "run",
         component: PrizesDemoComponent
+      },
+      {
+        path: "info",
+        component: PrizesInfoComponent
       }
     ])
   ],

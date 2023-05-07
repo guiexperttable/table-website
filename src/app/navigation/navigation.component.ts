@@ -78,6 +78,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       if (evt instanceof NavigationStart) {
         this.fadein = false;
         this.cdr.detectChanges();
+
       } else if (evt instanceof NavigationEnd) {
         this.matSidenavContent?.scrollTo({ top: 0, left: 0 });
         this.calcTitle(evt.url);
@@ -86,11 +87,13 @@ export class NavigationComponent implements OnInit, OnDestroy {
           !evt.url.includes("/tsdoc")
           && !evt.url.includes("/getstarted")
           && !evt.url.includes("/demo");
+
         this.actionBarVisible = evt.url.includes("/demo/");
-        this.cdr.detectChanges();
+
         const p = evt.url.replace("info", "").replace("run", "");
         this.infoLink = p + "/info";
         this.runLink = p + "/run";
+        this.cdr.detectChanges();
       }
     });
   }
