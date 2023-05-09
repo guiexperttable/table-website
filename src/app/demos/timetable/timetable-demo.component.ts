@@ -31,7 +31,7 @@ export class TimetableDemoComponent {
     const eventCount = Math.round(1 + 3 * Math.random());
     const events: TableCellUpdateEvent[] = [];
     const rowIdxes: number[] = [];
-    const rowMax = this.tableModel?.getBodyModel().getRowCount() ?? 0;
+    const rowMax = (this.tableModel?.getBodyModel().getRowCount() ?? 0) - 1;
 
     for (let i = 0; i < eventCount; i++) {
       const val = Math.floor(999 * Math.random());
@@ -58,6 +58,6 @@ export class TimetableDemoComponent {
   }
 
   rndm(from: number, to: number) {
-    return Math.min(to, Math.floor(from + (to - from) * Math.random()));
+    return Math.min(to, Math.round(from + (to - from) * Math.random()));
   }
 }
