@@ -27,8 +27,8 @@ export class TimetableDemoComponent {
       return; // skip
     }
 
-    // we try to send 60 times per second with each 1-10 items:
-    const eventCount = Math.round(1 + 10 * Math.random());
+    // we try to send 60 times per second with each 1-3 items:
+    const eventCount = Math.round(1 + 3 * Math.random());
     const events: TableCellUpdateEvent[] = [];
     const rowIdxes: number[] = [];
     const rowMax = this.tableModel?.getBodyModel().getRowCount() ?? 0;
@@ -58,6 +58,6 @@ export class TimetableDemoComponent {
   }
 
   rndm(from: number, to: number) {
-    return Math.floor(from + (to - from) * Math.random());
+    return Math.min(to, Math.floor(from + (to - from) * Math.random()));
   }
 }
