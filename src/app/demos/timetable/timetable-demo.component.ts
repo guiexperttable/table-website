@@ -27,7 +27,7 @@ export class TimetableDemoComponent {
       return; // skip
     }
 
-    // we try to send 60 times per second with each 1-3 items:
+    // we try to send 60 times per second with each 1-4 items:
     const eventCount = Math.round(1 + 3 * Math.random());
     const events: TableCellUpdateEvent[] = [];
     const rowIdxes: number[] = [];
