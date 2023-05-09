@@ -2,9 +2,9 @@ import { Component } from "@angular/core";
 
 
 @Component({
-  selector: "demo-simple-info",
+  selector: "demo-heatmap-info",
   template: `
-    infos todo`,
+    infos todo heatmap`,
   styles: [`
     :host {
       display: grid;

@@ -6,9 +6,17 @@ import { RouterModule } from "@angular/router";
 import { DemoUltraComponent } from "./ultra/demo-ultra.component";
 import { DemoUltraInfoComponent } from "./ultra/info/demo-ultra-info.component";
 import { DemoStyleInfoComponent } from "./info/demo-style-info.component";
+import { DemoHeatmapComponent } from "./heatmap/demo-heatmap.component";
+import { DemoHeatmapInfoComponent } from "./heatmap/demo-heatmap-info.component";
 
 @NgModule({
-  declarations: [DemoStyleComponent, DemoUltraComponent, DemoStyleInfoComponent, DemoUltraInfoComponent],
+  declarations: [
+    DemoStyleComponent,
+    DemoUltraComponent,
+    DemoHeatmapComponent,
+    DemoHeatmapInfoComponent,
+    DemoStyleInfoComponent,
+    DemoUltraInfoComponent],
   imports: [
     TableComponent,
     RouterModule.forChild([
@@ -19,6 +27,14 @@ import { DemoStyleInfoComponent } from "./info/demo-style-info.component";
       {
         path: "simple/info",
         component: DemoStyleInfoComponent
+      },
+      {
+        path: "heatmap/run",
+        component: DemoHeatmapComponent
+      },
+      {
+        path: "heatmap/info",
+        component: DemoHeatmapInfoComponent
       },
       {
         path: "ultra/run",

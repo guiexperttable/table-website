@@ -21,10 +21,6 @@ const routes: Routes = [
       import("../demos/simple/demo-simple.module").then(m => m.DemoSimpleModule)
   },
   {
-    path: "heatmap", loadChildren: () =>
-      import("../demos/heatmap/demo-heatmap.module").then(m => m.DemoHeatmapModule)
-  },
-  {
     path: "timetable", loadChildren: () =>
       import("../demos/timetable/timetable-demo.module").then(m => m.TimetableDemoModule)
   },
