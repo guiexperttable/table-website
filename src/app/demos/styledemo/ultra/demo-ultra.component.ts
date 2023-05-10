@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-import { DemoStyleColorCellRenderer } from "../demo-style-color-cell-renderer";
+import { DemoStyleColorCellRenderer } from "../stylecolor/demo-style-color-cell-renderer";
 import { DefaultRowHeights, TableModelFactory } from "@guiexpert/table";
-import { DemoStyleAreaModel } from "../demo-style-area-model";
+import { DemoStyleAreaModel } from "../stylecolor/demo-style-area-model";
 
 @Component({
   selector: "demo-ultra",

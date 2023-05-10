@@ -1,13 +1,16 @@
 import { NgModule } from "@angular/core";
 
 import { TableComponent } from "@guiexpert/angular-table";
-import { DemoStyleComponent } from "./demo-style.component";
+import { DemoStyleComponent } from "./stylecolor/demo-style.component";
 import { RouterModule } from "@angular/router";
 import { DemoUltraComponent } from "./ultra/demo-ultra.component";
 import { DemoUltraInfoComponent } from "./ultra/info/demo-ultra-info.component";
-import { DemoStyleInfoComponent } from "./info/demo-style-info.component";
+import { DemoStyleInfoComponent } from "./stylecolor/info/demo-style-info.component";
 import { DemoHeatmapComponent } from "./heatmap/demo-heatmap.component";
 import { DemoHeatmapInfoComponent } from "./heatmap/demo-heatmap-info.component";
+import { DemoHeatmapSeattleInfoComponent } from "./heatmapseattle/demo-heatmap-seattle-info.component";
+import { DemoHeatmapSeattleComponent } from "./heatmapseattle/demo-heatmap-seattle.component";
+import { DemoHeatmapSeattleModule } from "./heatmapseattle/demo-heatmap-seattle.module";
 
 @NgModule({
   declarations: [
@@ -16,9 +19,12 @@ import { DemoHeatmapInfoComponent } from "./heatmap/demo-heatmap-info.component"
     DemoHeatmapComponent,
     DemoHeatmapInfoComponent,
     DemoStyleInfoComponent,
-    DemoUltraInfoComponent],
+    DemoUltraInfoComponent
+
+  ],
   imports: [
     TableComponent,
+    DemoHeatmapSeattleModule,
     RouterModule.forChild([
       {
         path: "simple/run",
@@ -35,6 +41,14 @@ import { DemoHeatmapInfoComponent } from "./heatmap/demo-heatmap-info.component"
       {
         path: "heatmap/info",
         component: DemoHeatmapInfoComponent
+      },
+      {
+        path: "heatmapseattle/run",
+        component: DemoHeatmapSeattleComponent
+      },
+      {
+        path: "heatmapseattle/info",
+        component: DemoHeatmapSeattleInfoComponent
       },
       {
         path: "ultra/run",

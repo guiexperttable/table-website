@@ -37,8 +37,8 @@ const routes: Routes = [
       import("../demos/mouseevent/demo-mouseevent.module").then(m => m.DemoMouseeventModule)
   },
   {
-    path: "style", loadChildren: () =>
-      import("../demos/style/demo-style.module").then(m => m.DemoStyleModule)
+    path: "styledemo", loadChildren: () =>
+      import("../demos/styledemo/demo-style.module").then(m => m.DemoStyleModule)
   },
   {
     path: "idfilter", loadChildren: () =>

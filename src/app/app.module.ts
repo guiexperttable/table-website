@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppComponent } from "./app.component";
 import { NavigationModule } from "./navigation/navigation.module";
 import { AppRoutingModule } from "./app-routing.module";
+import { TableComponent } from "@guiexpert/angular-table";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppRoutingModule } from "./app-routing.module";
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NavigationModule
+    NavigationModule,
+    TableComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
