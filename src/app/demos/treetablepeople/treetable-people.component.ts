@@ -170,9 +170,9 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
   }
 
 
-  private setValue(rowIndex: number, columnIndex: number, value: string, tableModel: TableModelIf): boolean {
-    const row: TreeRow<PersonIf> = tableModel.getBodyRowByIndex(rowIndex);
-    const property = tableModel.getColumnProperty(columnIndex);
+  private setValue(rowIndex: number, columnIndex: number, value: string): boolean {
+    const row: TreeRow<PersonIf> = this.tableModel?.getBodyRowByIndex(rowIndex);
+    const property = this.tableModel?.getColumnProperty(columnIndex);
     let v: any = value;
 
     if (property === "age") {
