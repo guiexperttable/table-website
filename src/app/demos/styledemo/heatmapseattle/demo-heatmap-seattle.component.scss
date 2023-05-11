@@ -1,0 +1,10 @@
+:host {
+  padding: 16px;
+}
+
+.table {
+  margin: 0 auto auto 0;
+  display: block;
+  width: min(calc(100% - 32px), 1152px); // 60+364*3
+  height: 750px; // 25 * 25
+}

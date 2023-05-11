@@ -5,23 +5,9 @@ import { createHeatMapSeattleModel } from "@guiexpert/demo-table-models";
 
 @Component({
   selector: "demo-heatmap-seattle",
-  template: `
-    <guiexpert-table
-      [tableModel]="tableModel"
-      [tableOptions]="tableOptions"
-    ></guiexpert-table>`,
-  styles: [`
-    :host {
-      display: grid;
-      grid-template-rows: 1fr;
-    }
+  templateUrl: "./demo-heatmap-seattle.component.html",
+  styleUrls: ["./demo-heatmap-seattle.component.scss"]
 
-    :host > * {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
-  `]
 })
 export class DemoHeatmapSeattleComponent {
 
@@ -34,6 +20,7 @@ export class DemoHeatmapSeattleComponent {
     columnsResizable: false,
     tableTopBorderVisible: false,
     tableBottomBorderVisible: false,
+    footerSeparatorBorderVisible: false,
     horizontalBorderVisible: false,
     verticalBorderVisible: false
   };
