@@ -19,7 +19,7 @@ export class TimetableDemoComponent {
 
   onTableReady(api: TableApi) {
     this.tableApi = api;
-    // this.sendUpdateTableModelEvents();
+    this.sendUpdateTableModelEvents();
   }
 
   sendUpdateTableModelEvents() {
@@ -58,7 +58,9 @@ export class TimetableDemoComponent {
       }
       this.tableApi.repaint();
     }
-    requestAnimationFrame(this.sendUpdateTableModelEvents.bind(this));
+    setTimeout(() => {
+      requestAnimationFrame(this.sendUpdateTableModelEvents.bind(this));
+    }, 16);
   }
 
   rndm(from: number, to: number) {
