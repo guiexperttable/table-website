@@ -19,7 +19,7 @@ export class TimetableDemoComponent {
 
   onTableReady(api: TableApi) {
     this.tableApi = api;
-    this.sendUpdateTableModelEvents();
+    // this.sendUpdateTableModelEvents();
   }
 
   sendUpdateTableModelEvents() {
