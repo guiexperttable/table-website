@@ -1,3 +1,6 @@
+.ge-header {
+  padding: 0 16px 64px 16px;
+}
 
 h1 {
   display: flex;
@@ -23,6 +26,11 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 22px;
+  margin: 40px 0 20px 0;
+}
+
 .gap {
   height: 40px;
 }
@@ -30,9 +38,9 @@ h1 {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 3em;
 
   > * {
-    padding-right: 20px;
     display: block;
     flex-wrap: wrap;
     flex-grow: 1;
@@ -45,3 +53,6 @@ h1 {
   }
 }
 
+.initial-letter::first-letter {
+  initial-letter: 1.2;
+}

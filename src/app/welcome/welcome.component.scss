@@ -37,10 +37,15 @@ h1 {
     max-width: 620px;
     text-align: center;
     margin: auto;
+
+    p {
+      text-wrap: balance;
+    }
   }
 }
 
 .logos-div {
+  padding-top: 40px;
   display: flex;
   justify-content: center;
 
@@ -107,6 +112,10 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 22px;
+  margin: 40px 0 20px 0;
+}
 
 .gap {
   height: 40px;
