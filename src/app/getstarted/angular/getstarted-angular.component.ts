@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component } from "@angular/core";
+
+declare var Prism: any;
 
 @Component({
   selector: "app-get-started-angular",
@@ -6,8 +8,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["./getstarted-angular.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GetstartedAngularComponent {
-  logoSize = 80;
+export class GetstartedAngularComponent implements AfterViewInit {
 
 
   text1 = `
@@ -58,4 +59,8 @@ export class GetstartedAngularComponent {
         }
       };
   `;
+
+  ngAfterViewInit() {
+    Prism.highlightAll();
+  }
 }

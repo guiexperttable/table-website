@@ -73,4 +73,11 @@ h1 {
   height: 40px;
 }
 
-
+.mat-primary.mat-mdc-button-base {
+  background: var(--ge-table-doc-primary-color);
+  color: var(--ge-table-doc-dark-color);
+  margin-right: 16px;
+}
+a {
+  color: #008a02;
+}
