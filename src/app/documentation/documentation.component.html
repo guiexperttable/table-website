@@ -15,20 +15,19 @@
 
 <div class="ge-padding">
   <h2>
-    The idea / philosophy
+    The idea/philosophy
   </h2>
   <div class="flex-container">
     <div>
       <p class="initial-letter">
-        This project is made for solving the problem of displaying large datasets in a grid view.
-        Large datasets means thousands of rows and columns.
-        We use virtual scrolling for both directions (horizontal and vertical) to create a high performance ui
-        component.
-        The data can be displayed as a grid or as a tree table (hierarchical structure).
+        This project is made for solving the problem of displaying large datasets in a grid view. Large datasets mean
+        thousands of rows and columns. We use virtual scrolling for both directions (horizontal and vertical) to create
+        a high-performance ui component. The data can be displayed as a grid or as a tree table (hierarchical
+        structure).
       </p>
       <p>
-        The core library is agnostic, it's written in plain typescript.
-        This helps us to create a lot of table components for all common frameworks:</p>
+        The core library is agnostic, it's written in plain typescript. This helps us to create a lot of table
+        components for all common frameworks:</p>
       <ul>
         <li><a href="https://www.npmjs.com/package/@guiexpert/angular-table" target="_blank">guiexpert/angular-table</a>
         </li>
@@ -45,24 +44,24 @@
         </li>
       </ul>
       <p>
-        If you think that an important framework support is missing, send us a short message. ;-)
-        Of course you can use the table with plain JS.
+        If you think that important framework support is missing, send us a short message. ;-)
+        Of course, you can use the table with plain JS.
       </p>
     </div>
     <div>
       <p class="initial-letter">
         Our philosophy is to think in models. A simple table mostly has a simple data structure.
-        An array of array or an array of objects. This is not our meaning of a table model.
-        For our library: a table model gives the information how many rows and
-        how many columns the table has, what the value of a cell is, what the column span of a cell is,
-        what the css classes are and so on.
+        An array of arrays or an array of objects. This is not our meaning of a table model.
+        For our library: a table model gives the information on how many rows and
+        how many columns the table has, what the value of a cell is,
+        what the column span of a cell is, what the CSS classes are, and so on.
         A model is a concrete class of this interface <a href="/api/tsdoc/interfaces/TableModelIf.html">TableModelIf</a>.
       </p>
       <p class="initial-letter">
         We found out, that a lot of requirements of a table body also exist for the header or footer.
-        Also for a header it's important to known the css classes or to know the colspan value of a header cell and so
+        Also for a header, it's important to know the CSS classes or to know the 'colspan' value of a header cell and so
         on.
-        Because of this we decided to create three sub models: our table has three areas (header, body, footer),
+        Because of this, we decided to create three sub-models: our table has three areas (header, body, footer),
         so our table model has three (sub) area models (see: <a href="/api/tsdoc/interfaces/AreaModelIf.html">AreaModelIf</a>).
         This gives you the most flexibility for designing fancy tables.
         You can write an implementation of the table model by hand or you can use one of the flexible factory methods.
@@ -71,18 +70,18 @@
     </div>
     <div>
       <p class="initial-letter">
-        The table can respond to user inputs: it's possible to define edit renderer, so that the user can change cell
+        The table can respond to user inputs: it's possible to define an edit renderer so that the user can change cell
         values.
-        It's possible to filter table rows, to re-order or to resize the columns (by drag and drop) and so on.
-        This is all easy to use, because it's handled by default.
-        All features of this table can be configured by an option property (see <a
-        href="/api/tsdoc/classes/TableOptions.html">TableOptions</a>).
+        It's possible to filter table rows, re-order or resize the columns (by drag and drop), and so on.
+        This is all easy to use because it's handled by default.
+        All features of this table can be configured by an option property
+        (see <a href="/api/tsdoc/classes/TableOptions.html">TableOptions</a>).
       </p>
       <p>
         We have tons of demo code for helping you by starting with this component.
       </p>
       <p>
-        Have fun and don't worry: If you need help, write a question on stackoverflow
+        Have fun and don't worry: If you need help, write a question on Stackoverflow
         (<a href="https://stackoverflow.com/questions/tagged/guiexpert-table" target="_blank">#guiexpert-table</a>).
         Feedback is welcome! Do not hesitate to contact us
         (<a href="mailto:feedback@gui.expert?subject=guiexpert-table">feedback@gui.expert</a>).
