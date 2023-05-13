@@ -13,6 +13,14 @@
 			"flags": {
 				"isAbstract": true
 			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 1786,
@@ -2496,6 +2504,14 @@
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 1697,
@@ -4455,6 +4471,14 @@
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 1896,
@@ -8870,6 +8894,14 @@
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 2425,
@@ -11643,6 +11675,14 @@
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 2095,
@@ -14433,6 +14473,14 @@
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 2226,
@@ -41675,6 +41723,14 @@
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is a default implementation of TableModelIf.\nThs TableModel is on one hand a container for the header, body, and footer models\n(see : #getAreaModel, and #AreaModelIf), and on the other hand the master of\nthe column information (#getColumnCount(), #getColumnWidth(columnIndex: number)).\n\nIf getFixedLeftColumnCount() returns a value greater than 0, a fixed west area will be rendered in the\nheader, body, and footer. A value greater than 0 for getFixedLeftColumnCount()\nwill result in the presence of an east area.\n\n +----------------+-------------------+--------------+\n |  header/west   |  header/center    | header/east  |\n +----------------+-------------------+--------------+\n |                |                   |              |\n |  body/west     |  body/center      | body/east    |\n |                |                   |              |\n +----------------+-------------------+--------------+\n |  footer/west   |  footer/center    | footer/east  |\n +----------------+-------------------+--------------+"
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 1385,
@@ -41685,7 +41741,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 36,
+							"line": 43,
 							"character": 2
 						}
 					],
@@ -41699,7 +41755,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 36,
+									"line": 43,
 									"character": 2
 								}
 							],
@@ -41883,7 +41939,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 38,
+							"line": 45,
 							"character": 20
 						}
 					],
@@ -41905,7 +41961,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 47,
+							"line": 54,
 							"character": 14
 						}
 					],
@@ -41926,7 +41982,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 44,
+							"line": 51,
 							"character": 11
 						}
 					],
@@ -41952,7 +42008,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 45,
+							"line": 52,
 							"character": 11
 						}
 					],
@@ -41976,7 +42032,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 29,
+							"line": 36,
 							"character": 12
 						}
 					],
@@ -41997,7 +42053,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 30,
+							"line": 37,
 							"character": 12
 						}
 					],
@@ -42019,7 +42075,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 43,
+							"line": 50,
 							"character": 20
 						}
 					],
@@ -42043,7 +42099,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 40,
+							"line": 47,
 							"character": 20
 						}
 					],
@@ -42065,7 +42121,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 41,
+							"line": 48,
 							"character": 20
 						}
 					],
@@ -42087,7 +42143,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 39,
+							"line": 46,
 							"character": 20
 						}
 					],
@@ -42110,7 +42166,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 37,
+							"line": 44,
 							"character": 20
 						}
 					],
@@ -42132,7 +42188,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 46,
+							"line": 53,
 							"character": 14
 						}
 					],
@@ -42153,7 +42209,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 33,
+							"line": 40,
 							"character": 12
 						}
 					],
@@ -42176,7 +42232,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 48,
+							"line": 55,
 							"character": 14
 						}
 					],
@@ -42198,7 +42254,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 42,
+							"line": 49,
 							"character": 20
 						}
 					],
@@ -42219,7 +42275,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 28,
+							"line": 35,
 							"character": 12
 						}
 					],
@@ -42240,7 +42296,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 34,
+							"line": 41,
 							"character": 12
 						}
 					],
@@ -42264,7 +42320,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 308,
+							"line": 315,
 							"character": 10
 						}
 					],
@@ -42278,7 +42334,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 308,
+									"line": 315,
 									"character": 2
 								}
 							],
@@ -42341,7 +42397,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 318,
+							"line": 325,
 							"character": 10
 						}
 					],
@@ -42355,7 +42411,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 318,
+									"line": 325,
 									"character": 2
 								}
 							],
@@ -42375,7 +42431,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 299,
+							"line": 306,
 							"character": 2
 						}
 					],
@@ -42389,7 +42445,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 299,
+									"line": 306,
 									"character": 2
 								}
 							],
@@ -42443,7 +42499,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 273,
+							"line": 280,
 							"character": 2
 						}
 					],
@@ -42457,7 +42513,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 273,
+									"line": 280,
 									"character": 2
 								}
 							],
@@ -42505,7 +42561,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 269,
+							"line": 276,
 							"character": 2
 						}
 					],
@@ -42519,7 +42575,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 269,
+									"line": 276,
 									"character": 2
 								}
 							],
@@ -42581,7 +42637,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 184,
+							"line": 191,
 							"character": 2
 						}
 					],
@@ -42595,7 +42651,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 184,
+									"line": 191,
 									"character": 2
 								}
 							],
@@ -42630,7 +42686,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 240,
+							"line": 247,
 							"character": 2
 						}
 					],
@@ -42644,7 +42700,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 240,
+									"line": 247,
 									"character": 2
 								}
 							],
@@ -42691,7 +42747,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 253,
+							"line": 260,
 							"character": 2
 						}
 					],
@@ -42705,7 +42761,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 253,
+									"line": 260,
 									"character": 2
 								}
 							],
@@ -42737,7 +42793,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 285,
+							"line": 292,
 							"character": 2
 						}
 					],
@@ -42751,7 +42807,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 285,
+									"line": 292,
 									"character": 2
 								}
 							],
@@ -42794,7 +42850,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 78,
+							"line": 85,
 							"character": 2
 						}
 					],
@@ -42808,7 +42864,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 78,
+									"line": 85,
 									"character": 2
 								}
 							],
@@ -42838,7 +42894,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 225,
+							"line": 232,
 							"character": 2
 						}
 					],
@@ -42852,7 +42908,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 225,
+									"line": 232,
 									"character": 2
 								}
 							],
@@ -42906,7 +42962,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 277,
+							"line": 284,
 							"character": 2
 						}
 					],
@@ -42920,7 +42976,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 277,
+									"line": 284,
 									"character": 2
 								}
 							],
@@ -42964,7 +43020,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 281,
+							"line": 288,
 							"character": 2
 						}
 					],
@@ -42978,7 +43034,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 281,
+									"line": 288,
 									"character": 2
 								}
 							],
@@ -43021,7 +43077,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 93,
+							"line": 100,
 							"character": 2
 						}
 					],
@@ -43035,7 +43091,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 93,
+									"line": 100,
 									"character": 2
 								}
 							],
@@ -43078,7 +43134,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 168,
+							"line": 175,
 							"character": 2
 						}
 					],
@@ -43092,7 +43148,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 168,
+									"line": 175,
 									"character": 2
 								}
 							],
@@ -43122,7 +43178,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 172,
+							"line": 179,
 							"character": 2
 						}
 					],
@@ -43136,7 +43192,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 172,
+									"line": 179,
 									"character": 2
 								}
 							],
@@ -43166,7 +43222,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 232,
+							"line": 239,
 							"character": 2
 						}
 					],
@@ -43180,7 +43236,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 232,
+									"line": 239,
 									"character": 2
 								}
 							],
@@ -43210,7 +43266,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 236,
+							"line": 243,
 							"character": 2
 						}
 					],
@@ -43224,7 +43280,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 236,
+									"line": 243,
 									"character": 2
 								}
 							],
@@ -43254,7 +43310,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 180,
+							"line": 187,
 							"character": 2
 						}
 					],
@@ -43268,7 +43324,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 180,
+									"line": 187,
 									"character": 2
 								}
 							],
@@ -43305,7 +43361,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 164,
+							"line": 171,
 							"character": 2
 						}
 					],
@@ -43319,7 +43375,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 164,
+									"line": 171,
 									"character": 2
 								}
 							],
@@ -43351,7 +43407,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 176,
+							"line": 183,
 							"character": 2
 						}
 					],
@@ -43365,7 +43421,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 176,
+									"line": 183,
 									"character": 2
 								}
 							],
@@ -43421,7 +43477,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 198,
+							"line": 205,
 							"character": 2
 						}
 					],
@@ -43435,7 +43491,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 198,
+									"line": 205,
 									"character": 2
 								}
 							],
@@ -43470,7 +43526,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 207,
+							"line": 214,
 							"character": 2
 						}
 					],
@@ -43484,7 +43540,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 207,
+									"line": 214,
 									"character": 2
 								}
 							],
@@ -43528,7 +43584,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 103,
+							"line": 110,
 							"character": 2
 						}
 					],
@@ -43542,7 +43598,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 103,
+									"line": 110,
 									"character": 2
 								}
 							],
@@ -43585,7 +43641,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 62,
+							"line": 69,
 							"character": 2
 						}
 					],
@@ -43599,7 +43655,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 62,
+									"line": 69,
 									"character": 2
 								}
 							],
@@ -43629,7 +43685,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 257,
+							"line": 264,
 							"character": 2
 						}
 					],
@@ -43643,7 +43699,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 257,
+									"line": 264,
 									"character": 2
 								}
 							],
@@ -43673,7 +43729,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 261,
+							"line": 268,
 							"character": 2
 						}
 					],
@@ -43687,7 +43743,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 261,
+									"line": 268,
 									"character": 2
 								}
 							],
@@ -43717,7 +43773,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 265,
+							"line": 272,
 							"character": 2
 						}
 					],
@@ -43731,7 +43787,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 265,
+									"line": 272,
 									"character": 2
 								}
 							],
@@ -43761,7 +43817,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 289,
+							"line": 296,
 							"character": 2
 						}
 					],
@@ -43775,7 +43831,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 289,
+									"line": 296,
 									"character": 2
 								}
 							],
@@ -43820,7 +43876,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 127,
+							"line": 134,
 							"character": 10
 						}
 					],
@@ -43834,7 +43890,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 127,
+									"line": 134,
 									"character": 2
 								}
 							],
@@ -43869,7 +43925,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 314,
+							"line": 321,
 							"character": 10
 						}
 					],
@@ -43883,7 +43939,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 314,
+									"line": 321,
 									"character": 2
 								}
 							],
@@ -43903,7 +43959,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 118,
+							"line": 125,
 							"character": 2
 						}
 					],
@@ -43917,7 +43973,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 118,
+									"line": 125,
 									"character": 2
 								}
 							],
@@ -43947,7 +44003,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 151,
+							"line": 158,
 							"character": 2
 						}
 					],
@@ -43961,7 +44017,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 151,
+									"line": 158,
 									"character": 2
 								}
 							],
@@ -43991,7 +44047,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 113,
+							"line": 120,
 							"character": 2
 						}
 					],
@@ -44005,7 +44061,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 113,
+									"line": 120,
 									"character": 2
 								}
 							],
@@ -44048,7 +44104,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.ts",
-							"line": 82,
+							"line": 89,
 							"character": 2
 						}
 					],
@@ -44062,7 +44118,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.ts",
-									"line": 82,
+									"line": 89,
 									"character": 2
 								}
 							],
@@ -44181,7 +44237,7 @@
 			"sources": [
 				{
 					"fileName": "lib/table/data/tablemodel/table-model.ts",
-					"line": 26,
+					"line": 33,
 					"character": 13
 				}
 			],
@@ -54610,6 +54666,14 @@
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "This is the model interface for an area model. A table can have three of these models, one for the header,\none for the body , and one for the footer.\nAn AreaModelIf gives you information about the rows and cell contents.\nThe column information is given by the TableModelIf."
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 1607,
@@ -54628,7 +54692,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 14,
+							"line": 20,
 							"character": 2
 						}
 					],
@@ -54656,7 +54720,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 19,
+							"line": 25,
 							"character": 2
 						}
 					],
@@ -54691,7 +54755,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 24,
+							"line": 30,
 							"character": 2
 						}
 					],
@@ -54713,7 +54777,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 24,
+									"line": 30,
 									"character": 2
 								}
 							],
@@ -54757,7 +54821,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 178,
+							"line": 184,
 							"character": 2
 						}
 					],
@@ -54779,7 +54843,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 178,
+									"line": 184,
 									"character": 2
 								}
 							],
@@ -54817,7 +54881,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 172,
+							"line": 178,
 							"character": 2
 						}
 					],
@@ -54839,7 +54903,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 172,
+									"line": 178,
 									"character": 2
 								}
 							],
@@ -54899,7 +54963,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 109,
+							"line": 115,
 							"character": 2
 						}
 					],
@@ -54921,7 +54985,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 109,
+									"line": 115,
 									"character": 2
 								}
 							],
@@ -54976,7 +55040,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 50,
+							"line": 56,
 							"character": 2
 						}
 					],
@@ -54998,7 +55062,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 50,
+									"line": 56,
 									"character": 2
 								}
 							],
@@ -55042,7 +55106,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 79,
+							"line": 85,
 							"character": 2
 						}
 					],
@@ -55064,7 +55128,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 79,
+									"line": 85,
 									"character": 2
 								}
 							],
@@ -55127,7 +55191,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 86,
+							"line": 92,
 							"character": 2
 						}
 					],
@@ -55149,7 +55213,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 86,
+									"line": 92,
 									"character": 2
 								}
 							],
@@ -55211,7 +55275,7 @@
 											"sources": [
 												{
 													"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-													"line": 86,
+													"line": 92,
 													"character": 59
 												}
 											],
@@ -55224,7 +55288,7 @@
 												"sources": [
 													{
 														"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-														"line": 86,
+														"line": 92,
 														"character": 61
 													}
 												],
@@ -55262,7 +55326,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 58,
+							"line": 64,
 							"character": 2
 						}
 					],
@@ -55284,7 +55348,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 58,
+									"line": 64,
 									"character": 2
 								}
 							],
@@ -55304,7 +55368,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 72,
+							"line": 78,
 							"character": 2
 						}
 					],
@@ -55326,7 +55390,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 72,
+									"line": 78,
 									"character": 2
 								}
 							],
@@ -55346,7 +55410,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 121,
+							"line": 127,
 							"character": 2
 						}
 					],
@@ -55368,7 +55432,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 121,
+									"line": 127,
 									"character": 2
 								}
 							],
@@ -55401,7 +55465,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 39,
+							"line": 45,
 							"character": 2
 						}
 					],
@@ -55423,7 +55487,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 39,
+									"line": 45,
 									"character": 2
 								}
 							],
@@ -55443,7 +55507,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 115,
+							"line": 121,
 							"character": 2
 						}
 					],
@@ -55465,7 +55529,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 115,
+									"line": 121,
 									"character": 2
 								}
 							],
@@ -55498,7 +55562,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 64,
+							"line": 70,
 							"character": 2
 						}
 					],
@@ -55520,7 +55584,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 64,
+									"line": 70,
 									"character": 2
 								}
 							],
@@ -55564,7 +55628,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 101,
+							"line": 107,
 							"character": 2
 						}
 					],
@@ -55586,7 +55650,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 101,
+									"line": 107,
 									"character": 2
 								}
 							],
@@ -55630,12 +55694,12 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 44,
+							"line": 50,
 							"character": 2
 						},
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 94,
+							"line": 100,
 							"character": 2
 						}
 					],
@@ -55657,7 +55721,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 44,
+									"line": 50,
 									"character": 2
 								}
 							],
@@ -55718,7 +55782,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 94,
+									"line": 100,
 									"character": 2
 								}
 							],
@@ -55762,7 +55826,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 128,
+							"line": 134,
 							"character": 2
 						}
 					],
@@ -55784,7 +55848,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 128,
+									"line": 134,
 									"character": 2
 								}
 							],
@@ -55817,7 +55881,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 34,
+							"line": 40,
 							"character": 2
 						}
 					],
@@ -55839,7 +55903,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 34,
+									"line": 40,
 									"character": 2
 								}
 							],
@@ -55859,7 +55923,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 135,
+							"line": 141,
 							"character": 2
 						}
 					],
@@ -55881,7 +55945,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 135,
+									"line": 141,
 									"character": 2
 								}
 							],
@@ -55925,7 +55989,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 166,
+							"line": 172,
 							"character": 2
 						}
 					],
@@ -55953,7 +56017,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 166,
+									"line": 172,
 									"character": 2
 								}
 							],
@@ -55973,7 +56037,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 148,
+							"line": 154,
 							"character": 2
 						}
 					],
@@ -55995,7 +56059,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 148,
+									"line": 154,
 									"character": 2
 								}
 							],
@@ -56028,7 +56092,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 154,
+							"line": 160,
 							"character": 2
 						}
 					],
@@ -56050,7 +56114,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 154,
+									"line": 160,
 									"character": 2
 								}
 							],
@@ -56094,7 +56158,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 142,
+							"line": 148,
 							"character": 2
 						}
 					],
@@ -56116,7 +56180,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 142,
+									"line": 148,
 									"character": 2
 								}
 							],
@@ -56160,7 +56224,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 161,
+							"line": 167,
 							"character": 2
 						}
 					],
@@ -56182,7 +56246,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 161,
+									"line": 167,
 									"character": 2
 								}
 							],
@@ -56226,7 +56290,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-							"line": 29,
+							"line": 35,
 							"character": 2
 						}
 					],
@@ -56248,7 +56312,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-									"line": 29,
+									"line": 35,
 									"character": 2
 								}
 							],
@@ -56336,7 +56400,7 @@
 			"sources": [
 				{
 					"fileName": "lib/table/data/tablemodel/areamodel/area-model.if.ts",
-					"line": 8,
+					"line": 14,
 					"character": 17
 				}
 			],
@@ -60185,6 +60249,14 @@
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The TableModelIf is on one hand a container for the header, body, and footer models\n(see : #getAreaModel, and #AreaModelIf), and on the other hand the master of\nthe column information (#getColumnCount(), #getColumnWidth(columnIndex: number)).\n\nIf getFixedLeftColumnCount() returns a value greater than 0, a fixed west area will be rendered in the\nheader, body, and footer. A value greater than 0 for getFixedLeftColumnCount()\nwill result in the presence of an east area.\n\n +----------------+-------------------+--------------+\n |  header/west   |  header/center    | header/east  |\n +----------------+-------------------+--------------+\n |                |                   |              |\n |  body/west     |  body/center      | body/east    |\n |                |                   |              |\n +----------------+-------------------+--------------+\n |  footer/west   |  footer/center    | footer/east  |\n +----------------+-------------------+--------------+"
+					}
+				]
+			},
 			"children": [
 				{
 					"id": 1311,
@@ -60195,7 +60267,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 10,
+							"line": 29,
 							"character": 2
 						}
 					],
@@ -60209,7 +60281,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 10,
+									"line": 29,
 									"character": 2
 								}
 							],
@@ -60253,7 +60325,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 68,
+							"line": 87,
 							"character": 2
 						}
 					],
@@ -60267,7 +60339,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 68,
+									"line": 87,
 									"character": 2
 								}
 							],
@@ -60305,7 +60377,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 66,
+							"line": 85,
 							"character": 2
 						}
 					],
@@ -60319,7 +60391,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 66,
+									"line": 85,
 									"character": 2
 								}
 							],
@@ -60371,7 +60443,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 22,
+							"line": 41,
 							"character": 2
 						}
 					],
@@ -60385,7 +60457,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 22,
+									"line": 41,
 									"character": 2
 								}
 							],
@@ -60422,7 +60494,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 24,
+							"line": 43,
 							"character": 2
 						}
 					],
@@ -60436,7 +60508,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 24,
+									"line": 43,
 									"character": 2
 								}
 							],
@@ -60458,7 +60530,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 44,
+							"line": 63,
 							"character": 2
 						}
 					],
@@ -60472,7 +60544,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 44,
+									"line": 63,
 									"character": 2
 								}
 							],
@@ -60505,7 +60577,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 16,
+							"line": 35,
 							"character": 2
 						}
 					],
@@ -60519,7 +60591,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 16,
+									"line": 35,
 									"character": 2
 								}
 							],
@@ -60539,7 +60611,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 38,
+							"line": 57,
 							"character": 2
 						}
 					],
@@ -60553,7 +60625,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 38,
+									"line": 57,
 									"character": 2
 								}
 							],
@@ -60597,7 +60669,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 40,
+							"line": 59,
 							"character": 2
 						}
 					],
@@ -60611,7 +60683,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 40,
+									"line": 59,
 									"character": 2
 								}
 							],
@@ -60645,7 +60717,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 42,
+							"line": 61,
 							"character": 2
 						}
 					],
@@ -60659,7 +60731,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 42,
+									"line": 61,
 									"character": 2
 								}
 							],
@@ -60692,12 +60764,12 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 18,
+							"line": 37,
 							"character": 2
 						},
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 46,
+							"line": 65,
 							"character": 2
 						}
 					],
@@ -60711,7 +60783,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 18,
+									"line": 37,
 									"character": 2
 								}
 							],
@@ -60742,7 +60814,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 46,
+									"line": 65,
 									"character": 2
 								}
 							],
@@ -60775,7 +60847,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 60,
+							"line": 79,
 							"character": 2
 						}
 					],
@@ -60789,7 +60861,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 60,
+									"line": 79,
 									"character": 2
 								}
 							],
@@ -60809,7 +60881,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 62,
+							"line": 81,
 							"character": 2
 						}
 					],
@@ -60823,7 +60895,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 62,
+									"line": 81,
 									"character": 2
 								}
 							],
@@ -60843,7 +60915,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 26,
+							"line": 45,
 							"character": 2
 						}
 					],
@@ -60857,7 +60929,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 26,
+									"line": 45,
 									"character": 2
 								}
 							],
@@ -60877,7 +60949,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 28,
+							"line": 47,
 							"character": 2
 						}
 					],
@@ -60891,7 +60963,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 28,
+									"line": 47,
 									"character": 2
 								}
 							],
@@ -60911,7 +60983,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 58,
+							"line": 77,
 							"character": 2
 						}
 					],
@@ -60925,7 +60997,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 58,
+									"line": 77,
 									"character": 2
 								}
 							],
@@ -60947,7 +61019,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 36,
+							"line": 55,
 							"character": 2
 						}
 					],
@@ -60961,7 +61033,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 36,
+									"line": 55,
 									"character": 2
 								}
 							],
@@ -61007,7 +61079,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 20,
+							"line": 39,
 							"character": 2
 						}
 					],
@@ -61021,7 +61093,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 20,
+									"line": 39,
 									"character": 2
 								}
 							],
@@ -61054,7 +61126,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 14,
+							"line": 33,
 							"character": 2
 						}
 					],
@@ -61068,7 +61140,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 14,
+									"line": 33,
 									"character": 2
 								}
 							],
@@ -61088,7 +61160,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 32,
+							"line": 51,
 							"character": 2
 						}
 					],
@@ -61102,7 +61174,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 32,
+									"line": 51,
 									"character": 2
 								}
 							],
@@ -61122,7 +61194,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 30,
+							"line": 49,
 							"character": 2
 						}
 					],
@@ -61136,7 +61208,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 30,
+									"line": 49,
 									"character": 2
 								}
 							],
@@ -61156,7 +61228,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 34,
+							"line": 53,
 							"character": 2
 						}
 					],
@@ -61170,7 +61242,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 34,
+									"line": 53,
 									"character": 2
 								}
 							],
@@ -61190,7 +61262,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 12,
+							"line": 31,
 							"character": 2
 						}
 					],
@@ -61204,7 +61276,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 12,
+									"line": 31,
 									"character": 2
 								}
 							],
@@ -61237,7 +61309,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 56,
+							"line": 75,
 							"character": 2
 						}
 					],
@@ -61251,7 +61323,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 56,
+									"line": 75,
 									"character": 2
 								}
 							],
@@ -61271,7 +61343,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 54,
+							"line": 73,
 							"character": 2
 						}
 					],
@@ -61285,7 +61357,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 54,
+									"line": 73,
 									"character": 2
 								}
 							],
@@ -61305,7 +61377,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 52,
+							"line": 71,
 							"character": 2
 						}
 					],
@@ -61319,7 +61391,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 52,
+									"line": 71,
 									"character": 2
 								}
 							],
@@ -61352,7 +61424,7 @@
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-							"line": 48,
+							"line": 67,
 							"character": 2
 						}
 					],
@@ -61366,7 +61438,7 @@
 							"sources": [
 								{
 									"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-									"line": 48,
+									"line": 67,
 									"character": 2
 								}
 							],
@@ -61439,7 +61511,7 @@
 			"sources": [
 				{
 					"fileName": "lib/table/data/tablemodel/table-model.if.ts",
-					"line": 8,
+					"line": 27,
 					"character": 17
 				}
 			],
@@ -62813,10 +62885,18 @@
 			"variant": "declaration",
 			"kind": 4194304,
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The AreaIdent is an identifier for the three areas : header, boder, and footer."
+					}
+				]
+			},
 			"sources": [
 				{
 					"fileName": "lib/table/data/tablemodel/area-ident.type.ts",
-					"line": 1,
+					"line": 4,
 					"character": 12
 				}
 			],
@@ -65373,7 +65453,7 @@
 			"sources": [
 				{
 					"fileName": "lib/table/data/tablemodel/area-ident.type.ts",
-					"line": 3,
+					"line": 10,
 					"character": 13
 				}
 			],
@@ -65384,10 +65464,18 @@
 					"variant": "signature",
 					"kind": 4096,
 					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Converts a string to the identifier of type AreaIdent."
+							}
+						]
+					},
 					"sources": [
 						{
 							"fileName": "lib/table/data/tablemodel/area-ident.type.ts",
-							"line": 3,
+							"line": 10,
 							"character": 36
 						}
 					],
@@ -65398,6 +65486,14 @@
 							"variant": "param",
 							"kind": 32768,
 							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "should be \"header\"|\"body\"|\"footer\". The fallback return value is 'body'"
+									}
+								]
+							},
 							"type": {
 								"type": "union",
 								"types": [

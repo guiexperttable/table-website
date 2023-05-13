@@ -15,6 +15,23 @@
 <li><a href="../modules.html">@guiexpert/table</a></li>
 <li><a href="TableModelIf.html">TableModelIf</a></li></ul>
 <h1>Interface TableModelIf</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>The TableModelIf is on one hand a container for the header, body, and footer models
+(see : #getAreaModel, and #AreaModelIf), and on the other hand the master of
+the column information (#getColumnCount(), #getColumnWidth(columnIndex: number)).</p>
+<p>If getFixedLeftColumnCount() returns a value greater than 0, a fixed west area will be rendered in the
+header, body, and footer. A value greater than 0 for getFixedLeftColumnCount()
+will result in the presence of an east area.</p>
+<p> +----------------+-------------------+--------------+
+ |  header/west   |  header/center    | header/east  |
+ +----------------+-------------------+--------------+
+ |                |                   |              |
+ |  body/west     |  body/center      | body/east    |
+ |                |                   |              |
+ +----------------+-------------------+--------------+
+ |  footer/west   |  footer/center    | footer/east  |
+ +----------------+-------------------+--------------+</p>
+</div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
@@ -24,7 +41,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../classes/TableModel.html" class="tsd-signature-type tsd-kind-class">TableModel</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:8</li></ul></aside>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:27</li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -76,7 +93,7 @@
 <h5><span class="tsd-kind-parameter">targetColumnIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:10</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:29</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="doSort" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>do<wbr/>Sort</span><a href="#doSort" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -89,7 +106,7 @@
 <h5><span class="tsd-kind-parameter">sortItems</span>: <a href="../classes/SortItem.html" class="tsd-signature-type tsd-kind-class">SortItem</a><span class="tsd-signature-symbol">[]</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:68</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:87</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="externalFilterChanged" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>external<wbr/>Filter<wbr/>Changed</span><a href="#externalFilterChanged" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -107,7 +124,7 @@
 <h5><span class="tsd-kind-parameter">predictFn</span>: <a href="../types/FilterFunction.html" class="tsd-signature-type tsd-kind-type-alias">FilterFunction</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">T</span><span class="tsd-signature-symbol">&gt;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:66</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:85</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getAreaModel" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Area<wbr/>Model</span><a href="#getAreaModel" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -120,7 +137,7 @@
 <h5><span class="tsd-kind-parameter">rowAreaIdent</span>: <a href="../types/AreaIdent.html" class="tsd-signature-type tsd-kind-type-alias">AreaIdent</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="AreaModelIf.html" class="tsd-signature-type tsd-kind-interface">AreaModelIf</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:22</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:41</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getBodyModel" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Body<wbr/>Model</span><a href="#getBodyModel" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -128,7 +145,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="AreaModelIf.html" class="tsd-signature-type tsd-kind-interface">AreaModelIf</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:24</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:43</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getBodyRowByIndex" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Body<wbr/>Row<wbr/>By<wbr/>Index</span><a href="#getBodyRowByIndex" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -141,7 +158,7 @@
 <h5><span class="tsd-kind-parameter">rowIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:44</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:63</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getColumnCount" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Column<wbr/>Count</span><a href="#getColumnCount" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -149,7 +166,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:16</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:35</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getColumnDef" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Column<wbr/>Def</span><a href="#getColumnDef" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -162,7 +179,7 @@
 <h5><span class="tsd-kind-parameter">index</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="ColumnDefIf.html" class="tsd-signature-type tsd-kind-interface">ColumnDefIf</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:38</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:57</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getColumnDefs" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Column<wbr/>Defs</span><a href="#getColumnDefs" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -170,7 +187,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><a href="ColumnDefIf.html" class="tsd-signature-type tsd-kind-interface">ColumnDefIf</a><span class="tsd-signature-symbol">[]</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:40</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:59</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getColumnProperty" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Column<wbr/>Property</span><a href="#getColumnProperty" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -183,7 +200,7 @@
 <h5><span class="tsd-kind-parameter">columnIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:42</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:61</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getColumnWidth" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Column<wbr/>Width</span><a href="#getColumnWidth" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -196,7 +213,7 @@
 <h5><span class="tsd-kind-parameter">columnIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:18</li></ul></aside></li>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:37</li></ul></aside></li>
 <li class="tsd-signature tsd-anchor-link" id="getColumnWidth.getColumnWidth-2"><span class="tsd-kind-call-signature">get<wbr/>Column<wbr/>Width</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">columnIndex</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getColumnWidth.getColumnWidth-2" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
@@ -206,7 +223,7 @@
 <h5><span class="tsd-kind-parameter">columnIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:46</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:65</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getContentHeightInPixel" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Content<wbr/>Height<wbr/>In<wbr/>Pixel</span><a href="#getContentHeightInPixel" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -214,7 +231,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:60</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:79</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getContentWidthInPixel" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Content<wbr/>Width<wbr/>In<wbr/>Pixel</span><a href="#getContentWidthInPixel" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -222,7 +239,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:62</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:81</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getFixedLeftColumnCount" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Fixed<wbr/>Left<wbr/>Column<wbr/>Count</span><a href="#getFixedLeftColumnCount" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -230,7 +247,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:26</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:45</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getFixedRightColumnCount" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Fixed<wbr/>Right<wbr/>Column<wbr/>Count</span><a href="#getFixedRightColumnCount" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -238,7 +255,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:28</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:47</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getPadding" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Padding</span><a href="#getPadding" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -246,7 +263,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="../classes/Padding.html" class="tsd-signature-type tsd-kind-class">Padding</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:58</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:77</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getRowHeight" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>get<wbr/>Row<wbr/>Height</span><a href="#getRowHeight" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -261,7 +278,7 @@
 <h5><span class="tsd-kind-parameter">rowIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:36</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:55</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="getXPosByColumnIndex" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>getXPos<wbr/>By<wbr/>Column<wbr/>Index</span><a href="#getXPosByColumnIndex" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -274,7 +291,7 @@
 <h5><span class="tsd-kind-parameter">columnIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:20</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:39</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="init" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>init</span><a href="#init" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -282,7 +299,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:14</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:33</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="isFooterVisibe" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Footer<wbr/>Visibe</span><a href="#isFooterVisibe" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -290,7 +307,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:32</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:51</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="isHeaderVisibe" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Header<wbr/>Visibe</span><a href="#isHeaderVisibe" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -298,7 +315,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:30</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:49</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="isRowCheckboxVisible" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Row<wbr/>Checkbox<wbr/>Visible</span><a href="#isRowCheckboxVisible" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -306,7 +323,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:34</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:53</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="isSortable" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>is<wbr/>Sortable</span><a href="#isSortable" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -319,7 +336,7 @@
 <h5><span class="tsd-kind-parameter">colIdx</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:12</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:31</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="recalcHeightAndPadding" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>recalc<wbr/>Height<wbr/>And<wbr/>Padding</span><a href="#recalcHeightAndPadding" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -327,7 +344,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:56</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:75</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="recalcPadding" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>recalc<wbr/>Padding</span><a href="#recalcPadding" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -335,7 +352,7 @@
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:54</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:73</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="recalcSize" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>recalc<wbr/>Size</span><a href="#recalcSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -348,7 +365,7 @@
 <h5><span class="tsd-kind-parameter">clientWidth</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:52</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:71</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setColumnWidth" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Column<wbr/>Width</span><a href="#setColumnWidth" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -363,7 +380,7 @@
 <h5><span class="tsd-kind-parameter">width</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/data/tablemodel/table-model.if.ts:48</li></ul></aside></li></ul></section></section></div>
+<li>Defined in lib/table/data/tablemodel/table-model.if.ts:67</li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
