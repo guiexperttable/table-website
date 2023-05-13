@@ -1,7 +1,7 @@
-import { AreaIdent, AreaModelArrayArray, FilterFunction } from "@guiexpert/table";
+import { AreaIdent, AreaModelArrayOfArrays, FilterFunction } from "@guiexpert/table";
 
 export class DemoRowAndColspanAreaModel<T>
-  extends AreaModelArrayArray<T> {
+  extends AreaModelArrayOfArrays<T> {
 
 
   constructor(
