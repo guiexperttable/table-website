@@ -29,7 +29,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       demo: "Demos",
       api: "API",
       doc: "Documentation",
-      privacy: "Privacy",
+      privacy: "Privacy Policy",
       cou: "Conditions of Use",
       imprint: "Imprint"
     },
