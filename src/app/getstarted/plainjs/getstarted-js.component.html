@@ -32,19 +32,29 @@
   <br>
 
   <p>
+    <circle-letter text="1"></circle-letter>
     Add the following NPM package to your existing angular project
     (run this in your project root directory):
   </p>
   <source-code [language]="'language-shell'" [text]="text1"></source-code>
 
-  <p>Add an empty div element to your html code:</p>
+  <p>
+    <circle-letter text="2"></circle-letter>
+    Add an empty div element to your html code:
+  </p>
   <source-code [text]="text2"></source-code>
 
-  <p>Import the following classes:</p>
+  <p>
+    <circle-letter text="3"></circle-letter>
+    Import the following classes:
+  </p>
   <source-code [text]="text3"></source-code>
 
-  <p>Create a <i>tableModel</i>. Select the div element and create a table scope.
-    At least call firstInit():</p>
+  <p>
+    <circle-letter text="4"></circle-letter>
+    Create a <i>tableModel</i>. Select the div element and create a table scope.
+    At least call firstInit():
+  </p>
   <source-code [text]="text4"></source-code>
 
   <p>
@@ -53,7 +63,7 @@
   </p>
 
 
-  <button [routerLink]="['/getstarted']" mat-stroked-button>
+  <button [routerLink]="['/getstarted']" mat-flat-button color="primary">
     <mat-icon>arrow_back_ios_new</mat-icon>
   </button>
 </div>

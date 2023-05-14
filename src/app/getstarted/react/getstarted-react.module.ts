@@ -8,6 +8,7 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { MatIconModule } from "@angular/material/icon";
 import { ReactLogoComponent } from "../../3p-logos/react-logo.component";
 import { SourceCodeModule } from "../../common/code/source-code.module";
+import { CircleLetterModule } from "../../common/circle-letter.module";
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
     MatIconModule,
     MatButtonModule,
     TableComponent,
-    SourceCodeModule
+    SourceCodeModule,
+    CircleLetterModule
   ],
   exports: [RouterModule]
 })

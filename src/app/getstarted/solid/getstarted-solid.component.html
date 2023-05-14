@@ -32,24 +32,31 @@
   <br>
 
   <p>
+    <circle-letter text="1"></circle-letter>
     Add the following two NPM packages to your existing solid project
     (run this in your project root directory):
   </p>
   <source-code [language]="'language-shell'" [text]="text1"></source-code>
 
-  <p>Import the following classes in your component:</p>
+  <p>
+    <circle-letter text="2"></circle-letter>
+    Import the following classes in your component:
+  </p>
   <source-code [text]="text3"></source-code>
 
-  <p>Add this code to the component:</p>
+  <p>
+    <circle-letter text="3"></circle-letter>
+    Add this code to the component:
+  </p>
   <source-code [text]="text4"></source-code>
 
   <p>
+    <circle-letter text="4"></circle-letter>
     There are a lot of posibillities to create table models.
     See <a href="/doc">Docs</a> for further information or <a href="/demo">Demo</a> section for examples.
   </p>
 
-
-  <button [routerLink]="['/getstarted']" mat-stroked-button>
+  <button [routerLink]="['/getstarted']" mat-flat-button color="primary">
     <mat-icon>arrow_back_ios_new</mat-icon>
   </button>
 </div>
