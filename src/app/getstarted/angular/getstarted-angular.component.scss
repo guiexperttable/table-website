@@ -73,6 +73,9 @@ h1 {
   height: 40px;
 }
 
+pre {
+  max-width: min(100%, 600px);
+}
 .mat-primary.mat-mdc-button-base {
   background: var(--ge-table-doc-primary-color);
   color: var(--ge-table-doc-dark-color);

@@ -7,6 +7,8 @@ import { GetstartedAngularComponent } from "./getstarted-angular.component";
 import { GeLogoModule } from "../../ge-logo/ge-logo.module";
 import { TableComponent } from "@guiexpert/angular-table";
 import { MatIconModule } from "@angular/material/icon";
+import { PrismModule } from "../../common/prism.module";
+import { CircleLetterModule } from "../../common/circle-letter.module";
 
 
 const routes: Routes = [
@@ -27,7 +29,9 @@ const routes: Routes = [
     AngularLogoComponent,
     MatIconModule,
     MatButtonModule,
-    TableComponent
+    TableComponent,
+    PrismModule,
+    CircleLetterModule
   ],
   exports: [RouterModule]
 })
