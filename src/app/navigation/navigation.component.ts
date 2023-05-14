@@ -31,7 +31,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
       doc: "Documentation",
       privacy: "Privacy Policy",
       cou: "Conditions of Use",
-      imprint: "Imprint"
+      imprint: "Imprint",
+      license: "License",
     },
     titleFadeIn: true
   };

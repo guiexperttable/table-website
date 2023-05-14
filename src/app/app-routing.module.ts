@@ -23,6 +23,10 @@ const routes: Routes = [
       import("./demos/demos.module").then(m => m.DemosModule)
   },
   {
+    path: "license", loadChildren: () =>
+      import("./license/license.module").then(m => m.LicenseModule)
+  },
+  {
     path: "law", loadChildren: () =>
       import("./law/law.module").then(m => m.LawModule)
   },
