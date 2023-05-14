@@ -4,7 +4,6 @@ import { ClipboardModule } from "@angular/cdk/clipboard";
 import { CommonModule } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
-import { PrismModule } from "../prism.module";
 
 @NgModule({
   declarations: [SourceCodeComponent],
@@ -12,8 +11,7 @@ import { PrismModule } from "../prism.module";
     CommonModule,
     ClipboardModule,
     MatButtonModule,
-    MatIconModule,
-    PrismModule
+    MatIconModule
   ],
   exports: [SourceCodeComponent]
 })

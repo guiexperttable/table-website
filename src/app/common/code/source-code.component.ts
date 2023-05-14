@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input } from "@angular/core";
 
+declare var Prism: any;
 
 @Component({
   selector: "source-code",
@@ -7,9 +8,17 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
   styleUrls: ["./source-code.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SourceCodeComponent {
+export class SourceCodeComponent implements AfterViewInit {
 
-  @Input() text='';
-  @Input() language='language-typescript';
+  @Input() text = "";
+  @Input() language = "language-typescript";
 
+  constructor(
+    private readonly elementRef: ElementRef
+  ) {
+  }
+
+  ngAfterViewInit(): void {
+    Prism.highlightAllUnder(this.elementRef.nativeElement);
+  }
 }
