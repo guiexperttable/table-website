@@ -7,6 +7,7 @@ import { GeLogoModule } from "../../ge-logo/ge-logo.module";
 import { TableComponent } from "@guiexpert/angular-table";
 import { MatIconModule } from "@angular/material/icon";
 import { ReactLogoComponent } from "../../3p-logos/react-logo.component";
+import { SourceCodeModule } from "../../common/code/source-code.module";
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
     ReactLogoComponent,
     MatIconModule,
     MatButtonModule,
-    TableComponent
+    TableComponent,
+    SourceCodeModule
   ],
   exports: [RouterModule]
 })
