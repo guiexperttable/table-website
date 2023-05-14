@@ -9,6 +9,8 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { MatIconModule } from "@angular/material/icon";
 import { PrismModule } from "../../common/prism.module";
 import { CircleLetterModule } from "../../common/circle-letter.module";
+import { ClipboardModule } from "@angular/cdk/clipboard";
+import { SourceCodeModule } from "../../common/code/source-code.module";
 
 
 const routes: Routes = [
@@ -31,7 +33,9 @@ const routes: Routes = [
     MatButtonModule,
     TableComponent,
     PrismModule,
-    CircleLetterModule
+    CircleLetterModule,
+    ClipboardModule,
+    SourceCodeModule
   ],
   exports: [RouterModule]
 })

@@ -33,39 +33,64 @@ html, body {
   --ge-table-doc-gray-color: #aaa;
 }
 
-/*TODO red, yellow,...*/
-guiexpert-table-doc-root .mat-toolbar.mat-primary,
-guiexpert-table-doc-root .ge-header,
-guiexpert-table-doc-root .ge-header-bg {
-  background: var(--ge-table-doc-primary-color);
-  color: var(--ge-table-doc-dark-color);
+guiexpert-table-doc-root {
+  circle-letter,
+  .mat-toolbar.mat-primary,
+  .ge-header,
+  .ge-header-bg {
+    background: var(--ge-table-doc-primary-color);
+    color: var(--ge-table-doc-dark-color);
+  }
+
+  circle-letter {
+    border-color: var(--ge-table-doc-primary-color);
+  }
+  &.api {
+    circle-letter,
+    .mat-toolbar.mat-primary,
+    .ge-header {
+      background: var(--ge-table-doc-api-color);
+      color: var(--ge-table-doc-dark-color);
+    }
+    circle-letter {
+      border-color: var(--ge-table-doc-api-color);
+    }
+  }
+  &.doc {
+    circle-letter,
+    .mat-toolbar.mat-primary,
+    .ge-header {
+      background: var(--ge-table-doc-doc-color);
+      color: var(--ge-table-doc-light-color);
+    }
+    circle-letter {
+      border-color: var(--ge-table-doc-doc-color);
+    }
+  }
+  &.demo{
+    circle-letter,
+    .mat-toolbar.mat-primary,
+    .ge-header {
+      background: var(--ge-table-doc-demo-color);
+      color: var(--ge-table-doc-dark-color);
+    }
+    circle-letter {
+      border-color: var(--ge-table-doc-demo-color);
+    }
+    .doc-content a:-webkit-any-link {
+      color: #002d81 !important;
+      text-decoration: none;
+    }
+  }
 }
 
-guiexpert-table-doc-root.demo .doc-content a:-webkit-any-link {
-  color: var(--ge-table-doc-primary-color) !important;
-}
 
-guiexpert-table-doc-root.api .mat-toolbar.mat-primary,
-guiexpert-table-doc-root.api .ge-header {
-  background: var(--ge-table-doc-api-color);
-  color: var(--ge-table-doc-dark-color);
-}
 
-guiexpert-table-doc-root.doc .mat-toolbar.mat-primary,
-guiexpert-table-doc-root.doc .ge-header {
-  background: var(--ge-table-doc-doc-color);
-  color: var(--ge-table-doc-light-color);
-}
 
-guiexpert-table-doc-root.demo .mat-toolbar.mat-primary,
-guiexpert-table-doc-root.demo .ge-header {
-  background: var(--ge-table-doc-demo-color);
-  color: var(--ge-table-doc-dark-color);
-}
-guiexpert-table-doc-root.demo .doc-content a:-webkit-any-link {
-  color: #002d81 !important;
-  text-decoration: none;
-}
+
+
+
+
 
 
 guiexpert-table-doc-root .mat-drawer-container {
@@ -176,4 +201,9 @@ guiexpert-table-doc-root .ge-footer {
   color: #ea3943;
 }
 
-
+p, ul, ol , li, a ,input, body {
+  font-size: 1.6rem;
+}
+html {
+  font-size: 62.5%;
+}

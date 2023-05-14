@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
   styleUrls: ["./getstarted-angular.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GetstartedAngularComponent { //implements AfterViewInit {
+export class GetstartedAngularComponent {
 
 
   text1 = `

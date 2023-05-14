@@ -5,26 +5,33 @@ import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
   selector: "circle-letter",
   template: `
     <div>
-      <label [innerText]="text"></label>
-    </div>`,
+      <div class="thin-border">
+        <label [innerText]="text"></label>
+      </div>
+    </div>
+  `,
   styles: [`
       :host {
         display: inline-block;
-        width: 1.6rem;
-        height: calc(1.6rem - 4px);
-        background-color: #00ee4d;
-        border: 3px solid #00ee4d;
+        width: 2.56rem;
+        height: 2.56rem;
+        border-width: 0.25px;
+        border-style: solid;
         border-radius: 50%;
-        color: #000;
         margin-right: 0.5rem;
         position: relative;
-        top: -2px;
-        padding-top: 4px;
+        top: -4px;
       }
-
+      .thin-border {
+        width: 2.56rem;
+        height: 2.56rem;
+      }
       label {
-        padding-left: 0.5rem;
-
+        padding-left: 0.7rem;
+        position: relative;
+        top: 3px;
+        font-weight: bold;
+        font-size: larger;
       }
 
   `],
