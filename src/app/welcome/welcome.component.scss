@@ -70,7 +70,7 @@ h1 {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
 
   > * {
     padding-right: 20px;
@@ -148,4 +148,8 @@ h2 {
   background: var(--ge-table-doc-primary-color);
   color: var(--ge-table-doc-dark-color);
   margin-right: 16px;
+}
+.center-all {
+  display: grid;
+  place-items: center;
 }
