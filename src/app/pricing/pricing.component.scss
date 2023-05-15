@@ -1,37 +1,4 @@
 
-.ge-header {
-  padding: 0 16px 16px 16px;
-
-  p {
-    margin: 50px 0 0 0;
-  }
-}
-
-h1 {
-  display: flex;
-  column-gap: 40px;
-  align-items: center;
-  justify-content: center;
-
-  > div {
-    display: inline-block;
-  }
-
-  .logo {
-    display: inline-block;
-    width: 40px;
-
-    .logo-fill-color-2 {
-      fill: rgba(0, 0, 0, 0.5)
-    }
-  }
-
-  .title {
-    font-size: 44px;
-  }
-}
-
-
 h2 {
   font-size: 22px;
   margin: 0 0 20px 0;
@@ -77,4 +44,13 @@ mat-card-header {
     height: 49px;
     width: 49px;
   }
+}
+
+.mat-primary.mat-mdc-button-base {
+  background: var(--ge-table-doc-primary-color);
+  color: var(--ge-table-doc-dark-color);
+  margin-right: 16px;
+}
+a {
+  color: #008a02;
 }
