@@ -18,8 +18,10 @@
 
     <div>
       <h2>TableModels</h2>
-      The table model is the most important part. It defines the structure of the table: row count, column count, value
-      in a cell, etc.
+      <p>
+        The table model is the most important part. It defines the structure of the table: row count, column count, value
+        in a cell, etc.
+      </p>
       <ul class="btn-list">
         <li>
           <button
@@ -81,9 +83,12 @@
 
     <div>
       <h2>TableModelFactory</h2>
-      Helper class for creating table models out of data structures.
+      <p>
+        Helper class for creating table models out of data structures.
+      </p>
       <ul class="btn-list button-and-text">
         <li>
+          This factory class has some static methods, which help in creating table models.
           <button
             [routerLink]="['/api/tsdoc/classes','TableModelFactory.html']"
             color="primary"
@@ -91,54 +96,55 @@
             <mat-icon>chevron_right</mat-icon>
             TableModelFactory
           </button>
-          This factory class has some static methods, which help in creating table models.
         </li>
         <li>
+          An array of business objects can easily be converted into a table model by this method.
           <a
             color="primary" href="/assets/docs/classes/TableModelFactory.html#buildByTypedRowsParam"
             mat-button
             target="_blank">
             <mat-icon>chevron_right</mat-icon>
             buildByTypedRowsParam</a>
-          An array of business objects can easily be converted into a table model by this method.
         </li>
         <li>
+          An array of arrays data structure can be easily converted into a TableModel.
           <a
             color="primary" href="/assets/docs/classes/TableModelFactory.html#createByArrayOfArrayParams"
             mat-button
             target="_blank">
             <mat-icon>chevron_right</mat-icon>
             createByArrayOfArrayParams</a>
-          An array of arrays data structure can be easily converted into a TableModel.
         </li>
         <li>
+          If area models (header/body/footer) are built, they can be converted into a table model.
           <a
             color="primary" href="/assets/docs/classes/TableModelFactory.html#createByAreaModelsParam"
             mat-button
             target="_blank">
             <mat-icon>chevron_right</mat-icon>
             createByAreaModelsParam</a>
-          If area models (header/body/footer) are built, they can be converted into a table model.
         </li>
         <li>
+          <span>
+            An object array (T[]) can be grouped into a tree structure by this method.
+            All objects will be replaced by a
+            <a [routerLink]="['/api/tsdoc','classes','TableModelFactory.html']" href="#">TreeRow&lt;T&gt;</a>
+          </span>
           <a
             color="primary" href="/assets/docs/classes/TableModelFactory.html#buildTreeRows"
             mat-button
             target="_blank">
             <mat-icon>chevron_right</mat-icon>
             buildTreeRows</a>
-          <span>
-            An object array (T[]) can be grouped into a tree structure by this method.
-            All objects will be replaced by a
-            <a [routerLink]="['/api/tsdoc','classes','TableModelFactory.html']" href="#">TreeRow&lt;T&gt;</a>
-          </span>
         </li>
       </ul>
     </div>
 
     <div>
       <h2>ETC</h2>
-      Some useful classes:
+      <p>
+        Some useful classes:
+      </p>
       <ul class="btn-list">
         <li>
           <button

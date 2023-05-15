@@ -44,7 +44,7 @@ h1 {
     &.button-and-text {
       li {
         display: grid;
-        grid-template-columns: minmax(270px, 33%) 1fr;
+        //grid-template-rows: minmax(270px, 33%) 1fr;
         margin-bottom: 1rem;
 
         a, button {

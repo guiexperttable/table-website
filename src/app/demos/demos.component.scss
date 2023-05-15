@@ -61,11 +61,12 @@ h2 {
 .demo-welcome-content {
   padding-top: 60px;
   padding-bottom: 60px;
+  font-size: 1.6rem;
 }
 
 .auto-grid {
   --link-color: #002d81;
-  --min-column-size: 20rem;
+  --min-column-size: 25rem;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-size), 100%), 1fr));
