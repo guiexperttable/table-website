@@ -9,6 +9,7 @@ import { CommonModule } from "@angular/common";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule } from "@angular/forms";
+import { DemoTreetableInfoComponent } from "./info/demo-treetable-info.component";
 
 @NgModule({
   declarations: [TreetablePeopleComponent],
@@ -23,7 +24,7 @@ import { FormsModule } from "@angular/forms";
       },
       {
         path: "info",
-        component: TreetablePeopleComponent
+        component: DemoTreetableInfoComponent
       }
     ]),
     MatInputModule,
