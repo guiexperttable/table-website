@@ -27,6 +27,10 @@ const routes: Routes = [
       import("./license/license.module").then(m => m.LicenseModule)
   },
   {
+    path: "pricing", loadChildren: () =>
+      import("./pricing/pricing.module").then(m => m.PricingModule)
+  },
+  {
     path: "law", loadChildren: () =>
       import("./law/law.module").then(m => m.LawModule)
   },

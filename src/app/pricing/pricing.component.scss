@@ -1,0 +1,77 @@
+
+.ge-header {
+  padding: 0 16px 16px 16px;
+
+  p {
+    margin: 50px 0 0 0;
+  }
+}
+
+h1 {
+  display: flex;
+  column-gap: 40px;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    display: inline-block;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 40px;
+
+    .logo-fill-color-2 {
+      fill: rgba(0, 0, 0, 0.5)
+    }
+  }
+
+  .title {
+    font-size: 44px;
+  }
+}
+
+
+h2 {
+  font-size: 22px;
+  margin: 40px 0 20px 0;
+}
+
+.price {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.min-height-content {
+  min-height: 100vh;
+}
+
+.single-app-card {
+  max-width: 400px;
+}
+
+.center-all {
+  display: grid;
+  place-items: center;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
+}
+.price-info-div,
+.logo-div{
+  padding: 26px 0;
+}
+.action-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns:  1fr minmax(80px, 25%);
+}
+mat-card-header {
+  mat-icon {
+    font-size: 40px;
+    height: 49px;
+    width: 49px;
+  }
+}
