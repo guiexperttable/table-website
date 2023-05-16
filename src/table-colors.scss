@@ -1,0 +1,110 @@
+
+:root [data-theme= "light"] {
+
+  // -------------- Header:
+  --ge-table-header-west-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-header-center-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-header-east-bg: rgba(244, 244, 244, 0.5);
+
+  --ge-table-header-west-text: #000;
+  --ge-table-header-center-text: #000;
+  --ge-table-header-east-text: #000;
+
+  --ge-table-header-west-horizontal-border: #000;
+  --ge-table-header-west-vertical-border: #000;
+  --ge-table-header-center-horizontal-border: #000;
+
+  --ge-table-header-center-vertical-border: #000;
+  --ge-table-header-east-horizontal-border: #000;
+  --ge-table-header-east-vertical-border: #000;
+
+  --ge-table-header-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-header-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-header-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-header-west-selected-range-text: #fff;
+  --ge-table-header-center-selected-range-text: #fff;
+  --ge-table-header-east-selected-range-text: #fff;
+
+  --ge-table-header-west-hover-column-bg: #0098db;
+  --ge-table-header-west-hover-row-bg: #0098db;
+  --ge-table-header-center-hover-column-bg: #0098db;
+  --ge-table-header-center-hover-row-bg: #0098db;
+  --ge-table-header-east-hover-column-bg: #0098db;
+  --ge-table-header-east-hover-row-bg: #0098db;
+
+
+
+  // --------------- Body:
+  --ge-table-body-west-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-body-center-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-body-east-bg: rgba(244, 244, 244, 0.5);
+
+  --ge-table-body-west-text: #000;
+  --ge-table-body-center-text: #000;
+  --ge-table-body-east-text: #000;
+
+  --ge-table-body-west-horizontal-border: #000;
+  --ge-table-body-west-vertical-border: #000;
+  --ge-table-body-center-horizontal-border: #000;
+
+  --ge-table-body-center-vertical-border: #000;
+  --ge-table-body-east-horizontal-border: #000;
+  --ge-table-body-east-vertical-border: #000;
+
+  --ge-table-body-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-west-selected-range-text: #fff;
+  --ge-table-body-center-selected-range-text: #fff;
+  --ge-table-body-east-selected-range-text: #fff;
+
+  --ge-table-body-west-hover-column-bg: #0098db;
+  --ge-table-body-west-hover-row-bg: #0098db;
+  --ge-table-body-center-hover-column-bg: #0098db;
+  --ge-table-body-center-hover-row-bg: #0098db;
+  --ge-table-body-east-hover-column-bg: #0098db;
+  --ge-table-body-east-hover-row-bg: #0098db;
+
+
+  // --------------- Footer:
+  --ge-table-footer-west-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-footer-center-bg: rgba(244, 244, 244, 0.5);
+  --ge-table-footer-east-bg: rgba(244, 244, 244, 0.5);
+
+  --ge-table-footer-west-text: #000;
+  --ge-table-footer-center-text: #000;
+  --ge-table-footer-east-text: #000;
+
+  --ge-table-footer-west-horizontal-border: #000;
+  --ge-table-footer-west-vertical-border: #000;
+  --ge-table-footer-center-horizontal-border: #000;
+
+  --ge-table-footer-center-vertical-border: #000;
+  --ge-table-footer-east-horizontal-border: #000;
+  --ge-table-footer-east-vertical-border: #000;
+
+  --ge-table-footer-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-west-selected-range-text: #fff;
+  --ge-table-footer-center-selected-range-text: #fff;
+  --ge-table-footer-east-selected-range-text: #fff;
+
+  --ge-table-footer-west-hover-column-bg: #0098db;
+  --ge-table-footer-west-hover-row-bg: #0098db;
+  --ge-table-footer-center-hover-column-bg: #0098db;
+  --ge-table-footer-center-hover-row-bg: #0098db;
+  --ge-table-footer-east-hover-column-bg: #0098db;
+  --ge-table-footer-east-hover-row-bg: #0098db;
+
+
+  // Special:
+  --ge-table-focus-border: rgb(0, 255, 255);
+  --ge-table-color-col-resize-handle-hover-bg: rgb(0, 255, 255);
+  --ge-table-color-dragged-col-div-bg: lightcyan;
+  --ge-table-color-drop-zone-bg: rgba(244, 255, 242, 0.6);
+  --ge-table-color-drop-zone: rgba(244, 255, 242, 0.6);
+  --ge-table-color-tree-arrow-collapsed-color: #e00034;
+  --ge-table-color-error-text: #e00034;
+
+}

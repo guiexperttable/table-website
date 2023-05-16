@@ -158,7 +158,7 @@ guiexpert-table-doc-root .ge-footer {
   font-weight: bold;
 }
 
-
+/*
 .green-table {
   --ge-table-color-error-text: #e00034;
   --ge-table-color-selected-range-bg: rgba(0, 152, 219, 0.4);
@@ -181,7 +181,7 @@ guiexpert-table-doc-root .ge-footer {
   --ge-table-color-column-border-bg: rgba(0, 0, 0, 0.1);
   --ge-table-color-tree-arrow-collapsed-color: #e00034;
 }
-
+*/
 .doc-content > * + *,
 .doc-content > * + * + * {
   min-height: calc(100vh - 125px) !important;

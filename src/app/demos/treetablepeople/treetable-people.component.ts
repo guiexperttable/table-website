@@ -108,11 +108,11 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
       columnDef.editable = TrueFn;
     }
     this.columnDefs[0].editable = FalseFn;
-    this.selectionModel.addSelection(new CellRange(0, 0, 0, 2)); // TODO
-    this.selectionModel.addSelection(new CellRange(2, 1, 2, 2)); // TODO
-    this.selectionModel.addSelection(new CellRange(1, 5, 6, 7)); // TODO
-    this.selectionModel.addSelection(new CellRange(0, 8, 0, 8)); // TODO
-    this.selectionModel.addSelection(new CellRange(5, 6, 10, 10)); // TODO
+    this.selectionModel.addSelection(new CellRange(0, 0, 0, 2));
+    this.selectionModel.addSelection(new CellRange(2, 1, 2, 2));
+    this.selectionModel.addSelection(new CellRange(1, 5, 6, 7));
+    this.selectionModel.addSelection(new CellRange(0, 8, 0, 8));
+    this.selectionModel.addSelection(new CellRange(5, 6, 10, 10));
   }
 
   ngOnInit(): void {
