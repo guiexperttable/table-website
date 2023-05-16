@@ -31,7 +31,7 @@ export class GetstartedJsComponent {
 
   text4 = `
     const tableModel: TableModelIf = TableModelFactory
-      .createByArrayOfArrayParams<any>(param: {
+      .createByArrayOfArraysParams<any>(param: {
         columnLabels: [
           ['Header 1', 'Header 2']
         ],

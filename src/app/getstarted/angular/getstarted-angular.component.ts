@@ -38,7 +38,7 @@ export class GetstartedAngularComponent {
   } from "@guiexpert/table";
 
   tableModel: TableModelIf = TableModelFactory
-    .createByArrayOfArrayParams<any>(param: {
+    .createByArrayOfArraysParams<any>(param: {
       columnLabels: [
         ['Header 1', 'Header 2']
       ],

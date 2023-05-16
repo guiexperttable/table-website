@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { TableComponent } from "@guiexpert/angular-table";
 import { RouterModule } from "@angular/router";
 import { PrizesInfoComponent } from "./info/prizes-info.component";
+import { SourceCodeModule } from "../../common/code/source-code.module";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PrizesInfoComponent } from "./info/prizes-info.component";
         path: "info",
         component: PrizesInfoComponent
       }
-    ])
+    ]),
+    SourceCodeModule
   ],
   providers: [
     PrizesDemoService

@@ -3,7 +3,6 @@
   display: grid;
   grid-template-rows: 1fr;
   position: relative;
-  max-width: min(100%, 600px);
 }
 
 pre {

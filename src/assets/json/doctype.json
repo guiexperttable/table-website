@@ -45694,7 +45694,7 @@
 				},
 				{
 					"id": 288,
-					"name": "createByArrayOfArrayParams",
+					"name": "createByArrayOfArraysParams",
 					"variant": "declaration",
 					"kind": 2048,
 					"flags": {
@@ -45711,7 +45711,7 @@
 					"signatures": [
 						{
 							"id": 289,
-							"name": "createByArrayOfArrayParams",
+							"name": "createByArrayOfArraysParams",
 							"variant": "signature",
 							"kind": 4096,
 							"flags": {},
@@ -67097,11 +67097,11 @@
 		},
 		"288": {
 			"sourceFileName": "src/lib/table/table-model-factory.ts",
-			"qualifiedName": "TableModelFactory.createByArrayOfArrayParams"
+			"qualifiedName": "TableModelFactory.createByArrayOfArraysParams"
 		},
 		"289": {
 			"sourceFileName": "src/lib/table/table-model-factory.ts",
-			"qualifiedName": "TableModelFactory.createByArrayOfArrayParams"
+			"qualifiedName": "TableModelFactory.createByArrayOfArraysParams"
 		},
 		"290": {
 			"sourceFileName": "src/lib/table/table-model-factory.ts",

@@ -67,12 +67,6 @@ export class PrizesDemoComponent implements OnInit {
         headerLabel: "Surname",
         bodyClasses: ["ge-table-text-align-left"]
       })
-      // ColumnDef.create({
-      //   property: "laureate.motivation",
-      //   headerLabel: "Motivation",
-      //   width: new Size(400, "px"),
-      //   bodyClasses: ["ge-table-text-align-left", "multi-line-text-cell"]
-      // })
     ];
 
     this.tableModel = TableModelFactory.createByObjectArrayParam<SimplePrize>({

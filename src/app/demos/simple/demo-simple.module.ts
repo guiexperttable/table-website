@@ -3,6 +3,8 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { RouterModule } from "@angular/router";
 import { DemoSimpleComponent } from "./demo-simple.component";
 import { DemoSimpleInfoComponent } from "./demo-simple-info.component";
+import { SourceCodeModule } from "../../common/code/source-code.module";
+import { CircleLetterModule } from "../../common/circle-letter.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DemoSimpleInfoComponent } from "./demo-simple-info.component";
         path: "info",
         component: DemoSimpleInfoComponent
       }
-    ])
+    ]),
+    SourceCodeModule,
+    CircleLetterModule
   ]
 })
 export class DemoSimpleModule {

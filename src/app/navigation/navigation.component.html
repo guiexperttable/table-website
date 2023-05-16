@@ -129,18 +129,27 @@
       *ngIf="actionBarVisible"
       class="ge-action-bar">
       <button
+        [routerLink]="'/demo'"
+        color="primary"
+        title="All Demos"
+        mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button
         [routerLink]="[runLink]"
         color="primary"
-        mat-flat-button>
+        title="Demo"
+        mat-icon-button>
         <mat-icon>directions_run</mat-icon>
-        Demo
       </button>
+
       <button
         [routerLink]="[infoLink]"
         color="primary"
-        mat-flat-button>
+        title="Description"
+        mat-icon-button>
         <mat-icon>description</mat-icon>
-        Description
       </button>
     </div>
 
