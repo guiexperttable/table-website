@@ -1,4 +1,15 @@
 
+:host {
+  margin: 0;
+  overflow: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
 h1 {
   display: flex;
   column-gap: 40px;
@@ -70,7 +81,7 @@ h1 {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: flex-start;
 
   > * {
     padding-right: 20px;
