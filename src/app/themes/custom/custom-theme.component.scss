@@ -27,9 +27,22 @@
   --surface-3: var(--swatch-8);
 }
 
-:host {
-  background: var(--surface-1);
-  color: var(--text-1);
+//:host {
+//  background: var(--surface-1);
+//  color: var(--text-1);
+//}
+
+.custom-theme-div {
+  &.light {
+    background: #fff;
+    color: #000;
+  }
+
+  &.dark {
+    background: #000;
+    color: #fff;
+  }
+
 }
 
 small {
@@ -88,66 +101,20 @@ small {
 }
 
 
-.card {
-  display: grid;
-  gap: 1ch;
-  border-radius: 10px;
-  background: var(--surface-2);
-  border: 1px solid var(--surface-3);
-  padding: 1rem;
-}
-
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-//html {
-//  block-size: 100%;
-//  color-scheme: dark light;
-//}
-
-.header,
-.content {
-  min-block-size: 100%;
-  font-family: system-ui, sans-serif;
-
-  display: grid;
-  place-content: center;
-  gap: 5vmin;
-  grid-auto-flow: column;
-}
-
-.header {
+div.header {
   height: 60px;
-}
-
-p {
-  max-inline-size: 40ch;
-}
-
-article {
   display: grid;
-  gap: 2ch;
-  align-content: start;
-}
+  grid-template-columns: 60px 1fr 60px;
 
-input {
-  width: 360px
-}
+  .logo {
+    padding-left: 16px;
+    padding-top: 14px;
+  }
+  .title {
+    font-size: 20px;
+    padding-top: 20px;
+  }
 
-
-@keyframes octocat-wave {
-  0%, 100% {
-    transform: rotate(0)
-  }
-  20%, 60% {
-    transform: rotate(-25deg)
-  }
-  40%, 80% {
-    transform: rotate(10deg)
-  }
 }
 
 

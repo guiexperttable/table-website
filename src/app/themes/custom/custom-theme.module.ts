@@ -7,6 +7,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { GeLogoModule } from "../../ge-logo/ge-logo.module";
 import { MatSliderModule } from "@angular/material/slider";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
     MatButtonModule,
     MatSliderModule,
     ReactiveFormsModule,
-    GeLogoModule
+    GeLogoModule,
+    MatIconModule
   ],
   exports: [RouterModule]
 })

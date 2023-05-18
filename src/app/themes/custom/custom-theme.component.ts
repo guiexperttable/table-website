@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef } from "@angular/core";
 
 @Component({
   selector: "app-custom-theme",
@@ -8,8 +8,13 @@ import { ChangeDetectionStrategy, Component, ElementRef } from "@angular/core";
 })
 export class CustomThemeComponent {
 
+  public theme = "light";
+  public light = true;
+
   constructor(
-    private readonly elementRef: ElementRef
+    // @Inject(DOCUMENT) private readonly document: Document,
+    private readonly elementRef: ElementRef,
+    private readonly cdr: ChangeDetectorRef
   ) {
   }
 
@@ -22,6 +27,12 @@ export class CustomThemeComponent {
   set value(value: number) {
     this._value = value;
     this.elementRef.nativeElement.style.setProperty("--hue", "" + value);
+  }
+
+  setTheme(m: "light" | "dark") {
+    this.theme = m;
+    this.light = m==='light';
+    this.cdr.detectChanges();
   }
 
   formatLabel(value: number): string {
