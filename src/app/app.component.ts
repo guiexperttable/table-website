@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
     if (url.includes("/privacy")) return "welcome";
     if (url.includes("/cou")) return "welcome";
     if (url.includes("/imprint")) return "welcome";
+    if (url.includes("/themes/custom")) return "custom";
     return "xxx";
   }
 

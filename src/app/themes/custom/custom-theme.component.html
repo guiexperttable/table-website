@@ -1,0 +1,54 @@
+<div class="ge-header">
+  <header>
+    <guiexpert-logo [mode]="'monocolor-white'" [size]="30"></guiexpert-logo>
+    GuiExpert Table / Custom Theme Generator
+  </header>
+
+  <div class="content">
+
+    <div>
+
+      <div class="example-label-container">
+        <label class="example-name-label" id="example-name-label">Value</label>
+        <label class="example-value-label">{{value}}</label>
+      </div>
+      <mat-slider
+        [displayWith]="formatLabel"
+        discrete
+        max="360"
+        min="0"
+        showTickMarks
+        step="1">
+        <input [(ngModel)]="value" matSliderThumb>
+      </mat-slider>
+    </div>
+
+    <div class="palette">
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+      <div class="swatch"></div>
+    </div>
+
+    <article>
+      <header>
+        <h2>Text Usage</h2>
+        <small>Lorem ipsum dolor</small>
+      </header>
+      <div class="card">
+        <h2>I'm a card</h2>
+        <small>Lorem ipsum dolor</small>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque doloremque modi veniam aspernatur voluptatum
+          labore dolores perspiciatis.</p>
+      </div>
+    </article>
+
+
+  </div>
+</div>

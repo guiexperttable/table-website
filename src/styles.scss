@@ -93,6 +93,7 @@ html, body {
   --ge-table-doc-api-color: #EFF0F1;
   --ge-table-doc-doc-color: #0035ee;
   --ge-table-doc-demo-color: #f9ed06;
+  --ge-table-doc-custom-color: #000;
   /*TODO red, yellow,...*/
   --ge-table-doc-dark-color: #000;
   --ge-table-doc-light-color: #fff;
@@ -144,6 +145,24 @@ guiexpert-table-doc-root {
     .ge-header {
       background: var(--ge-table-doc-demo-color);
       color: var(--ge-table-doc-dark-color);
+    }
+
+    circle-letter {
+      border-color: var(--ge-table-doc-demo-color);
+    }
+
+    .doc-content a:-webkit-any-link {
+      color: #002d81 !important;
+      text-decoration: none;
+    }
+  }
+
+  &.custom {
+    circle-letter,
+    .mat-toolbar.mat-primary,
+    .ge-header {
+      background: var(--ge-table-doc-custom-color);
+      color: var(--ge-table-doc-light-color);
     }
 
     circle-letter {

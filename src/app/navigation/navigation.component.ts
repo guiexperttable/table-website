@@ -34,6 +34,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       imprint: "Imprint",
       license: "License",
       pricing: "Pricing",
+      custom: "Custom Theme",
     },
     titleFadeIn: true
   };
@@ -48,8 +49,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
   lawInSidenavVisible = true;
   footerVisible = true;
   actionBarVisible = false;
+  toolbarVisible = false;
 
-  route?: Route;
   runLink = "";
   infoLink = "";
 
@@ -88,7 +89,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
         this.footerVisible =
           !evt.url.includes("/tsdoc")
           && !evt.url.includes("/getstarted")
+          && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
+
+       this.toolbarVisible = !evt.url.includes("/themes");
 
         this.actionBarVisible = evt.url.includes("/demo/");
 
@@ -119,4 +123,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.fadein = NavigationComponent.config.titleFadeIn;
     this.cdr.detectChanges();
   }
+
+  protected readonly toolbar = toolbar;
 }

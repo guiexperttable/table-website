@@ -39,6 +39,10 @@ const routes: Routes = [
       import("./getstarted/getstarted.module").then(m => m.GetstartedModule)
   },
   {
+    path: "themes/custom", loadChildren: () =>
+      import("./themes/custom/custom-theme.module").then(m => m.CustomThemeModule)
+  },
+  {
     path: "**", redirectTo: "welcome"
   }
 ];
