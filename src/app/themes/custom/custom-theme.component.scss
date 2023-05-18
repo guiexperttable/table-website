@@ -119,5 +119,12 @@ div.header {
 
 
 mat-slider {
-  width: 300px;
+  width: 100%;
+}
+.rows {
+  display: grid;
+  grid-template-columns: repeat(360, 1fr);
+  > div {
+    height: 10px;
+  }
 }

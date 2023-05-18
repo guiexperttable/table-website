@@ -29,6 +29,10 @@
   <div class="content">
 
     <div>
+      <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+      <br>
+      <br>
+      <br>
 
       <div class="example-label-container">
         <label class="example-name-label" id="example-name-label">H: </label>
@@ -43,6 +47,16 @@
         step="1">
         <input [(ngModel)]="value" matSliderThumb>
       </mat-slider>
+    </div>
+
+    <div class="oklch-picker">
+      <div *ngFor="let a of arr" class="rows">
+        <div
+          *ngFor="let col of cols"
+          [attr.data-h]="col"
+          [style]="'background-color: oklch('+a[0]+' '+a[1]+' '+col+')'"
+        ></div>
+      </div>
     </div>
 
     <div class="palette">
