@@ -49,6 +49,13 @@
       </div>
     </div>
 
+    SHORTCUTS:
+    <div>
+      <button (click)="setOkLch(0, 0, 0, 100)" mat-flat-button>Black</button>
+      <button (click)="setOkLch(100, 0, 0, 100)" mat-flat-button>White</button>
+      <button (click)="setOkLch(100, 0, 0, 0)" mat-flat-button>Transparent</button>
+    </div>
+
 
     LIGHTNESS (0-100)<br>
     <div class="grid-100-cols">
@@ -138,12 +145,6 @@
           (ngModelChange)="onSliderChangedAlpha($event)"
           [(ngModel)]="okLch.a" matSliderThumb>
       </mat-slider>
-    </div>
-
-    <div>
-      <button (click)="setOkLch(0, 0, 0, 100)" mat-flat-button>Black</button>
-      <button (click)="setOkLch(100, 0, 0, 100)" mat-flat-button>White</button>
-      <button (click)="setOkLch(100, 0, 0, 0)" mat-flat-button>Transparent</button>
     </div>
 
     <div class="columns ge-padding">
