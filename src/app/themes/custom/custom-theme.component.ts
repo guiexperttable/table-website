@@ -45,14 +45,14 @@ export class CustomThemeComponent implements OnInit {
   constructor(
     private readonly cdr: ChangeDetectorRef
   ) {
-    for (let i = 0; i < 360; i++) {
-      this.hueValues.push(i);
+    for (let i = 0; i < 100; i++) {
+      this.hueValues.push(i * 3.6);
     }
     for (let i = 0; i < 100; i++) {
       this.percentages.push(i);
     }
     for (let i = 0; i < 100; i++) {
-      this.chromas.push(0.333/100 * i);
+      this.chromas.push(0.333 / 100 * i);
     }
   }
 

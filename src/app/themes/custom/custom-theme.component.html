@@ -17,10 +17,10 @@
     </div>
 
     <div>
-      <button *ngIf="light" mat-icon-button color="primary" (click)="setTheme('dark')">
+      <button (click)="setTheme('dark')" *ngIf="light" color="primary" mat-icon-button>
         <mat-icon>dark_mode</mat-icon>
       </button>
-      <button *ngIf="!light" mat-icon-button color="primary" (click)="setTheme('light')">
+      <button (click)="setTheme('light')" *ngIf="!light" color="primary" mat-icon-button>
         <mat-icon>light_mode</mat-icon>
       </button>
     </div>
@@ -29,12 +29,11 @@
   <div class="content">
 
 
-
     <div class="oklch-picker">
       <div *ngFor="let a of arr" class="rows">
         <div
-          *ngFor="let h of hueValues"
           (click)="setOkLch(a[0], a[1], h)"
+          *ngFor="let h of hueValues"
           [style]="'background-color: oklch('+a[0]+'% '+a[1]+' '+h+')'">
         </div>
       </div>
@@ -44,15 +43,11 @@
     GRAYS:<br>
     <div class="grid-100-cols">
       <div
-        *ngFor="let l of percentages"
         (click)="setOkLch(l, 0, 256, 100)"
+        *ngFor="let l of percentages"
         [style]="'background-color: oklch('+l+'% 0 256 / 100%)'">
       </div>
     </div>
-
-
-
-
 
 
     LIGHTNESS (0-100)<br>
@@ -72,8 +67,8 @@
         showTickMarks
         step="1">
         <input
-          [(ngModel)]="okLch.l"
-          (ngModelChange)="onSliderChangedLightness($event)" matSliderThumb>
+          (ngModelChange)="onSliderChangedLightness($event)"
+          [(ngModel)]="okLch.l" matSliderThumb>
       </mat-slider>
     </div>
 
@@ -95,13 +90,13 @@
         showTickMarks
         step="0.01">
         <input
-          [(ngModel)]="okLch.c"
-          (ngModelChange)="onSliderChangedChroma($event)" matSliderThumb>
+          (ngModelChange)="onSliderChangedChroma($event)"
+          [(ngModel)]="okLch.c" matSliderThumb>
       </mat-slider>
     </div>
 
     HUE (0-360)<br>
-    <div class="grid-360-cols">
+    <div class="grid-100-cols">
       <div
         (click)="setOkLch(okLch.l, okLch.c, h)"
         *ngFor="let h of hueValues"
@@ -117,8 +112,8 @@
         showTickMarks
         step="1">
         <input
-          [(ngModel)]="okLch.h"
-          (ngModelChange)="onSliderChangedHue($event)" matSliderThumb>
+          (ngModelChange)="onSliderChangedHue($event)"
+          [(ngModel)]="okLch.h" matSliderThumb>
       </mat-slider>
     </div>
 
@@ -140,15 +135,26 @@
         showTickMarks
         step="1">
         <input
-          [(ngModel)]="okLch.a"
-          (ngModelChange)="onSliderChangedAlpha($event)" matSliderThumb>
+          (ngModelChange)="onSliderChangedAlpha($event)"
+          [(ngModel)]="okLch.a" matSliderThumb>
       </mat-slider>
     </div>
 
-    <h2 [innerText]="cssString"></h2>
-    <div class="resulting-color-div" [style.background]="cssString"></div>
+    <div>
+      <button (click)="setOkLch(0, 0, 0, 100)" mat-flat-button>Black</button>
+      <button (click)="setOkLch(100, 0, 0, 100)" mat-flat-button>White</button>
+      <button (click)="setOkLch(100, 0, 0, 0)" mat-flat-button>Transparent</button>
+    </div>
 
-    <a [attr.href]="url" target="_blank" [innerText]="url"></a>
+    <div class="columns ge-padding">
+      <div [style.background]="cssString" class="resulting-color-div"></div>
+      <div>
+        <label>Resulting Color:</label><br>
+        <strong [innerText]="cssString"></strong><br>
+        <a [attr.href]="url" [innerText]="url" target="_blank"></a>
+      </div>
+    </div>
+
 
   </div>
 </div>
