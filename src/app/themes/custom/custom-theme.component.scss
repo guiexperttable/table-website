@@ -25,34 +25,6 @@ div.header {
 
 :host {
   --hue: 320;
-
-  --swatch-1: oklch(99% .05 var(--hue));
-  --swatch-2: oklch(90% .1 var(--hue));
-  --swatch-3: oklch(80% .2 var(--hue));
-  --swatch-4: oklch(72% .25 var(--hue));
-  --swatch-5: oklch(67% .31 var(--hue));
-  --swatch-6: oklch(50% .27 var(--hue));
-  --swatch-7: oklch(35% .25 var(--hue));
-  --swatch-8: oklch(25% .2 var(--hue));
-  --swatch-9: oklch(13% .2 var(--hue));
-  --swatch-10: oklch(5% .1 var(--hue));
-
-  //--gray-1: oklch(99% .05 0);
-  //--gray-2: oklch(90% .1 0);
-  //--gray-3: oklch(80% .2 0);
-  //--gray-4: oklch(72% .25 0);
-  //--gray-5: oklch(67% .31 0);
-  //--gray-6: oklch(50% .27 0);
-  //--gray-7: oklch(35% .25 0);
-  //--gray-8: oklch(25% .2 0);
-  //--gray-9: oklch(13% .2 0);
-  //--gray-10: oklch(5% .1 0);
-
-  //--text-1: var(--swatch-1);
-  //--text-2: var(--swatch-2);
-  //--surface-1: var(--swatch-10);
-  //--surface-2: var(--swatch-9);
-  //--surface-3: var(--swatch-8);
 }
 
 
@@ -78,51 +50,14 @@ small {
   box-shadow: inset 0 0 0 1px oklch(50% 0 0 / 20%);
 }
 
-.swatch:nth-of-type(1) {
-  background: var(--swatch-1)
-}
-
-.swatch:nth-of-type(2) {
-  background: var(--swatch-2)
-}
-
-.swatch:nth-of-type(3) {
-  background: var(--swatch-3)
-}
-
-.swatch:nth-of-type(4) {
-  background: var(--swatch-4)
-}
-
-.swatch:nth-of-type(5) {
-  background: var(--swatch-5)
-}
-
-.swatch:nth-of-type(6) {
-  background: var(--swatch-6)
-}
-
-.swatch:nth-of-type(7) {
-  background: var(--swatch-7)
-}
-
-.swatch:nth-of-type(8) {
-  background: var(--swatch-8)
-}
-
-.swatch:nth-of-type(9) {
-  background: var(--swatch-9)
-}
-
-.swatch:nth-of-type(10) {
-  background: var(--swatch-10)
-}
 
 
 .palette {
   display: grid;
-  grid-auto-rows: 40px;
-  grid-template-columns: 60px;
+  grid-template-columns: repeat(10, 1fr);
+  > div {
+    height: 60px;
+  }
 }
 .palette-width{
   width: 60px;

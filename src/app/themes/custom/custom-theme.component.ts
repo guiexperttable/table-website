@@ -41,6 +41,21 @@ export class CustomThemeComponent implements OnInit {
 
   public selectedColor = "#0098db";
 
+  public swatches = [
+    "oklch(99% .05 var(--hue))",
+    "oklch(90% .1 var(--hue))",
+    "oklch(80% .2 var(--hue))",
+    "oklch(72% .25 var(--hue))",
+    "oklch(67% .31 var(--hue))",
+    "oklch(50% .27 var(--hue))",
+    "oklch(35% .25 var(--hue))",
+    "oklch(25% .2 var(--hue))",
+    "oklch(13% .2 var(--hue))",
+    "oklch(5% .1 var(--hue))"
+  ].reverse();
+
+  public oklchUrl='';
+
   constructor(
     @Inject(DOCUMENT) private readonly document: Document,
     private readonly elementRef: ElementRef,
@@ -74,6 +89,7 @@ export class CustomThemeComponent implements OnInit {
   setColor(txt: string) {
     this.selectedColor = txt;
     console.info(txt);
+    this.oklchUrl = this.calcOklchUrl();
   }
 
   formatLabel(value: number): string {
@@ -103,4 +119,27 @@ export class CustomThemeComponent implements OnInit {
       parseInt(result[2], 16),
       parseInt(result[3], 16)) : new ColorRgb(0, 0, 0);
   }
+
+  getSelectedColor() {
+    return this.selectedColor.replace(/var\(--hue\)/g, this.value + "");
+  }
+
+  colorPickerChanged($event: Event) {
+    if (($event.target as HTMLInputElement).value) {
+      this.selectedColor = ($event.target as HTMLInputElement).value;
+      this.cdr.detectChanges();
+    }
+  }
+
+  calcOklchUrl(): string {
+    if (this.selectedColor.startsWith("#")) {
+      return '';
+    }
+    const arr = this.getSelectedColor()
+      .replace(/[^0123456789 .]/g, '')
+      .split(" ")
+      .map(s=>parseFloat(s));
+    return 'https://oklch.com/#' + arr[0] + ',' + arr[1] + ',' + arr[2] + ',100';
+  }
+
 }

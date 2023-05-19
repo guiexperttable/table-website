@@ -68,27 +68,27 @@
     </div>
 
     <div class="palette">
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-      <div class="swatch"></div>
-    </div>
-
-    <div class="palette">
-      <div class="gray" style="background-color: oklch(90% .1 0);"></div>
+      <div
+        *ngFor="let sw of swatches"
+        [style.background]="sw"
+        (click)="setColor(sw)"
+        class="swatch"></div>
     </div>
 
 
-    <input type="color" class="palette-width" id="favcolor" name="favcolor" [value]="selectedColor">
+    <input
+      type="color"
+      class="palette-width"
+      id="favcolor"
+      name="favcolor"
+      [value]="'#ffffff'"
+      (change)="colorPickerChanged($event)"
+    >
 
-    <h2 [innerText]="selectedColor"></h2>
+    <h2 [innerText]="getSelectedColor()"></h2>
     <div class="resulting-color-div" [style.background]="selectedColor"></div>
+
+    <a [attr.href]="oklchUrl" target="_blank" [innerText]="oklchUrl"></a>
 
   </div>
 </div>
