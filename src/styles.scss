@@ -304,3 +304,14 @@ html {
 //      #e5ffe5 40px
 //  ) !important;
 //}
+
+.mat-thumb-only{
+  .mdc-slider__track {
+    display: none !important;
+  }
+  .mat-mdc-slider .mdc-slider__thumb--focused .mdc-slider__thumb-knob,
+  .mat-mdc-slider .mdc-slider__thumb-knob {
+    background-color: yellow;
+    border: solid 1px #000000;
+  }
+}

@@ -7,7 +7,6 @@
 }
 
 
-
 div.header {
   height: 60px;
   display: grid;
@@ -17,16 +16,12 @@ div.header {
     padding-left: 16px;
     padding-top: 14px;
   }
+
   .title {
     font-size: 20px;
     padding-top: 20px;
   }
 }
-
-:host {
-  --hue: 320;
-}
-
 
 
 .custom-theme-div {
@@ -38,43 +33,32 @@ div.header {
   &.dark {
     background: #000;
     color: #fff;
+    button, a {
+      color: #fff !important;
+    }
   }
 
 }
 
-small {
-  color: var(--text-2);
-}
 
 .swatch {
   box-shadow: inset 0 0 0 1px oklch(50% 0 0 / 20%);
 }
 
 
-
-.palette {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  > div {
-    height: 60px;
-  }
-}
-.palette-width{
-  width: 60px;
-}
-#favcolor{
-  height: 60px;
-}
-
-
-mat-slider {
-  width: 100%;
-}
-
-
-.oklch-gray-picker {
+.grid-100-cols {
   display: grid;
   grid-template-columns: repeat(100, 1fr);
+
+  > div {
+    height: 40px;
+  }
+}
+
+.grid-360-cols {
+  display: grid;
+  grid-template-columns: repeat(360, 1fr);
+
   > div {
     height: 40px;
   }
@@ -88,9 +72,25 @@ mat-slider {
   }
 }
 
-.resulting-color-div{
+.resulting-color-div {
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: #0098db;
+}
+
+mat-slider {
+  width: calc(100%);
+  margin: 0;
+}
+
+.slider-tweak {
+  background-color: transparent;
+  position: relative;
+
+  mat-slider {
+    position: absolute;
+    top: -44px;
+    left: 0;
+  }
 }

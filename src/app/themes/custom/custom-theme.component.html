@@ -28,67 +28,127 @@
 
   <div class="content">
 
-    <div class="oklch-gray-picker">
-      <div
-        *ngFor="let p of percentages"
-        (click)="setColor('oklch('+p+'% 0 256)')"
-        [style]="'background-color: oklch('+p+'% 0 256)'">
-      </div>
-    </div>
+
 
     <div class="oklch-picker">
       <div *ngFor="let a of arr" class="rows">
         <div
           *ngFor="let h of hueValues"
-          (click)="setColor('oklch('+a[0]+' '+a[1]+' '+h+')')"
-          [style]="'background-color: oklch('+a[0]+' '+a[1]+' '+h+')'">
+          (click)="setOkLch(a[0], a[1], h)"
+          [style]="'background-color: oklch('+a[0]+'% '+a[1]+' '+h+')'">
         </div>
       </div>
     </div>
 
-    <div>
+
+    GRAYS:<br>
+    <div class="grid-100-cols">
+      <div
+        *ngFor="let l of percentages"
+        (click)="setOkLch(l, 0, 256, 100)"
+        [style]="'background-color: oklch('+l+'% 0 256 / 100%)'">
+      </div>
+    </div>
+
+
+
+
+
+
+    LIGHTNESS (0-100)<br>
+    <div class="grid-100-cols">
+      <div
+        (click)="setOkLch(l, okLch.c, okLch.h, okLch.a)"
+        *ngFor="let l of percentages"
+        [style]="'background-color: oklch('+l+'% '+okLch.c+' '+okLch.h+' / '+okLch.a+'%)'">
+      </div>
+    </div>
+    <div class="slider-tweak mat-thumb-only">
       <mat-slider
-        [displayWith]="formatLabel"
+        [displayWith]="formatLabelLightness"
+        discrete
+        max="100"
+        min="0"
+        showTickMarks
+        step="1">
+        <input
+          [(ngModel)]="okLch.l"
+          (ngModelChange)="onSliderChangedLightness($event)" matSliderThumb>
+      </mat-slider>
+    </div>
+
+
+    CHROMA (0-0.33)<br>
+    <div class="grid-100-cols">
+      <div
+        (click)="setOkLch(okLch.l, c, okLch.h, okLch.a)"
+        *ngFor="let c of chromas"
+        [style]="'background-color: oklch('+okLch.l+'% '+c+' '+okLch.h+' / '+okLch.a+'%)'">
+      </div>
+    </div>
+    <div class="slider-tweak mat-thumb-only">
+      <mat-slider
+        [displayWith]="formatLabelChroma"
+        discrete
+        max="0.33"
+        min="0"
+        showTickMarks
+        step="0.01">
+        <input
+          [(ngModel)]="okLch.c"
+          (ngModelChange)="onSliderChangedChroma($event)" matSliderThumb>
+      </mat-slider>
+    </div>
+
+    HUE (0-360)<br>
+    <div class="grid-360-cols">
+      <div
+        (click)="setOkLch(okLch.l, okLch.c, h)"
+        *ngFor="let h of hueValues"
+        [style]="'background-color: oklch('+okLch.l+'% '+okLch.c+' '+h+' / '+okLch.a+'%)'">
+      </div>
+    </div>
+    <div class="slider-tweak mat-thumb-only">
+      <mat-slider
+        [displayWith]="formatLabelHue"
         discrete
         max="360"
         min="0"
         showTickMarks
         step="1">
-        <input [(ngModel)]="value" matSliderThumb>
+        <input
+          [(ngModel)]="okLch.h"
+          (ngModelChange)="onSliderChangedHue($event)" matSliderThumb>
       </mat-slider>
     </div>
 
-    <div class="oklch-gray-picker">
+
+    ALPHA (0-100)<br>
+    <div class="grid-100-cols">
       <div
-        (click)="setColor('oklch('+p+'% .2 '+value+')')"
-        *ngFor="let p of percentages"
-        [attr.data-p]="p"
-        [style]="'background-color: oklch('+p+'% .2 '+value+')'">
+        (click)="setOkLch(okLch.l, okLch.c, okLch.h, a)"
+        *ngFor="let a of percentages"
+        [style]="'background-color: oklch('+okLch.l+'% '+okLch.c+' '+okLch.h+' / '+ a +'%)'">
       </div>
     </div>
-
-    <div class="palette">
-      <div
-        *ngFor="let sw of swatches"
-        [style.background]="sw"
-        (click)="setColor(sw)"
-        class="swatch"></div>
+    <div class="slider-tweak mat-thumb-only">
+      <mat-slider
+        [displayWith]="formatLabelAlpha"
+        discrete
+        max="100"
+        min="0"
+        showTickMarks
+        step="1">
+        <input
+          [(ngModel)]="okLch.a"
+          (ngModelChange)="onSliderChangedAlpha($event)" matSliderThumb>
+      </mat-slider>
     </div>
 
+    <h2 [innerText]="cssString"></h2>
+    <div class="resulting-color-div" [style.background]="cssString"></div>
 
-    <input
-      type="color"
-      class="palette-width"
-      id="favcolor"
-      name="favcolor"
-      [value]="'#ffffff'"
-      (change)="colorPickerChanged($event)"
-    >
-
-    <h2 [innerText]="getSelectedColor()"></h2>
-    <div class="resulting-color-div" [style.background]="selectedColor"></div>
-
-    <a [attr.href]="oklchUrl" target="_blank" [innerText]="oklchUrl"></a>
+    <a [attr.href]="url" target="_blank" [innerText]="url"></a>
 
   </div>
 </div>
