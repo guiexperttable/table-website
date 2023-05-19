@@ -8,6 +8,8 @@ import { GeLogoModule } from "../../ge-logo/ge-logo.module";
 import { MatSliderModule } from "@angular/material/slider";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
+import { TableComponent } from "@guiexpert/angular-table";
+import { PrizesDemoModule } from "../../demos/prizesdemo/prizes-demo.module";
 
 
 const routes: Routes = [
@@ -30,7 +32,9 @@ const routes: Routes = [
     MatSliderModule,
     ReactiveFormsModule,
     GeLogoModule,
-    MatIconModule
+    MatIconModule,
+    TableComponent,
+    PrizesDemoModule
   ],
   exports: [RouterModule]
 })

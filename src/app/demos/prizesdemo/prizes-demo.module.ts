@@ -30,6 +30,9 @@ import { SourceCodeModule } from "../../common/code/source-code.module";
     ]),
     SourceCodeModule
   ],
+  exports: [
+    PrizesDemoComponent
+  ],
   providers: [
     PrizesDemoService
   ]
