@@ -28,16 +28,25 @@
 
   <div class="content">
 
-    <div>
-      <input type="color" id="favcolor" name="favcolor" value="#ff0000">
-      <br>
-      <br>
-      <br>
-
-      <div class="example-label-container">
-        <label class="example-name-label" id="example-name-label">H: </label>
-        <label class="example-value-label">{{value}}</label>
+    <div class="oklch-gray-picker">
+      <div
+        *ngFor="let p of percentages"
+        (click)="setColor('oklch('+p+'% 0 256)')"
+        [style]="'background-color: oklch('+p+'% 0 256)'">
       </div>
+    </div>
+
+    <div class="oklch-picker">
+      <div *ngFor="let a of arr" class="rows">
+        <div
+          *ngFor="let h of hueValues"
+          (click)="setColor('oklch('+a[0]+' '+a[1]+' '+h+')')"
+          [style]="'background-color: oklch('+a[0]+' '+a[1]+' '+h+')'">
+        </div>
+      </div>
+    </div>
+
+    <div>
       <mat-slider
         [displayWith]="formatLabel"
         discrete
@@ -49,13 +58,12 @@
       </mat-slider>
     </div>
 
-    <div class="oklch-picker">
-      <div *ngFor="let a of arr" class="rows">
-        <div
-          *ngFor="let col of cols"
-          [attr.data-h]="col"
-          [style]="'background-color: oklch('+a[0]+' '+a[1]+' '+col+')'"
-        ></div>
+    <div class="oklch-gray-picker">
+      <div
+        (click)="setColor('oklch('+p+'% .2 '+value+')')"
+        *ngFor="let p of percentages"
+        [attr.data-p]="p"
+        [style]="'background-color: oklch('+p+'% .2 '+value+')'">
       </div>
     </div>
 
@@ -71,6 +79,16 @@
       <div class="swatch"></div>
       <div class="swatch"></div>
     </div>
+
+    <div class="palette">
+      <div class="gray" style="background-color: oklch(90% .1 0);"></div>
+    </div>
+
+
+    <input type="color" class="palette-width" id="favcolor" name="favcolor" [value]="selectedColor">
+
+    <h2 [innerText]="selectedColor"></h2>
+    <div class="resulting-color-div" [style.background]="selectedColor"></div>
 
   </div>
 </div>

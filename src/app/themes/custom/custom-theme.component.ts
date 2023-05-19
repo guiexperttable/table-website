@@ -36,7 +36,10 @@ export class CustomThemeComponent implements OnInit {
     ["10%", 0.2],
     ["5%", 0.1]
   ];
-  public cols: number[] = [];
+  public hueValues: number[] = [];
+  public percentages: number[] = [];
+
+  public selectedColor = "#0098db";
 
   constructor(
     @Inject(DOCUMENT) private readonly document: Document,
@@ -44,7 +47,10 @@ export class CustomThemeComponent implements OnInit {
     private readonly cdr: ChangeDetectorRef
   ) {
     for (let i = 0; i < 360; i++) {
-      this.cols.push(i);
+      this.hueValues.push(i);
+    }
+    for (let i = 0; i < 100; i++) {
+      this.percentages.push(i);
     }
   }
 
@@ -65,8 +71,13 @@ export class CustomThemeComponent implements OnInit {
     this.cdr.detectChanges();
   }
 
+  setColor(txt: string) {
+    this.selectedColor = txt;
+    console.info(txt);
+  }
+
   formatLabel(value: number): string {
-    return `${value}%`;
+    return `Hue:${value}deg`;
   }
 
   onModelChanged($event: any) {
@@ -74,24 +85,7 @@ export class CustomThemeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.document.querySelectorAll(".swatch")
-      .forEach(ele =>
-        ele.addEventListener("click", evt => {
-          const bg = window.getComputedStyle(ele).getPropertyValue("background-color");
-          console.info("bg", bg);
-        })
-      );
-    this.document.querySelector(".oklch-picker");
-    addEventListener("click", evt => {
-      console.info(evt.target);
-      const h = (evt.target as HTMLDivElement).getAttribute("data-h");
-      // const bg = window.getComputedStyle(ele).getPropertyValue("background-color");
-      console.info("h", h);
-      if (h) {
-        this.value = parseInt(h);
-        this.cdr.detectChanges();
-      }
-    });
+    //
   }
 
   rgb2hex(red: number, green: number, blue: number): string {
