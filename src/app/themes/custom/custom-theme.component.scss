@@ -44,7 +44,7 @@ div.header {
   height: calc(100vh - 60px);
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: minmax(350px, 33%) 1fr;
+  grid-template-columns: min(77%, 800px) minmax(350px, 1fr);
 
   > .grid{
     display: grid;

@@ -1,18 +1,20 @@
 import {
   AreaIdent,
   AreaModelIf,
-  CellRendererIf, CheckboxBooleanPropertyCellRenderer, CheckboxColumn,
+  CellRendererIf,
+  CheckboxBooleanPropertyCellRenderer,
   ColumnDef,
   ColumnDefIf,
   DomServiceIf,
   px150,
-  px250, px50,
+  px250,
+  px50,
   px60,
-  RendererCleanupFnType, SelectionModel,
+  RendererCleanupFnType,
+  SelectionModel,
   TableModelFactory,
   TableModelIf,
-  TableOptions,
-  TableOptionsIf
+  TableOptions
 } from "@guiexpert/table";
 import { OkLch } from "./ok-lch";
 import { ThemeRowIf } from "./theme-row.If";
@@ -105,6 +107,21 @@ const CSS_LIST = [
   "drop-zone-bg"
 ];
 
+export function createTableOptions(): TableOptions {
+  const selectionModel = new SelectionModel("row", "multi");
+  return {
+    ...new TableOptions(),
+    hoverColumnVisible: false,
+    hoverRowVisible: true,
+    defaultRowHeights: {
+      header: 40,
+      body: 34,
+      footer: 34
+    },
+    getSelectionModel: () => selectionModel
+  };
+}
+
 
 export class OkLchCellRenderer implements CellRendererIf {
 
@@ -125,29 +142,13 @@ export class OkLchCellRenderer implements CellRendererIf {
 }
 
 
-export function createTableOptions(): TableOptions {
-  const selectionModel = new SelectionModel("row", "multi");
-  const tableOptions: TableOptionsIf = {
-    ...new TableOptions(),
-    hoverColumnVisible: false,
-    hoverRowVisible: true,
-    defaultRowHeights: {
-      header: 40,
-      body: 34,
-      footer: 34
-    },
-    getSelectionModel: () => selectionModel
-  };
-  return tableOptions;
-}
-
 export function createColumnDefs(): ColumnDefIf[] {
-  return [
+  const defs = [
     ColumnDef.create({
       property: "selected",
       headerLabel: " ",
       width: px50,
-      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>('selected')
+      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected")
     }),
     new ColumnDef("id", "CSS var", px250),
     new ColumnDef("area", "Area", px60),
@@ -159,18 +160,22 @@ export function createColumnDefs(): ColumnDefIf[] {
       width: px150,
       bodyRenderer: new OkLchCellRenderer()
     }),
-    new ColumnDef("value", "CSS Value", px150),
+    new ColumnDef("value", "CSS Value", px150)
   ];
+  for (const def of defs) {
+    def.sortable = () => true;
+  }
+  return defs;
 }
 
 function createTableRows(): ThemeRowIf[] {
-  return CSS_LIST.map( (l,i) => {
+  return CSS_LIST.map((l, i) => {
     return new ThemeRow(
-      i<5,
+      i < 5,
       l,
-      "body",
-      "west",
-      "bg",
+      l.includes("header") ? "header" : l.includes("footer") ? "footer" : "body",
+      l.includes("west") ? "west" : l.includes("east") ? "east" : "center",
+      l.includes("bg") ? "bg" : l.includes("text") ? "text" : "border",
       new OkLch(100, 0.2, 50, 100)
     );
   });
@@ -179,8 +184,8 @@ function createTableRows(): ThemeRowIf[] {
 export function createThemeTableModel(): TableModelIf {
   const tableOptions = createTableOptions();
   const rows: ThemeRowIf[] = createTableRows();
-  console.info(rows);
   const columnDefs: ColumnDefIf[] = createColumnDefs();
+
   return TableModelFactory.buildByTypedRowsParam({
     rows,
     columnDefs,
