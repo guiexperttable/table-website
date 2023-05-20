@@ -1,7 +1,16 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit } from "@angular/core";
 import { OkLch } from "../data/ok-lch";
-import { TableModelIf, TableOptionsIf } from "@guiexpert/table";
-import { createTableOptions, createThemeTableModel } from "../data/createThemeTableModel";
+import {
+  GeFilterService,
+  SelectionModel,
+  TableApi,
+  TableModelIf,
+  TableOptions,
+  TableOptionsIf
+} from "@guiexpert/table";
+import { createThemeTableModel } from "../data/createThemeTableModel";
+import { ThemeRowIf } from "../data/theme-row.If";
+import { debounceTime, takeWhile } from "rxjs";
 
 @Component({
   selector: "app-custom-theme",
@@ -9,7 +18,7 @@ import { createTableOptions, createThemeTableModel } from "../data/createThemeTa
   styleUrls: ["./custom-theme.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CustomThemeComponent implements OnInit {
+export class CustomThemeComponent implements OnInit, OnDestroy {
 
   public theme = "light";
   public light = true;
@@ -43,11 +52,25 @@ export class CustomThemeComponent implements OnInit {
   public url = "";
   public cssString = "";
 
-  tableModel: TableModelIf = createThemeTableModel();
-  tableOptions: TableOptionsIf = createTableOptions();
+  filterText = "bg"; // try: 'xxx lamu'
 
+  readonly selectionModel = new SelectionModel("row", "multi");
+  tableOptions: TableOptionsIf = {
+    ...new TableOptions(),
+    hoverColumnVisible: false,
+    columnsDraggable: false,
+    getSelectionModel: () => this.selectionModel,
+    externalFilterFunction: this.filterFn.bind(this)
+  };
+  tableModel: TableModelIf = createThemeTableModel(this.tableOptions);
 
-    constructor(
+  private filterService = new GeFilterService();
+
+  private tableApi?: TableApi;
+  private filter$ = new EventEmitter<number>();
+  private alive = true;
+
+  constructor(
     private readonly cdr: ChangeDetectorRef
   ) {
     for (let i = 0; i < 100; i++) {
@@ -58,6 +81,21 @@ export class CustomThemeComponent implements OnInit {
     }
     for (let i = 0; i < 100; i++) {
       this.chromas.push(0.333 / 100 * i);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  onKeyup() {
+    this.filter$.next(Date.now());
+  }
+
+  onTableReady($event: TableApi) {
+    this.tableApi = $event;
+    if (this.filterText) {
+      this.tableApi?.externalFilterChanged();
     }
   }
 
@@ -94,6 +132,15 @@ export class CustomThemeComponent implements OnInit {
 
   ngOnInit(): void {
     this.calc();
+    this.filter$
+      .pipe(
+        takeWhile(() => this.alive),
+        debounceTime(400)
+      )
+      .subscribe(() => {
+        console.info("this.filterText", this.filterText);
+        this.tableApi?.externalFilterChanged();
+      });
   }
 
   onSliderChangedHue(h: number) {
@@ -120,5 +167,11 @@ export class CustomThemeComponent implements OnInit {
     this.url = "https://oklch.com/#" + this.okLch.l + "," + this.okLch.c + "," + this.okLch.h + "," + this.okLch.a;
     this.cssString = this.okLch.toCssString();
     this.cdr.detectChanges();
+  }
+
+  private filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {
+    const ret = this.filterService.filterPredict<ThemeRowIf>(t, this.filterText);
+    console.info(ret);
+    return ret;
   }
 }

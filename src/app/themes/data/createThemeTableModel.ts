@@ -5,9 +5,9 @@ import {
   CheckboxBooleanPropertyCellRenderer,
   ColumnDef,
   ColumnDefIf,
-  DomServiceIf,
+  DomServiceIf, FilterFunction,
   px150,
-  px250,
+  px250, px300,
   px50,
   px60,
   RendererCleanupFnType,
@@ -20,107 +20,101 @@ import { OkLch } from "./ok-lch";
 import { ThemeRowIf } from "./theme-row.If";
 import { ThemeRow } from "./theme-row";
 
-const CSS_LIST = [
-  "header-center-bg",
-  "header-east-bg",
-  "header-west-text",
-  "header-center-text",
-  "header-east-text",
+const COLOR_VARS = `
+:root [data-theme= "light"] {
 
-  "header-west-horizontal-border",
-  "header-west-vertical-border",
-  "header-center-horizontal-border",
-  "header-center-vertical-border",
-  "header-east-horizontal-border",
-  "header-east-vertical-border",
+  --ge-table-header-west-bg: var(--ge-table-header-center-bg);
+  --ge-table-header-center-bg: rgba(233, 233, 233, 0.5);
+  --ge-table-header-east-bg: var(--ge-table-header-center-bg);
+  --ge-table-header-west-text: var(--ge-table-header-center-text);
+  --ge-table-header-center-text: #000;
+  --ge-table-header-east-text: var(--ge-table-header-center-text);
 
-  "header-west-selected-range-bg",
-  "header-center-selected-range-bg",
-  "header-east-selected-range-bg",
-  "header-west-selected-range-text",
-  "header-center-selected-range-text",
-  "header-east-selected-range-text",
+  --ge-table-header-west-horizontal-border: var(--ge-table-header-center-horizontal-border);
+  --ge-table-header-west-vertical-border: var(--ge-table-header-center-vertical-border);
+  --ge-table-header-center-horizontal-border: #ddd;
+  --ge-table-header-center-vertical-border: #ccc;
+  --ge-table-header-east-horizontal-border: var(--ge-table-header-center-horizontal-border);
+  --ge-table-header-east-vertical-border: var(--ge-table-header-center-vertical-border);
 
-
-  "body-west-bg",
-  "body-center-bg",
-  "body-east-bg",
-
-  "body-west-text",
-  "body-center-text",
-  "body-east-text",
-
-  "body-west-horizontal-border",
-  "body-west-vertical-border",
-  "body-center-horizontal-border",
-  "body-center-vertical-border",
-  "body-east-horizontal-border",
-  "body-east-vertical-border",
-
-  "body-west-selected-range-bg",
-  "body-center-selected-range-bg",
-  "body-east-selected-range-bg",
-  "body-west-selected-range-text",
-  "body-center-selected-range-text",
-  "body-east-selected-range-text",
-
-  "footer-west-bg",
-  "footer-center-bg",
-  "footer-east-bg",
-
-  "footer-west-text",
-  "footer-center-text",
-  "footer-east-text",
-
-  "footer-west-horizontal-border",
-  "footer-west-vertical-border",
-  "footer-center-horizontal-border",
-  "footer-center-vertical-border",
-  "footer-east-horizontal-border",
-  "footer-east-vertical-border",
-
-  "footer-west-selected-range-bg",
-  "footer-center-selected-range-bg",
-  "footer-east-selected-range-bg",
-  "footer-west-selected-range-text",
-  "footer-center-selected-range-text",
-  "footer-east-selected-range-text",
+  --ge-table-header-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-header-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-header-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-header-west-selected-range-text: #fff;
+  --ge-table-header-center-selected-range-text: #fff;
+  --ge-table-header-east-selected-range-text: #fff;
 
 
-  "border ",
-  "selected-range-bg",
+  --ge-table-body-west-bg: var(--ge-table-header-center-bg);
+  --ge-table-body-center-bg: rgba(255,255,255, 0.5);
+  --ge-table-body-east-bg: var(--ge-table-header-center-bg);
 
-  "row-odd-bg",
-  "row-even-bg",
-  "column-odd-bg",
-  "column-even-bg",
+  --ge-table-body-west-text: var(--ge-table-header-center-text);
+  --ge-table-body-center-text: var(--ge-table-header-center-text);
+  --ge-table-body-east-text: var(--ge-table-header-center-text);
 
-  "hover-column-bg",
-  "hover-row-bg",
-  "focus-border",
+  --ge-table-body-west-horizontal-border: var(--ge-table-header-west-horizontal-border);
+  --ge-table-body-west-vertical-border: var(--ge-table-header-west-vertical-border);
+  --ge-table-body-center-horizontal-border: #bbb;
+  --ge-table-body-center-vertical-border: #ddd;
+  --ge-table-body-east-horizontal-border: var(--ge-table-header-east-horizontal-border);
+  --ge-table-body-east-vertical-border: var(--ge-table-header-east-vertical-border);;
 
-  "color-error-text",
-  "tree-arrow-collapsed-color",
-  "column-resize-handle-border",
+  --ge-table-body-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-west-selected-range-text: #fff;
+  --ge-table-body-center-selected-range-text: #fff;
+  --ge-table-body-east-selected-range-text: #fff;
 
-  "dragged-col-div-bg",
-  "drop-zone-bg"
-];
 
-export function createTableOptions(): TableOptions {
-  const selectionModel = new SelectionModel("row", "multi");
-  return {
-    ...new TableOptions(),
-    hoverColumnVisible: false,
-    hoverRowVisible: true,
-    defaultRowHeights: {
-      header: 40,
-      body: 34,
-      footer: 34
-    },
-    getSelectionModel: () => selectionModel
-  };
+
+
+  --ge-table-footer-west-bg: var(--ge-table-header-center-bg);
+  --ge-table-footer-center-bg: var(--ge-table-header-center-bg);
+  --ge-table-footer-east-bg: var(--ge-table-header-center-bg);
+
+  --ge-table-footer-west-text: var(--ge-table-header-center-text);
+  --ge-table-footer-center-text: var(--ge-table-header-center-text);
+  --ge-table-footer-east-text: var(--ge-table-header-center-text);
+
+  --ge-table-footer-west-horizontal-border: var(--ge-table-header-west-horizontal-border);
+  --ge-table-footer-west-vertical-border: var(--ge-table-header-west-vertical-border);
+  --ge-table-footer-center-horizontal-border: var(--ge-table-header-center-horizontal-border);
+  --ge-table-footer-center-vertical-border: var(--ge-table-header-center-vertical-border);
+  --ge-table-footer-east-horizontal-border: var(--ge-table-header-east-horizontal-border);
+  --ge-table-footer-east-vertical-border: var(--ge-table-header-east-vertical-border);
+
+  --ge-table-footer-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-west-selected-range-text: #fff;
+  --ge-table-footer-center-selected-range-text: #fff;
+  --ge-table-footer-east-selected-range-text: #fff;
+
+
+  --ge-table-border : #ccc;
+  --ge-table-selected-range-bg: rgba(0, 140, 255, 0.2);
+
+  --ge-table-row-odd-bg: transparent;
+  --ge-table-row-even-bg: transparent;
+  --ge-table-column-odd-bg: transparent;
+  --ge-table-column-even-bg: transparent;
+
+  --ge-table-hover-column-bg: rgba(0, 224, 255, 0.27);
+  --ge-table-hover-row-bg: rgba(0, 224, 255, 0.27);
+  --ge-table-focus-border: rgb(0, 255, 255);
+
+  --ge-table-color-error-text: #e00034;
+  --ge-table-tree-arrow-collapsed-color: #e00034;
+  --ge-table-column-resize-handle-border: rgb(0, 255, 255);
+
+  --ge-table-dragged-col-div-bg: lightcyan;
+  --ge-table-drop-zone-bg: rgba(244, 255, 242, 0.6);
 }
+`;
+
+
 
 
 export class OkLchCellRenderer implements CellRendererIf {
@@ -148,9 +142,15 @@ export function createColumnDefs(): ColumnDefIf[] {
       property: "selected",
       headerLabel: " ",
       width: px50,
-      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected")
+      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected"),
     }),
-    new ColumnDef("id", "CSS var", px250),
+    ColumnDef.create({
+      property: "id",
+      headerLabel: "CSS var",
+      width: px300,
+      bodyClasses:['ge-table-text-align-left'],
+      headerClasses:['ge-table-text-align-left'],
+    }),
     new ColumnDef("area", "Area", px60),
     new ColumnDef("side", "Side", px60),
     new ColumnDef("type", "Type", px60),
@@ -158,9 +158,17 @@ export function createColumnDefs(): ColumnDefIf[] {
       property: "okLch",
       headerLabel: "ok LCH",
       width: px150,
-      bodyRenderer: new OkLchCellRenderer()
+      bodyRenderer: new OkLchCellRenderer(),
+      bodyClasses:['ge-table-text-align-left'],
+      headerClasses:['ge-table-text-align-left'],
     }),
-    new ColumnDef("value", "CSS Value", px150)
+    ColumnDef.create({
+      property: "value",
+      headerLabel: "CSS Value",
+      width: px300,
+      bodyClasses:['ge-table-text-align-left'],
+      headerClasses:['ge-table-text-align-left'],
+    }),
   ];
   for (const def of defs) {
     def.sortable = () => true;
@@ -169,20 +177,30 @@ export function createColumnDefs(): ColumnDefIf[] {
 }
 
 function createTableRows(): ThemeRowIf[] {
-  return CSS_LIST.map((l, i) => {
-    return new ThemeRow(
-      i < 5,
-      l,
-      l.includes("header") ? "header" : l.includes("footer") ? "footer" : "body",
-      l.includes("west") ? "west" : l.includes("east") ? "east" : "center",
-      l.includes("bg") ? "bg" : l.includes("text") ? "text" : "border",
-      new OkLch(100, 0.2, 50, 100)
-    );
-  });
+  const rows = COLOR_VARS
+    .split('\n')
+    .map(r=>r.trim())
+    .filter(r=>r.includes('--ge-table'))
+    .map(r => {
+      const [l, v] = r.split(': ');
+
+      return new ThemeRow(
+        false,
+        l.trim(),
+        l.includes("header") ? "header" : l.includes("footer") ? "footer" : l.includes("body") ? "body" : "",
+        l.includes("west") ? "west" : l.includes("east") ? "east" : l.includes("center") ? "center" : "",
+        l.includes("bg") ? "bg" : l.includes("text") ? "text" :  l.includes("border") ? "border" : "",
+        undefined,
+        v
+      );
+    });
+  return rows;
 }
 
-export function createThemeTableModel(): TableModelIf {
-  const tableOptions = createTableOptions();
+
+export function createThemeTableModel(
+  tableOptions : TableOptions = new TableOptions()
+): TableModelIf {;
   const rows: ThemeRowIf[] = createTableRows();
   const columnDefs: ColumnDefIf[] = createColumnDefs();
 
@@ -190,7 +208,8 @@ export function createThemeTableModel(): TableModelIf {
     rows,
     columnDefs,
     tableOptions,
-    fixedLeftColumnCount: 2
+    fixedLeftColumnCount: 1,
+    fixedRightColumnCount: 1,
   });
 }
 

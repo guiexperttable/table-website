@@ -26,10 +26,19 @@
     </div>
   </div>
 
+  <div class="toolbar">
+    <mat-form-field appearance="fill">
+      <mat-label>Filter</mat-label>
+      <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
+    </mat-form-field>
+  </div>
+
+
   <div class="content">
 
     <div class="grid">
       <guiexpert-table
+        (tableReady)="onTableReady($event)"
         [tableIf]="!!tableModel"
         [tableModel]="tableModel"
         [tableOptions]="tableOptions"

@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 import { TableComponent } from "@guiexpert/angular-table";
 import { PrizesDemoModule } from "../../demos/prizesdemo/prizes-demo.module";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
 
 
 const routes: Routes = [
@@ -34,7 +36,9 @@ const routes: Routes = [
     GeLogoModule,
     MatIconModule,
     TableComponent,
-    PrizesDemoModule
+    PrizesDemoModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [RouterModule]
 })
