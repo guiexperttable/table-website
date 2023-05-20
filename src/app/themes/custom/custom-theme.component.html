@@ -158,10 +158,13 @@
         </div>
       </div>
 
-      <div>aaaa</div>
 
       <div class="grid">
-        <prizes-demo></prizes-demo>
+        <guiexpert-table
+          [tableIf]="!!tableModel"
+          [tableModel]="tableModel"
+          [tableOptions]="tableOptions"
+        ></guiexpert-table>
       </div>
     </div>
 

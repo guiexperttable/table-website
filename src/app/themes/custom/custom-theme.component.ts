@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { OkLch } from "../data/ok-lch";
-import { TableModelIf } from "@guiexpert/table";
-import { generateSimpleModel } from "@guiexpert/demo-table-models";
+import { TableModelIf, TableOptionsIf } from "@guiexpert/table";
+import { createTableOptions, createThemeTableModel } from "../data/createThemeTableModel";
 
 @Component({
   selector: "app-custom-theme",
@@ -43,10 +43,11 @@ export class CustomThemeComponent implements OnInit {
   public url = "";
   public cssString = "";
 
-  tableModel: TableModelIf = generateSimpleModel(40, 10);
+  tableModel: TableModelIf = createThemeTableModel();
+  tableOptions: TableOptionsIf = createTableOptions();
 
 
-  constructor(
+    constructor(
     private readonly cdr: ChangeDetectorRef
   ) {
     for (let i = 0; i < 100; i++) {
