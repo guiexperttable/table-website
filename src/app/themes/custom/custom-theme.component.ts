@@ -63,9 +63,8 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     externalFilterFunction: this.filterFn.bind(this)
   };
   tableModel: TableModelIf = createThemeTableModel(this.tableOptions);
-
+  public selectedHtml5PickerColor: string = "#000000";
   private filterService = new GeFilterService();
-
   private tableApi?: TableApi;
   private filter$ = new EventEmitter<number>();
   private alive = true;
@@ -164,9 +163,26 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   }
 
   calc() {
-    this.url = "https://oklch.com/#" + this.okLch.l + "," + this.okLch.c + "," + this.okLch.h + "," + this.okLch.a;
-    this.cssString = this.okLch.toCssString();
+    this.setCssString(this.okLch.toCssString());
+  }
+
+  colorPickerChanged($event: Event) {
+    if (($event.target as HTMLInputElement).value) {
+      this.selectedHtml5PickerColor = ($event.target as HTMLInputElement).value;
+      this.setCssString(this.selectedHtml5PickerColor);
+      this.cdr.detectChanges();
+    }
+  }
+
+  private setCssString(css: string) {
+    this.cssString = css;
+    if (this.cssString.includes("oklch")) {
+      this.url = "https://oklch.com/#" + this.okLch.l + "," + this.okLch.c + "," + this.okLch.h + "," + this.okLch.a;
+    } else {
+      this.url = "";
+    }
     this.cdr.detectChanges();
+    // TODO sync selected css vars from table
   }
 
   private filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {

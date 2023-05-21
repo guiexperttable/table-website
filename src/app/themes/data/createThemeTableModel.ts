@@ -5,13 +5,11 @@ import {
   CheckboxBooleanPropertyCellRenderer,
   ColumnDef,
   ColumnDefIf,
-  DomServiceIf, FilterFunction,
-  px150,
-  px250, px300,
+  DomServiceIf,
   px50,
   px60,
   RendererCleanupFnType,
-  SelectionModel,
+  Size,
   TableModelFactory,
   TableModelIf,
   TableOptions
@@ -115,8 +113,6 @@ const COLOR_VARS = `
 `;
 
 
-
-
 export class OkLchCellRenderer implements CellRendererIf {
 
   render(
@@ -142,33 +138,25 @@ export function createColumnDefs(): ColumnDefIf[] {
       property: "selected",
       headerLabel: " ",
       width: px50,
-      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected"),
+      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected")
     }),
     ColumnDef.create({
       property: "id",
       headerLabel: "CSS var",
-      width: px300,
-      bodyClasses:['ge-table-text-align-left'],
-      headerClasses:['ge-table-text-align-left'],
+      width: new Size(340, "px"),
+      bodyClasses: ["ge-table-text-align-left"],
+      headerClasses: ["ge-table-text-align-left"]
     }),
     new ColumnDef("area", "Area", px60),
     new ColumnDef("side", "Side", px60),
     new ColumnDef("type", "Type", px60),
     ColumnDef.create({
-      property: "okLch",
-      headerLabel: "ok LCH",
-      width: px150,
-      bodyRenderer: new OkLchCellRenderer(),
-      bodyClasses:['ge-table-text-align-left'],
-      headerClasses:['ge-table-text-align-left'],
-    }),
-    ColumnDef.create({
       property: "value",
       headerLabel: "CSS Value",
-      width: px300,
-      bodyClasses:['ge-table-text-align-left'],
-      headerClasses:['ge-table-text-align-left'],
-    }),
+      width: new Size(340, "px"),
+      bodyClasses: ["ge-table-text-align-left"],
+      headerClasses: ["ge-table-text-align-left"]
+    })
   ];
   for (const def of defs) {
     def.sortable = () => true;
@@ -177,30 +165,29 @@ export function createColumnDefs(): ColumnDefIf[] {
 }
 
 function createTableRows(): ThemeRowIf[] {
-  const rows = COLOR_VARS
-    .split('\n')
-    .map(r=>r.trim())
-    .filter(r=>r.includes('--ge-table'))
+  return COLOR_VARS
+    .split("\n")
+    .map(r => r.trim())
+    .filter(r => r.includes("--ge-table"))
     .map(r => {
-      const [l, v] = r.split(': ');
+      const [l, v] = r.split(": ");
 
       return new ThemeRow(
         false,
         l.trim(),
         l.includes("header") ? "header" : l.includes("footer") ? "footer" : l.includes("body") ? "body" : "",
         l.includes("west") ? "west" : l.includes("east") ? "east" : l.includes("center") ? "center" : "",
-        l.includes("bg") ? "bg" : l.includes("text") ? "text" :  l.includes("border") ? "border" : "",
+        l.includes("bg") ? "bg" : l.includes("text") ? "text" : l.includes("border") ? "border" : "",
         undefined,
         v
       );
     });
-  return rows;
 }
 
 
 export function createThemeTableModel(
-  tableOptions : TableOptions = new TableOptions()
-): TableModelIf {;
+  tableOptions: TableOptions = new TableOptions()
+): TableModelIf {
   const rows: ThemeRowIf[] = createTableRows();
   const columnDefs: ColumnDefIf[] = createColumnDefs();
 
@@ -208,8 +195,7 @@ export function createThemeTableModel(
     rows,
     columnDefs,
     tableOptions,
-    fixedLeftColumnCount: 1,
-    fixedRightColumnCount: 1,
+    fixedLeftColumnCount: 1
   });
 }
 

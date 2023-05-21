@@ -166,15 +166,30 @@
         </mat-slider>
       </div>
 
+
+      <div class="ge-padding">
+        <input
+          type="color"
+          class="html-color-picker"
+          id="favcolor"
+          name="favcolor"
+          [value]="'#ffffff'"
+          (input)="colorPickerChanged($event)"
+          (change)="colorPickerChanged($event)">
+      </div>
+
       <div class="columns ge-padding">
         <div [style.background]="cssString" class="resulting-color-div"></div>
+
         <div>
           <label>Resulting Color:</label><br>
           <strong [innerText]="cssString"></strong><br>
-          <a [attr.href]="url" [innerText]="url" target="_blank"></a>
+          <a *ngIf="url" [attr.href]="url" [innerText]="url" target="_blank"></a>
         </div>
       </div>
     </div>
+
+
 
   </div>
 

@@ -48,9 +48,10 @@ div.toolbar {
   height: calc(100vh - 60px - 60px);
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: min(77%, 1000px) minmax(350px, 1fr);
+  grid-template-columns: min(77%, 950px) minmax(350px, 1fr);
 
   > .grid {
+    height: calc(100vh - 60px - 60px);
     display: grid;
     grid-template-rows: 1fr;
 
@@ -91,6 +92,10 @@ div.toolbar {
   }
 }
 
+.html-color-picker{
+  width: 60px;
+  height: 60px;
+}
 .resulting-color-div {
   width: 60px;
   height: 60px;
