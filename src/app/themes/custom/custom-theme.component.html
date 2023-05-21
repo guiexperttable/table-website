@@ -31,6 +31,31 @@
       <mat-label>Filter</mat-label>
       <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
     </mat-form-field>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="setFilter('+body +text -selected')">
+        Body Text
+      </button>
+      <button mat-menu-item (click)="setFilter('+body +bg')">
+        Body Background
+      </button>
+      <button mat-menu-item (click)="setFilter('+header +text -selected')">
+        Header Text
+      </button>
+      <button mat-menu-item (click)="setFilter('+header +bg')">
+        Header Background
+      </button>
+      <button mat-menu-item (click)="setFilter('+horizontal +border')">
+        Horizontal Border
+      </button>
+      <button mat-menu-item (click)="setFilter('+vertical +border')">
+        Vertical Border
+      </button>
+    </mat-menu>
+
     <button (click)="selectVisible()" mat-flat-button>Select Visible</button>
     <button (click)="unSelectAll()" mat-flat-button>Unselect All</button>
     <label>Selected: {{selectedCount}}</label>

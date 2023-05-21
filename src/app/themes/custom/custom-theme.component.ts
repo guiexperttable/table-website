@@ -120,6 +120,12 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     this.filter$.next(Date.now());
   }
 
+  setFilter(text: string) {
+    this.unSelectAll();
+    this.filterText = text;
+    this.filter$.next(Date.now());
+  }
+
   onTableReady($event: TableApi) {
     this.tableApi = $event;
     if (this.filterText) {
@@ -222,12 +228,11 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       this.url = "";
     }
     this.cdr.detectChanges();
-    // TODO sync selected css vars from table
     this.syncCssVars();
   }
 
   private filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {
-    return this.filterService.filterPredict<ThemeRowIf>(t, this.filterText);
+    return this.filterService.filterPredict<ThemeRowIf>(t, this.filterText, t => t.id);
   }
 
   private syncCssVars() {

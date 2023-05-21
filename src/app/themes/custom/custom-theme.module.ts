@@ -12,6 +12,7 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { PrizesDemoModule } from "../../demos/prizesdemo/prizes-demo.module";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { MatMenuModule } from "@angular/material/menu";
 
 
 const routes: Routes = [
@@ -38,7 +39,8 @@ const routes: Routes = [
     TableComponent,
     PrizesDemoModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   exports: [RouterModule]
 })
