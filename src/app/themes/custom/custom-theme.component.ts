@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit } from "@angular/core";
 import { OkLch } from "../data/ok-lch";
 import {
+  AreaModelObjectyArray,
   GeFilterService,
   SelectionModel,
   TableApi,
@@ -174,6 +175,31 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
   }
 
+  selectVisible() {
+    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+    const rows = m.getFilteredRows();
+    console.info(' m.getFilteredRows()',  m.getFilteredRows());
+    for (const row of rows) {
+      row.selected = true;
+      console.info(row); // TODO bug
+    }
+    this.cdr.detectChanges();
+    if (this.tableApi) {
+      this.tableApi.repaint();
+    }
+  }
+
+  unSelectAll() {
+    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+    const rows = m.getAllRows();
+    for (const row of rows) {
+      row.selected = false;
+    }
+    if (this.tableApi) {
+      this.tableApi.repaint();
+    }
+  }
+
   private setCssString(css: string) {
     this.cssString = css;
     if (this.cssString.includes("oklch")) {
@@ -186,8 +212,6 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   }
 
   private filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {
-    const ret = this.filterService.filterPredict<ThemeRowIf>(t, this.filterText);
-    console.info(ret);
-    return ret;
+    return this.filterService.filterPredict<ThemeRowIf>(t, this.filterText);
   }
 }

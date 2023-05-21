@@ -31,6 +31,8 @@
       <mat-label>Filter</mat-label>
       <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
     </mat-form-field>
+    <button (click)="selectVisible()" mat-flat-button>Select Visible</button>
+    <button (click)="unSelectAll()" mat-flat-button>Unselect All</button>
   </div>
 
 
@@ -188,8 +190,6 @@
         </div>
       </div>
     </div>
-
-
 
   </div>
 
