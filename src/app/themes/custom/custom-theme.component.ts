@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnDestroy,
+  OnInit
+} from "@angular/core";
 import { OkLch } from "../data/ok-lch";
 import {
   AreaModelObjectyArray,
@@ -52,8 +60,9 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   public okLch = new OkLch(50, .27, 266, 100);
   public url = "";
   public cssString = "";
+  selectedCount = 0;
 
-  filterText = "bg"; // try: 'xxx lamu'
+  filterText = "+body + bg"; // try: 'xxx lamu'
 
   readonly selectionModel = new SelectionModel("row", "multi");
   tableOptions: TableOptionsIf = {
@@ -64,13 +73,18 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     externalFilterFunction: this.filterFn.bind(this)
   };
   tableModel: TableModelIf = createThemeTableModel(this.tableOptions);
+
   public selectedHtml5PickerColor: string = "#000000";
   private filterService = new GeFilterService();
   private tableApi?: TableApi;
   private filter$ = new EventEmitter<number>();
   private alive = true;
+  private guiTable?: HTMLDivElement;
+
 
   constructor(
+    // @Inject(DOCUMENT) private readonly document: Document,
+    private readonly elementRef: ElementRef,
     private readonly cdr: ChangeDetectorRef
   ) {
     for (let i = 0; i < 100; i++) {
@@ -84,11 +98,25 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
   }
 
+  ngOnInit(): void {
+    this.calc();
+    this.filter$
+      .pipe(
+        takeWhile(() => this.alive),
+        debounceTime(400)
+      )
+      .subscribe(() => {
+        this.tableApi?.externalFilterChanged();
+      });
+    this.guiTable = this.elementRef.nativeElement.querySelector("guiexpert-table");
+  }
+
   ngOnDestroy(): void {
     this.alive = false;
   }
 
   onKeyup() {
+    this.unSelectAll();
     this.filter$.next(Date.now());
   }
 
@@ -126,22 +154,6 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     return `l:${value}`;
   }
 
-  onModelChanged($event: any) {
-    console.info($event);
-  }
-
-  ngOnInit(): void {
-    this.calc();
-    this.filter$
-      .pipe(
-        takeWhile(() => this.alive),
-        debounceTime(400)
-      )
-      .subscribe(() => {
-        console.info("this.filterText", this.filterText);
-        this.tableApi?.externalFilterChanged();
-      });
-  }
 
   onSliderChangedHue(h: number) {
     this.okLch.h = h;
@@ -178,15 +190,15 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   selectVisible() {
     const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
     const rows = m.getFilteredRows();
-    console.info(' m.getFilteredRows()',  m.getFilteredRows());
     for (const row of rows) {
       row.selected = true;
-      console.info(row); // TODO bug
     }
     this.cdr.detectChanges();
     if (this.tableApi) {
       this.tableApi.repaint();
     }
+    this.selectedCount = m.getAllRows().filter(r => r.selected).length;
+    this.cdr.detectChanges();
   }
 
   unSelectAll() {
@@ -198,6 +210,8 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     if (this.tableApi) {
       this.tableApi.repaint();
     }
+    this.selectedCount = 0;
+    this.cdr.detectChanges();
   }
 
   private setCssString(css: string) {
@@ -209,9 +223,21 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
     this.cdr.detectChanges();
     // TODO sync selected css vars from table
+    this.syncCssVars();
   }
 
   private filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {
     return this.filterService.filterPredict<ThemeRowIf>(t, this.filterText);
+  }
+
+  private syncCssVars() {
+    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+    const selectedRows = m.getAllRows().filter(r => r.selected);
+
+    selectedRows.forEach(r => {
+      r.value = this.cssString;
+      this.guiTable?.style.setProperty(r.id, this.cssString);
+    });
+    this.tableApi?.repaint();
   }
 }
