@@ -17,6 +17,7 @@ import {
 import { OkLch } from "./ok-lch";
 import { ThemeRowIf } from "./theme-row.If";
 import { ThemeRow } from "./theme-row";
+import { CssColorCellRenderer } from "../table/css-color-cell-renderer";
 
 const COLOR_VARS = `
 :root [data-theme= "light"] {
@@ -113,23 +114,23 @@ const COLOR_VARS = `
 `;
 
 
-export class OkLchCellRenderer implements CellRendererIf {
-
-  render(
-    cellDiv: HTMLDivElement,
-    _rowIndex: number,
-    _columnIndex: number,
-    _areaIdent: AreaIdent,
-    _areaModel: AreaModelIf,
-    cellValue: any,
-    _domService: DomServiceIf): RendererCleanupFnType | undefined {
-    if (cellValue) {
-      cellDiv.innerText = (cellValue as OkLch).toCssString();
-    }
-    return undefined;
-  }
-
-}
+// export class OkLchCellRenderer implements CellRendererIf {
+//
+//   render(
+//     cellDiv: HTMLDivElement,
+//     _rowIndex: number,
+//     _columnIndex: number,
+//     _areaIdent: AreaIdent,
+//     _areaModel: AreaModelIf,
+//     cellValue: any,
+//     _domService: DomServiceIf): RendererCleanupFnType | undefined {
+//     if (cellValue) {
+//       cellDiv.innerText = (cellValue as OkLch).toCssString();
+//     }
+//     return undefined;
+//   }
+//
+// }
 
 
 export function createColumnDefs(): ColumnDefIf[] {
@@ -156,6 +157,12 @@ export function createColumnDefs(): ColumnDefIf[] {
       width: new Size(340, "px"),
       bodyClasses: ["ge-table-text-align-left"],
       headerClasses: ["ge-table-text-align-left"]
+    }),
+    ColumnDef.create({
+      property: "value",
+      headerLabel: " ",
+      width: new Size(34, "px"),
+      bodyRenderer: new CssColorCellRenderer()
     })
   ];
   for (const def of defs) {
