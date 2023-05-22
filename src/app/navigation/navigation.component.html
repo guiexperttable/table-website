@@ -3,12 +3,11 @@
     #drawer
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
+    [opened]="!menuForcedClosed && (isHandset$ | async) === false"
     class="sidenav"
     fixedInViewport>
     <mat-toolbar>
       guiexpert/table
-      <!--guiexpert-logo></guiexpert-logo-->
     </mat-toolbar>
 
     <mat-nav-list>
@@ -103,11 +102,11 @@
 
   <mat-sidenav-content #matSidenavContent>
     <mat-toolbar
-      *ngIf="toolbarVisible"
+      *ngIf="menuForcedClosed || toolbarVisible"
       color="primary">
       <button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
+        *ngIf="menuForcedClosed || (isHandset$ | async)"
         aria-label="Toggle sidenav"
         mat-icon-button
         type="button">

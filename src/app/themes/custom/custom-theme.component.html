@@ -5,25 +5,13 @@
   }"
   class="custom-theme-div">
 
-  <div class="header">
-
-    <div class="logo">
-      <guiexpert-logo *ngIf="!light" [mode]="'monocolor-white'" [size]="30"></guiexpert-logo>
-      <guiexpert-logo *ngIf="light" [mode]="'monocolor-black'" [size]="30"></guiexpert-logo>
-    </div>
-
-    <div class="title">
-      Custom Theme Generator
-    </div>
-
-    <div>
-      <button (click)="setTheme('dark')" *ngIf="light" color="primary" mat-icon-button>
-        <mat-icon>dark_mode</mat-icon>
-      </button>
-      <button (click)="setTheme('light')" *ngIf="!light" color="primary" mat-icon-button>
-        <mat-icon>light_mode</mat-icon>
-      </button>
-    </div>
+  <div class="light-dark-div">
+    <button (click)="setTheme('dark')" *ngIf="light" color="primary" mat-icon-button>
+      <mat-icon>dark_mode</mat-icon>
+    </button>
+    <button (click)="setTheme('light')" *ngIf="!light" color="primary" mat-icon-button>
+      <mat-icon>light_mode</mat-icon>
+    </button>
   </div>
 
   <div class="toolbar">

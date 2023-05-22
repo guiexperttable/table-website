@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map, shareReplay, takeWhile } from "rxjs/operators";
-import { ActivatedRoute, NavigationEnd, NavigationStart, Route, Router } from "@angular/router";
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { MatSidenav, MatSidenavContent } from "@angular/material/sidenav";
 import { environment } from "../../environments/environment";
 
@@ -34,7 +34,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       imprint: "Imprint",
       license: "License",
       pricing: "Pricing",
-      custom: "Custom Theme",
+      custom: "Custom Theme Generator"
     },
     titleFadeIn: true
   };
@@ -53,8 +53,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   runLink = "";
   infoLink = "";
+  menuForcedClosed = false;
 
   protected readonly location = location;
+  protected readonly toolbar = toolbar;
   private alive = true;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     takeWhile(() => this.alive),
@@ -92,8 +94,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
 
-       this.toolbarVisible = !evt.url.includes("/themes");
-
+        this.toolbarVisible = !evt.url.includes("/themes");
+        this.menuForcedClosed = evt.url.includes("/themes/");
         this.actionBarVisible = evt.url.includes("/demo/");
 
         const p = evt.url.replace("info", "").replace("run", "");
@@ -123,6 +125,4 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.fadein = NavigationComponent.config.titleFadeIn;
     this.cdr.detectChanges();
   }
-
-  protected readonly toolbar = toolbar;
 }

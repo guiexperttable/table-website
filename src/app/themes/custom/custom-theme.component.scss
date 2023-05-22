@@ -1,8 +1,8 @@
 :host {
-  height: 100vh;
+  height: calc(100vh - 62px);
 
   > div {
-    height: 100vh;
+    height: calc(100vh - 62px);
   }
 }
 
@@ -10,6 +10,10 @@
   &.light {
     background: #fff;
     color: #000;
+
+    div.light-dark-div .mat-primary.mat-mdc-button-base {
+      color: #fff;
+    }
   }
 
   &.dark {
@@ -24,20 +28,12 @@
 }
 
 
-div.header {
-  height: 60px;
-  display: grid;
-  grid-template-columns: 60px 1fr 60px;
-
-  .logo {
-    padding-left: 16px;
-    padding-top: 14px;
-  }
-
-  .title {
-    font-size: 20px;
-    padding-top: 20px;
-  }
+div.light-dark-div {
+  color: #fff;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 999;
 }
 
 .mat-primary.mat-mdc-button-base {
@@ -51,7 +47,7 @@ div.toolbar {
   grid-gap: 1rem;
   place-items: center;
 
-  .mat-mdc-form-field-bottom-align{
+  .mat-mdc-form-field-bottom-align {
     display: none;
   }
 
@@ -61,7 +57,6 @@ div.toolbar {
     margin-right: 16px;
   }
 }
-
 
 
 .content {
@@ -112,10 +107,11 @@ div.toolbar {
   }
 }
 
-.html-color-picker{
+.html-color-picker {
   width: 60px;
   height: 60px;
 }
+
 .resulting-color-div {
   width: 60px;
   height: 60px;
