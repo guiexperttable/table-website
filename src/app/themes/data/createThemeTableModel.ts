@@ -1,20 +1,14 @@
 import {
-  AreaIdent,
-  AreaModelIf,
-  CellRendererIf,
   CheckboxBooleanPropertyCellRenderer,
   ColumnDef,
   ColumnDefIf,
-  DomServiceIf,
   px50,
   px60,
-  RendererCleanupFnType,
   Size,
   TableModelFactory,
   TableModelIf,
   TableOptions
 } from "@guiexpert/table";
-import { OkLch } from "./ok-lch";
 import { ThemeRowIf } from "./theme-row.If";
 import { ThemeRow } from "./theme-row";
 import { CssColorCellRenderer } from "../table/css-color-cell-renderer";

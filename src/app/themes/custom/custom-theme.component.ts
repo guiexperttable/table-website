@@ -20,6 +20,8 @@ import {
 import { createThemeTableModel } from "../data/createThemeTableModel";
 import { ThemeRowIf } from "../data/theme-row.If";
 import { debounceTime, takeWhile } from "rxjs";
+import { ExportDialogComponent } from "./exportdialog/export-dialog.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
   selector: "app-custom-theme",
@@ -84,6 +86,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
 
   constructor(
     // @Inject(DOCUMENT) private readonly document: Document,
+    public readonly dialog: MatDialog,
     private readonly elementRef: ElementRef,
     private readonly cdr: ChangeDetectorRef
   ) {
@@ -218,6 +221,27 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
     this.selectedCount = 0;
     this.cdr.detectChanges();
+  }
+
+  exportCss() {
+    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+    const rows = m.getAllRows();
+    const buf: string[] = [":root [data-theme= \"light\"] {"];
+    for (const row of rows) {
+      const key = row.id;
+      const val = row.value;
+      buf.push(`  ${key}: ${val}`);
+    }
+    buf.push("}");
+
+    this.dialog.open(ExportDialogComponent, {
+      height: "calc(100vh - 100px)",
+      minHeight: "calc(100vh - 100px)",
+      maxHeight: "calc(100vh - 100px)",
+      width: "min(1000px, 100vw)",
+      data: { text: buf.join("\n") },
+      restoreFocus: false
+    });
   }
 
   private setCssString(css: string) {

@@ -13,6 +13,9 @@ import { PrizesDemoModule } from "../../demos/prizesdemo/prizes-demo.module";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatMenuModule } from "@angular/material/menu";
+import { ExportDialogComponent } from "./exportdialog/export-dialog.component";
+import { MatDialogModule } from "@angular/material/dialog";
+import { SourceCodeModule } from "../../common/code/source-code.module";
 
 
 const routes: Routes = [
@@ -24,7 +27,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    CustomThemeComponent
+    CustomThemeComponent,
+    ExportDialogComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +44,9 @@ const routes: Routes = [
     PrizesDemoModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    SourceCodeModule
   ],
   exports: [RouterModule]
 })

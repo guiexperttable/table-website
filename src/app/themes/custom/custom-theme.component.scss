@@ -40,9 +40,25 @@ div.header {
   }
 }
 
+.mat-primary.mat-mdc-button-base {
+  color: var(--ge-table-doc-primary-color);
+}
+
 div.toolbar {
   height: 60px;
+  display: grid;
+  grid-template-columns: auto auto auto auto 1fr auto;
+  grid-gap: 1rem;
+  place-items: center;
+
+  .mat-primary.mat-mdc-button-base {
+    background: var(--ge-table-doc-primary-color);
+    color: var(--ge-table-doc-dark-color) !important;
+    margin-right: 16px;
+  }
 }
+
+
 
 .content {
   height: calc(100vh - 60px - 60px);
