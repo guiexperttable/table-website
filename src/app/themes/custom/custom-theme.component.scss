@@ -41,7 +41,7 @@ div.header {
 }
 
 .mat-primary.mat-mdc-button-base {
-  color: var(--ge-table-doc-primary-color);
+  color: #000;
 }
 
 div.toolbar {
@@ -50,6 +50,10 @@ div.toolbar {
   grid-template-columns: auto auto auto auto 1fr auto;
   grid-gap: 1rem;
   place-items: center;
+
+  .mat-mdc-form-field-bottom-align{
+    display: none;
+  }
 
   .mat-primary.mat-mdc-button-base {
     background: var(--ge-table-doc-primary-color);

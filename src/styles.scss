@@ -100,6 +100,10 @@ html, body {
   --ge-table-doc-gray-color: #aaa;
 }
 
+:root {
+ --mdc-theme-primary: #008a02;
+}
+
 guiexpert-table-doc-root {
   circle-letter,
   .mat-toolbar.mat-primary,
@@ -313,5 +317,20 @@ html {
   .mat-mdc-slider .mdc-slider__thumb-knob {
     background-color: yellow;
     border: solid 1px #000000;
+  }
+}
+.mat-mdc-form-field-bottom-align{
+  display: none;
+}
+.dark {
+  .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input,
+  .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-floating-label {
+    color: #fff;
+  }
+  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background: #2b2e33;
+  }
+  .mdc-text-field--filled .mdc-line-ripple::after{
+    border-bottom-color: #00ee4d;
   }
 }

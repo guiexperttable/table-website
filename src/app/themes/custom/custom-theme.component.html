@@ -36,6 +36,9 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="setFilter('')">
+        Clear
+      </button>
       <button mat-menu-item (click)="setFilter('+body +text -selected')">
         Body Text
       </button>
@@ -56,8 +59,8 @@
       </button>
     </mat-menu>
 
-    <button (click)="selectVisible()" mat-flat-button>Select Visible</button>
-    <button (click)="unSelectAll()" mat-flat-button>Unselect All</button>
+    <button (click)="selectVisible()" mat-stroked-button>Select Visible</button>
+    <button (click)="unSelectAll()" mat-stroked-button>Unselect All</button>
     <label>Selected: {{selectedCount}}</label>
 
     <button (click)="exportCss()" color="primary" mat-flat-button>Export...</button>

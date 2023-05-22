@@ -64,7 +64,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   public cssString = "";
   selectedCount = 0;
 
-  filterText = "+body + bg"; // try: 'xxx lamu'
+  filterText = ""; // try: '+body + bg'
 
   readonly selectionModel = new SelectionModel("row", "multi");
   tableOptions: TableOptionsIf = {
@@ -226,7 +226,9 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   exportCss() {
     const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
     const rows = m.getAllRows();
-    const buf: string[] = [":root [data-theme= \"light\"] {"];
+    const lightdark = this.light ? "light" : "dark";
+    const buf: string[] = [`:root [data-theme= "${lightdark}"] {`];
+
     for (const row of rows) {
       const key = row.id;
       const val = row.value;
@@ -235,12 +237,8 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     buf.push("}");
 
     this.dialog.open(ExportDialogComponent, {
-      height: "calc(100vh - 100px)",
-      minHeight: "calc(100vh - 100px)",
-      maxHeight: "calc(100vh - 100px)",
-      width: "min(1000px, 100vw)",
-      data: { text: buf.join("\n") },
-      restoreFocus: false
+      ...ExportDialogComponent.DLG_OPTIONS,
+      data: { text: buf.join("\n") }
     });
   }
 

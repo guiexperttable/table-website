@@ -138,3 +138,19 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
+
+
+code[class=language-scss],
+pre[class=language-scss] {
+  color: #852828;
+
+  .token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+    color: #3f7900;
+  }
+  .token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+    color: darkblue;
+  }
+  .token.punctuation {
+    color: cornflowerblue;
+  }
+}
