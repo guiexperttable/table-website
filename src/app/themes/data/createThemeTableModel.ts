@@ -13,7 +13,81 @@ import { ThemeRowIf } from "./theme-row.If";
 import { ThemeRow } from "./theme-row";
 import { CssColorCellRenderer } from "../table/css-color-cell-renderer";
 
-const COLOR_VARS = `
+export const COLOR_VARS_DARK = `
+:root [data-theme= "dark"] {
+  --ge-table-header-west-bg: #252528
+  --ge-table-header-center-bg: #252528
+  --ge-table-header-east-bg: #252528
+  --ge-table-header-west-text: oklch(100% 0 0)
+  --ge-table-header-center-text: oklch(100% 0 0)
+  --ge-table-header-east-text: oklch(100% 0 0)
+  --ge-table-header-west-horizontal-border: #0e0f11
+  --ge-table-header-west-vertical-border: #0e0f11
+  --ge-table-header-center-horizontal-border: #0e0f11
+  --ge-table-header-center-vertical-border: #0e0f11
+  --ge-table-header-east-horizontal-border: #0e0f11
+  --ge-table-header-east-vertical-border: #0e0f11
+  --ge-table-header-west-selected-range-bg: #252528
+  --ge-table-header-center-selected-range-bg: #252528
+  --ge-table-header-east-selected-range-bg: #252528
+  --ge-table-header-west-selected-range-text: oklch(100% 0 0)
+  --ge-table-header-center-selected-range-text: oklch(100% 0 0)
+  --ge-table-header-east-selected-range-text: oklch(100% 0 0)
+  --ge-table-body-west-bg: #2c2e33
+  --ge-table-body-center-bg: #2c2e33
+  --ge-table-body-east-bg: #2c2e33
+  --ge-table-body-west-text: #dde1e9
+  --ge-table-body-center-text: #dde1e9
+  --ge-table-body-east-text: #dde1e9
+  --ge-table-body-west-horizontal-border: #0e0f11
+  --ge-table-body-west-vertical-border: #0e0f11
+  --ge-table-body-center-horizontal-border: #0e0f11
+  --ge-table-body-center-vertical-border: #0e0f11
+  --ge-table-body-east-horizontal-border: #0e0f11
+  --ge-table-body-east-vertical-border: #0e0f11
+  --ge-table-body-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-body-west-selected-range-text: #fff;
+  --ge-table-body-center-selected-range-text: #fff;
+  --ge-table-body-east-selected-range-text: #fff;
+  --ge-table-footer-west-bg: #2c2e33
+  --ge-table-footer-center-bg: #2c2e33
+  --ge-table-footer-east-bg: #2c2e33
+  --ge-table-footer-west-text: #dde1e9
+  --ge-table-footer-center-text: #dde1e9
+  --ge-table-footer-east-text: #dde1e9
+  --ge-table-footer-west-horizontal-border: #0e0f11
+  --ge-table-footer-west-vertical-border: #0e0f11
+  --ge-table-footer-center-horizontal-border: #0e0f11
+  --ge-table-footer-center-vertical-border: #0e0f11
+  --ge-table-footer-east-horizontal-border: #0e0f11
+  --ge-table-footer-east-vertical-border: #0e0f11
+  --ge-table-footer-west-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-center-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-east-selected-range-bg: rgba(0, 152, 219, 0.4);
+  --ge-table-footer-west-selected-range-text: #fff;
+  --ge-table-footer-center-selected-range-text: #fff;
+  --ge-table-footer-east-selected-range-text: #fff;
+  --ge-table-border: #000000;
+  --ge-table-selected-range-bg: rgba(0, 140, 255, 0.2);
+  --ge-table-row-odd-bg: #2c2e33
+  --ge-table-row-even-bg: #2c2e33
+  --ge-table-column-odd-bg: #2c2e33
+  --ge-table-column-even-bg: #2c2e33
+  --ge-table-hover-column-bg: #2c2e33
+  --ge-table-hover-row-bg: #2c2e33
+  --ge-table-focus-border: #0e0f11
+  --ge-table-color-error-text: #dde1e9
+  --ge-table-tree-arrow-collapsed-color: #e00034;
+  --ge-table-column-resize-handle-border: #0e0f11
+  --ge-table-dragged-col-div-bg: #2c2e33
+  --ge-table-drop-zone-bg: #2c2e33
+}
+`;
+
+
+export const COLOR_VARS_LIGHT = `
 :root [data-theme= "light"] {
 
   --ge-table-header-west-bg: var(--ge-table-header-center-bg);
@@ -165,8 +239,11 @@ export function createColumnDefs(): ColumnDefIf[] {
   return defs;
 }
 
-function createTableRows(): ThemeRowIf[] {
-  return COLOR_VARS
+function createTableRows(
+  dark: boolean = true
+): ThemeRowIf[] {
+  const css = dark ? COLOR_VARS_DARK: COLOR_VARS_LIGHT;
+  return css
     .split("\n")
     .map(r => r.trim())
     .filter(r => r.includes("--ge-table"))
@@ -187,9 +264,10 @@ function createTableRows(): ThemeRowIf[] {
 
 
 export function createThemeTableModel(
-  tableOptions: TableOptions = new TableOptions()
+  tableOptions: TableOptions = new TableOptions(),
+  dark: boolean = true
 ): TableModelIf {
-  const rows: ThemeRowIf[] = createTableRows();
+  const rows: ThemeRowIf[] = createTableRows(dark);
   const columnDefs: ColumnDefIf[] = createColumnDefs();
 
   return TableModelFactory.buildByTypedRowsParam({

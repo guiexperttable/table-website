@@ -74,7 +74,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     getSelectionModel: () => this.selectionModel,
     externalFilterFunction: this.filterFn.bind(this)
   };
-  tableModel: TableModelIf = createThemeTableModel(this.tableOptions);
+  tableModel: TableModelIf | undefined = createThemeTableModel(this.tableOptions);
 
   public selectedHtml5PickerColor: string = "#000000";
   private filterService = new GeFilterService();
@@ -85,7 +85,6 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    // @Inject(DOCUMENT) private readonly document: Document,
     public readonly dialog: MatDialog,
     private readonly elementRef: ElementRef,
     private readonly cdr: ChangeDetectorRef
@@ -139,7 +138,14 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   setTheme(m: "light" | "dark") {
     this.theme = m;
     this.light = m === "light";
+    // destroy table element:
+    this.tableModel = undefined;
     this.cdr.detectChanges();
+    // rebuild:
+    this.tableModel = createThemeTableModel(this.tableOptions, !this.light);
+    this.cdr.detectChanges();
+    this.guiTable = this.elementRef.nativeElement.querySelector("guiexpert-table");
+    this.syncAllCssVars();
   }
 
   setOkLch(l: number, c: number, h: number, a: number = 100) {
@@ -197,55 +203,63 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   }
 
   selectVisible() {
-    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
-    const rows = m.getFilteredRows();
-    for (const row of rows) {
-      row.selected = true;
+    if (this.tableModel) {
+      const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      const rows = m.getFilteredRows();
+      for (const row of rows) {
+        row.selected = true;
+      }
+      this.cdr.detectChanges();
+      if (this.tableApi) {
+        this.tableApi.repaint();
+      }
+      this.selectedCount = m.getAllRows().filter(r => r.selected).length;
+      this.cdr.detectChanges();
     }
-    this.cdr.detectChanges();
-    if (this.tableApi) {
-      this.tableApi.repaint();
-    }
-    this.selectedCount = m.getAllRows().filter(r => r.selected).length;
-    this.cdr.detectChanges();
   }
 
   unSelectAll() {
-    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
-    const rows = m.getAllRows();
-    for (const row of rows) {
-      row.selected = false;
+    if (this.tableModel) {
+      const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      const rows = m.getAllRows();
+      for (const row of rows) {
+        row.selected = false;
+      }
+      if (this.tableApi) {
+        this.tableApi.repaint();
+      }
+      this.selectedCount = 0;
+      this.cdr.detectChanges();
     }
-    if (this.tableApi) {
-      this.tableApi.repaint();
-    }
-    this.selectedCount = 0;
-    this.cdr.detectChanges();
   }
 
   exportCss() {
-    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
-    const rows = m.getAllRows();
-    const lightdark = this.light ? "light" : "dark";
-    const buf: string[] = [`:root [data-theme= "${lightdark}"] {`];
+    if (this.tableModel) {
+      const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      const rows = m.getAllRows();
+      const lightdark = this.light ? "light" : "dark";
+      const buf: string[] = [`:root [data-theme= "${lightdark}"] {`];
 
-    for (const row of rows) {
-      const key = row.id;
-      const val = row.value;
-      buf.push(`  ${key}: ${val}`);
+      for (const row of rows) {
+        const key = row.id;
+        const val = row.value;
+        buf.push(`  ${key}: ${val}`);
+      }
+      buf.push("}");
+
+      this.dialog.open(ExportDialogComponent, {
+        ...ExportDialogComponent.DLG_OPTIONS,
+        data: { text: buf.join("\n") }
+      });
     }
-    buf.push("}");
-
-    this.dialog.open(ExportDialogComponent, {
-      ...ExportDialogComponent.DLG_OPTIONS,
-      data: { text: buf.join("\n") }
-    });
   }
 
   private setCssString(css: string) {
     this.cssString = css;
     if (this.cssString.includes("oklch")) {
       this.url = "https://oklch.com/#" + this.okLch.l + "," + this.okLch.c + "," + this.okLch.h + "," + this.okLch.a;
+    } else if (this.cssString.includes("#")) {
+      this.url = "https://colorpicker.me/#" + this.cssString.split("#")[1];
     } else {
       this.url = "";
     }
@@ -258,13 +272,25 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   }
 
   private syncCssVars() {
-    const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
-    const selectedRows = m.getAllRows().filter(r => r.selected);
+    if (this.tableModel) {
+      const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      const selectedRows = m.getAllRows().filter(r => r.selected);
 
-    selectedRows.forEach(r => {
-      r.value = this.cssString;
-      this.guiTable?.style.setProperty(r.id, this.cssString);
-    });
-    this.tableApi?.repaint();
+      selectedRows.forEach(r => {
+        r.value = this.cssString;
+        this.guiTable?.style.setProperty(r.id, this.cssString);
+      });
+      this.tableApi?.repaint();
+    }
+  }
+
+  private syncAllCssVars() {
+    if (this.tableModel) {
+      const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      m.getAllRows().forEach(r => {
+        this.guiTable?.style.setProperty(r.id, r.value);
+      });
+      this.tableApi?.repaint();
+    }
   }
 }

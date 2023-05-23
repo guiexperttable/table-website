@@ -27,6 +27,16 @@
       <button mat-menu-item (click)="setFilter('')">
         Clear
       </button>
+      <button mat-menu-item (click)="setFilter('+bg -select')">
+        All Background
+      </button>
+      <button mat-menu-item (click)="setFilter('+text -select')">
+        All Text
+      </button>
+      <button mat-menu-item (click)="setFilter('+border')">
+        All Border
+      </button>
+
       <button mat-menu-item (click)="setFilter('+body +text -selected')">
         Body Text
       </button>
@@ -59,8 +69,8 @@
 
     <div class="grid">
       <guiexpert-table
+        *ngIf="tableModel"
         (tableReady)="onTableReady($event)"
-        [tableIf]="!!tableModel"
         [tableModel]="tableModel"
         [tableOptions]="tableOptions"
       ></guiexpert-table>
