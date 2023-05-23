@@ -238,7 +238,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
       const rows = m.getAllRows();
       const lightdark = this.light ? "light" : "dark";
-      const buf: string[] = [`:root [data-theme= "${lightdark}"] {`];
+      const buf: string[] = [`:root [data-theme="${lightdark}"] {`];
 
       for (const row of rows) {
         const key = row.id;
