@@ -5,7 +5,7 @@
   }"
   class="custom-theme-div">
 
-  <div class="light-dark-div">
+  <div class="light-dark-div" *ngIf="bigScreen">
     <button (click)="setTheme('dark')" *ngIf="light" color="primary" mat-icon-button>
       <mat-icon>dark_mode</mat-icon>
     </button>
@@ -58,15 +58,15 @@
     </mat-menu>
 
     <button (click)="selectVisible()" mat-stroked-button>Select Visible</button>
-    <button (click)="unSelectAll()" mat-stroked-button>Unselect All</button>
-    <label>Selected: {{selectedCount}}</label>
+    <button (click)="unSelectAll()" mat-stroked-button>Clear</button>
+    <label>Sel: {{selectedCount}}</label>
     <label></label>
 
     <button (click)="exportCss()" color="primary" mat-flat-button>Export...</button>
   </div>
 
 
-  <div class="content">
+  <div class="content" [ngClass]="{big:bigScreen, small:!bigScreen}">
 
     <div class="grid">
       <guiexpert-table

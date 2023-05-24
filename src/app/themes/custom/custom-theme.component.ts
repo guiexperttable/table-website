@@ -75,21 +75,22 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     getSelectionModel: () => this.selectionModel,
     externalFilterFunction: this.filterFn.bind(this)
   };
-  tableModel: TableModelIf | undefined = createThemeTableModel(this.tableOptions, false);
+  tableModel: TableModelIf | undefined;
 
   public selectedHtml5PickerColor: string = "#000000";
-  private filterService = new GeFilterService();
-  private tableApi?: TableApi;
-  private filter$ = new EventEmitter<number>();
-  private alive = true;
-  private guiTable?: HTMLDivElement;
+  protected filterService = new GeFilterService();
+  protected tableApi?: TableApi;
+  protected filter$ = new EventEmitter<number>();
+  protected alive = true;
+  protected guiTable?: HTMLDivElement;
 
+  protected bigScreen = true;
 
   constructor(
     public readonly dialog: MatDialog,
-    private readonly elementRef: ElementRef,
-    private readonly cdr: ChangeDetectorRef,
-    private readonly syncCssService: SyncCssService
+    protected readonly elementRef: ElementRef,
+    protected readonly cdr: ChangeDetectorRef,
+    protected readonly syncCssService: SyncCssService
   ) {
     for (let i = 0; i < 100; i++) {
       this.hueValues.push(i * 3.6);
@@ -103,6 +104,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.tableModel = createThemeTableModel(this.tableOptions, !this.light, this.bigScreen);
     this.calc();
     this.filter$
       .pipe(
@@ -113,6 +115,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
         this.tableApi?.externalFilterChanged();
       });
     this.guiTable = this.elementRef.nativeElement.querySelector("guiexpert-table");
+    this.syncAllCssVars();
   }
 
   ngOnDestroy(): void {
@@ -259,7 +262,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
   }
 
-  private setCssString(css: string) {
+  protected setCssString(css: string) {
     this.cssString = css;
     if (this.cssString.includes("oklch")) {
       this.url = "https://oklch.com/#" + this.okLch.l + "," + this.okLch.c + "," + this.okLch.h + "," + this.okLch.a;
@@ -272,11 +275,11 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     this.syncCssVars();
   }
 
-  private filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {
+  protected filterFn(t: ThemeRowIf, _index: number, _array: ThemeRowIf[]) {
     return this.filterService.filterPredict<ThemeRowIf>(t, this.filterText, t => t.id);
   }
 
-  private syncCssVars() {
+  protected syncCssVars() {
     if (this.tableModel) {
       const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
       const selectedRows = m.getAllRows().filter(r => r.selected);
@@ -290,13 +293,15 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
   }
 
-  private syncAllCssVars() {
+  protected syncAllCssVars() {
     if (this.tableModel) {
       const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
-      m.getAllRows().forEach(r => {
-        this.guiTable?.style.setProperty(r.id, r.value);
-      });
-      this.tableApi?.repaint();
+      if (this.bigScreen) {
+        m.getAllRows().forEach(r => {
+          this.guiTable?.style.setProperty(r.id, r.value);
+        });
+        this.tableApi?.repaint();
+      }
       this.syncCssService.messageBroadcast(m.getAllRows().map(r => [r.id, r.value]));
     }
   }

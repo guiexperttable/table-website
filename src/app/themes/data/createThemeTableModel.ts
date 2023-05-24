@@ -15,74 +15,74 @@ import { CssColorCellRenderer } from "../table/css-color-cell-renderer";
 
 export const COLOR_VARS_DARK = `
 :root [data-theme="dark"] {
-  --ge-table-header-west-bg: #252528
-  --ge-table-header-center-bg: #252528
-  --ge-table-header-east-bg: #252528
-  --ge-table-header-west-text: oklch(92% 0.2 266 / 94%)
-  --ge-table-header-center-text: oklch(92% 0.2 266 / 94%)
-  --ge-table-header-east-text: oklch(92% 0.2 266 / 94%)
-  --ge-table-header-west-horizontal-border: oklch(0% 0 0)
-  --ge-table-header-west-vertical-border: oklch(0% 0 0)
-  --ge-table-header-center-horizontal-border: oklch(0% 0 0)
-  --ge-table-header-center-vertical-border: oklch(0% 0 0)
-  --ge-table-header-east-horizontal-border: oklch(0% 0 0)
-  --ge-table-header-east-vertical-border: oklch(0% 0 0)
-  --ge-table-header-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-header-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-header-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-header-west-selected-range-text: oklch(100% 0 0)
-  --ge-table-header-center-selected-range-text: oklch(100% 0 0)
-  --ge-table-header-east-selected-range-text: oklch(100% 0 0)
-  --ge-table-body-west-bg: #2c2e33
-  --ge-table-body-center-bg: #2c2e33
-  --ge-table-body-east-bg: #2c2e33
-  --ge-table-body-west-text: #dde1e9
-  --ge-table-body-center-text: #dde1e9
-  --ge-table-body-east-text: #dde1e9
-  --ge-table-body-west-horizontal-border: oklch(0% 0 0)
-  --ge-table-body-west-vertical-border: oklch(0% 0 0)
-  --ge-table-body-center-horizontal-border: oklch(0% 0 0)
-  --ge-table-body-center-vertical-border: oklch(0% 0 0)
-  --ge-table-body-east-horizontal-border: oklch(0% 0 0)
-  --ge-table-body-east-vertical-border: oklch(0% 0 0)
-  --ge-table-body-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-body-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-body-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-body-west-selected-range-text: oklch(100% 0 0)
-  --ge-table-body-center-selected-range-text: oklch(100% 0 0)
-  --ge-table-body-east-selected-range-text: oklch(100% 0 0)
-  --ge-table-footer-west-bg: #2c2e33
-  --ge-table-footer-center-bg: #2c2e33
-  --ge-table-footer-east-bg: #2c2e33
-  --ge-table-footer-west-text: #dde1e9
-  --ge-table-footer-center-text: #dde1e9
-  --ge-table-footer-east-text: #dde1e9
-  --ge-table-footer-west-horizontal-border: oklch(0% 0 0)
-  --ge-table-footer-west-vertical-border: oklch(0% 0 0)
-  --ge-table-footer-center-horizontal-border: oklch(0% 0 0)
-  --ge-table-footer-center-vertical-border: oklch(0% 0 0)
-  --ge-table-footer-east-horizontal-border: oklch(0% 0 0)
-  --ge-table-footer-east-vertical-border: oklch(0% 0 0)
-  --ge-table-footer-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-footer-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-footer-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-footer-west-selected-range-text: oklch(100% 0 0)
-  --ge-table-footer-center-selected-range-text: oklch(100% 0 0)
-  --ge-table-footer-east-selected-range-text: oklch(100% 0 0)
-  --ge-table-border: oklch(0% 0 0)
-  --ge-table-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
-  --ge-table-row-odd-bg: oklch(100% 0 0 / 0%)
-  --ge-table-row-even-bg: oklch(100% 0 0 / 0%)
-  --ge-table-column-odd-bg: oklch(100% 0 0 / 0%)
-  --ge-table-column-even-bg: oklch(100% 0 0 / 0%)
-  --ge-table-hover-column-bg: #2c2e33
-  --ge-table-hover-row-bg: #2c2e33
-  --ge-table-focus-border: oklch(0% 0 0)
-  --ge-table-color-error-text: #dde1e9
+  --ge-table-header-west-bg: #252528;
+  --ge-table-header-center-bg: #252528;
+  --ge-table-header-east-bg: #252528;
+  --ge-table-header-west-text: oklch(92% 0.2 266 / 94%);
+  --ge-table-header-center-text: oklch(92% 0.2 266 / 94%);
+  --ge-table-header-east-text: oklch(92% 0.2 266 / 94%);
+  --ge-table-header-west-horizontal-border: oklch(0% 0 0);
+  --ge-table-header-west-vertical-border: oklch(0% 0 0);
+  --ge-table-header-center-horizontal-border: oklch(0% 0 0);
+  --ge-table-header-center-vertical-border: oklch(0% 0 0);
+  --ge-table-header-east-horizontal-border: oklch(0% 0 0);
+  --ge-table-header-east-vertical-border: oklch(0% 0 0);
+  --ge-table-header-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-header-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-header-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-header-west-selected-range-text: oklch(100% 0 0);
+  --ge-table-header-center-selected-range-text: oklch(100% 0 0);
+  --ge-table-header-east-selected-range-text: oklch(100% 0 0);
+  --ge-table-body-west-bg: #2c2e33;
+  --ge-table-body-center-bg: #2c2e33;
+  --ge-table-body-east-bg: #2c2e33;
+  --ge-table-body-west-text: #dde1e9;
+  --ge-table-body-center-text: #dde1e9;
+  --ge-table-body-east-text: #dde1e9;
+  --ge-table-body-west-horizontal-border: oklch(0% 0 0);
+  --ge-table-body-west-vertical-border: oklch(0% 0 0);
+  --ge-table-body-center-horizontal-border: oklch(0% 0 0);
+  --ge-table-body-center-vertical-border: oklch(0% 0 0);
+  --ge-table-body-east-horizontal-border: oklch(0% 0 0);
+  --ge-table-body-east-vertical-border: oklch(0% 0 0);
+  --ge-table-body-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-body-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-body-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-body-west-selected-range-text: oklch(100% 0 0);
+  --ge-table-body-center-selected-range-text: oklch(100% 0 0);
+  --ge-table-body-east-selected-range-text: oklch(100% 0 0);
+  --ge-table-footer-west-bg: #2c2e33;
+  --ge-table-footer-center-bg: #2c2e33;
+  --ge-table-footer-east-bg: #2c2e33;
+  --ge-table-footer-west-text: #dde1e9;
+  --ge-table-footer-center-text: #dde1e9;
+  --ge-table-footer-east-text: #dde1e9;
+  --ge-table-footer-west-horizontal-border: oklch(0% 0 0);
+  --ge-table-footer-west-vertical-border: oklch(0% 0 0);
+  --ge-table-footer-center-horizontal-border: oklch(0% 0 0);
+  --ge-table-footer-center-vertical-border: oklch(0% 0 0);
+  --ge-table-footer-east-horizontal-border: oklch(0% 0 0);
+  --ge-table-footer-east-vertical-border: oklch(0% 0 0);
+  --ge-table-footer-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-footer-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-footer-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-footer-west-selected-range-text: oklch(100% 0 0);
+  --ge-table-footer-center-selected-range-text: oklch(100% 0 0);
+  --ge-table-footer-east-selected-range-text: oklch(100% 0 0);
+  --ge-table-border: oklch(0% 0 0);
+  --ge-table-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
+  --ge-table-row-odd-bg: oklch(100% 0 0 / 0%);
+  --ge-table-row-even-bg: oklch(100% 0 0 / 0%);
+  --ge-table-column-odd-bg: oklch(100% 0 0 / 0%);
+  --ge-table-column-even-bg: oklch(100% 0 0 / 0%);
+  --ge-table-hover-column-bg: #2c2e33;
+  --ge-table-hover-row-bg: #2c2e33;
+  --ge-table-focus-border: oklch(0% 0 0);
+  --ge-table-color-error-text: #dde1e9;
   --ge-table-tree-arrow-collapsed-color: #e00034;
-  --ge-table-column-resize-handle-border: oklch(0% 0 0)
-  --ge-table-dragged-col-div-bg: #2c2e33
-  --ge-table-drop-zone-bg: #2c2e33
+  --ge-table-column-resize-handle-border: oklch(0% 0 0);
+  --ge-table-dragged-col-div-bg: #2c2e33;
+  --ge-table-drop-zone-bg: #2c2e33;
 }
 `;
 
@@ -201,38 +201,57 @@ export const COLOR_VARS_LIGHT = `
 // }
 
 
-export function createColumnDefs(): ColumnDefIf[] {
-  const defs = [
-    ColumnDef.create({
-      property: "selected",
-      headerLabel: " ",
-      width: px50,
-      bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected")
-    }),
-    ColumnDef.create({
-      property: "id",
-      headerLabel: "CSS var",
-      width: new Size(340, "px"),
-      bodyClasses: ["ge-table-text-align-left"],
-      headerClasses: ["ge-table-text-align-left"]
-    }),
-    new ColumnDef("area", "Area", px60),
-    new ColumnDef("side", "Side", px60),
-    new ColumnDef("type", "Type", px60),
-    ColumnDef.create({
-      property: "value",
-      headerLabel: "CSS Value",
-      width: new Size(340, "px"),
-      bodyClasses: ["ge-table-text-align-left"],
-      headerClasses: ["ge-table-text-align-left"]
-    }),
-    ColumnDef.create({
-      property: "value",
-      headerLabel: " ",
-      width: new Size(34, "px"),
-      bodyRenderer: new CssColorCellRenderer()
-    })
-  ];
+export function createColumnDefs(
+  bigScreen: boolean = true
+): ColumnDefIf[] {
+
+
+  const defs = bigScreen ? [
+      ColumnDef.create({
+        property: "selected",
+        headerLabel: " ",
+        width: px50,
+        bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected")
+      }),
+      ColumnDef.create({
+        property: "id",
+        headerLabel: "CSS var",
+        width: new Size(340, "px"),
+        bodyClasses: ["ge-table-text-align-left"],
+        headerClasses: ["ge-table-text-align-left"]
+      }),
+      new ColumnDef("area", "Area", px60),
+      new ColumnDef("side", "Side", px60),
+      new ColumnDef("type", "Type", px60),
+      ColumnDef.create({
+        property: "value",
+        headerLabel: "CSS Value",
+        width: new Size(340, "px"),
+        bodyClasses: ["ge-table-text-align-left"],
+        headerClasses: ["ge-table-text-align-left"]
+      }),
+      ColumnDef.create({
+        property: "value",
+        headerLabel: " ",
+        width: new Size(34, "px"),
+        bodyRenderer: new CssColorCellRenderer()
+      })
+    ]
+    :
+    [
+      ColumnDef.create({
+        property: "selected",
+        headerLabel: " ",
+        width: px50,
+        bodyRenderer: new CheckboxBooleanPropertyCellRenderer<ThemeRowIf>("selected")
+      }),
+      ColumnDef.create({
+        property: "id",
+        headerLabel: "CSS var",
+        width: new Size(300, "px"),
+        bodyClasses: ["ge-table-text-align-left"],
+        headerClasses: ["ge-table-text-align-left"]
+      })];
   for (const def of defs) {
     def.sortable = () => true;
   }
@@ -242,7 +261,7 @@ export function createColumnDefs(): ColumnDefIf[] {
 function createTableRows(
   dark: boolean = true
 ): ThemeRowIf[] {
-  const css = dark ? COLOR_VARS_DARK: COLOR_VARS_LIGHT;
+  const css = dark ? COLOR_VARS_DARK : COLOR_VARS_LIGHT;
   return css
     .split("\n")
     .map(r => r.trim())
@@ -265,16 +284,17 @@ function createTableRows(
 
 export function createThemeTableModel(
   tableOptions: TableOptions = new TableOptions(),
-  dark: boolean = true
+  dark: boolean = true,
+  bigScreen: boolean = true
 ): TableModelIf {
   const rows: ThemeRowIf[] = createTableRows(dark);
-  const columnDefs: ColumnDefIf[] = createColumnDefs();
+  const columnDefs: ColumnDefIf[] = createColumnDefs(bigScreen);
 
   return TableModelFactory.buildByTypedRowsParam({
     rows,
     columnDefs,
     tableOptions,
-    fixedLeftColumnCount: 1
+    fixedLeftColumnCount: bigScreen?1:0
   });
 }
 

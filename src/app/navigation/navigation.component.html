@@ -102,7 +102,7 @@
 
   <mat-sidenav-content #matSidenavContent>
     <mat-toolbar
-      *ngIf="menuForcedClosed || toolbarVisible"
+      *ngIf="toolbarVisible"
       color="primary">
       <button
         (click)="drawer.toggle()"

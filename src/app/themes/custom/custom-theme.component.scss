@@ -21,7 +21,7 @@
     color: #fff;
 
     button, a {
-      color: #fff !important;
+      color: #00ee4d !important;
       background: #000;
     }
   }
@@ -59,7 +59,7 @@ div.toolbar {
 }
 
 
-.content {
+.content.big {
   height: calc(100vh - 60px - 60px);
   display: grid;
   grid-gap: 1rem;
@@ -76,7 +76,25 @@ div.toolbar {
       display: block;
     }
   }
+}
 
+.content.small {
+  height: calc(100vh - 60px);
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 350px minmax(350px, 1fr);
+
+  > .grid {
+    height: calc(100vh - 60px);
+    display: grid;
+    grid-template-rows: 1fr;
+
+    guiexpert-table {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
 }
 
 .columns {

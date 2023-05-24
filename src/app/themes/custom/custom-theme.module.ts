@@ -17,9 +17,14 @@ import { ExportDialogComponent } from "./exportdialog/export-dialog.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { SourceCodeModule } from "../../common/code/source-code.module";
 import { SyncCssDataModule } from "../../common/syncdata/sync-css-data.module";
+import { SmallCustomThemeComponent } from "./picker/small-custom-theme.component";
 
 
 const routes: Routes = [
+  {
+    path: "picker",
+    component: SmallCustomThemeComponent
+  },
   {
     path: "",
     component: CustomThemeComponent
@@ -29,7 +34,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     CustomThemeComponent,
-    ExportDialogComponent
+    ExportDialogComponent,
+    SmallCustomThemeComponent
   ],
   imports: [
     CommonModule,
