@@ -115,7 +115,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
         this.tableApi?.externalFilterChanged();
       });
     this.guiTable = this.elementRef.nativeElement.querySelector("guiexpert-table");
-    this.syncAllCssVars();
+    this.syncAllCssVarsToPickerTable();
   }
 
   ngOnDestroy(): void {
@@ -153,7 +153,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     this.tableModel = createThemeTableModel(this.tableOptions, !this.light);
     this.cdr.detectChanges();
     this.guiTable = this.elementRef.nativeElement.querySelector("guiexpert-table");
-    this.syncAllCssVars();
+    this.syncAllCssVarsToPickerTable();
   }
 
   setOkLch(l: number, c: number, h: number, a: number = 100) {
@@ -283,17 +283,21 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     if (this.tableModel) {
       const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
       const selectedRows = m.getAllRows().filter(r => r.selected);
-
       selectedRows.forEach(r => {
         r.value = this.cssString;
-        this.guiTable?.style.setProperty(r.id, this.cssString);
+        if (this.bigScreen) {
+          this.guiTable?.style.setProperty(r.id, this.cssString);
+        }
       });
-      this.tableApi?.repaint();
+      if (this.bigScreen) {
+        this.tableApi?.repaint();
+      }
+
       this.syncCssService.messageBroadcast(m.getAllRows().map(r => [r.id, r.value]));
     }
   }
 
-  protected syncAllCssVars() {
+  protected syncAllCssVarsToPickerTable() {
     if (this.tableModel) {
       const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
       if (this.bigScreen) {

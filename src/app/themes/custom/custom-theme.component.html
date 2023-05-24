@@ -25,10 +25,10 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setFilter('', false)">
-        Clear
+        All
       </button>
-      <button mat-menu-item (click)="setFilter('+bg -select')">
-        All Background
+      <button mat-menu-item (click)="setFilter('+bg -select -column -row -hover -drag -dropped')">
+        Table Background
       </button>
       <button mat-menu-item (click)="setFilter('+text -select')">
         All Text
@@ -199,7 +199,7 @@
       </div>
 
 
-      <div class="ge-padding">
+      <div>
         <input
           type="color"
           class="html-color-picker"
@@ -210,7 +210,7 @@
           (change)="colorPickerChanged($event)">
       </div>
 
-      <div class="columns ge-padding">
+      <div class="columns padding-top">
         <div [style.background]="cssString" class="resulting-color-div"></div>
 
         <div>

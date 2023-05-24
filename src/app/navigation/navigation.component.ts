@@ -125,4 +125,11 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.fadein = NavigationComponent.config.titleFadeIn;
     this.cdr.detectChanges();
   }
+
+  openCustomThemePicker() {
+    window.open(
+      'http://localhost:4200/themes/custom/picker',
+      'custom_picker',
+      'left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0')
+  }
 }

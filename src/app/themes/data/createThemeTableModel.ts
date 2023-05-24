@@ -251,7 +251,8 @@ export function createColumnDefs(
         width: new Size(300, "px"),
         bodyClasses: ["ge-table-text-align-left"],
         headerClasses: ["ge-table-text-align-left"]
-      })];
+      })
+    ];
   for (const def of defs) {
     def.sortable = () => true;
   }
@@ -290,6 +291,9 @@ export function createThemeTableModel(
   const rows: ThemeRowIf[] = createTableRows(dark);
   const columnDefs: ColumnDefIf[] = createColumnDefs(bigScreen);
 
+  if (!bigScreen){
+    tableOptions.defaultRowHeights.header = 0;
+  }
   return TableModelFactory.buildByTypedRowsParam({
     rows,
     columnDefs,
