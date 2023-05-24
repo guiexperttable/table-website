@@ -2,11 +2,11 @@
 :host {
   margin: 0;
   overflow: scroll;
-  height: 100vh;
+  height: calc(100vh - 64px);
   scroll-snap-type: y mandatory;
 }
 section {
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   scroll-snap-align: start;
 }
 

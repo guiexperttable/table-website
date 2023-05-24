@@ -1,5 +1,5 @@
 label {
-  margin: 20px;
+  margin: 22px;
   font-size: large;
   color: #c72a01;;
 }
@@ -25,7 +25,8 @@ label {
     place-items: center;
 
     label {
-      font-size: large;
+      font-size: 22px;
+      margin: 0;
       color: #0275a2;
     }
 
@@ -36,7 +37,7 @@ label {
       height: calc(100% - 170px);
 
       opacity: 0.8;
-      background-size: 40px 40px;
+      background-size: 40px 33px;
       background-image:  repeating-linear-gradient(0deg, #00aff4, #00aff4 1px, transparent 1px, transparent);
     }
     &.footer {
