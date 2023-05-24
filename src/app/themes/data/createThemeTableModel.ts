@@ -18,18 +18,18 @@ export const COLOR_VARS_DARK = `
   --ge-table-header-west-bg: #252528
   --ge-table-header-center-bg: #252528
   --ge-table-header-east-bg: #252528
-  --ge-table-header-west-text: oklch(100% 0 0)
-  --ge-table-header-center-text: oklch(100% 0 0)
-  --ge-table-header-east-text: oklch(100% 0 0)
-  --ge-table-header-west-horizontal-border: #0e0f11
-  --ge-table-header-west-vertical-border: #0e0f11
-  --ge-table-header-center-horizontal-border: #0e0f11
-  --ge-table-header-center-vertical-border: #0e0f11
-  --ge-table-header-east-horizontal-border: #0e0f11
-  --ge-table-header-east-vertical-border: #0e0f11
-  --ge-table-header-west-selected-range-bg: #252528
-  --ge-table-header-center-selected-range-bg: #252528
-  --ge-table-header-east-selected-range-bg: #252528
+  --ge-table-header-west-text: oklch(92% 0.2 266 / 94%)
+  --ge-table-header-center-text: oklch(92% 0.2 266 / 94%)
+  --ge-table-header-east-text: oklch(92% 0.2 266 / 94%)
+  --ge-table-header-west-horizontal-border: oklch(0% 0 0)
+  --ge-table-header-west-vertical-border: oklch(0% 0 0)
+  --ge-table-header-center-horizontal-border: oklch(0% 0 0)
+  --ge-table-header-center-vertical-border: oklch(0% 0 0)
+  --ge-table-header-east-horizontal-border: oklch(0% 0 0)
+  --ge-table-header-east-vertical-border: oklch(0% 0 0)
+  --ge-table-header-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-header-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-header-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
   --ge-table-header-west-selected-range-text: oklch(100% 0 0)
   --ge-table-header-center-selected-range-text: oklch(100% 0 0)
   --ge-table-header-east-selected-range-text: oklch(100% 0 0)
@@ -39,48 +39,48 @@ export const COLOR_VARS_DARK = `
   --ge-table-body-west-text: #dde1e9
   --ge-table-body-center-text: #dde1e9
   --ge-table-body-east-text: #dde1e9
-  --ge-table-body-west-horizontal-border: #0e0f11
-  --ge-table-body-west-vertical-border: #0e0f11
-  --ge-table-body-center-horizontal-border: #0e0f11
-  --ge-table-body-center-vertical-border: #0e0f11
-  --ge-table-body-east-horizontal-border: #0e0f11
-  --ge-table-body-east-vertical-border: #0e0f11
-  --ge-table-body-west-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-body-center-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-body-east-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-body-west-selected-range-text: #fff;
-  --ge-table-body-center-selected-range-text: #fff;
-  --ge-table-body-east-selected-range-text: #fff;
+  --ge-table-body-west-horizontal-border: oklch(0% 0 0)
+  --ge-table-body-west-vertical-border: oklch(0% 0 0)
+  --ge-table-body-center-horizontal-border: oklch(0% 0 0)
+  --ge-table-body-center-vertical-border: oklch(0% 0 0)
+  --ge-table-body-east-horizontal-border: oklch(0% 0 0)
+  --ge-table-body-east-vertical-border: oklch(0% 0 0)
+  --ge-table-body-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-body-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-body-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-body-west-selected-range-text: oklch(100% 0 0)
+  --ge-table-body-center-selected-range-text: oklch(100% 0 0)
+  --ge-table-body-east-selected-range-text: oklch(100% 0 0)
   --ge-table-footer-west-bg: #2c2e33
   --ge-table-footer-center-bg: #2c2e33
   --ge-table-footer-east-bg: #2c2e33
   --ge-table-footer-west-text: #dde1e9
   --ge-table-footer-center-text: #dde1e9
   --ge-table-footer-east-text: #dde1e9
-  --ge-table-footer-west-horizontal-border: #0e0f11
-  --ge-table-footer-west-vertical-border: #0e0f11
-  --ge-table-footer-center-horizontal-border: #0e0f11
-  --ge-table-footer-center-vertical-border: #0e0f11
-  --ge-table-footer-east-horizontal-border: #0e0f11
-  --ge-table-footer-east-vertical-border: #0e0f11
-  --ge-table-footer-west-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-footer-center-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-footer-east-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-footer-west-selected-range-text: #fff;
-  --ge-table-footer-center-selected-range-text: #fff;
-  --ge-table-footer-east-selected-range-text: #fff;
-  --ge-table-border: #000000;
-  --ge-table-selected-range-bg: rgba(0, 140, 255, 0.2);
-  --ge-table-row-odd-bg: #2c2e33
-  --ge-table-row-even-bg: #2c2e33
-  --ge-table-column-odd-bg: #2c2e33
-  --ge-table-column-even-bg: #2c2e33
+  --ge-table-footer-west-horizontal-border: oklch(0% 0 0)
+  --ge-table-footer-west-vertical-border: oklch(0% 0 0)
+  --ge-table-footer-center-horizontal-border: oklch(0% 0 0)
+  --ge-table-footer-center-vertical-border: oklch(0% 0 0)
+  --ge-table-footer-east-horizontal-border: oklch(0% 0 0)
+  --ge-table-footer-east-vertical-border: oklch(0% 0 0)
+  --ge-table-footer-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-footer-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-footer-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-footer-west-selected-range-text: oklch(100% 0 0)
+  --ge-table-footer-center-selected-range-text: oklch(100% 0 0)
+  --ge-table-footer-east-selected-range-text: oklch(100% 0 0)
+  --ge-table-border: oklch(0% 0 0)
+  --ge-table-selected-range-bg: oklch(2% 0.26 237.6 / 55%)
+  --ge-table-row-odd-bg: oklch(100% 0 0 / 0%)
+  --ge-table-row-even-bg: oklch(100% 0 0 / 0%)
+  --ge-table-column-odd-bg: oklch(100% 0 0 / 0%)
+  --ge-table-column-even-bg: oklch(100% 0 0 / 0%)
   --ge-table-hover-column-bg: #2c2e33
   --ge-table-hover-row-bg: #2c2e33
-  --ge-table-focus-border: #0e0f11
+  --ge-table-focus-border: oklch(0% 0 0)
   --ge-table-color-error-text: #dde1e9
   --ge-table-tree-arrow-collapsed-color: #e00034;
-  --ge-table-column-resize-handle-border: #0e0f11
+  --ge-table-column-resize-handle-border: oklch(0% 0 0)
   --ge-table-dragged-col-div-bg: #2c2e33
   --ge-table-drop-zone-bg: #2c2e33
 }
