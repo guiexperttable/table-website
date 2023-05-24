@@ -22,6 +22,7 @@ import { ThemeRowIf } from "../data/theme-row.If";
 import { debounceTime, takeWhile } from "rxjs";
 import { ExportDialogComponent } from "./exportdialog/export-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 @Component({
   selector: "app-custom-theme",
@@ -74,7 +75,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     getSelectionModel: () => this.selectionModel,
     externalFilterFunction: this.filterFn.bind(this)
   };
-  tableModel: TableModelIf | undefined = createThemeTableModel(this.tableOptions);
+  tableModel: TableModelIf | undefined = createThemeTableModel(this.tableOptions, false);
 
   public selectedHtml5PickerColor: string = "#000000";
   private filterService = new GeFilterService();
@@ -87,7 +88,8 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   constructor(
     public readonly dialog: MatDialog,
     private readonly elementRef: ElementRef,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly syncCssService: SyncCssService
   ) {
     for (let i = 0; i < 100; i++) {
       this.hueValues.push(i * 3.6);
@@ -122,10 +124,13 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     this.filter$.next(Date.now());
   }
 
-  setFilter(text: string) {
+  setFilter(text: string, select: boolean = true) {
     this.unSelectAll();
     this.filterText = text;
-    this.filter$.next(Date.now());
+    this.tableApi?.externalFilterChanged();
+    if (select) {
+      this.selectVisible();
+    }
   }
 
   onTableReady($event: TableApi) {
@@ -281,6 +286,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
         this.guiTable?.style.setProperty(r.id, this.cssString);
       });
       this.tableApi?.repaint();
+      this.syncCssService.messageBroadcast(m.getAllRows().map(r => [r.id, r.value]));
     }
   }
 
@@ -291,6 +297,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
         this.guiTable?.style.setProperty(r.id, r.value);
       });
       this.tableApi?.repaint();
+      this.syncCssService.messageBroadcast(m.getAllRows().map(r => [r.id, r.value]));
     }
   }
 }

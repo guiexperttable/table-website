@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from "@angular/core";
 import { TableApi, TableModelIf, TableOptionsIf } from "@guiexpert/table";
 import { COL_IDX_UPDATED_AT, createTimeTableModel, tableOptions } from "@guiexpert/demo-table-models";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
+import { takeWhile } from "rxjs/operators";
 
 @Component({
   selector: "timetable-demo",
@@ -8,7 +10,7 @@ import { COL_IDX_UPDATED_AT, createTimeTableModel, tableOptions } from "@guiexpe
   styleUrls: ["./timetable-demo.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TimetableDemoComponent {
+export class TimetableDemoComponent implements OnInit {
 
 
   tableModel?: TableModelIf = createTimeTableModel();
@@ -16,6 +18,32 @@ export class TimetableDemoComponent {
   running = true;
   private tableApi?: TableApi;
 
+  private alive = true;
+  private guiTable?: HTMLDivElement;
+
+
+  constructor(
+    private readonly syncCssService: SyncCssService,
+    private readonly elementRef: ElementRef
+  ) {
+  }
+
+  ngOnInit(): void {
+    this.guiTable = this.elementRef.nativeElement.querySelector("guiexpert-table");
+    this.syncCssService
+      .received$
+      .pipe(
+        takeWhile(() => this.alive)
+      )
+      .subscribe(this.syncCss.bind(this));
+  }
+
+  syncCss(arr: Array<[string, string]>) {
+    arr.forEach(k => {
+      this.guiTable?.style.setProperty(k[0], k[1]);
+    });
+    this.tableApi?.repaint();
+  }
 
   onTableReady(api: TableApi) {
     this.tableApi = api;

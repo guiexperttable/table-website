@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
@@ -7,26 +7,19 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
   styleUrls: ["./export-dialog.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExportDialogComponent implements OnInit, OnDestroy {
+export class ExportDialogComponent {
 
   public static DLG_OPTIONS = {
     height: "calc(100vh - 100px)",
     minHeight: "calc(100vh - 100px)",
     maxHeight: "calc(100vh - 100px)",
     width: "min(1000px, 100vw)",
-    restoreFocus: false,
+    restoreFocus: false
   };
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-  }
-
-
-  ngOnDestroy(): void {
-  }
-
-  ngOnInit(): void {
   }
 
 }
