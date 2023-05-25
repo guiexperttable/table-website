@@ -16,6 +16,8 @@ import { TimetableDemoModule } from "../demos/timetable/timetable-demo.module";
 import { MatButtonModule } from "@angular/material/button";
 import { CryptoTop100Module } from "../demos/cryptotop/crypto-top-100.module";
 import { MatIconModule } from "@angular/material/icon";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { FormsModule } from "@angular/forms";
 
 
 const routes: Routes = [
@@ -45,7 +47,9 @@ const routes: Routes = [
     MatDividerModule,
     MatButtonModule,
     CryptoTop100Module,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   exports: [RouterModule]
 })

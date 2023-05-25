@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit } from "@angular/core";
 import { TableApi, TableModelIf, TableOptionsIf } from "@guiexpert/table";
 import { COL_IDX_UPDATED_AT, createTimeTableModel, tableOptions } from "@guiexpert/demo-table-models";
 import { SyncCssService } from "../../common/syncdata/sync-css.service";
@@ -16,8 +16,9 @@ export class TimetableDemoComponent implements OnInit {
   tableModel?: TableModelIf = createTimeTableModel();
   tableOptions: TableOptionsIf = tableOptions;
   running = true;
-  private tableApi?: TableApi;
+  @Input() freezeUi = false;
 
+  private tableApi?: TableApi;
   private alive = true;
   private guiTable?: HTMLDivElement;
 
@@ -59,32 +60,33 @@ export class TimetableDemoComponent implements OnInit {
     //    this.tableApi?.updateCells([new TableCellUpdateEvent("body", row, col, val)]);
     // but because we have to  calculate the footer cells we
     // do an update of the model directly and trigger a table repaint() at the end:
+    if (!this.freezeUi) {
+      const bodyModel = this.tableModel?.getBodyModel();
+      const footerModel = this.tableModel?.getAreaModel("footer");
+      if (this.tableApi && bodyModel && footerModel) {
+        const eventCount = Math.round(1 + 3 * Math.random());
+        const rowMax = (bodyModel?.getRowCount() ?? 0) - 1;
+        const now = new Date();
 
-    const bodyModel = this.tableModel?.getBodyModel();
-    const footerModel = this.tableModel?.getAreaModel("footer");
-    if (this.tableApi && bodyModel && footerModel) {
-      const eventCount = Math.round(1 + 3 * Math.random());
-      const rowMax = (bodyModel?.getRowCount() ?? 0) - 1;
-      const now = new Date();
-
-      for (let i = 0; i < eventCount; i++) {
-        const val = Math.floor(999 * Math.random());
-        const col = this.rndm(4, COL_IDX_UPDATED_AT - 1);
-        const row = this.rndm(0, rowMax);
-        // Update value cell and timestamp cell:
-        bodyModel.setValue(row, col, val);
-        bodyModel.setValue(row, COL_IDX_UPDATED_AT, now);
-      }
-      // Calculate the column sum:
-      for (let c = 4; c < COL_IDX_UPDATED_AT; c++) {
-        let sum = 0;
-        for (let r = 0; r < rowMax; r++) {
-          sum = sum + bodyModel.getValueAt(r, c);
+        for (let i = 0; i < eventCount; i++) {
+          const val = Math.floor(999 * Math.random());
+          const col = this.rndm(4, COL_IDX_UPDATED_AT - 1);
+          const row = this.rndm(0, rowMax);
+          // Update value cell and timestamp cell:
+          bodyModel.setValue(row, col, val);
+          bodyModel.setValue(row, COL_IDX_UPDATED_AT, now);
         }
-        // Update footer:
-        footerModel.setValue(0, c, sum);
+        // Calculate the column sum:
+        for (let c = 4; c < COL_IDX_UPDATED_AT; c++) {
+          let sum = 0;
+          for (let r = 0; r < rowMax; r++) {
+            sum = sum + bodyModel.getValueAt(r, c);
+          }
+          // Update footer:
+          footerModel.setValue(0, c, sum);
+        }
+        this.tableApi.repaint();
       }
-      this.tableApi.repaint();
     }
     setTimeout(() => {
       requestAnimationFrame(this.sendUpdateTableModelEvents.bind(this));
