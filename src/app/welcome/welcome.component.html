@@ -1,5 +1,6 @@
-<section class="ge-header ge-padding">
+<section class="ge-header ge-padding center-all">
 
+  <div>
   <h1>
     <div class="logo">
       <guiexpert-logo [mode]="'monocolor-black'" [size]="50"></guiexpert-logo>
@@ -81,7 +82,7 @@
     </div>
   </div>
 
-  <div class="gap"></div>
+  </div>
 </section>
 
 <div class="hero-scroll-down">
@@ -140,8 +141,8 @@
   </div>
 </section>
 
-<section>
-  <div class="ge-table-header-bg">
+<section class="ge-table-header-bg">
+  <div >
     <div class="ge-padding">
       <div class="demo-grid">
         <h3>Demo</h3>
@@ -170,9 +171,8 @@
 </section>
 
 
-<div class="gap"></div>
 
-<section class="ge-padding min-height-60vh">
+<section class="ge-padding">
   <h2>Get Started - Choose your framework:</h2>
   <div class="gap"></div>
 
@@ -264,16 +264,35 @@
       </div>
       <button [routerLink]="['/getstarted','plainjs']" href="#" mat-button>Plain JS</button>
     </div>
+  </div>
 
 
+</section>
+
+<section class="ge-footer-section">
+  <div></div>
+  <div class="ge-footer">
+    <a href="#" mat-list-item routerLink="/law/imprint">
+      <mat-icon>import_contacts</mat-icon>
+      Imprint
+    </a>
+
+    <a
+      href="#"
+      mat-list-item
+      routerLink="/law/cou">
+      <mat-icon>gavel</mat-icon>
+      Conditions of Use
+    </a>
+
+    <a href="#" mat-list-item routerLink="/law/privacy">
+      <mat-icon>sentiment_satisfied_alt</mat-icon>
+      Privacy Policy
+    </a>
   </div>
 </section>
 
-<div class="gap"></div>
 
 
-<div class="ge-footer ">
-  <div class="ge-padding">
-  </div>
-</div>
+
 

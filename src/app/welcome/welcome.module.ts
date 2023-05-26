@@ -18,6 +18,7 @@ import { CryptoTop100Module } from "../demos/cryptotop/crypto-top-100.module";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { FormsModule } from "@angular/forms";
+import { MatListModule } from "@angular/material/list";
 
 
 const routes: Routes = [
@@ -49,7 +50,8 @@ const routes: Routes = [
     CryptoTop100Module,
     MatIconModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   exports: [RouterModule]
 })
