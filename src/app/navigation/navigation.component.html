@@ -1,4 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
+
   <mat-sidenav
     #drawer
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -7,7 +8,7 @@
     class="sidenav"
     fixedInViewport>
     <mat-toolbar>
-      guiexpert/table
+      <guiexpert-logo [mode]="'monocolor-black'" [size]="24"></guiexpert-logo> guiexpert/table
     </mat-toolbar>
 
     <mat-nav-list>
@@ -164,26 +165,19 @@
     </div>
 
 
-    <!--div *ngIf="footerVisible" class="ge-footer ge-padding">
-      <a href="#" mat-list-item routerLink="/law/imprint">
-        <mat-icon>import_contacts</mat-icon>
-        Imprint
-      </a>
 
-      <a
-        href="#"
-        mat-list-item
-        routerLink="/law/cou">
-        <mat-icon>gavel</mat-icon>
-        Conditions of Use
-      </a>
-
-      <a href="#" mat-list-item routerLink="/law/privacy">
-        <mat-icon>sentiment_satisfied_alt</mat-icon>
-        Privacy Policy
-      </a>
-    </div-->
+    <button
+      class="side-nav-toggle-fab-btn"
+      (click)="drawer.toggle()"
+      *ngIf="!toolbarVisible && (menuForcedClosed || (isHandset$ | async))"
+      aria-label="Toggle sidenav"
+      mat-mini-fab
+      color="primary"
+      type="button">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 

@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   private static readonly config = {
     routeTitles: {
-      home: "Welcome!",
+      home: "",
       angular: "Get Started Angular",
       vue: "Get Started Vue3",
       svelte: "Get Started Svelte",
@@ -44,7 +44,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   version = environment.version;
   commitHash = environment.commitHash;
-  title = "Welcome!";
+  title = "";
   fadein = true;
   lawInSidenavVisible = true;
   footerVisible = true;
@@ -94,7 +94,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
 
-        this.toolbarVisible = !evt.url.includes("/themes/custom/picker") && !evt.url.includes("/welcome");
+        this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker") && !evt.url.includes("/welcome");
         this.menuForcedClosed = evt.url.includes("/themes/");
         this.actionBarVisible = evt.url.includes("/demo/");
 
@@ -117,7 +117,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
         return;
       }
     }
-    this.setTitle("Welcome!");
+    this.setTitle("");
   }
 
   setTitle(title: string) {

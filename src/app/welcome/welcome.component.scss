@@ -177,7 +177,9 @@ h2 {
   position: relative;
   left: 50%;
   top: -80px;
-  overflow: clip;
+  overflow: visible;
+  width: 0;
+  height: 0;
 
   .mat-icon {
     font-size: 40px;
