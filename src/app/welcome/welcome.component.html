@@ -1,100 +1,37 @@
 <section class="ge-header ge-padding center-all">
+  <div class="hero-box">
 
-  <div>
-  <h1>
-    <div class="logo">
-      <guiexpert-logo [mode]="'monocolor-black'" [size]="50"></guiexpert-logo>
-    </div>
-  </h1>
-  <h1>
-    <div class="title">
-<!--      GuiExpert Table-->
-      Improve Your Data Display with @guiexpert/table
-    </div>
-  </h1>
-
-
-  <div class="center">
-    <h2 class="sub-title">
-
-<!--      Empowering the future with our versatile table component-->
-    </h2>
-
-
-    <div class="box">
-      <p>Fully-featured and highly customizable data grid.</p>
-      <!--p>It delivers outstanding performance and has no third-party dependencies.</p-->
-      <p>Outstanding performance & no third-party dependencies</p>
-      <p>
-        Available for Angular, Vue.js, React, Preact, Svelte, and Solid, and plain JavaScript.
-      </p>
-
-      <div class="logos-div">
-        <div>
-          <a [routerLink]="['/getstarted','angular']" href="#">
-            <app-angular-logo />
-          </a>
-        </div>
-
-        <div>
-          <a [routerLink]="['/getstarted','vue']" href="#">
-            <app-vue-logo />
-          </a>
-        </div>
-
-        <div>
-          <a [routerLink]="['/getstarted','react']" href="#">
-            <app-react-logo />
-          </a>
-        </div>
-
-        <div>
-          <a [routerLink]="['/getstarted','preact']" href="#">
-            <app-preact-logo />
-          </a>
-        </div>
-
-        <div>
-          <div style="padding: 0 5px">
-            <a [routerLink]="['/getstarted','svelte']" href="#">
-              <app-svelte-logo />
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <a [routerLink]="['/getstarted','solid']" href="#">
-            <app-solid-logo />
-          </a>
-        </div>
-
-        <div>
-          <a [routerLink]="['/getstarted','webcomponent']" href="#">
-            <app-web-component-logo />
-          </a>
-        </div>
-
-        <div>
-          <a [routerLink]="['/getstarted','plainjs']" href="#">
-            <app-js-logo />
-          </a>
-        </div>
+    <div class="left">
+      <div class="hero-big">
+        Improve your data display with @guiexpert/table
       </div>
-      <div class="clear-both"></div>
+      <div class="hero-medium">
+        Handle large datasets easily.
+      </div>
+      <div class="hero-medium">
+        Fully-featured <!--(advanced sorting and filtering) -->and highly customizable data grid.
+      </div>
+      <div class="hero-medium">
+        Outstanding performance & no third-party dependencies
+      </div>
     </div>
-  </div>
+
+    <div class="right">
+      <img src="assets/img/hero_01.png" width="450px" height="450px">
+    </div>
 
   </div>
 </section>
-
 <div class="hero-scroll-down">
-  <mat-icon class="shake-vertical">expand_more</mat-icon>
+  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
-<section class="ge-padding">
-  <div class="center-all min-height-60vh">
-    <div class="flex-container">
-      <div>
+
+<section>
+  <div class="features-2">
+
+    <div class="box">
+      <div class="text-div">
         <h2>Features</h2>
         <ul dir="auto">
           <li>Excellent performance for <strong>large</strong> tables by vertical
@@ -106,8 +43,13 @@
           <li>Single and Multi Selection</li>
         </ul>
       </div>
+    </div>
+    <div class="box img-div">
+      <img src="assets/img/hero_01.png">
+    </div>
 
-      <div>
+    <div class="box">
+      <div class="text-div">
         <h2>Interaction</h2>
         <ul dir="auto">
           <li>Tree table (Hierarchical View)</li>
@@ -118,8 +60,13 @@
           <li>Userdefined Key and Mouse Events</li>
         </ul>
       </div>
+    </div>
+    <div class="box img-div">
+      <img src="assets/img/hero_01.png">
+    </div>
 
-      <div>
+    <div class="box">
+      <div class="text-div">
         <h2>Layout, Look & Feel</h2>
         <ul dir="auto">
           <li>Customizable Cell Contents via Renderer</li>
@@ -130,21 +77,32 @@
           <!--        <li><s>Keyboard Navigation</s></li>-->
         </ul>
       </div>
+    </div>
+    <div class="box img-div">
+      <img src="assets/img/hero_01.png">
+    </div>
 
-      <div>
+    <div class="box">
+      <div class="text-div">
         <h2>Usability</h2>
         <ul dir="auto">
-          <!--        <li><s>Copy / Paste</s></li>-->
+          <li><s>Copy / Paste</s></li>
           <li>Row and Column Spanning</li>
           <li>Fixed Columns (Left and Right)</li>
         </ul>
       </div>
     </div>
+    <div class="box img-div">
+      <img src="assets/img/hero_01.png">
+    </div>
   </div>
 </section>
+<div class="hero-scroll-down">
+  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+</div>
 
 <section class="ge-table-header-bg">
-  <div >
+  <div>
     <div class="ge-padding">
       <div class="demo-grid">
         <h3>Demo</h3>
@@ -171,130 +129,104 @@
     </div>
   </div>
 </section>
+<div class="hero-scroll-down">
+  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+</div>
 
 
+<section>
+  <div class="ge-padding">
+    <h2>Get Started - Choose your framework:</h2>
+    <div class="gap"></div>
 
-<section class="ge-padding">
-  <h2>Get Started - Choose your framework:</h2>
-  <div class="gap"></div>
-
-  <div class="auto-grid get-started-div">
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','angular']" href="#">
-            <app-angular-logo />
-          </a>
+    <div class="getstarted-grid get-started-div">
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','angular']" href="#">
+              <app-angular-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','angular']" mat-button>Angular</button>
       </div>
-      <button [routerLink]="['/getstarted','angular']" href="#" mat-button>Angular</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','vue']" href="#">
-            <app-vue-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','vue']" href="#">
+              <app-vue-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','vue']" mat-button>Vue</button>
       </div>
-      <button [routerLink]="['/getstarted','vue']" href="#" mat-button>Vue</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','react']" href="#">
-            <app-react-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','react']" href="#">
+              <app-react-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','react']" mat-button>React</button>
       </div>
-      <button [routerLink]="['/getstarted','react']" href="#" mat-button>React</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','preact']" href="#">
-            <app-preact-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','preact']" href="#">
+              <app-preact-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','preact']" mat-button>Preact</button>
       </div>
-      <button [routerLink]="['/getstarted','preact']" href="#" mat-button>Preact</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','svelte']" href="#">
-            <app-svelte-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','svelte']" href="#">
+              <app-svelte-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','svelte']" mat-button>Svelte</button>
       </div>
-      <button [routerLink]="['/getstarted','svelte']" href="#" mat-button>Svelte</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','solid']" href="#">
-            <app-solid-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','solid']" href="#">
+              <app-solid-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','solid']" mat-button>Solid</button>
       </div>
-      <button [routerLink]="['/getstarted','solid']" href="#" mat-button>Solid</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','webcomponent']" href="#">
-            <app-web-component-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','webcomponent']" href="#">
+              <app-web-component-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','webcomponent']" mat-button>Web Component</button>
       </div>
-      <button [routerLink]="['/getstarted','webcomponent']" href="#" mat-button>Web Component</button>
-    </div>
 
-    <div>
-      <div class="logo-outer">
-        <div class="logo">
-          <a [routerLink]="['/getstarted','plainjs']" href="#">
-            <app-js-logo />
-          </a>
+      <div>
+        <div class="logo-outer">
+          <div class="logo">
+            <a [routerLink]="['/getstarted','plainjs']" href="#">
+              <app-js-logo />
+            </a>
+          </div>
         </div>
+        <button [routerLink]="['/getstarted','plainjs']" mat-button>Plain JS</button>
       </div>
-      <button [routerLink]="['/getstarted','plainjs']" href="#" mat-button>Plain JS</button>
     </div>
   </div>
-
-
 </section>
-
-<section class="ge-footer-section">
-  <div></div>
-  <div class="ge-footer">
-    <a href="#" mat-list-item routerLink="/law/imprint">
-      <mat-icon>import_contacts</mat-icon>
-      Imprint
-    </a>
-
-    <a
-      href="#"
-      mat-list-item
-      routerLink="/law/cou">
-      <mat-icon>gavel</mat-icon>
-      Conditions of Use
-    </a>
-
-    <a href="#" mat-list-item routerLink="/law/privacy">
-      <mat-icon>sentiment_satisfied_alt</mat-icon>
-      Privacy Policy
-    </a>
-  </div>
-</section>
-
-
-
-
-
