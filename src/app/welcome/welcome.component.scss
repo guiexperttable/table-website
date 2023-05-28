@@ -29,6 +29,7 @@ section {
   --p:1;
 
   display:grid;
+  //noinspection CssInvalidFunction
   grid-template-columns:
     repeat(auto-fill,
       minmax(
