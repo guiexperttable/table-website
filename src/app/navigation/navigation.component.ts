@@ -134,7 +134,4 @@ export class NavigationComponent implements OnInit, OnDestroy {
       'left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0')
   }
 
-  drawerToggle() {
-    this.mainNav?.toggle()
-  }
 }
