@@ -9,7 +9,7 @@ export class SyncCssService extends SyncDataService<Array<[string, string]>> {
     super(hash);
   }
 
-  sync(hash: string, nativeElement: any, gettableApi: () => TableApi | undefined, predicate: () => boolean) {
+  sync(nativeElement: any, gettableApi: () => TableApi | undefined, predicate: () => boolean) {
     this.received$
       .pipe(
         takeWhile(predicate)

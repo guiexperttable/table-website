@@ -144,7 +144,7 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
     // Color picker sync:
     const m = location.pathname.match(/\/demo\/(.*?)\/run/);
     if (m && m[1]) {
-      new SyncCssService(m[1]).sync(m[1], this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
     }
   }
 

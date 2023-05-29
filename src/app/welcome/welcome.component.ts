@@ -23,4 +23,11 @@ export class WelcomeComponent {
       behavior: "smooth"
     });
   }
+
+  openCustomThemePicker() {
+    window.open(
+      "http://localhost:4200/themes/custom/picker#welcome",
+      "_blank",
+      "left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0");
+  }
 }

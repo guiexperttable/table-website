@@ -16,8 +16,9 @@ export class TimetableDemoComponent implements OnInit {
   tableOptions: TableOptionsIf = tableOptions;
   running = true;
   @Input() freezeUi = false;
+  @Input() forcedColorPickerHash = "";
 
-  private tableApi?: TableApi;
+  tableApi?: TableApi;
   private alive = true;
 
 
@@ -26,10 +27,18 @@ export class TimetableDemoComponent implements OnInit {
   ) {
   }
 
+
   ngOnInit(): void {
-    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
-    if (m && m[1]) {
-      new SyncCssService(m[1]).sync(m[1], this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    if (this.forcedColorPickerHash) {
+      new SyncCssService(this.forcedColorPickerHash)
+        .sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+
+    } else {
+      const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+      if (m && m[1]) {
+        new SyncCssService(m[1])
+          .sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+      }
     }
   }
 
