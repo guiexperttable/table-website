@@ -120,14 +120,12 @@
   <div class="ge-padding">
     <h2>Demo</h2>
     <div class="demo-grid">
-      <mat-checkbox class="example-margin" [(ngModel)]="freezeUi">no updates</mat-checkbox>
 
-      <button
-        (click)="openCustomThemePicker()"
-        title="Custom Theme"
-        mat-icon-button>
-        <mat-icon>palette</mat-icon>
+      <button mat-flat-button (click)="openCustomThemePicker()">
+        Custom Theme
       </button>
+
+      <mat-checkbox class="example-margin" [(ngModel)]="freezeUi">no updates</mat-checkbox>
     </div>
   </div>
 

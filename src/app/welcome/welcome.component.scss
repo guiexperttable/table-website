@@ -147,8 +147,9 @@ section {
 
 
 .demo-grid {
-  display: grid;
-  grid-template-columns: 1fr 163px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
 }
 
 .getstarted-grid {

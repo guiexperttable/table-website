@@ -9,6 +9,7 @@
   src: url('assets/fonts/roboto-v30-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
   url('assets/fonts/roboto-v30-latin-300.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* roboto-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -18,6 +19,7 @@
   src: url('assets/fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
   url('assets/fonts/roboto-v30-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* roboto-500 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -101,7 +103,7 @@ html, body {
 }
 
 :root {
- --mdc-theme-primary: #008a02;
+  --mdc-theme-primary: #008a02;
 }
 
 guiexpert-table-doc-root {
@@ -274,6 +276,7 @@ html {
 .mat-mdc-card {
   background-color: #fafafa !important;
 }
+
 //.stripes-green .mat-mdc-card,
 //.stripes-green {
 //  background: repeating-linear-gradient(
@@ -285,28 +288,33 @@ html {
 //  ) !important;
 //}
 
-.mat-thumb-only{
+.mat-thumb-only {
   .mdc-slider__track {
     display: none !important;
   }
+
   .mat-mdc-slider .mdc-slider__thumb--focused .mdc-slider__thumb-knob,
   .mat-mdc-slider .mdc-slider__thumb-knob {
     background-color: yellow;
     border: solid 1px #000000;
   }
 }
-.mat-mdc-form-field-bottom-align{
+
+.mat-mdc-form-field-bottom-align {
   display: none;
 }
+
 .dark {
   .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input,
   .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-floating-label {
     color: #fff;
   }
+
   .mdc-text-field--filled:not(.mdc-text-field--disabled) {
     background: #2b2e33;
   }
-  .mdc-text-field--filled .mdc-line-ripple::after{
+
+  .mdc-text-field--filled .mdc-line-ripple::after {
     border-bottom-color: #00ee4d;
   }
 }
@@ -324,4 +332,8 @@ html {
   --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
   --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
   --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54)
+}
+
+.mat-mdc-fab{
+  background-color: #fff !important;
 }
