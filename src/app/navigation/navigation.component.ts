@@ -54,6 +54,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   runLink = "";
   infoLink = "";
   menuForcedClosed = false;
+  picker = location.href.includes("/picker"); // Once a picker, always a picker.
 
   protected readonly location = location;
   protected readonly toolbar = toolbar;
@@ -95,7 +96,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/demo");
 
         this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker") && !evt.url.includes("/welcome");
-        this.menuForcedClosed = evt.url.includes("/themes/");
+        this.menuForcedClosed = evt.url.includes("/themes/custom");
         this.actionBarVisible = evt.url.includes("/demo/");
 
         const p = evt.url.replace("info", "").replace("run", "");
@@ -131,5 +132,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
       'http://localhost:4200/themes/custom/picker',
       'custom_picker',
       'left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0')
+  }
+
+  drawerToggle() {
+    this.mainNav?.toggle()
   }
 }

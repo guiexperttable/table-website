@@ -4,7 +4,7 @@
     #drawer
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!menuForcedClosed && (isHandset$ | async) === false"
+    [opened]="!picker && !menuForcedClosed && (isHandset$ | async) === false"
     class="sidenav"
     fixedInViewport>
     <mat-toolbar>
@@ -107,7 +107,7 @@
       color="primary">
       <button
         (click)="drawer.toggle()"
-        *ngIf="menuForcedClosed || (isHandset$ | async)"
+        *ngIf="(menuForcedClosed || (isHandset$ | async))"
         aria-label="Toggle sidenav"
         mat-icon-button
         type="button">
@@ -169,7 +169,7 @@
     <button
       class="side-nav-toggle-fab-btn"
       (click)="drawer.toggle()"
-      *ngIf="!toolbarVisible && (menuForcedClosed || (isHandset$ | async))"
+      *ngIf="!picker && !toolbarVisible && (menuForcedClosed || (isHandset$ | async))"
       aria-label="Toggle sidenav"
       mat-mini-fab
       color="primary"
