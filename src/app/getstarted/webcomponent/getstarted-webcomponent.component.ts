@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 @Component({
   selector: "app-get-started-webcomponent",
   templateUrl: "./getstarted-webcomponent.component.html",
-  styleUrls: ["./getstarted-webcomponent.component.scss"],
+  styleUrls: ["../common/getstarted.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GetstartedWebcomponentComponent {

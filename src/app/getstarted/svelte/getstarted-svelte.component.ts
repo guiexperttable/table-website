@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 @Component({
   selector: "app-get-started-svelte",
   templateUrl: "./getstarted-svelte.component.html",
-  styleUrls: ["./getstarted-svelte.component.scss"],
+  styleUrls: ["../common/getstarted.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GetstartedSvelteComponent {

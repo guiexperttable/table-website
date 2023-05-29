@@ -9,6 +9,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { PreactLogoComponent } from "../../3p-logos/preact-logo.component";
 import { SourceCodeModule } from "../../common/code/source-code.module";
 import { CircleLetterModule } from "../../common/circle-letter.module";
+import { JsLogoComponent } from "../../3p-logos/js-logo.component";
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
     MatButtonModule,
     TableComponent,
     SourceCodeModule,
-    CircleLetterModule
+    CircleLetterModule,
+    JsLogoComponent
   ],
   exports: [RouterModule]
 })

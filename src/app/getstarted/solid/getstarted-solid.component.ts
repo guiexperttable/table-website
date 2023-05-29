@@ -5,7 +5,7 @@ import { GeMouseEvent } from "@guiexpert/table";
 @Component({
   selector: "app-get-started-solid",
   templateUrl: "./getstarted-solid.component.html",
-  styleUrls: ["./getstarted-solid.component.scss"],
+  styleUrls: ["../common/getstarted.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GetstartedSolidComponent {

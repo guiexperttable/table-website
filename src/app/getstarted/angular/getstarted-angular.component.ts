@@ -4,7 +4,9 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 @Component({
   selector: "app-get-started-angular",
   templateUrl: "./getstarted-angular.component.html",
-  styleUrls: ["./getstarted-angular.component.scss"],
+  styleUrls: [
+    "../common/getstarted.scss"
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GetstartedAngularComponent {
@@ -37,7 +39,7 @@ export class GetstartedAngularComponent {
     TableOptionsIf
   } from "@guiexpert/table";
 
-  tableModel: TableModelIf = TableModelFactory
+  TableModelIf = TableModelFactory
     .createByArrayOfArraysParams<any>(param: {
       columnLabels: [
         ['Header 1', 'Header 2']
@@ -48,7 +50,7 @@ export class GetstartedAngularComponent {
       ]
     };
 
-  tableOptions: TableOptionsIf = {
+  TableOptionsIf = {
       ...new TableOptions(),
       hoverColumnVisible: false,
       defaultRowHeights: {

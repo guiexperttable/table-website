@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 @Component({
   selector: "app-get-started-preact",
   templateUrl: "./getstarted-preact.component.html",
-  styleUrls: ["./getstarted-preact.component.scss"],
+  styleUrls: ["../common/getstarted.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GetstartedPreactComponent {

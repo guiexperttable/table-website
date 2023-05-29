@@ -105,7 +105,6 @@ html, body {
 }
 
 guiexpert-table-doc-root {
-  circle-letter,
   .mat-toolbar.mat-primary,
   .ge-header,
   .ge-header-bg {
@@ -113,46 +112,28 @@ guiexpert-table-doc-root {
     color: var(--ge-table-doc-dark-color);
   }
 
-  circle-letter {
-    border-color: var(--ge-table-doc-primary-color);
-  }
 
   &.api {
-    circle-letter,
     .mat-toolbar.mat-primary,
     .ge-header {
       background: var(--ge-table-doc-api-color);
       color: var(--ge-table-doc-dark-color);
     }
-
-    circle-letter {
-      border-color: var(--ge-table-doc-api-color);
-    }
   }
 
   &.doc {
-    circle-letter,
     .mat-toolbar.mat-primary,
     .ge-header {
       background: var(--ge-table-doc-doc-color);
       color: var(--ge-table-doc-light-color);
     }
-
-    circle-letter {
-      border-color: var(--ge-table-doc-doc-color);
-    }
   }
 
   &.demo {
-    circle-letter,
     .mat-toolbar.mat-primary,
     .ge-header {
       background: var(--ge-table-doc-demo-color);
       color: var(--ge-table-doc-dark-color);
-    }
-
-    circle-letter {
-      border-color: var(--ge-table-doc-demo-color);
     }
 
     .doc-content a:-webkit-any-link {
@@ -162,15 +143,10 @@ guiexpert-table-doc-root {
   }
 
   &.custom {
-    circle-letter,
     .mat-toolbar.mat-primary,
     .ge-header {
       background: var(--ge-table-doc-custom-color);
       color: var(--ge-table-doc-light-color);
-    }
-
-    circle-letter {
-      border-color: var(--ge-table-doc-demo-color);
     }
 
     .doc-content a:-webkit-any-link {
