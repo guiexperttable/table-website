@@ -4,7 +4,7 @@ import { TimetableDemoComponent } from "./timetable-demo.component";
 import { TableComponent } from "@guiexpert/angular-table";
 import { RouterModule } from "@angular/router";
 import { DemoTimetableInfoComponent } from "./info/demo-timetable-info.component";
-import { SyncCssDataModule } from "../../common/syncdata/sync-css-data.module";
+
 
 
 @NgModule({
@@ -23,8 +23,7 @@ import { SyncCssDataModule } from "../../common/syncdata/sync-css-data.module";
         path: "info",
         component: DemoTimetableInfoComponent
       }
-    ]),
-    SyncCssDataModule
+    ])
   ],
   exports: [
     TimetableDemoComponent

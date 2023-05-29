@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { SyncCssService } from "../../../common/syncdata/sync-css.service";
 import { CustomThemeComponent } from "../custom-theme.component";
@@ -12,14 +12,15 @@ import { TableOptions } from "@guiexpert/table";
 })
 export class SmallCustomThemeComponent extends CustomThemeComponent {
 
+  protected override syncCssService: SyncCssService;
+
 
   constructor(
     public override readonly dialog: MatDialog,
     protected override readonly elementRef: ElementRef,
-    protected override readonly cdr: ChangeDetectorRef,
-    protected override readonly syncCssService: SyncCssService
+    protected override readonly cdr: ChangeDetectorRef
   ) {
-    super(dialog, elementRef, cdr, syncCssService);
+    super(dialog, elementRef, cdr);
     this.bigScreen = false;
     this.tableOptions = {
       ...new TableOptions(),
@@ -29,6 +30,9 @@ export class SmallCustomThemeComponent extends CustomThemeComponent {
     };
     this.theme = "dark";
     this.light = false;
+
+    const hash = location.hash.replace(/#/g, "");
+    this.syncCssService = new SyncCssService(hash ? hash : "sync-css-vars");
   }
 
 }

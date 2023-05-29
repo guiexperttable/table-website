@@ -16,7 +16,6 @@ import { MatMenuModule } from "@angular/material/menu";
 import { ExportDialogComponent } from "./exportdialog/export-dialog.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { SourceCodeModule } from "../../common/code/source-code.module";
-import { SyncCssDataModule } from "../../common/syncdata/sync-css-data.module";
 import { SmallCustomThemeComponent } from "./picker/small-custom-theme.component";
 
 
@@ -53,8 +52,7 @@ const routes: Routes = [
     MatInputModule,
     MatMenuModule,
     MatDialogModule,
-    SourceCodeModule,
-    SyncCssDataModule
+    SourceCodeModule
   ],
   exports: [RouterModule]
 })

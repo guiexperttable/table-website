@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnDestroy,
+  OnInit
+} from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import {
   AutoRestoreOptions,
@@ -32,6 +40,7 @@ import {
 } from "@guiexpert/table";
 import { PersonIf } from "./data/person.if";
 import { debounceTime, takeWhile } from "rxjs";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 
 @Component({
@@ -101,7 +110,8 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly http: HttpClient,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly elementRef: ElementRef
   ) {
     for (const columnDef of this.columnDefs) {
       columnDef.sortable = TrueFn;
@@ -114,6 +124,8 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
     this.selectionModel.addSelection(new CellRange(0, 8, 0, 8));
     this.selectionModel.addSelection(new CellRange(5, 6, 10, 10));
   }
+
+
 
   ngOnInit(): void {
     this.http
@@ -128,6 +140,12 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.tableApi?.externalFilterChanged();
       });
+
+    // Color picker sync:
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(m[1], this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
   }
 
 

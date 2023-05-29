@@ -86,11 +86,13 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
 
   protected bigScreen = true;
 
+  protected syncCssService = new SyncCssService('sync-css-vars');
+
+
   constructor(
     public readonly dialog: MatDialog,
     protected readonly elementRef: ElementRef,
-    protected readonly cdr: ChangeDetectorRef,
-    protected readonly syncCssService: SyncCssService
+    protected readonly cdr: ChangeDetectorRef
   ) {
     for (let i = 0; i < 100; i++) {
       this.hueValues.push(i * 3.6);

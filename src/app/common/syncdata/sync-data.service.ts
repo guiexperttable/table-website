@@ -7,7 +7,7 @@ export class SyncDataService<T> {
 
 
   constructor(
-    private storageKey: string = "message"
+    public storageKey: string = "message"
   ) {
     window.addEventListener("storage", this.messageReceived.bind(this));
   }

@@ -128,10 +128,12 @@ export class NavigationComponent implements OnInit, OnDestroy {
   }
 
   openCustomThemePicker() {
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    const p = m ? "#" + m[1] : "";
     window.open(
-      'http://localhost:4200/themes/custom/picker',
-      'custom_picker',
-      'left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0')
+      "http://localhost:4200/themes/custom/picker" + p,
+      "custom_picker",
+      "left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0");
   }
 
 }
