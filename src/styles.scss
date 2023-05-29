@@ -225,30 +225,7 @@ guiexpert-table-doc-root .ge-footer {
   font-weight: bold;
 }
 
-/*
-.green-table {
-  --ge-table-color-error-text: #e00034;
-  --ge-table-color-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-color-col-resize-handle-hover-bg: rgb(0, 255, 255);
-  --ge-table-color-drop-zone: rgba(244, 255, 242, 0.6);
-  --ge-table-color-drop-zone-bg: rgba(244, 255, 242, 0.6);
-  --ge-table-color-dragged-col-div-bg: lightcyan;
-  --ge-table-color-focus-border-bg: rgb(0, 255, 255);
-  --ge-table-color-header-bg: transparent;
-  --ge-table-color-footer-bg: transparent;
-  --ge-table-color-body-west-bg: rgba(244, 244, 244, 0.5);
-  --ge-table-color-body-east-bg: rgba(244, 244, 244, 0.5);
-  --ge-table-color-hover-column-bg: rgba(0, 0, 0, 0.1);
-  --ge-table-color-hover-row-bg: rgba(0, 0, 0, 0.1);
-  --ge-table-color-west-fixed-column-border-bg: #333;
-  --ge-table-color-east-fixed-column-border-bg: #333;
-  --ge-table-color-footer-border-bg: #333;
-  --ge-table-color-header-border-bg: #333;
-  --ge-table-color-row-border-bg: rgba(0, 0, 0, 0.5);
-  --ge-table-color-column-border-bg: rgba(0, 0, 0, 0.1);
-  --ge-table-color-tree-arrow-collapsed-color: #e00034;
-}
-*/
+
 .doc-content > * + *,
 .doc-content > * + * + * {
   min-height: calc(100vh - 125px) !important;

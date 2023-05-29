@@ -27,12 +27,6 @@ export const COLOR_VARS_DARK = `
   --ge-table-header-center-vertical-border: oklch(0% 0 0);
   --ge-table-header-east-horizontal-border: oklch(0% 0 0);
   --ge-table-header-east-vertical-border: oklch(0% 0 0);
-  --ge-table-header-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
-  --ge-table-header-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
-  --ge-table-header-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
-  --ge-table-header-west-selected-range-text: oklch(100% 0 0);
-  --ge-table-header-center-selected-range-text: oklch(100% 0 0);
-  --ge-table-header-east-selected-range-text: oklch(100% 0 0);
   --ge-table-body-west-bg: #2c2e33;
   --ge-table-body-center-bg: #2c2e33;
   --ge-table-body-east-bg: #2c2e33;
@@ -63,12 +57,6 @@ export const COLOR_VARS_DARK = `
   --ge-table-footer-center-vertical-border: oklch(0% 0 0);
   --ge-table-footer-east-horizontal-border: oklch(0% 0 0);
   --ge-table-footer-east-vertical-border: oklch(0% 0 0);
-  --ge-table-footer-west-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
-  --ge-table-footer-center-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
-  --ge-table-footer-east-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
-  --ge-table-footer-west-selected-range-text: oklch(100% 0 0);
-  --ge-table-footer-center-selected-range-text: oklch(100% 0 0);
-  --ge-table-footer-east-selected-range-text: oklch(100% 0 0);
   --ge-table-border: oklch(0% 0 0);
   --ge-table-row-odd-bg: oklch(100% 0 0 / 0%);
   --ge-table-row-even-bg: oklch(100% 0 0 / 0%);
@@ -102,13 +90,6 @@ export const COLOR_VARS_LIGHT = `
   --ge-table-header-center-vertical-border: #ccc;
   --ge-table-header-east-horizontal-border: var(--ge-table-header-center-horizontal-border);
   --ge-table-header-east-vertical-border: var(--ge-table-header-center-vertical-border);
-
-  --ge-table-header-west-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-header-center-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-header-east-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-header-west-selected-range-text: #fff;
-  --ge-table-header-center-selected-range-text: #fff;
-  --ge-table-header-east-selected-range-text: #fff;
 
 
   --ge-table-body-west-bg: var(--ge-table-header-center-bg);
@@ -151,12 +132,6 @@ export const COLOR_VARS_LIGHT = `
   --ge-table-footer-east-horizontal-border: var(--ge-table-header-east-horizontal-border);
   --ge-table-footer-east-vertical-border: var(--ge-table-header-east-vertical-border);
 
-  --ge-table-footer-west-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-footer-center-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-footer-east-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-footer-west-selected-range-text: #fff;
-  --ge-table-footer-center-selected-range-text: #fff;
-  --ge-table-footer-east-selected-range-text: #fff;
 
   --ge-table-border : #ccc;
 
