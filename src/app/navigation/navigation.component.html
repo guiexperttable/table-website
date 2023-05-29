@@ -156,6 +156,7 @@
       </button>
 
       <button
+        *ngIf="customThemePickerButtonVisible"
         (click)="openCustomThemePicker()"
         color="primary"
         title="Custom Theme"

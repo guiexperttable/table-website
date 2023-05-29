@@ -50,6 +50,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   footerVisible = true;
   actionBarVisible = false;
   toolbarVisible = false;
+  customThemePickerButtonVisible = false;
 
   runLink = "";
   infoLink = "";
@@ -64,6 +65,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
     map(result => result.matches),
     shareReplay()
   );
+
+  private readonly customThemPickerDemos = ["simple", "treepeople", "timetable"];
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -98,6 +101,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
         this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker") && !evt.url.includes("/welcome");
         this.menuForcedClosed = evt.url.includes("/themes/custom");
         this.actionBarVisible = evt.url.includes("/demo/");
+        this.customThemePickerButtonVisible = this.isCustomThemePickerVisible(evt.url);
 
         const p = evt.url.replace("info", "").replace("run", "");
         this.infoLink = p + "/info";
@@ -132,8 +136,15 @@ export class NavigationComponent implements OnInit, OnDestroy {
     const p = m ? "#" + m[1] : "";
     window.open(
       "http://localhost:4200/themes/custom/picker" + p,
-      "custom_picker",
+      "_blank",
       "left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0");
   }
 
+  private isCustomThemePickerVisible(url: string) {
+    const m = url.match(/.*\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      return this.customThemPickerDemos.includes(m[1]);
+    }
+    return false;
+  }
 }
