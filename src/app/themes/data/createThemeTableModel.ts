@@ -70,7 +70,6 @@ export const COLOR_VARS_DARK = `
   --ge-table-footer-center-selected-range-text: oklch(100% 0 0);
   --ge-table-footer-east-selected-range-text: oklch(100% 0 0);
   --ge-table-border: oklch(0% 0 0);
-  --ge-table-selected-range-bg: oklch(2% 0.26 237.6 / 55%);
   --ge-table-row-odd-bg: oklch(100% 0 0 / 0%);
   --ge-table-row-even-bg: oklch(100% 0 0 / 0%);
   --ge-table-column-odd-bg: oklch(100% 0 0 / 0%);
@@ -159,9 +158,7 @@ export const COLOR_VARS_LIGHT = `
   --ge-table-footer-center-selected-range-text: #fff;
   --ge-table-footer-east-selected-range-text: #fff;
 
-
   --ge-table-border : #ccc;
-  --ge-table-selected-range-bg: rgba(0, 140, 255, 0.2);
 
   --ge-table-row-odd-bg: transparent;
   --ge-table-row-even-bg: transparent;
