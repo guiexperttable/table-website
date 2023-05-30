@@ -17,15 +17,19 @@
   <div class="toolbar">
     <mat-form-field appearance="fill">
       <mat-label>Filter</mat-label>
-      <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
+      <input
+        (keyup)="onKeyup()"
+        (dblclick)="setFilter('', false)"
+        (blur)="selectVisible()"
+        [(ngModel)]="filterText" matInput>
     </mat-form-field>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Filter Presets">
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setFilter('', false)">
-        All
+        Filter All
       </button>
       <button mat-menu-item (click)="setFilter('+bg -select -column -row -hover -drag -dropped')">
         Table Background
@@ -33,21 +37,22 @@
       <button mat-menu-item (click)="setFilter('+text -select')">
         All Text
       </button>
-      <button mat-menu-item (click)="setFilter('+border')">
-        All Border
-      </button>
-
       <button mat-menu-item (click)="setFilter('+body +text -selected')">
         Body Text
       </button>
       <button mat-menu-item (click)="setFilter('+body +bg')">
         Body Background
       </button>
+      <mat-divider></mat-divider>
       <button mat-menu-item (click)="setFilter('+header +text -selected')">
         Header Text
       </button>
       <button mat-menu-item (click)="setFilter('+header +bg')">
         Header Background
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="setFilter('+border')">
+        All Border
       </button>
       <button mat-menu-item (click)="setFilter('+horizontal +border')">
         Horizontal Border
@@ -55,6 +60,7 @@
       <button mat-menu-item (click)="setFilter('+vertical +border')">
         Vertical Border
       </button>
+      <mat-divider></mat-divider>
       <button mat-menu-item (click)="setFilter('+select +text')">
         Selection Text
       </button>
@@ -63,7 +69,29 @@
       </button>
     </mat-menu>
 
-    <button (click)="selectVisible()" mat-stroked-button>Select Visible</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Selection Macros">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu2="matMenu">
+      <button mat-menu-item (click)="selectItems()">Select All</button>
+      <button mat-menu-item (click)="selectItems('header')">Select Header</button>
+      <button mat-menu-item (click)="selectItems('body')">Select Body</button>
+      <button mat-menu-item (click)="selectItems('footer')">Select Footer</button>
+      <button mat-menu-item (click)="selectItems('range')">Select Range</button>
+      <button mat-menu-item (click)="selectItems('text')">Select Text</button>
+      <button mat-menu-item (click)="selectItems('bg')">Select Background</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="unselectItems()">Unselect All</button>
+      <button mat-menu-item (click)="unselectItems('header')">Unselect Header</button>
+      <button mat-menu-item (click)="unselectItems('body')">Unselect Body</button>
+      <button mat-menu-item (click)="unselectItems('footer')">Unselect Footer</button>
+      <button mat-menu-item (click)="unselectItems('range')">Unselect Range</button>
+      <button mat-menu-item (click)="unselectItems('text')">Unselect Text</button>
+      <button mat-menu-item (click)="unselectItems('bg')">Unselect Background</button>
+
+    </mat-menu>
+
+    <!--button (click)="selectVisible()" mat-stroked-button>Select Visible</button-->
     <button (click)="unSelectAll()" mat-stroked-button>Clear</button>
     <label>Sel: {{selectedCount}}</label>
     <label></label>

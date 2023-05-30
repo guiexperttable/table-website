@@ -86,7 +86,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
 
   protected bigScreen = true;
 
-  protected syncCssService = new SyncCssService('sync-css-vars');
+  protected syncCssService = new SyncCssService("sync-css-vars");
 
 
   constructor(
@@ -135,6 +135,38 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     this.tableApi?.externalFilterChanged();
     if (select) {
       this.selectVisible();
+    }
+  }
+
+  selectItems(what: string = "") {
+    const bodyModel = this.tableModel?.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+    if (bodyModel) {
+      const rc = bodyModel.getRowCount();
+      for (let i = 0; i < rc; i++) {
+        const key = bodyModel?.getValueAt(i, 1);
+        if (key.includes(what)){
+          bodyModel?.setValue(i, 0, true);
+        }
+      }
+      this.tableApi?.repaint();
+      this.selectedCount = bodyModel.getAllRows().filter(r => r.selected).length;
+      this.cdr.detectChanges();
+    }
+  }
+
+  unselectItems(what: string = "") {
+    const bodyModel = this.tableModel?.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+    if (bodyModel) {
+      const rc = bodyModel.getRowCount();
+      for (let i = 0; i < rc; i++) {
+        const key = bodyModel?.getValueAt(i, 1);
+        if (key.includes(what)){
+          bodyModel?.setValue(i, 0, false);
+        }
+      }
+      this.tableApi?.repaint();
+      this.selectedCount = bodyModel.getAllRows().filter(r => r.selected).length;
+      this.cdr.detectChanges();
     }
   }
 

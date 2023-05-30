@@ -89,9 +89,11 @@ section {
   justify-content: center;
 
   .hero-big {
-    font-size: 64px;
+    font-size: 66px;
     line-height: 66px;
-    margin-bottom: 66px;
+    margin-bottom: 44px;
+    font-weight: bold;
+    opacity: 0.95;
   }
 
   .hero-medium {
@@ -113,6 +115,16 @@ section {
     margin: 5px;
     justify-content: flex-end;
     justify-items: flex-end;
+
+    //.hero-table {
+    //  width: 500px;
+    //  height: 500px;
+    //  position: absolute;
+    //  > div {
+    //    transform-style: preserve-3d;
+    //    transform: perspective(400px) rotateY(40deg) scale(0.5) translateX(-165px) skewY(338deg);
+    //  }
+    //}
   }
   .hero-img {
     margin-left: 30px;
