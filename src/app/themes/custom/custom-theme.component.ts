@@ -170,6 +170,10 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
   }
 
+  setPredefinedTheme(theme: string){
+   console.info('setPredefinedTheme()', theme);
+  }
+
   onTableReady($event: TableApi) {
     this.tableApi = $event;
     if (this.filterText) {

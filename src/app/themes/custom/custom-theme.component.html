@@ -22,11 +22,17 @@
         (dblclick)="setFilter('', false)"
         (blur)="selectVisible()"
         [(ngModel)]="filterText" matInput>
+      <button
+        matSuffix
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        class="bg-transparent"
+        aria-label="Filter Presets">
+        <mat-icon class="bg-transparent">keyboard_arrow_down</mat-icon>
+      </button>
     </mat-form-field>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Filter Presets">
-      <mat-icon>more_vert</mat-icon>
-    </button>
+
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setFilter('', false)">
         Filter All
@@ -70,7 +76,7 @@
     </mat-menu>
 
     <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Selection Macros">
-      <mat-icon>keyboard_arrow_down</mat-icon>
+      <mat-icon>task_alt</mat-icon>
     </button>
     <mat-menu #menu2="matMenu">
       <button mat-menu-item (click)="selectItems()">Select All</button>
@@ -91,10 +97,18 @@
 
     </mat-menu>
 
-    <!--button (click)="selectVisible()" mat-stroked-button>Select Visible</button-->
     <button (click)="unSelectAll()" mat-stroked-button>Clear</button>
     <label>Sel: {{selectedCount}}</label>
     <label></label>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu3" aria-label="Selection Macros">
+      <mat-icon>palette</mat-icon>
+    </button>
+    <mat-menu #menu3="matMenu">
+      <button mat-menu-item (click)="setPredefinedTheme('Combat')">Combat</button>
+      <button mat-menu-item (click)="setPredefinedTheme('C64')">Combat</button>
+    </mat-menu>
+
 
     <button (click)="exportCss()" color="primary" mat-flat-button>Export...</button>
   </div>
