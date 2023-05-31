@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import {
@@ -15,6 +15,7 @@ import {
   TableOptionsIf
 } from "@guiexpert/table";
 import { SimplePersonIf } from "@guiexpert/demo-table-models";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 @Component({
   selector: "demo-idfilter",
@@ -39,10 +40,12 @@ export class DemoIdfilterComponent implements OnInit {
   filterMinimalId = 990;
 
   private tableApi?: TableApi;
+  private alive = true;
 
   constructor(
     private readonly http: HttpClient,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly elementRef: ElementRef
   ) {
   }
 
@@ -50,6 +53,15 @@ export class DemoIdfilterComponent implements OnInit {
     this.http
       .get<SimplePersonIf[]>("/assets/demo/persons1000.json")
       .subscribe(this.onDataLoaded.bind(this));
+    // init picker:
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
   }
 
 

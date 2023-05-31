@@ -66,7 +66,16 @@ export class NavigationComponent implements OnInit, OnDestroy {
     shareReplay()
   );
 
-  private readonly customThemPickerDemos = ["simple", "treepeople", "timetable"];
+  private readonly customThemePickerDemos = [
+    "simple",
+    "treepeople",
+    "timetable",
+    "prizes",
+    "mouseevent",
+    "rowandcolspan",
+    "idfilter",
+    "olympic"
+  ];
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -143,7 +152,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   private isCustomThemePickerVisible(url: string) {
     const m = url.match(/.*\/demo\/(.*?)\/run/);
     if (m && m[1]) {
-      return this.customThemPickerDemos.includes(m[1]);
+      return this.customThemePickerDemos.includes(m[1]);
     }
     return false;
   }

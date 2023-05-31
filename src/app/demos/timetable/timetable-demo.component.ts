@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, OnInit } from "@angular/core";
 import { TableApi, TableModelIf, TableOptionsIf } from "@guiexpert/table";
 import { COL_IDX_UPDATED_AT, createTimeTableModel, tableOptions } from "@guiexpert/demo-table-models";
 import { SyncCssService } from "../../common/syncdata/sync-css.service";
@@ -9,7 +9,7 @@ import { SyncCssService } from "../../common/syncdata/sync-css.service";
   styleUrls: ["./timetable-demo.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TimetableDemoComponent implements OnInit {
+export class TimetableDemoComponent implements OnInit, OnDestroy {
 
 
   tableModel?: TableModelIf = createTimeTableModel();
@@ -18,13 +18,22 @@ export class TimetableDemoComponent implements OnInit {
   @Input() freezeUi = false;
   @Input() forcedColorPickerHash = "";
 
-  tableApi?: TableApi;
+  private tableApi?: TableApi;
   private alive = true;
 
 
   constructor(
     private readonly elementRef: ElementRef
   ) {
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  onTableReady(api: TableApi) {
+    this.tableApi = api;
+    this.sendUpdateTableModelEvents();
   }
 
 
@@ -42,11 +51,6 @@ export class TimetableDemoComponent implements OnInit {
     }
   }
 
-
-  onTableReady(api: TableApi) {
-    this.tableApi = api;
-    this.sendUpdateTableModelEvents();
-  }
 
   sendUpdateTableModelEvents() {
     if (!this.running || !this.tableApi) {
@@ -93,4 +97,5 @@ export class TimetableDemoComponent implements OnInit {
   rndm(from: number, to: number) {
     return Math.min(to, Math.round(from + (to - from) * Math.random()));
   }
+
 }

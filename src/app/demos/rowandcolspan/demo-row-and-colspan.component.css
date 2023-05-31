@@ -10,17 +10,14 @@
 }
 
 
-::ng-deep demo-row-and-colspan .table-div .ge-table-col-div.bg-yellow,
-::ng-deep demo-row-and-colspan .table-div .ge-table-col-div.bg-yellow {
+:host ::ng-deep  .ge-table-col-div.bg-yellow {
   background-color: rgba(255, 255, 0, 0.5);
 }
 
-::ng-deep demo-row-and-colspan .table-div .ge-table-col-div.bg-cyan,
-::ng-deep demo-row-and-colspan .table-div .ge-table-col-div.bg-cyan {
+:host ::ng-deep  .ge-table-col-div.bg-cyan {
   background-color: rgba(0, 255, 255, 0.2);
 }
 
-::ng-deep demo-row-and-colspan .table-div .ge-table-col-div.bg-red,
-::ng-deep demo-row-and-colspan .table-div .ge-table-col-div.bg-red {
+:host ::ng-deep  .ge-table-col-div.bg-red {
   background-color: rgb(255, 240, 245, 0.8);
 }

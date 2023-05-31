@@ -1,28 +1,34 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
 import {
   AreaModelArrayOfArrays,
   ColumnDef,
   ColumnDefIf,
-  Size,
+  Size, TableApi,
   TableModelFactory,
   TableModelIf
 } from "@guiexpert/table";
 import { DemoRowAndColspanAreaModel } from "./demo-row-and-colspan-area-model";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 @Component({
   selector: "demo-row-and-colspan",
   templateUrl: "./demo-row-and-colspan.component.html",
   styleUrls: ["./demo-row-and-colspan.component.css"]
 })
-export class DemoRowAndColspanComponent {
+export class DemoRowAndColspanComponent implements OnInit, OnDestroy {
 
   tableModel: TableModelIf;
 
   private rowCount = 100;
   private columnCount = 100;
 
-  constructor() {
+  private tableApi?: TableApi;
+  private alive = true;
 
+
+  constructor(
+    private readonly elementRef: ElementRef
+  ) {
     const buf: string[][] = [];
     for (let r = 0; r < this.rowCount; r++) {
       const row: string[] = [];
@@ -55,5 +61,22 @@ export class DemoRowAndColspanComponent {
       columnDefs
     });
   }
+
+  ngOnInit(): void {
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  onTableReady(api: TableApi) {
+    this.tableApi = api;
+  }
+
+
 
 }

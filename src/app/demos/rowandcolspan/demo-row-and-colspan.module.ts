@@ -10,7 +10,7 @@ import { DemoRowAndColspanInfoComponent } from "./info/demo-row-and-colspan-info
     TableComponent,
     RouterModule.forChild([
       {
-        path: "tun",
+        path: "run",
         component: DemoRowAndColspanComponent
       },
       {

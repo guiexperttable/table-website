@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from "@angular/core";
-import { GeMouseEvent, TableModelFactory, TableModelIf } from "@guiexpert/table";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
+import { GeMouseEvent, TableApi, TableModelFactory, TableModelIf } from "@guiexpert/table";
 import { DemoMouseeventAreaModel } from "./demo-mouseevent-area-model";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 @Component({
   selector: "demo-mouseevent",
@@ -8,14 +9,19 @@ import { DemoMouseeventAreaModel } from "./demo-mouseevent-area-model";
   styleUrls: ["./demo-mouseevent.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DemoMouseeventComponent {
+export class DemoMouseeventComponent implements OnInit, OnDestroy {
 
   colCount = 40;
   tableModel: TableModelIf;
   debugHtml = "";
 
+  private tableApi?: TableApi;
+  private alive = true;
+
+
   constructor(
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly elementRef: ElementRef
   ) {
     const columnSizes: number[] = [];
     for (let i = 0; i < this.colCount; i++) {
@@ -29,6 +35,22 @@ export class DemoMouseeventComponent {
       overridingColumnWidth: 100
     });
     console.info(this.tableModel);
+  }
+
+
+  ngOnInit(): void {
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  onTableReady(api: TableApi) {
+    this.tableApi = api;
   }
 
 

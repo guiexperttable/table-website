@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, OnDestroy, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
@@ -17,6 +17,7 @@ import {
 } from "@guiexpert/table";
 import { OlympicIf } from "./olympic.if";
 import { debounceTime, takeWhile } from "rxjs";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 
 @Component({
@@ -52,7 +53,8 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly http: HttpClient,
-    private readonly cdr: ChangeDetectorRef
+    private readonly cdr: ChangeDetectorRef,
+    private readonly elementRef: ElementRef
   ) {
   }
 
@@ -70,6 +72,11 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
         console.info("this.filterText", this.filterText);
         this.tableApi?.externalFilterChanged();
       });
+
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
   }
 
 

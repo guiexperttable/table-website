@@ -21,9 +21,9 @@ export class CssColorCellRenderer implements CellRendererIf {
     _domService: DomServiceIf): RendererCleanupFnType | undefined {
 
     cellDiv.innerHTML = `
-        <div
-          style="width:100%;height:100%;margin:0;background:${cellValue} !important; "
-          class=""></div>`;
+      <div style="width:calc(100% - 2px);height:calc(100% - 2px);margin-left:1px; margin-top:1px;">
+          <div style="width:100%;height:100%;border-radius:50%;margin:0;background:${cellValue} !important;"></div>
+      </div>`;
     return undefined;
   }
 

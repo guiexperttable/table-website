@@ -1,4 +1,5 @@
 <guiexpert-table
+  *ngIf="tableModel"
   (modelChanged)="onModelChanged($event)"
   (tableReady)="onTableReady($event)"
   [tableIf]="!!tableModel"

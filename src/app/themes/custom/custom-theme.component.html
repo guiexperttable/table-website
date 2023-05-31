@@ -32,7 +32,6 @@
       </button>
     </mat-form-field>
 
-
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="setFilter('', false)">
         Filter All
@@ -46,7 +45,7 @@
       <button mat-menu-item (click)="setFilter('+body +text -selected')">
         Body Text
       </button>
-      <button mat-menu-item (click)="setFilter('+body +bg')">
+      <button mat-menu-item (click)="setFilter('+body +bg -selected')">
         Body Background
       </button>
       <mat-divider></mat-divider>

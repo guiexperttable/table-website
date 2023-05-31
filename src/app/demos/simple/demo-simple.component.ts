@@ -1,12 +1,16 @@
-import { Component } from "@angular/core";
-import { TableModelIf } from "@guiexpert/table";
+import { Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
+import { TableApi, TableModelIf } from "@guiexpert/table";
 import { generateSimpleModel } from "@guiexpert/demo-table-models";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 
 @Component({
   selector: "demo-simple",
   template: `
-    <guiexpert-table [tableModel]="tableModel"></guiexpert-table>`,
+    <guiexpert-table
+      [tableModel]="tableModel"
+      (tableReady)="onTableReady($event)"></guiexpert-table>`,
+
   styles: [`
     :host {
       display: grid;
@@ -20,9 +24,33 @@ import { generateSimpleModel } from "@guiexpert/demo-table-models";
     }
   `]
 })
-export class DemoSimpleComponent {
+export class DemoSimpleComponent implements OnInit, OnDestroy {
 
   tableModel: TableModelIf = generateSimpleModel(1000, 100);
+
+  private tableApi?: TableApi;
+  private alive = true;
+
+
+  constructor(
+    private readonly elementRef: ElementRef
+  ) {
+  }
+
+  ngOnInit(): void {
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  onTableReady(api: TableApi) {
+    this.tableApi = api;
+  }
 
 }
 

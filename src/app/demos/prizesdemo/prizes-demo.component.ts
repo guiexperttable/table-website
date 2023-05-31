@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
 import {
   ColumnDef,
-  ColumnDefIf,
+  ColumnDefIf, TableApi,
   TableModelFactory,
   TableModelIf,
   TableOptions,
@@ -9,6 +9,7 @@ import {
 } from "@guiexpert/table";
 import { PrizesDemoService } from "./prizes-demo.service";
 import { SimplePrize } from "./prizes.model";
+import { SyncCssService } from "../../common/syncdata/sync-css.service";
 
 @Component({
   selector: "prizes-demo",
@@ -16,7 +17,7 @@ import { SimplePrize } from "./prizes.model";
   styleUrls: ["./prizes-demo.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PrizesDemoComponent implements OnInit {
+export class PrizesDemoComponent implements OnInit, OnDestroy {
 
   tableModel?: TableModelIf;
   tableOptions: TableOptionsIf = {
@@ -30,11 +31,15 @@ export class PrizesDemoComponent implements OnInit {
     columnsDraggable: false,
     columnsResizable: true
   };
+
   private data: SimplePrize[] = [];
+  private tableApi?: TableApi;
+  private alive = true;
 
 
   constructor(
     private readonly prizesDemoService: PrizesDemoService,
+    private readonly elementRef: ElementRef,
     private readonly cdr: ChangeDetectorRef
   ) {
   }
@@ -43,6 +48,18 @@ export class PrizesDemoComponent implements OnInit {
     this.prizesDemoService
       .getSimplePrizes()
       .subscribe(this.onDataLoaded.bind(this));
+    const m = location.pathname.match(/\/demo\/(.*?)\/run/);
+    if (m && m[1]) {
+      new SyncCssService(m[1]).sync(this.elementRef.nativeElement, () => this.tableApi, () => this.alive);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  onTableReady(api: TableApi) {
+    this.tableApi = api;
   }
 
 
