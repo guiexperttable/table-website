@@ -195,19 +195,18 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
 
 
   private setValue(rowIndex: number, columnIndex: number, value: string): boolean {
-    const row: TreeRow<PersonIf> = this.tableModel?.getBodyRowByIndex(rowIndex);
-    const property = this.tableModel?.getColumnProperty(columnIndex);
-    let v: any = value;
-
-    if (property === "age") {
-      v = Number(value);
-      if (isNaN(v)) {
-        v = value;
+    if (this.tableModel) {
+      const property = this.tableModel.getColumnProperty(columnIndex);
+      let v: any = value;
+      if (property === "age") {
+        v = Number(value);
+        if (isNaN(v)) {
+          v = value;
+        }
       }
+      return this.tableModel.getBodyModel().setValue(rowIndex, columnIndex, v);
     }
-    // @ts-ignore
-    row.data[property] = v;
-    return true;
+    return false;
   }
 }
 
