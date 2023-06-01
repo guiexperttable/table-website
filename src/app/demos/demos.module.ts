@@ -1,17 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { DemosComponent } from "./demos.component";
 import { GeLogoModule } from "../ge-logo/ge-logo.module";
 import { BidiModule } from "@angular/cdk/bidi";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 
 const routes: Routes = [
-  {
-    path: "",
-    component: DemosComponent
-  },
   {
     path: "rowandcolspan", loadChildren: () =>
       import("../demos/rowandcolspan/demo-row-and-colspan.module").then(m => m.DemoRowAndColspanModule)
@@ -59,9 +54,6 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    DemosComponent
-  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

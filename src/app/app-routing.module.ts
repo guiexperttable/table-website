@@ -19,7 +19,15 @@ const routes: Routes = [
       import("./documentation/documentation.module").then(m => m.DocumentationModule)
   },
   {
+    path: "demos", loadChildren: () =>
+      import("./demos/demo-welcome.module").then(m => m.DemoWelcomeModule)
+  },
+  {
     path: "demo", loadChildren: () =>
+      import("./demos/demos.module").then(m => m.DemosModule)
+  },
+  {
+    path: "demos", loadChildren: () =>
       import("./demos/demos.module").then(m => m.DemosModule)
   },
   {

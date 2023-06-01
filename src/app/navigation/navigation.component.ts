@@ -26,7 +26,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
       plainjs: "Get Started Plain JS",
       webcomponent: "Get Started Web Component",
       getstarted: "Get Started",
-      demo: "",
+      demos: "",
+      demo: "Demo",
       api: "API",
       doc: "Documentation",
       privacy: "Privacy Policy",
@@ -100,6 +101,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       } else if (evt instanceof NavigationEnd) {
         this.matSidenavContent?.scrollTo({ top: 0, left: 0 });
         this.calcTitle(evt.url);
+
         this.lawInSidenavVisible = evt.url === "/" || evt.url.includes("/welcome") || evt.url.includes("/law");
         this.footerVisible =
           !evt.url.includes("/tsdoc")
@@ -107,6 +109,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
 
+        console.info("this.title", this.title);
         this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker") && !evt.url.includes("/welcome");
         this.menuForcedClosed = evt.url.includes("/themes/custom");
         this.actionBarVisible = evt.url.includes("/demo/");
@@ -121,8 +124,14 @@ export class NavigationComponent implements OnInit, OnDestroy {
   }
 
   calcTitle(url: string) {
-    url = url.replace(/\//g, "");
     const routeTitles = NavigationComponent.config.routeTitles;
+
+    url = url.replace(/\//g, "");
+    // TODO 'demo/simple/run' -> demosimple usw und 12 neue titles 'Demo Simple'
+    if (url.startsWith("demo") && url.length > 10) {
+      this.setTitle(routeTitles.demo);
+      return;
+    }
     const keys = Object.keys(routeTitles);
     for (const key of keys) {
       if (url.indexOf(key) > -1) {

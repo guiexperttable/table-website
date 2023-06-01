@@ -7,8 +7,15 @@
 }
 
 section {
-  min-height: 100vh;
+  min-height: 50vh;
   scroll-snap-align: start;
+}
+
+.hero {
+  height: calc(50vh - 60px);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
 }
 
 
@@ -60,15 +67,15 @@ section {
   }
 
   > :nth-child(4n+1) {
-    background-color: var(--ge-table-doc-demo-color);
-  }
-
-  > :nth-child(4n+2) {
     background-color: lighten(#f9ed06, 20%);
   }
 
+  > :nth-child(4n+2) {
+    background-color: lighten(#f9ed06, 30%);
+  }
+
   > :nth-child(4n+3) {
-    background-color: var(--ge-table-doc-api-color);
+    background-color: lighten(#f9ed06, 40%);
   }
 
   > :nth-child(4n) {
