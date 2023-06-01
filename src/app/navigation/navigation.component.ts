@@ -26,7 +26,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       plainjs: "Get Started Plain JS",
       webcomponent: "Get Started Web Component",
       getstarted: "Get Started",
-      demo: "Demos",
+      demo: "",
       api: "API",
       doc: "Documentation",
       privacy: "Privacy Policy",

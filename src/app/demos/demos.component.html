@@ -1,271 +1,328 @@
-<div class="ge-header ge-padding">
+<section class="demos-content">
 
-  <h1>
-    <div class="logo">
-      <guiexpert-logo [mode]="'monocolor-black'" [size]="50"></guiexpert-logo>
+  <div class="box">
+    <div class="text-div">
+      <h2>Simple Table: Array of Arrays Demo</h2>
+      <p>
+        An array of arrays data structure can be easily converted in a
+        <a [routerLink]="['/api/tsdoc','classes','TableModel.html']" href="#">TableModel</a>
+        with help of TableModelFactory
+        <a
+          href="/assets/docs/classes/TableModelFactory.html#createByArrayOfArray"
+          target="blank">.createByArrayOfArraysParams()</a>.
+        <br></p>
+      <button
+        [routerLink]="['/demo/simple/run']"
+        color="primary"
+        mat-button>
+        <mat-icon>chevron_right</mat-icon>
+        Open Simple Table
+      </button>
     </div>
-  </h1>
-  <h1>
-    <div class="title">
-      GuiExpert Table - Demos
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
     </div>
-  </h1>
-
-
-  <div class="center">
-    <h2 class="sub-title">
-      Empowering the future with our versatile and inclusive table component
-    </h2>
-
   </div>
 
-  <div class="gap"></div>
-</div>
-
-<div class="ge-padding min-height-content demo-welcome-content">
-
-
-  <div class="getstarted-grid">
-
-    <div>
-      <h2>Simple Table: Array of Arrays</h2>
-      An array of arrays data structure can be easily converted in a
-      <a [routerLink]="['/api/tsdoc','classes','TableModel.html']" href="#">TableModel</a>
-      with help of TableModelFactory
-      <a
-        href="/assets/docs/classes/TableModelFactory.html#createByArrayOfArray"
-        target="blank">.createByArrayOfArraysParams()</a>.
-      <br>
-      <button
-        [routerLink]="['/demo/simple/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Simple Table
-      </button>
+  <div class="box">
+    <div class="text-div">
+      <h2>Object Array Demo</h2>
+      <p>
+        The most common use case is an array of business objects.
+        This array can be easily converted to a table model.
+        An array of <a
+        [routerLink]="['/api/tsdoc/interfaces/ColumnDefIf.html']"
+        href="#">ColumnDefIf</a>s is used to define which object property is displayed in which table column.
+        <br>
+        <button
+          [routerLink]="['/demo/prizes/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Object Array
+        </button>
+      </p>
     </div>
-
-    <div>
-      <h2>Object Array</h2>
-      The most common use case is an array of business objects.
-      This array can be easily converted to a table model.
-      An array of <a
-      [routerLink]="['/api/tsdoc/interfaces/ColumnDefIf.html']"
-      href="#">ColumnDefIf</a>s is used to define which object property is displayed in which table column.
-      <br>
-      <button
-        [routerLink]="['/demo/prizes/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Object Array
-      </button>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
     </div>
+  </div>
 
-    <div>
-      <h2>Self-written Table Model</h2>
-      A table model does not necessarily need a data structure/object. You can write table models yourself,
-      as a developer you have full control over what is to be rendered in which cell. Here are a few examples:
-      <br>
-      <button
-        [routerLink]="['/demo/simple/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Table Model
-      </button>
+  <div class="box">
+    <div class="text-div">
+      <h2>Self-written Table Model Demo</h2>
+      <p>
+        A table model does not necessarily need a data structure/object. You can write table models yourself,
+        as a developer you have full control over what is to be rendered in which cell. Here are a few examples:
+        <br>
+        <button
+          [routerLink]="['/demo/simple/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Table Model
+        </button>
+      </p>
     </div>
-
-    <div>
-      <h2>Events</h2>
-      The table can send many different events.
-      In the following example, we demonstrate listening for mouse events.
-      <br>
-      <button
-        [routerLink]="['/demo/mouseevent/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Mouse Events
-      </button>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
     </div>
+  </div>
 
-    <!--div>
-      <h2> TODO Switching Look and Feel</h2>
-      There are many ways to change the style of the table.
-      Here we show how to change the global style using CSS
-      variables.
-      <br>
-      <button
-        [routerLink]="['/demo/simple/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Look & Feel
-      </button>
-    </div-->
-
-    <div>
-      <h2>Style of cells</h2>
-      The style of a table cell can be changed by setting a cell renderer,
-      by setting a cell class, and by setting a style.
-      <br>
-      <button
-        [routerLink]="['/demo/styledemo/simple/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Custom Renderer
-      </button>
-      <button
-        [routerLink]="['/demo/styledemo/heatmap/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Heatmap 1
-      </button>
-      <button
-        [routerLink]="['/demo/styledemo/heatmapseattle/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Heatmap 2
-      </button>
+  <div class="box">
+    <div class="text-div">
+      <h2>Events Demo</h2>
+      <p>
+        The table can send many different events.
+        In the following example, we demonstrate listening for mouse events.
+        <br>
+        <button
+          [routerLink]="['/demo/mouseevent/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Mouse Events
+        </button>
+      </p>
     </div>
-
-    <div>
-      <h2>Rowspan, Colspan</h2>
-      Row and colspan can be defined in the table body as well as in the header and footer.
-      <br>
-      <button
-        [routerLink]="['/demo/rowandcolspan/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Row/Colspan Demo
-      </button>
-      <button
-        [routerLink]="['/demo/timetable/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Time Table
-      </button>
-      <button
-        [routerLink]="['/demo/prizes/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Nobel Prizes
-      </button>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
     </div>
+  </div>
 
-    <div>
-      <h2>Tree Table by Tree Model</h2>
-      There are many ways to represent data hierarchically. We show here how to build tree tables.
-      <br>
-      <button
-        [routerLink]="['/demo/treepeople/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Tree Table (People)
-      </button>
+  <div class="box">
+    <div class="text-div">
+      <h2>TODO Switching Look and Feel Demo</h2>
+      <p>
+        There are many ways to change the style of the table.
+        Here we show how to change the global style using CSS
+        variables.
+        <br>
+        <button
+          [routerLink]="['/demo/simple/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Look & Feel
+        </button>
+      </p>
     </div>
-
-    <!--div>
-      <h2>Tree Table by Helper Function</h2>
-      Flat data can be grouped using helper functions and displayed as a tree table.
-      <br>
-      <button
-        [routerLink]="['/demo/tree2/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Tree Table Demo
-      </button>
-    </div-->
-
-    <div>
-      <h2>Using the Table API</h2>
-      After the first rendering of a table, a
-      <a [routerLink]="['/api/tsdoc','classes','TableApi.html']" href="#">TableApi</a>
-      service is emitted.
-      With this service, you can do a lot of things: change cell values,
-      change table column widths, scroll to a specific row, trigger a repaint, etc.
-      <br>
-      <button
-        [routerLink]="['/demo/idfilter/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Filtering (Slider)
-      </button>
-      <button
-        [routerLink]="['/demo/olympic/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Filtering (Input)
-      </button>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
     </div>
+  </div>
 
-
-    <div>
-      <h2>Edit Table Data</h2>
-      Data can not only be displayed but also edited by the user.
-      We show you how to do it here:
-      <br>
-      <button
-        [routerLink]="['/demo/treepeople/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Editing
-      </button>
+  <div class="box">
+    <div class="text-div">
+      <h2>Style of table cells (cell renderer) Demo</h2>
+      <p>
+        The style of a table cell can be changed by setting a cell renderer,
+        by setting a cell class, and by setting a style.
+        <br>
+        <button
+          [routerLink]="['/demo/styledemo/simple/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Custom Renderer
+        </button>
+        <button
+          [routerLink]="['/demo/styledemo/heatmap/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Heatmap 1
+        </button>
+        <button
+          [routerLink]="['/demo/styledemo/heatmapseattle/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Heatmap 2
+        </button>
+      </p>
     </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
 
-    <div>
+
+  <div class="box">
+    <div class="text-div">
+      <h2>Rowspan and Colspan Demo</h2>
+      <p>
+        Row and colspan can be defined in the table body as well as in the header and footer.
+        <br>
+        <button
+          [routerLink]="['/demo/rowandcolspan/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Row/Colspan Demo
+        </button>
+        <button
+          [routerLink]="['/demo/timetable/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Time Table
+        </button>
+        <button
+          [routerLink]="['/demo/prizes/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Nobel Prizes
+        </button>
+      </p>
+    </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
+
+
+  <div class="box">
+    <div class="text-div">
+      <h2>Tree Table by Tree Model Demo</h2>
+      <p>
+        There are many ways to represent data hierarchically. We show here how to build tree tables.
+        <br>
+        <button
+          [routerLink]="['/demo/treepeople/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Tree Table (People)
+        </button>
+      </p>
+    </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
+
+
+  <div class="box">
+    <div class="text-div">
+      <h2>TODO Tree Table by Helper Function Demo</h2>
+      <p>
+        Flat data can be grouped using helper functions and displayed as a tree table.
+        <br>
+        <button
+          [routerLink]="['/demo/tree2/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Tree Table Demo
+        </button>
+      </p>
+    </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="text-div">
+      <h2>Using the Table API Demo</h2>
+      <p>
+        After the first rendering of a table, a
+        <a [routerLink]="['/api/tsdoc','classes','TableApi.html']" href="#">TableApi</a>
+        service is emitted.
+        With this service, you can do a lot of things: change cell values,
+        change table column widths, scroll to a specific row, trigger a repaint, etc.
+        <br>
+        <button
+          [routerLink]="['/demo/idfilter/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Filtering (Slider)
+        </button>
+        <button
+          [routerLink]="['/demo/olympic/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Filtering (Input)
+        </button>
+      </p>
+    </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="text-div">
+      <h2>Edit Table Data Demo</h2>
+      <p>
+        Data can not only be displayed but also edited by the user.
+        We show you how to do it here:
+        <br>
+        <button
+          [routerLink]="['/demo/treepeople/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Editing
+        </button>
+      </p>
+    </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="text-div">
       <h2>High-Performance Updating of Table Cells</h2>
-      Financial dashboard applications often display rapidly changing data.
-      We show here how to do this with an incredible performance.
-      <br>
-      <button
-        [routerLink]="['/demo/crypto/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Crypto Table
-      </button>
-      <button
-        [routerLink]="['/demo/timetable/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Time Table
-      </button>
+      <p>
+        Financial dashboard applications often display rapidly changing data.
+        We show here how to do this with an incredible performance.
+        <br>
+        <button
+          [routerLink]="['/demo/crypto/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Crypto Table
+        </button>
+        <button
+          [routerLink]="['/demo/timetable/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Time Table
+        </button>
+      </p>
     </div>
-
-
-    <div>
-      <h2>Sorting</h2>
-      Sorting rows by header double click. Sorting columns by drag and drop.
-      <br>
-      <button
-        [routerLink]="['/demo/headerdblclick/run']"
-        color="primary"
-        mat-button>
-        <mat-icon>chevron_right</mat-icon>
-        Sorting
-      </button>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
     </div>
-
   </div>
 
-</div>
+  <div class="box">
+    <div class="text-div">
+      <h2>Sorting Demo</h2>
+      <p>
+        Sorting rows by header double click. Sorting columns by drag and drop.
+        <br>
+        <button
+          [routerLink]="['/demo/headerdblclick/run']"
+          color="primary"
+          mat-button>
+          <mat-icon>chevron_right</mat-icon>
+          Sorting
+        </button>
+      </p>
+    </div>
+    <div class="img-div">
+      <img alt="." src="assets/img/hero01.png">
+    </div>
+  </div>
 
-
-<div class="ge-footer">
-
-</div>
+</section>
 
