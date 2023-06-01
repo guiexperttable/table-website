@@ -54,6 +54,7 @@ section {
   gap: 0;
 
   > div {
+    scroll-snap-align: start;
     min-height: 50vh;
     padding-left: 16px;
 

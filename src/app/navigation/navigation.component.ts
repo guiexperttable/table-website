@@ -26,6 +26,21 @@ export class NavigationComponent implements OnInit, OnDestroy {
       plainjs: "Get Started Plain JS",
       webcomponent: "Get Started Web Component",
       getstarted: "Get Started",
+      demosimple: "Demo Simpe Model",
+      demoprizes: "Demo Nobel Prices",
+      demomouseevent: "Demo Mouse Events ",
+      demostyledemosimple: "Demo Simpe Cell Renderer",
+      demostyledemoheatmaptemp: "Demo Temperature Heatmap",
+      demostyledemoheatmapseattle: "Demo Seattle Annual Temperatures",
+      demorowandcolspan: "Demo Colspan & Rowspan",
+      demotimetable: "Demo Time Table",
+      demotreepeople: "Demo People Tree Table",
+      demolaf: "Demo Look and Feel (CSS)",
+      demoidfilter: "Demo Slider Filter",
+      demoolympic: "Demo Input Filter",
+      democrypto: "Demo Crypto Table",
+      demoheaderdblclick: "Demo Sorting Rows",
+
       demos: "",
       demo: "Demo",
       api: "API",
@@ -125,13 +140,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   calcTitle(url: string) {
     const routeTitles = NavigationComponent.config.routeTitles;
-
     url = url.replace(/\//g, "");
-    // TODO 'demo/simple/run' -> demosimple usw und 12 neue titles 'Demo Simple'
-    if (url.startsWith("demo") && url.length > 10) {
-      this.setTitle(routeTitles.demo);
-      return;
-    }
     const keys = Object.keys(routeTitles);
     for (const key of keys) {
       if (url.indexOf(key) > -1) {

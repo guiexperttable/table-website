@@ -35,11 +35,11 @@ import { DemoHeatmapSeattleModule } from "./heatmapseattle/demo-heatmap-seattle.
         component: DemoStyleInfoComponent
       },
       {
-        path: "heatmap/run",
+        path: "heatmaptemp/run",
         component: DemoHeatmapComponent
       },
       {
-        path: "heatmap/info",
+        path: "heatmaptemp/info",
         component: DemoHeatmapInfoComponent
       },
       {
