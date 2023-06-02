@@ -21,8 +21,8 @@ section {
 
 .demos-content {
   /* first breakpoint*/
-  --w1: 1200px;
-  --n: 3;
+  --w1: 1600px;
+  --n: 4;
   /* second breakpoint*/
   --w2: 800px;
   --m: 2;
@@ -53,10 +53,30 @@ section {
     );
   gap: 0;
 
-  > div {
+  > div.box {
     scroll-snap-align: start;
     min-height: 50vh;
-    padding-left: 16px;
+    padding: 0;
+
+    .text-div {
+      padding: 0 16px;
+      min-height: 25vh;
+    }
+    .img-div {
+      padding: 16px;
+      height: 25vh;
+      //
+      overflow: clip;
+
+      img {
+        aspect-ratio: 1;
+        border-radius: 50%;
+        max-width: min(25vh, 100%);
+      }
+      .img-bg {
+        //background: ;
+      }
+    }
 
     h2 {
       margin-top: 16px;
@@ -67,34 +87,35 @@ section {
     }
   }
 
-  > :nth-child(4n+1) {
-    background-color: lighten(#f9ed06, 20%);
+  > :nth-child(2n+1) {
+    background-color: lighten(#f9ed06, 50%);
   }
 
-  > :nth-child(4n+2) {
-    background-color: lighten(#f9ed06, 30%);
-  }
 
-  > :nth-child(4n+3) {
-    background-color: lighten(#f9ed06, 40%);
-  }
+  //> :nth-child(8n+1) {background-color: lighten(#f9ed06, 50%); }
+  //> :nth-child(8n+2) { background-color: lighten(#f9ed06, 45%); }
+  //> :nth-child(8n+3) {  background-color: lighten(#f9ed06, 40%); }
+  //> :nth-child(8n+4) {background-color: lighten(#f9ed06, 35%); }
+  //> :nth-child(8n+5) { background-color: lighten(#f9ed06, 30%); }
+  //> :nth-child(8n+6) {  background-color: lighten(#f9ed06, 25%); }
+  //> :nth-child(8n+7) {background-color: lighten(#f9ed06, 20%); }
 
-  > :nth-child(4n) {
-    background-color: #fff;
-  }
 
-  .img-div {
-    padding-top: 16px;
 
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-    }
-  }
 }
 
 .run-link {
   margin-top: 12px;
   margin-bottom: 12px;
 }
+
+/*
+.circle-animated:hover {
+  clip-path: circle(30% at 0%);
+  animation: look 5s infinite;
+}
+@keyframes look {
+  0% {clip-path: circle(30% at 0%)}
+  50% {clip-path: circle(30% at 100%)}
+}
+*/
