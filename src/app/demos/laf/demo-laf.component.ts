@@ -77,11 +77,9 @@ export class DemoLafComponent implements OnInit, OnDestroy {
   setTheme(theme: string) {
     // @ts-ignore
     const cssVars = CssVars.vars[theme];
-    console.info(cssVars);
     if (cssVars) {
       const nativeElement = this.elementRef.nativeElement;
       const kvs = this.cssVarString2KeyValueArray(cssVars);
-      console.info(kvs);
       kvs.forEach(k => {
         nativeElement.style.setProperty(k[0], k[1]);
       });

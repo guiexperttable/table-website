@@ -111,9 +111,9 @@ export const COLOR_VARS_LIGHT = `
   --ge-table-body-west-selected-range-bg: rgba(0, 152, 219, 0.4);
   --ge-table-body-center-selected-range-bg: rgba(0, 152, 219, 0.4);
   --ge-table-body-east-selected-range-bg: rgba(0, 152, 219, 0.4);
-  --ge-table-body-west-selected-range-text: #fff;
-  --ge-table-body-center-selected-range-text: #fff;
-  --ge-table-body-east-selected-range-text: #fff;
+  --ge-table-body-west-selected-range-text: #000;
+  --ge-table-body-center-selected-range-text: #000;
+  --ge-table-body-east-selected-range-text: #000;
 
 
 
