@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: "selfwritten", loadChildren: () =>
       import("../demos/selfwritten/demo-selfwritten.module").then(m => m.DemoSelfwrittenModule)
+  },
+  {
+    path: "laf", loadChildren: () =>
+      import("../demos/laf/demo-laf.module").then(m => m.DemoLafModule)
   }
 ];
 

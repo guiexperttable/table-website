@@ -1,0 +1,14 @@
+<div class="header">
+  <button
+    (click)="openCustomThemePicker()"
+    color="primary"
+    title="Custom Theme"
+    mat-stroked-button>
+    Custom Theme Creator
+  </button>
+  TODO predefined theme selector
+</div>
+
+<guiexpert-table
+  [tableModel]="tableModel"
+  (tableReady)="onTableReady($event)"></guiexpert-table>

@@ -90,7 +90,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
     "mouseevent",
     "rowandcolspan",
     "idfilter",
-    "olympic"
+    "olympic",
+    "laf",
   ];
 
   constructor(

@@ -10,7 +10,7 @@ import { SelfwrittenAreaModel } from "./selfwritten-area-model";
 
 
 @Component({
-  selector: "demo-simple",
+  selector: "demo-self-written",
   template: `
     <guiexpert-table  [tableModel]="tableModel"></guiexpert-table>`,
 
