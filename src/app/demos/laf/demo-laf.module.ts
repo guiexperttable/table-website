@@ -7,7 +7,7 @@ import { SourceCodeModule } from "../../common/code/source-code.module";
 import { CircleLetterModule } from "../../common/circle-letter.module";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
-import { NgIf } from "@angular/common";
+import { NgForOf, NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { NgIf } from "@angular/common";
     CircleLetterModule,
     MatButtonModule,
     MatIconModule,
-    NgIf
+    NgIf,
+    NgForOf
   ]
 })
 export class DemoLafModule {

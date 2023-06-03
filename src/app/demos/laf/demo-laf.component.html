@@ -6,7 +6,14 @@
     mat-stroked-button>
     Custom Theme Creator
   </button>
-  TODO predefined theme selector
+
+  <button
+    *ngFor="let theme of themes"
+    (click)="setTheme(theme)"
+    title="Custom Theme"
+    mat-stroked-button
+    [innerText]="theme"></button>
+
 </div>
 
 <guiexpert-table

@@ -13,6 +13,7 @@ import { ThemeRowIf } from "./theme-row.If";
 import { ThemeRow } from "./theme-row";
 import { CssColorCellRenderer } from "../table/css-color-cell-renderer";
 
+
 export const COLOR_VARS_DARK = `
 :root [data-theme="dark"] {
   --ge-table-header-west-bg: #252528;
