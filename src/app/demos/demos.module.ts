@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: "crypto", loadChildren: () =>
       import("../demos/cryptotop/crypto-top-100.module").then(m => m.CryptoTop100Module)
+  },
+  {
+    path: "selfwritten", loadChildren: () =>
+      import("../demos/selfwritten/demo-selfwritten.module").then(m => m.DemoSelfwrittenModule)
   }
 ];
 
