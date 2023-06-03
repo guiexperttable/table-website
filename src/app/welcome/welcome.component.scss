@@ -13,22 +13,20 @@ section {
 }
 
 
-
-
 // -------------------------------------
 
 .features-2 {
   /* first breakpoint*/
-  --w1:1200px;
-  --n:4;
+  --w1: 1200px;
+  --n: 4;
   /* second breakpoint*/
-  --w2:800px;
-  --m:2;
+  --w2: 800px;
+  --m: 2;
   /* third breakpoint*/
-  --w3:400px;
-  --p:1;
+  --w3: 400px;
+  --p: 1;
 
-  display:grid;
+  display: grid;
   //noinspection CssInvalidFunction
   grid-template-columns:
     repeat(auto-fill,
@@ -36,33 +34,37 @@ section {
           clamp(
             clamp(
               clamp(
-                100%/(var(--n) + 1) + 0.1%,
-                (var(--w1) - 100vw)*1000,
-                100%/(var(--m) + 1) + 0.1%
+                100% / (var(--n) + 1) + 0.1%,
+                (var(--w1) - 100vw) * 1000,
+                100% / (var(--m) + 1) + 0.1%
               ),
-              (var(--w2) - 100vw)*1000,
-              100%/(var(--p) + 1) + 0.1%
+              (var(--w2) - 100vw) * 1000,
+              100% / (var(--p) + 1) + 0.1%
             ),
-            (var(--w3) - 100vw)*1000,
+            (var(--w3) - 100vw) * 1000,
             100%
           ),
-        1fr
+          1fr
       )
     );
-  gap:10px;
+  gap: 10px;
 
   > div {
-    min-height:300px;
+    min-height: 300px;
     padding-left: 16px;
-    h2{
+
+    h2 {
       margin-top: 16px;
     }
+
     ul {
       padding-left: 12px;
     }
   }
-  .img-div{
+
+  .img-div {
     padding-top: 16px;
+
     img {
       width: 200px;
       height: 200px;
@@ -70,6 +72,7 @@ section {
     }
   }
 }
+
 @media (max-width: 800px) {
   // < 800
   .features-2 .box.img-div,
@@ -77,10 +80,8 @@ section {
     display: none;
   }
 }
+
 // -------------------------------------
-
-
-
 
 
 .hero-box {
@@ -103,29 +104,18 @@ section {
   }
 
   > .left {
-    //flex: 1 1 150px; /*  Stretching: */
-    flex: 0 1 150px; /*  No stretching: */
+    flex: 0 1 150px;
     margin: 5px;
   }
 
   > .right {
     display: flex;
-    //flex: 1 1 150px; /*  Stretching: */
-    flex: 0 1 150px; /*  No stretching: */
+    flex: 0 1 150px;
     margin: 5px;
     justify-content: flex-end;
     justify-items: flex-end;
-
-    //.hero-table {
-    //  width: 500px;
-    //  height: 500px;
-    //  position: absolute;
-    //  > div {
-    //    transform-style: preserve-3d;
-    //    transform: perspective(400px) rotateY(40deg) scale(0.5) translateX(-165px) skewY(338deg);
-    //  }
-    //}
   }
+
   .hero-img {
     margin-left: 30px;
     width: 500px;
