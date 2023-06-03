@@ -12,7 +12,7 @@ section {
 }
 
 .hero {
-  height: calc(50vh - 60px);
+  height: calc(50vh - 80px);
   display: grid;
   place-items: center;
   font-size: 18px;
@@ -63,10 +63,13 @@ section {
       min-height: 25vh;
     }
     .img-div {
-      padding: 16px;
+      padding: 0 16px 16px 0;
       height: 25vh;
-      //
       overflow: clip;
+      > div {
+        height: min(25vh, 100%);
+        width: 100%;
+      }
 
       img {
         aspect-ratio: 1;
