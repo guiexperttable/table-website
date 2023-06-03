@@ -1,7 +1,6 @@
 <div class="header">
   <button
     (click)="openCustomThemePicker()"
-    color="primary"
     title="Custom Theme"
     mat-stroked-button>
     Custom Theme Creator
@@ -11,7 +10,7 @@
     *ngFor="let theme of themes"
     (click)="setTheme(theme)"
     title="Custom Theme"
-    mat-stroked-button
+    mat-button
     [innerText]="theme"></button>
 
 </div>
