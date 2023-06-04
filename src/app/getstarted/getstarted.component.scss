@@ -2,31 +2,11 @@
   > div {
     min-height: 100vh;
   }
+  color:#fff;
 }
 
-h1 {
-  display: flex;
-  column-gap: 40px;
-  align-items: center;
-  justify-content: center;
 
-  > div {
-    display: inline-block;
-  }
 
-  .logo {
-    display: inline-block;
-    width: 40px;
-
-    .logo-fill-color-2 {
-      fill: rgba(0, 0, 0, 0.5)
-    }
-  }
-
-  .title {
-    font-size: 44px;
-  }
-}
 
 .sub-title {
   margin-top: 120px;
@@ -49,7 +29,7 @@ h1 {
   display: grid;
   place-items: center;
   gap: 1rem;
-  justify-content: center end;
+  justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(min(100px, 100px), 1fr));
 
   > div {
@@ -88,4 +68,6 @@ h1 {
   height: 50vh;
 }
 
-
+.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base {
+  color: #fff;
+}

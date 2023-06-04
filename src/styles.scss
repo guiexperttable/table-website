@@ -77,6 +77,33 @@ html, body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
+section {
+  scroll-snap-align: start;
+  &.min-height-100vh {
+    min-height: 100vh;
+  }
+  &.min-height {
+    min-height: calc(100vh - 64px);
+  }
+  &.padding-top {
+    padding-top: 64px;
+  }
+}
+section.dark {
+  min-height: calc(100vh - 64px);
+
+  background: rgb(2, 0, 36);
+  color: #fff;
+
+  &.radial-circle {
+    background: radial-gradient(circle,
+      oklch(67.29% 0.121 218.65) 0%,
+      oklch(0.22 0.1 275.09 / 0.89) 35%,
+      oklch(11.49% 0.063 276.97) 100%);
+  }
+
+}
+
 .ge-padding {
   padding: 16px;
 }
@@ -110,8 +137,9 @@ guiexpert-table-doc-root {
   .mat-toolbar.mat-primary,
   .ge-header,
   .ge-header-bg {
-    background: var(--ge-table-doc-primary-color);
-    color: var(--ge-table-doc-dark-color);
+    background: transparent;
+    color: #fff;
+    backdrop-filter: blur(23px);
   }
 
 
@@ -139,7 +167,7 @@ guiexpert-table-doc-root {
     }
 
     .doc-content a:-webkit-any-link {
-      color: #002d81 !important;
+      color: #0098db !important;
       text-decoration: none;
     }
   }
@@ -152,7 +180,7 @@ guiexpert-table-doc-root {
     }
 
     .doc-content a:-webkit-any-link {
-      color: #002d81 !important;
+      color: #0098db !important;
       text-decoration: none;
     }
   }

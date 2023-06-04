@@ -9,6 +9,10 @@
 section {
   min-height: 50vh;
   scroll-snap-align: start;
+
+  &.xxx {
+    min-height: 0;
+  }
 }
 
 .hero {
@@ -90,9 +94,9 @@ section {
     }
   }
 
-  > :nth-child(2n+1) {
-    background-color: lighten(#f9ed06, 50%);
-  }
+  //> :nth-child(2n+1) {
+  //  background-color: lighten(#f9ed06, 50%);
+  //}
 
 
   //> :nth-child(8n+1) {background-color: lighten(#f9ed06, 50%); }

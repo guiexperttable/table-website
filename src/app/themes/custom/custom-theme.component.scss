@@ -43,7 +43,7 @@ div.light-dark-div {
 div.toolbar {
   height: 60px;
   display: grid;
-  grid-template-columns: auto auto auto auto auto 1fr auto;
+  grid-template-columns: auto auto auto auto auto 1fr auto auto;
   grid-gap: 1rem;
   place-items: center;
 

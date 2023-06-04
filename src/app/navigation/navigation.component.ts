@@ -17,6 +17,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   private static readonly config = {
     routeTitles: {
       home: "",
+      welcome: "",
       angular: "Get Started Angular",
       vue: "Get Started Vue3",
       svelte: "Get Started Svelte",
@@ -66,13 +67,14 @@ export class NavigationComponent implements OnInit, OnDestroy {
   footerVisible = true;
   actionBarVisible = false;
   toolbarVisible = false;
+  customHeaderVisible = true;
   customThemePickerButtonVisible = false;
 
   runLink = "";
   infoLink = "";
   menuForcedClosed = false;
   picker = location.href.includes("/picker"); // Once a picker, always a picker.
-
+  public closed = false;
   protected readonly location = location;
   protected readonly toolbar = toolbar;
   private alive = true;
@@ -81,7 +83,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     map(result => result.matches),
     shareReplay()
   );
-
   private readonly customThemePickerDemos = [
     "simple",
     "treepeople",
@@ -91,7 +92,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
     "rowandcolspan",
     "idfilter",
     "olympic",
-    "laf",
+    "laf"
   ];
 
   constructor(
@@ -100,6 +101,14 @@ export class NavigationComponent implements OnInit, OnDestroy {
     private readonly activatedRoute: ActivatedRoute,
     private readonly cdr: ChangeDetectorRef
   ) {
+  }
+
+  onClosedStart() {
+    this.closed = true;
+  }
+
+  onOpenStart() {
+    this.closed = false;
   }
 
   ngOnDestroy(): void {
@@ -125,8 +134,16 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
 
+        this.customHeaderVisible =
+          evt.url ==='/'
+          || evt.url.includes("/welcome")
+          || evt.url.includes("/demos")
+          || evt.url.includes("/getstarted");
+
+        console.info("evt.url", evt.url);
         console.info("this.title", this.title);
-        this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker") && !evt.url.includes("/welcome");
+        this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker");
+        // && !evt.url.includes("/welcome");
         this.menuForcedClosed = evt.url.includes("/themes/custom");
         this.actionBarVisible = evt.url.includes("/demo/");
         this.customThemePickerButtonVisible = this.isCustomThemePickerVisible(evt.url);

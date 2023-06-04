@@ -1,3 +1,42 @@
+header {
+  left: 220px;
+  width: calc(100% - 220px);
+
+  height: 64px;
+  background: transparent;
+  color: #fff;
+  backdrop-filter: blur(23px);
+  position: fixed;
+  top: 0;
+  z-index: 4;
+
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  grid-template-columns: auto  auto auto 1fr auto auto auto auto auto 50px  auto auto auto;
+  font-size: 16px;
+
+  &.menu-closed {
+    left: 0;
+    width: 100%;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .guiexpert-table-title {
+    font-size: 26px;
+    font-weight: bold;
+  }
+}
+
 .side-nav-toggle-fab-btn {
   position: absolute;
   top: 20px;
@@ -39,7 +78,7 @@
     overflow-x: clip;
 
 
-   .mat-toolbar.mat-primary {
+    .mat-toolbar.mat-primary {
       position: sticky;
       top: 0;
       z-index: 1;
