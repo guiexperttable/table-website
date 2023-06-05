@@ -1,3 +1,10 @@
+:host {
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: clip;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
 
 h2 {
   font-size: 22px;
@@ -51,9 +58,8 @@ mat-card-header {
   color: var(--ge-table-doc-dark-color);
   margin-right: 16px;
 }
-a {
-  color: #008a02;
-}
+
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;

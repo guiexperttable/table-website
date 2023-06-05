@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ElementRef } from "@angular/core";
 
 @Component({
   selector: "app-pricing",
@@ -8,5 +8,18 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 })
 export class PricingComponent {
 
+  constructor(
+    private readonly elementRef: ElementRef
+  ) {
+  }
+
+  scrollDown() {
+    const h = document.body.offsetHeight;
+    this.elementRef.nativeElement.scrollBy({
+      top: h,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
 
 }

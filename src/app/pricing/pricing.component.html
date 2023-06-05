@@ -1,15 +1,14 @@
-<section class="ge-padding min-height-content">
-  <div>
-    <h2>Commercial Licenses:</h2>
-  </div>
+<section class="ge-padding padding-top radial-circle dark">
+
   <br>
   <br>
+  <h3>Commercial Licenses:</h3>
 
 
   <div class="center-all">
     <div class="flex-container">
 
-      <mat-card class="single-app-card">
+      <mat-card class="single-app-card light">
         <mat-card-header>
           <div mat-card-avatar>
             <mat-icon>gavel</mat-icon>
@@ -42,8 +41,8 @@
       </mat-card>
 
 
-      <mat-card class="triple-app-card">
-        <mat-card-header class="green-stripes">
+      <mat-card class="triple-app-card light">
+        <mat-card-header>
           <div mat-card-avatar>
             <mat-icon>gavel</mat-icon>
           </div>
@@ -74,46 +73,14 @@
         </mat-card-actions>
       </mat-card>
 
-
-
-      <!--mat-card class="multi-app-card">
-        <mat-card-header>
-          <div mat-card-avatar>
-            <mat-icon>gavel</mat-icon>
-          </div>
-          <mat-card-title>Multiple Application</mat-card-title>
-          <mat-card-subtitle>Deployment License</mat-card-subtitle>
-        </mat-card-header>
-        <div class="center-all logo-div">
-          <guiexpert-logo [mode]="'monocolor-black'" [size]="250"></guiexpert-logo>
-        </div>
-        <mat-card-content>
-          <div class="two-columns price-info-div">
-            <div>
-              <div class="price">9999 €</div>
-            </div>
-            <div>
-              <p>Perpetual license</p>
-              <p>1 year of updates</p>
-            </div>
-          </div>
-        </mat-card-content>
-        <mat-card-actions>
-          <div class="action-row">
-            <div>Coming soon.<br>It will be free in 2023.</div>
-            <button color="primary" disabled mat-flat-button>
-              <del>BUY NOW</del>
-            </button>
-          </div>
-        </mat-card-actions>
-      </mat-card-->
-
     </div>
   </div>
 </section>
+<div class="hero-scroll-down">
+  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+</div>
 
-
-<div class="ge-padding">
+<section class="ge-padding padding-top dark">
   <h2>Single Application</h2>
   <p>
     One 'Single Application' Deployment License covers one production environment for a single project (application).
@@ -150,5 +117,5 @@
     Individuals and non-commercial users can freely use and modify this software library under the terms of the open
     source license. See <a href="#" routerLink="/license">License</a>.
   </p>
-</div>
+</section>
 

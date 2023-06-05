@@ -67,6 +67,49 @@
   -webkit-font-smoothing: antialiased;
 }
 
+:root {
+  --ge-primary: #0098db;
+  --ge-secondary: #72ea53;
+  --ge-tertiary: #ea53cc;
+  --ge-main-background: rgb(2, 0, 36);
+  --ge-main-color: #fff;
+}
+
+.ge-main-background {
+  color: var(--ge-main-background);
+}
+
+.ge-main-color {
+  color: var(--ge-main-color);
+}
+
+.ge-main-bg {
+  background-color: var(--ge-main-color);
+}
+
+.ge-primary-color {
+  color: var(--ge-primary);
+}
+
+.ge-primary-bg {
+  background-color: var(--ge-primary);
+}
+
+.ge-secondary-color {
+  color: var(--ge-secondary);
+}
+
+.ge-secondary-bg {
+  background-color: var(--ge-secondary);
+}
+
+.ge-tertiary-color {
+  color: var(ge-tertiary);
+}
+
+.ge-tertiary-bg {
+  background-color: var(ge-tertiary);
+}
 
 /* You can add global styles to this file, and also import other style files */
 html, body {
@@ -79,12 +122,15 @@ html, body {
 
 section {
   scroll-snap-align: start;
+
   &.min-height-100vh {
     min-height: 100vh;
   }
+
   &.min-height {
     min-height: calc(100vh - 64px);
   }
+
   &.padding-top {
     padding-top: 64px;
   }
@@ -95,6 +141,10 @@ section.dark {
 
   background: rgb(2, 0, 36);
   color: #fff;
+  .light {
+    background: #fff;
+    color: rgb(2, 0, 36);
+  }
 
   &.radial-circle {
     background: radial-gradient(circle,
@@ -107,8 +157,85 @@ section.dark {
     color: #0098db;
     text-decoration: none;
   }
-
 }
+
+// ---------------------------------------------------
+.hero-scroll-down {
+  position: relative;
+  left: 50%;
+  top: -80px;
+  overflow: visible;
+  width: 0;
+  height: 0;
+
+  .mat-icon {
+    font-size: 40px;
+    color: var(--ge-secondary);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+}
+
+@media (max-height: 660px) {
+  .hero-scroll-down {
+    display: none;
+  }
+}
+
+.shake-vertical {
+  -webkit-animation: shake-vertical 2.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+  animation: shake-vertical 2.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+
+@-webkit-keyframes shake-vertical {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
+  80% {
+    transform: translateY(6.4px);
+  }
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+
+@keyframes shake-vertical {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
+  80% {
+    transform: translateY(6.4px);
+  }
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+// -------------------------------------
 
 .ge-padding {
   padding: 16px;
@@ -136,7 +263,7 @@ section.dark {
 }
 
 :root {
-  --mdc-theme-primary: #008a02;
+  --mdc-theme-primary: var(--ge-tertiary);
 }
 
 guiexpert-table-doc-root {
@@ -345,7 +472,7 @@ html {
   --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54)
 }
 
-.mat-mdc-fab{
+.mat-mdc-fab {
   background-color: #fff !important;
 }
 

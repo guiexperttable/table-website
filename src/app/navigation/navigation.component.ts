@@ -143,6 +143,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
           || evt.url.includes("/doc")
           || evt.url.includes("/api")
           || evt.url.includes("/law")
+          || evt.url.includes("/pricing")
           || evt.url.includes("/getstarted");
 
         console.info("evt.url", evt.url);

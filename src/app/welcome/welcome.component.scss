@@ -222,81 +222,9 @@ h2 {
 }
 
 
-.hero-scroll-down {
-  position: relative;
-  left: 50%;
-  top: -80px;
-  overflow: visible;
-  width: 0;
-  height: 0;
 
-  .mat-icon {
-    font-size: 40px;
-    color: rgba(0, 0, 0, 0.7);
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-  }
-}
 
-@media (max-height: 660px) {
-  .hero-scroll-down {
-    display: none;
-  }
-}
 
-.shake-vertical {
-  -webkit-animation: shake-vertical 2.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-  animation: shake-vertical 2.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-}
-
-@-webkit-keyframes shake-vertical {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    transform: translateY(-8px);
-  }
-  20%,
-  40%,
-  60% {
-    transform: translateY(8px);
-  }
-  80% {
-    transform: translateY(6.4px);
-  }
-  90% {
-    transform: translateY(-6.4px);
-  }
-}
-
-@keyframes shake-vertical {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    transform: translateY(-8px);
-  }
-  20%,
-  40%,
-  60% {
-    transform: translateY(8px);
-  }
-  80% {
-    transform: translateY(6.4px);
-  }
-  90% {
-    transform: translateY(-6.4px);
-  }
-}
 
 section > div > h2 {
   margin-top: 0;
