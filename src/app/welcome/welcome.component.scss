@@ -14,7 +14,7 @@
 .features-2 {
   /* first breakpoint*/
   --w1: 1200px;
-  --n: 4;
+  --n: 3;
   /* second breakpoint*/
   --w2: 800px;
   --m: 2;
@@ -161,6 +161,12 @@
     flex-direction: column;
     padding: 0;
     justify-content: space-between;
+
+    .mat-mdc-button:not(:disabled),
+    .mdc-button__label {
+      color: #fff;
+    }
+
   }
 
   .logo-outer {

@@ -1,42 +1,12 @@
 
-.ge-header {
-  padding: 0 16px 64px 16px;
-}
-
 h1 {
-  display: flex;
-  column-gap: 40px;
-  align-items: center;
-  justify-content: center;
-
-  > div {
-    display: inline-block;
-  }
-
-  .logo {
-    display: inline-block;
-    width: 40px;
-
-    .logo-fill-color-2 {
-      fill: rgba(0, 0, 0, 0.5)
-    }
-  }
-
-  .title {
-    font-size: 44px;
-  }
+  margin-top: 100px;
 }
-
-
 h2 {
   font-size: 22px;
   margin: 40px 0 20px 0;
 }
-.min-height-content {
-  min-height: calc(100vh - 560px);
-  padding-top: 0;
-  padding-bottom: 100px;
-}
+
 a {
-  color: #008a02;
+  color: #0098db;
 }

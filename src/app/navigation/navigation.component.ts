@@ -74,7 +74,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
   infoLink = "";
   menuForcedClosed = false;
   picker = location.href.includes("/picker"); // Once a picker, always a picker.
-  public closed = false;
+  public closed = true;
+
   protected readonly location = location;
   protected readonly toolbar = toolbar;
   private alive = true;
@@ -138,6 +139,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
           evt.url ==='/'
           || evt.url.includes("/welcome")
           || evt.url.includes("/demos")
+          || evt.url.includes("/license")
+          || evt.url.includes("/doc")
           || evt.url.includes("/getstarted");
 
         console.info("evt.url", evt.url);

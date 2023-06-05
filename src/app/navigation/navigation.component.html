@@ -6,7 +6,7 @@
     (openedStart)="onOpenStart()"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!picker && !menuForcedClosed && (isHandset$ | async) === false"
+    [opened]="!closed"
     class="sidenav"
     fixedInViewport>
 
