@@ -195,10 +195,13 @@
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
 
-  <guiexpert-logo
-    [ngClass]="{'hidden': !closed}"
-    [mode]="'monocolor-white'"
-    [size]="30"></guiexpert-logo>
+  <a href="#"
+     [ngClass]="{'hidden': !closed}"
+     routerLink="/welcome">
+    <guiexpert-logo
+      [mode]="'monocolor-white'"
+      [size]="30"></guiexpert-logo>
+  </a>
   <div
     [ngClass]="{'hidden': !closed}"
     class="guiexpert-table-title">GuiExpert Table
