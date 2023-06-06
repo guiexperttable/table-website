@@ -8,7 +8,6 @@
 }
 
 
-
 // -------------------------------------
 
 .features-2 {
@@ -223,10 +222,6 @@ h2 {
 }
 
 
-
-
-
-
 section > div > h2 {
   margin-top: 0;
 }
@@ -237,4 +232,49 @@ section.footer {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: auto  auto auto;
+}
+
+section > * {
+  opacity: 0;
+  transition: ease-in-out 1s;
+}
+
+section.show > * {
+  opacity: 1;
+}
+
+
+.animated-shadow {
+  text-shadow: 0 0 50px #0f08,
+    0 0 50px #0f08,
+    0 0 100px #0f08,
+    0 0 150px #0f08,
+    0 0 200px #0f08,
+    0 0 250px #0f08;
+  animation: hue-animate 5s linear infinite;
+  animation-play-state: paused;
+}
+.hero-big:hover .animated-shadow {
+  animation-play-state: running;
+}
+
+@keyframes hue-animate {
+  0% {
+    filter: hue-rotate(0deg)
+  }
+  100% {
+    filter: hue-rotate(360deg)
+  }
+}
+
+.get-started-div .logo:hover {
+  animation: size-animation 1s ease 1;
+}
+@keyframes size-animation {
+  0% {
+    transform: scale(1)
+  }
+  100% {
+    transform: scale(1.2)
+  }
 }
