@@ -13,6 +13,13 @@ export class WelcomeComponent {
   constructor(
     private readonly elementRef: ElementRef
   ) {
+    let nativeElement = this.elementRef.nativeElement;
+    nativeElement.addEventListener("scroll", () => {
+      const mh = nativeElement.scrollTop / (nativeElement.scrollHeight - nativeElement.offsetHeight);
+      const ph = (nativeElement.scrollTop & nativeElement.offsetHeight) / nativeElement.offsetHeight;
+      nativeElement.style.setProperty("--scroll-mh", mh + "");
+      nativeElement.style.setProperty("--scroll-ph", ph + "");
+    }, false);
   }
 
   scrollDown() {
@@ -22,6 +29,7 @@ export class WelcomeComponent {
       left: 0,
       behavior: "smooth"
     });
+
   }
 
   openCustomThemePicker() {

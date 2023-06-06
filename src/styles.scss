@@ -136,11 +136,17 @@ section {
   }
 }
 
+
 section.dark {
   min-height: calc(100vh - 64px);
 
   background: rgb(2, 0, 36);
   color: #fff;
+
+  .mdc-checkbox,
+  label {
+    color: #fff;
+  }
   .light {
     background: #fff;
     color: rgb(2, 0, 36);

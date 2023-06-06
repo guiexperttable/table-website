@@ -96,6 +96,7 @@
   .hero-medium {
     margin-top: 20px;
     font-size: 30px;
+    //font-size: calc(30px +  var(--scroll-ph) * 100px);
     line-height: 36px;
   }
 
