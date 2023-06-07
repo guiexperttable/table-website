@@ -251,11 +251,11 @@ section.show > * {
     0 0 200px #0f08,
     0 0 250px #0f08;
   animation: hue-animate 5s linear infinite;
-  animation-play-state: paused;
+  //animation-play-state: paused;
 }
-.hero-big:hover .animated-shadow {
-  animation-play-state: running;
-}
+//.hero-big:hover .animated-shadow {
+//  animation-play-state: running;
+//}
 
 @keyframes hue-animate {
   0% {

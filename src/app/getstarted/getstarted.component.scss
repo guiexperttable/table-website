@@ -71,3 +71,15 @@
 .mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base {
   color: #fff;
 }
+
+.get-started-div .logo:hover {
+  animation: size-animation 1s ease 1;
+}
+@keyframes size-animation {
+  0% {
+    transform: scale(1)
+  }
+  100% {
+    transform: scale(1.2)
+  }
+}
