@@ -56,16 +56,6 @@
       padding-left: 12px;
     }
   }
-
-  .img-div {
-    padding-top: 16px;
-
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-    }
-  }
 }
 
 @media (max-width: 800px) {
@@ -115,6 +105,38 @@
     margin-left: 30px;
     width: 500px;
     height: 450px;
+  }
+}
+
+
+.feature-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+  > .left {
+    flex: 0 1 250px;
+    margin: 5px;
+
+    ul {
+      padding-left: 12px;
+    }
+  }
+
+  > .right {
+    display: flex;
+    flex: 0 1 400px;
+    margin: 5px;
+    padding-top: 16px;
+    perspective: 600px;
+
+    > img {
+      transform: rotateY(var(--rotateY));
+      width: 400px;
+      aspect-ratio: 1;
+    }
+
   }
 }
 
@@ -243,14 +265,15 @@ section.show > * {
 
 .animated-shadow {
   text-shadow: 0 0 50px #0f08,
-    0 0 50px #0f08,
-    0 0 100px #0f08,
-    0 0 150px #0f08,
-    0 0 200px #0f08,
-    0 0 250px #0f08;
+  0 0 50px #0f08,
+  0 0 100px #0f08,
+  0 0 150px #0f08,
+  0 0 200px #0f08,
+  0 0 250px #0f08;
   animation: hue-animate 5s linear infinite;
   //animation-play-state: paused;
 }
+
 //.hero-big:hover .animated-shadow {
 //  animation-play-state: running;
 //}
@@ -267,6 +290,7 @@ section.show > * {
 .get-started-div .logo:hover {
   animation: size-animation 1s ease 1;
 }
+
 @keyframes size-animation {
   0% {
     transform: scale(1)

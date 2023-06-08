@@ -16,13 +16,13 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     private readonly elementRef: ElementRef,
     @Inject(DOCUMENT) private readonly document: Document
   ) {
-    // let nativeElement = this.elementRef.nativeElement;
-    // nativeElement.addEventListener("scroll", () => {
-    //   const mh = nativeElement.scrollTop / (nativeElement.scrollHeight - nativeElement.offsetHeight);
-    //   const ph = (nativeElement.scrollTop & nativeElement.offsetHeight) / nativeElement.offsetHeight;
-    //   nativeElement.style.setProperty("--scroll-mh", mh + "");
-    //   nativeElement.style.setProperty("--scroll-ph", ph + "");
-    // }, false);
+    const nativeElement = this.elementRef.nativeElement;
+    nativeElement.addEventListener("scroll", () => {
+      const offsetHeight = nativeElement.offsetHeight + 16;
+      const ph = 0.5 + ((nativeElement.scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
+      const rotateY = ((ph) * 180 - 180) + "deg";
+      nativeElement.style.setProperty("--rotateY", rotateY);
+    }, false);
   }
 
   scrollDown() {
