@@ -19,9 +19,19 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     const nativeElement = this.elementRef.nativeElement;
     nativeElement.addEventListener("scroll", () => {
       const offsetHeight = nativeElement.offsetHeight + 16;
-      const ph = 0.5 + ((nativeElement.scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
-      const rotateY = ((ph) * 180 - 180) + "deg";
+      const rotH = 0.5 + ((nativeElement.scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
+      const rotateY = `${rotH * 180 - 180}deg`;
       nativeElement.style.setProperty("--rotateY", rotateY);
+
+
+      let opacH = (((nativeElement.scrollTop + offsetHeight) % offsetHeight) / offsetHeight) % 1;
+      if (opacH < 0.5) {
+        opacH = 1 - opacH;
+      }
+      if (opacH === 0) opacH = 1;
+      opacH = (opacH - 1) * 2 + 1;
+      const opacity = `${opacH}`;
+      nativeElement.style.setProperty("--opacity", opacity);
     }, false);
   }
 

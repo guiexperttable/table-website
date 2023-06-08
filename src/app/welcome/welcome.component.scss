@@ -130,9 +130,9 @@
     margin: 5px;
     padding-top: 16px;
     perspective: 600px;
-
     > img {
       transform: rotateY(var(--rotateY));
+      opacity: var(--opacity);
       width: 400px;
       aspect-ratio: 1;
     }
