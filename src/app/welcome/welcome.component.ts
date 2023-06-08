@@ -1,6 +1,73 @@
 import { ChangeDetectionStrategy, Component, ElementRef, Inject, OnDestroy, OnInit } from "@angular/core";
 import { DOCUMENT } from "@angular/common";
 
+// TODO component bauen
+export class TxtType {
+
+  public loopNum = 0;
+  public txt = '';
+  public isDeleting = false;
+  public el?: HTMLDivElement;
+  public toRotate: string[] =[
+    "Handle large datasets easily",
+    "Fully-featured (advanced sorting and filtering)",
+    "Highly customizable data grid",
+    "Outstanding performance",
+    "No third-party dependencies",
+    "UI-agnostic",
+  ];
+  public period = 2000
+
+
+  public tick() {
+    const i = this.loopNum % this.toRotate.length;
+    const fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+   if (this.el) this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    const that = this;
+    let delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  }
+
+  // public init(){
+  //
+  //     const toRotate = this.el.getAttribute("data-type");
+  //     const period = this.el.getAttribute("data-period");
+  //     if (toRotate) {
+  //       new TxtType(this.el, JSON.parse(toRotate), 2000);
+  //     }
+  //   }
+  //   // INJECT CSS
+  //   const css = document.createElement("style");
+  //   css.type = "text/css";
+  //   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  //   document.body.appendChild(css);
+  // }
+}
+
+
+
 @Component({
   selector: "app-doc-welcome",
   templateUrl: "./welcome.component.html",
