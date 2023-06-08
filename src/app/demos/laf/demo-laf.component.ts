@@ -87,7 +87,7 @@ export class DemoLafComponent implements OnInit, OnDestroy {
     }
   }
 
-  cssVarString2KeyValueArray(css: string) {
+  private cssVarString2KeyValueArray(css: string) {
     return css
       .replace(/;/g, '')
       .split("\n")

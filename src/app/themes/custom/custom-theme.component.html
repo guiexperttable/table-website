@@ -95,8 +95,13 @@
       <mat-icon>palette</mat-icon>
     </button>
     <mat-menu #menu3="matMenu">
-      <button mat-menu-item (click)="setPredefinedTheme('Combat')">Combat</button>
-      <button mat-menu-item (click)="setPredefinedTheme('C64')">Combat</button>
+      <button
+        mat-menu-item
+        *ngFor="let theme of themes"
+        (click)="setPredefinedTheme(theme)"
+        [innerText]="theme"
+        class="custom-theme-menu-item"
+      ></button>
     </mat-menu>
 
     <div class="light-dark-div_" *ngIf="bigScreen">

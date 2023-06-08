@@ -10,6 +10,7 @@ import {
 import { OkLch } from "../data/ok-lch";
 import {
   AreaModelObjectyArray,
+  CssVars,
   GeFilterService,
   SelectionModel,
   TableApi,
@@ -63,6 +64,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   public okLch = new OkLch(50, .27, 266, 100);
   public url = "";
   public cssString = "";
+  public themes = CssVars.themes;
   selectedCount = 0;
 
   filterText = ""; // try: '+body + bg'
@@ -144,7 +146,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       const rc = bodyModel.getRowCount();
       for (let i = 0; i < rc; i++) {
         const key = bodyModel?.getValueAt(i, 1);
-        if (key.includes(what)){
+        if (key.includes(what)) {
           bodyModel?.setValue(i, 0, true);
         }
       }
@@ -160,7 +162,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       const rc = bodyModel.getRowCount();
       for (let i = 0; i < rc; i++) {
         const key = bodyModel?.getValueAt(i, 1);
-        if (key.includes(what)){
+        if (key.includes(what)) {
           bodyModel?.setValue(i, 0, false);
         }
       }
@@ -170,8 +172,32 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
     }
   }
 
-  setPredefinedTheme(theme: string){
-   console.info('setPredefinedTheme()', theme);
+
+  setPredefinedTheme(theme: string) {
+    // @ts-ignore
+    const cssVars = CssVars.vars[theme];
+    if (cssVars) {
+      const kvs = this.cssVarString2KeyValueArray(cssVars);
+      const map: { [key: string]: string } = {};
+      kvs.forEach(k => {
+        map[k[0]] = k[1];
+      });
+
+      const bodyModel = this.tableModel?.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      if (bodyModel) {
+        const rc = bodyModel.getRowCount();
+        for (let i = 0; i < rc; i++) {
+          const row: ThemeRowIf = bodyModel.getRowByIndex(i);
+          const key = row.id;
+          row.selected = true;
+          row.value = map[key];
+        }
+        this.tableApi?.repaint();
+        this.selectedCount = rc;
+        this.cdr.detectChanges();
+        this.syncAllCssVarsToPickerTable();
+      }
+    }
   }
 
   onTableReady($event: TableApi) {
@@ -214,7 +240,6 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
   formatLabelLightness(value: number): string {
     return `l:${value}`;
   }
-
 
   onSliderChangedHue(h: number) {
     this.okLch.h = h;
@@ -289,7 +314,7 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       for (const row of rows) {
         const key = row.id;
         const val = row.value;
-        buf.push(`  ${key}: ${val}`);
+        buf.push(`  ${key}: ${val};`);
       }
       buf.push("}");
 
@@ -346,5 +371,14 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       }
       this.syncCssService.messageBroadcast(m.getAllRows().map(r => [r.id, r.value]));
     }
+  }
+
+  private cssVarString2KeyValueArray(css: string) {
+    return css
+      .replace(/;/g, "")
+      .split("\n")
+      .map(r => r.trim())
+      .filter(r => r.includes("--ge-table"))
+      .map(r => r.split(": ").map(s => s.trim()));
   }
 }
