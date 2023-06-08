@@ -16,6 +16,7 @@ import { CssColorCellRenderer } from "../table/css-color-cell-renderer";
 
 export const COLOR_VARS_DARK = `
 :root [data-theme="dark"] {
+  --ge-table-bg: #000;
   --ge-table-header-west-bg: #252528;
   --ge-table-header-center-bg: #252528;
   --ge-table-header-east-bg: #252528;
@@ -77,7 +78,7 @@ export const COLOR_VARS_DARK = `
 
 export const COLOR_VARS_LIGHT = `
 :root [data-theme="light"] {
-
+  --ge-table-bg: #fff;
   --ge-table-header-west-bg: var(--ge-table-header-center-bg);
   --ge-table-header-center-bg: rgba(233, 233, 233, 0.5);
   --ge-table-header-east-bg: var(--ge-table-header-center-bg);
