@@ -149,16 +149,14 @@ section.dark {
   label {
     color: #fff;
   }
+
   .light {
     background: #fff;
     color: rgb(2, 0, 36);
   }
 
   &.radial-circle {
-    background: radial-gradient(circle,
-      oklch(67.29% 0.121 218.65) 0%,
-      oklch(0.22 0.1 275.09 / 0.89) 35%,
-      oklch(11.49% 0.063 276.97) 100%);
+    background: radial-gradient(circle, oklch(0.29 0.08 286.95) 0%, oklch(0.22 0.1 275.09/0.89) 35%, oklch(11.49% 0.063 276.97) 100%);
   }
 
   a {
@@ -243,6 +241,7 @@ section.dark {
     transform: translateY(-6.4px);
   }
 }
+
 // -------------------------------------
 
 .ge-padding {
