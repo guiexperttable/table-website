@@ -5,6 +5,7 @@
   overflow-x: clip;
   height: 100vh;
   scroll-snap-type: y mandatory;
+  background-color: rgba(49, 58, 114, 1.0);
 }
 
 
@@ -298,7 +299,7 @@ section.show > * {
   --ge-table-focus-border: #2c507d;
   --ge-table-color-error-text: #bed8f9;
   --ge-table-tree-arrow-collapsed-color: #e00034;;
-  --ge-table-column-resize-handle-border: #2c507d;
+  --ge-table-column-resize-handle-border: #0098db;
   --ge-table-dragged-col-div-bg: #2c2e33;;
   --ge-table-drop-zone-bg: #121136;
 }
