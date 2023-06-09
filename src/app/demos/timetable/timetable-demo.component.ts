@@ -15,7 +15,7 @@ export class TimetableDemoComponent implements OnInit, OnDestroy {
   tableModel?: TableModelIf = createTimeTableModel();
   tableOptions: TableOptionsIf = tableOptions;
   running = true;
-  @Input() freezeUi = false;
+  @Input() freezeUi = true;
   @Input() forcedColorPickerHash = "";
 
   private tableApi?: TableApi;

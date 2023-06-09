@@ -142,7 +142,7 @@ section {
 section.dark {
   min-height: calc(100vh - 64px);
 
-  background: rgb(2, 0, 36);
+  background: rgb(36,39,45);
   color: #fff;
 
   .mdc-checkbox,
@@ -173,7 +173,7 @@ section.dark {
 
     &::after {
       content: '';
-      background: #000;
+      background: rgb(36,39,45);
       // background: radial-gradient(at center, rgba(49, 58, 114, 1.0), rgba(2, 1, 32, 1.0));
       //background: url(https://astro.build/assets/noise.webp) repeat, linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
       //background-blend-mode: overlay;

@@ -2,6 +2,8 @@
 :host {
   display: grid;
   grid-template-rows: 1fr;
+
+  /*--ge-table-body-center-vertical-border: yellow;*/
 }
 
 :host > * {
