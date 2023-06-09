@@ -8,65 +8,6 @@
 }
 
 
-// -------------------------------------
-
-.features-2 {
-  /* first breakpoint*/
-  --w1: 1200px;
-  --n: 3;
-  /* second breakpoint*/
-  --w2: 800px;
-  --m: 2;
-  /* third breakpoint*/
-  --w3: 400px;
-  --p: 1;
-
-  display: grid;
-  //noinspection CssInvalidFunction
-  grid-template-columns:
-    repeat(auto-fill,
-      minmax(
-          clamp(
-            clamp(
-              clamp(
-                100% / (var(--n) + 1) + 0.1%,
-                (var(--w1) - 100vw) * 1000,
-                100% / (var(--m) + 1) + 0.1%
-              ),
-              (var(--w2) - 100vw) * 1000,
-              100% / (var(--p) + 1) + 0.1%
-            ),
-            (var(--w3) - 100vw) * 1000,
-            100%
-          ),
-          1fr
-      )
-    );
-  gap: 10px;
-
-  > div {
-    min-height: 300px;
-    padding-left: 16px;
-
-    h2 {
-      margin-top: 16px;
-    }
-
-    ul {
-      padding-left: 12px;
-    }
-  }
-}
-
-@media (max-width: 800px) {
-  // < 800
-  .features-2 .box.img-div,
-  .features-2 .box.img-div img {
-    display: none;
-  }
-}
-
-// -------------------------------------
 
 
 .hero-box {
@@ -130,6 +71,7 @@
     margin: 5px;
     padding-top: 16px;
     perspective: 600px;
+
     > img {
       transform: rotateY(var(--rotateY));
       opacity: var(--opacity);
@@ -137,25 +79,6 @@
       aspect-ratio: 1;
     }
 
-  }
-}
-
-
-.logos-div {
-  padding: 40px 0;
-  display: flex;
-  justify-content: center;
-
-  > div {
-    width: 80px;
-    margin-right: 20px;
-  }
-
-
-  .solid-svg {
-    path {
-      opacity: 0.8;
-    }
   }
 }
 
@@ -192,13 +115,36 @@
 
   .logo-outer {
     text-align: center;
+    padding-left: 10px;
 
     .logo {
-      width: 80px;
-      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: currentColor;
+      border-color: currentColor;
+      border-radius: 50%;
+      overflow: clip;
+      display: grid;
+      place-items: center;
+
+      &:hover,
+      &:focus-visible {
+        transform: translateY(-0.75rem) scale(1.2);
+        transition: transform 250ms;
+        // animation: size-animation 1s ease 1;
+      }
+
+      > a,
+      > a > *,
+      > a > * > svg {
+        display: block;
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 }
+
 
 h2 {
   font-size: 22px;
@@ -287,9 +233,6 @@ section.show > * {
   }
 }
 
-.get-started-div .logo:hover {
-  animation: size-animation 1s ease 1;
-}
 
 @keyframes size-animation {
   0% {

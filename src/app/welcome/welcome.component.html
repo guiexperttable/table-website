@@ -1,4 +1,6 @@
 <section class="ge-padding padding-top center-all radial-circle dark">
+
+  <!--  TODO style raus!-->
   <div class="hero-box" style="backdrop-filter: blur(23px);">
 
     <div class="x" style="color: #fff;text-align: center;">
@@ -15,15 +17,19 @@
           <span class="wrap"></span>
         </div>
       </div>
-      <!--div class="hero-medium">
+
+      <ge-typewriter
+        *ngIf="typewriter" class="hero-medium"></ge-typewriter>
+
+      <div *ngIf="!typewriter" class="hero-medium">
         Handle large datasets easily
       </div>
-      <div class="hero-medium">
+      <div *ngIf="!typewriter" class="hero-medium">
         Fully-featured and <br>highly customizable data grid
       </div>
-      <div-- class="hero-medium">
+      <div *ngIf="!typewriter" class="hero-medium">
         Outstanding performance & <br>no third-party dependencies
-      </div-->
+      </div>
     </div>
 
     <!--div class="right">
@@ -35,7 +41,6 @@
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
-
 
 
 <section class="ge-padding padding-top center-all radial-circle dark">
@@ -67,7 +72,6 @@
 </div>
 
 
-
 <section class="ge-padding padding-top center-all radial-circle dark">
   <div class="features">
 
@@ -93,7 +97,6 @@
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
-
 
 
 <section class="ge-padding padding-top center-all radial-circle dark">
@@ -168,78 +171,6 @@
 </div>
 
 
-<!--
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features-2">
-
-    <div class="box">
-      <div class="text-div">
-        <h2>Features</h2>
-        <ul>
-          <li>Excellent performance for <strong>large</strong> tables by vertical
-            and horizontal <strong>virtual scrolling</strong>
-          </li>
-          <li>Column Interactions (resize, reorder)</li>
-          <li>Sorting Rows</li>
-          <li>Row, Column, and Range Selection</li>
-          <li>Single and Multi Selection</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="text-div">
-        <h2>Interaction</h2>
-        <ul>
-          <li>Tree table (Hierarchical View)</li>
-          <li>Accessibility support: Keyboard Shortcuts</li>
-          <li>Custom Filtering</li>
-          <li>In-place Cell Editing</li>
-          <li>Userdefined Key and Mouse Events</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="text-div">
-        <h2>Layout, Look & Feel</h2>
-        <ul>
-          <li>Customizable Cell Contents via Renderer</li>
-          <li>Customizable Look & Feel (via CSS variables)</li>
-          <li>Row sorting)</li>
-          <li>Column Reordering (Drag and Drop)</li>
-          <li>State Persistence (Row Sorting, Column Order, Selection)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="text-div">
-        <h2>Usability</h2>
-        <ul>
-          <li><s>Copy / Paste</s></li>
-          <li>Row and Column Spanning</li>
-          <li>Fixed Columns (Left and Right)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="box">
-      <div class="text-div">
-        <h2>License</h2>
-        <ul>
-          <li>Open source</li>
-          <li>Free for individuals and non-commercial users</li>
-          <li>For our valued business customers, we offer highly attractive licensing terms.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
-</div>
--->
 
 <section class="ge-table-header-bg min-height-100vh padding-top radial-circle dark">
   <div class="ge-padding">
@@ -291,7 +222,9 @@
         <div class="logo-outer">
           <div class="logo">
             <a [routerLink]="['/getstarted','angular']" href="#">
-              <app-angular-logo />
+              <div style="transform: translateX(6px) translateY(4px);">
+                <app-angular-logo />
+              </div>
             </a>
           </div>
         </div>
@@ -302,7 +235,9 @@
         <div class="logo-outer">
           <div class="logo">
             <a [routerLink]="['/getstarted','vue']" href="#">
-              <app-vue-logo />
+              <div style="transform: scale(0.9) translateY(10px);">
+                <app-vue-logo />
+              </div>
             </a>
           </div>
         </div>
@@ -335,7 +270,9 @@
         <div class="logo-outer">
           <div class="logo">
             <a [routerLink]="['/getstarted','svelte']" href="#">
-              <app-svelte-logo />
+              <div style="transform: scale(0.8) translateY(-10px);">
+                <app-svelte-logo style="width: 30px;" />
+              </div>
             </a>
           </div>
         </div>
@@ -357,7 +294,9 @@
         <div class="logo-outer">
           <div class="logo">
             <a [routerLink]="['/getstarted','webcomponent']" href="#">
-              <app-web-component-logo />
+              <div style="transform: translateY(6px);">
+                <app-web-component-logo />
+              </div>
             </a>
           </div>
         </div>
@@ -368,7 +307,9 @@
         <div class="logo-outer">
           <div class="logo">
             <a [routerLink]="['/getstarted','plainjs']" href="#">
-              <app-js-logo />
+              <div style="transform: scale(0.8);">
+                <app-js-logo />
+              </div>
             </a>
           </div>
         </div>
