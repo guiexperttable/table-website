@@ -13,7 +13,7 @@ import {
   CellRange,
   ColumnDef,
   ColumnDefIf,
-  DateToIntlDDMMYYYYCellRenderer,
+  DateToIntlDDMMYYYYCellRenderer, editInputPipeForNumber,
   FalseFn,
   GeModelChangeEvent,
   MaleFemaleToIconCellRenderer,
@@ -80,7 +80,15 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
   private columnDefs: ColumnDefIf[] = [
     new ColumnDef("lastName", "Last Name", px200),
     new ColumnDef("preName", "Pre Name", px120),
-    new ColumnDef("age", "Age", px80, undefined, ColumnDef.bodyRenderer(new NumberCellRenderer())),
+    ColumnDef.create({
+      property: "age",
+      headerLabel: "Age",
+      width: px80,
+      bodyRenderer: new NumberCellRenderer(),
+      editable: TrueFn,
+      // editInputPipe: (value: any) => value ? Number(value) : ""
+      editInputPipe: editInputPipeForNumber
+    }),
     new ColumnDef("birth", "Birthday", px100,
       undefined,
       Renderer.bodyRenderer(new DateToIntlDDMMYYYYCellRenderer())),
@@ -126,7 +134,6 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
   }
 
 
-
   ngOnInit(): void {
     this.http
       .get<PersonIf[]>("/assets/demo/tree-persons.json")
@@ -165,7 +172,7 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
 
   onModelChanged(evt: GeModelChangeEvent) {
     console.info(evt);
-    if (evt.cells?.length){
+    if (evt.cells?.length) {
       for (let i = 0; i < evt.cells.length; i++) {
         const cell = evt.cells[i];
         // TODO update cell?
@@ -187,26 +194,26 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
       1,
       1
     );
-    if (this.tableModel) {
-      this.tableModel.getBodyModel().setValue = this.setValue.bind(this);
-    }
+    // if (this.tableModel) {
+    //   this.tableModel.getBodyModel().setValue = this.setValue.bind(this);
+    // }
     this.cdr.detectChanges();
   }
 
 
-  private setValue(rowIndex: number, columnIndex: number, value: string): boolean {
-    if (this.tableModel) {
-      const property = this.tableModel.getColumnProperty(columnIndex);
-      let v: any = value;
-      if (property === "age") {
-        v = Number(value);
-        if (isNaN(v)) {
-          v = value;
-        }
-      }
-      return this.tableModel.getBodyModel().setValue(rowIndex, columnIndex, v);
-    }
-    return false;
-  }
+  // private setValue(rowIndex: number, columnIndex: number, value: string): boolean {
+  //   if (this.tableModel) {
+  //     const property = this.tableModel.getColumnProperty(columnIndex);
+  //     let v: any = value;
+  //     if (property === "age") {
+  //       v = Number(value);
+  //       if (isNaN(v)) {
+  //         v = value;
+  //       }
+  //     }
+  //     return this.tableModel.getBodyModel().setValue(rowIndex, columnIndex, v);
+  //   }
+  //   return false;
+  // }
 }
 

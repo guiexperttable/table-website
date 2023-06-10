@@ -424,7 +424,7 @@ guiexpert-table-doc-root .ge-footer {
 
 .doc-content > * + *,
 .doc-content > * + * + * {
-  min-height: calc(100vh - 125px) !important;
+  min-height: calc(100vh - 64px) !important;
   width: 100%;
   display: block;
   overflow: clip;

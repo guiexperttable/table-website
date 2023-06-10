@@ -1,3 +1,9 @@
+<div class="filter-div">
+  <mat-form-field appearance="fill">
+    <mat-label>Filter</mat-label>
+    <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
+  </mat-form-field>
+</div>
 <guiexpert-table
   *ngIf="tableModel"
   (modelChanged)="onModelChanged($event)"
@@ -7,9 +13,4 @@
   [tableOptions]="tableOptions"
 ></guiexpert-table>
 
-<div class="filter-div">
-  <mat-form-field appearance="fill">
-    <mat-label>Filter</mat-label>
-    <input (keyup)="onKeyup()" [(ngModel)]="filterText" matInput>
-  </mat-form-field>
-</div>
+
