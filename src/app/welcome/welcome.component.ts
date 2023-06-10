@@ -80,6 +80,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     }
     if (opacH === 0) opacH = 1;
     opacH = (opacH - 1) * 2 + 1;
+    opacH = opacH * opacH;
     const opacity = `${opacH}`;
     this.nativeElement.style.setProperty("--opacity", opacity);
   }
