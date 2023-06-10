@@ -6,15 +6,15 @@
 }
 
 :host > * {
-  margin-top: 60px;
+  margin-top: 0px;
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
 }
 
 .filter-div {
   position: absolute;
   top: -60px;
-  left: 256px;
+  right: 20px;
   width: 200px;
   height: 60px;
   overflow-y: clip;

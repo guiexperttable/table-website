@@ -21,10 +21,10 @@
         Welcome
       </a>
 
-      <a href="#" mat-list-item routerLink="/getstarted">
+      <!--a href="#" mat-list-item routerLink="/getstarted">
         <mat-icon>outlined_flag</mat-icon>
         Get Started
-      </a>
+      </a-->
 
       <a href="#" mat-list-item routerLink="/demos">
         <mat-icon>filter_vintage</mat-icon>
@@ -107,35 +107,39 @@
 
   <mat-sidenav-content #matSidenavContent>
 
-    <div class="doc-content">
-      <router-outlet></router-outlet>
-    </div>
-
     <div
       *ngIf="actionBarVisible"
       class="ge-action-bar">
+      <a
+        [routerLink]="'/welcome'"
+        title="Welcome">
+        <guiexpert-logo
+          [mode]="'monocolor-black'"
+          [size]="30"></guiexpert-logo>
+      </a>
+
       <button
         [routerLink]="'/demos'"
         color="primary"
         title="All Demos"
-        mat-icon-button>
-        <mat-icon>home</mat-icon>
-      </button>
-
-      <button
-        [routerLink]="[runLink]"
-        color="primary"
-        title="Demo"
-        mat-icon-button>
-        <mat-icon>directions_run</mat-icon>
+        mat-flat-button>
+        Demos
       </button>
 
       <button
         [routerLink]="[infoLink]"
         color="primary"
         title="Description"
-        mat-icon-button>
-        <mat-icon>description</mat-icon>
+        mat-flat-button>
+        Description
+      </button>
+
+      <button
+        [routerLink]="[runLink]"
+        color="primary"
+        title="Demo"
+        mat-flat-button>
+       Run
       </button>
 
       <button
@@ -143,15 +147,19 @@
         (click)="openCustomThemePicker()"
         color="primary"
         title="Custom Theme"
-        mat-icon-button>
-        <mat-icon>palette</mat-icon>
+        mat-flat-button>
+        Themes
       </button>
+    </div>
+
+    <div class="doc-content">
+      <router-outlet></router-outlet>
     </div>
 
     <button
       class="side-nav-toggle-fab-btn"
       (click)="drawer.toggle()"
-      *ngIf="!picker && !toolbarVisible && (menuForcedClosed || (isHandset$ | async))"
+      *ngIf="!actionBarVisible && !picker && !toolbarVisible && (menuForcedClosed || (isHandset$ | async))"
       aria-label="Toggle sidenav"
       mat-mini-fab
       color="primary"

@@ -31,7 +31,7 @@ import { DemoHeatmapSeattleModule } from "./heatmapseattle/demo-heatmap-seattle.
         component: DemoStyleComponent
       },
       {
-        path: "simple/info",
+        path: "simple /info",
         component: DemoStyleInfoComponent
       },
       {
