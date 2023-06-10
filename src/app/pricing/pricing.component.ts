@@ -3,7 +3,10 @@ import { ChangeDetectionStrategy, Component, ElementRef } from "@angular/core";
 @Component({
   selector: "app-pricing",
   templateUrl: "./pricing.component.html",
-  styleUrls: ["./pricing.component.scss"],
+  styleUrls: [
+    "./pricing.component.scss",
+    "./glow-effect.css"
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PricingComponent {

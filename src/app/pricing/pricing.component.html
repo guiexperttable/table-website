@@ -8,7 +8,7 @@
   <div class="center-all">
     <div class="flex-container">
 
-      <mat-card class="single-app-card light">
+      <mat-card class="single-app-card light glow-effect" style="height: 552px">
         <mat-card-header>
           <div mat-card-avatar>
             <mat-icon>gavel</mat-icon>
@@ -38,10 +38,15 @@
             </button>
           </div>
         </mat-card-actions>
+
+        <svg class="glow-container">
+          <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+          <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+        </svg>
       </mat-card>
 
 
-      <mat-card class="triple-app-card light">
+      <mat-card class="triple-app-card light glow-effect" style="height: 552px">
         <mat-card-header>
           <div mat-card-avatar>
             <mat-icon>gavel</mat-icon>
@@ -71,6 +76,11 @@
             </button>
           </div>
         </mat-card-actions>
+
+        <svg class="glow-container">
+          <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
+          <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+        </svg>
       </mat-card>
 
     </div>
