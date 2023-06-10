@@ -71,11 +71,24 @@
 
 
   > .left {
-    flex: 0 1 250px;
-    margin: 5px;
+    flex: 0 1 400px;
+    margin-right: 20px;
+
+    h2 {
+      font-size: 40px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
 
     ul {
-      padding-left: 12px;
+      padding-left: 0;
+      list-style-type:none;
+
+      li {
+        font-size: 22px;
+        line-height: 22px;
+        padding-bottom: 20px;
+      }
     }
   }
 
