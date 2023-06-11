@@ -8,33 +8,30 @@
   background-color: rgba(49, 58, 114, 1.0);
 }
 
-//.hero-section {
-//  isolation: isolate;
-//  position: relative;
-//  &:after {
-//    content: '';
-//    // background: url(/assets/img/wave.svg);
-//    background: yellow;
-//    z-index: -0.5;
-//    position: absolute;
-//    inset: 0;
-//    //transform: skewY(-5deg);
-//  }
-//}
-
 
 
 .hero-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  color: #fff;
+  text-align: center;
 
   .hero-big {
+    max-width: 560px;
     font-size: 66px;
     line-height: 66px;
     margin-bottom: 44px;
     font-weight: bold;
-    opacity: 0.95;
+    opacity: 1;
+    color: #fff;
+    text-align: center;
+    text-wrap: balance;
+
+    .getstarted-button{
+      background-color: rgb(172, 126, 244);
+      color: #fff;
+    }
   }
 
   .hero-medium {
@@ -158,6 +155,7 @@
       &:focus-visible {
         transform: translateY(-0.75rem) scale(1.2);
         transition: transform 250ms;
+        background-color: rgb(172, 126, 244);
         // animation: size-animation 1s ease 1;
       }
 

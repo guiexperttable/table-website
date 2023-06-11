@@ -1,41 +1,32 @@
 <section class="ge-padding padding-top center-all radial-circle dark hero-section">
 
-  <!--  TODO style raus!-->
-  <div class="hero-box" style="backdrop-filter: blur(23px);">
+  <div class="hero-box">
 
-    <div class="x" style="color: #fff;text-align: center;">
-      <div class="hero-big" style="color: #fff;text-align: center">
-
-        Enhance<br>
-        <span class="ge-primary-color">Data&nbsp;Visualization</span><br>
-        <small>with</small>&nbsp;<br>
-        <span class="animated-shadow">GuiExpert <br>Table</span>
-      </div>
-
-      <div class="hero-medium">
-        <div>
-          <span class="wrap"></span>
-        </div>
-      </div>
-
+    <div class="hero-big">
+      Enhance
+      <div class="ge-primary-color">Data Visualization</div>
+      <div> with </div>
+      <span class="animated-shadow">GuiExpert Table</span>
+      <br>
+      <br>
+      <button mat-flat-button class="getstarted-button" (click)="scrollTo('#getstarted')">Get Started</button>
+      <br>
+      <br>
       <ge-typewriter
         *ngIf="typewriter" class="hero-medium"></ge-typewriter>
-
-      <div *ngIf="!typewriter" class="hero-medium">
-        Handle large datasets easily
-      </div>
-      <div *ngIf="!typewriter" class="hero-medium">
-        Fully-featured and <br>highly customizable data grid
-      </div>
-      <div *ngIf="!typewriter" class="hero-medium">
-        Outstanding performance & <br>no third-party dependencies
-      </div>
     </div>
 
-    <!--div class="right">
-      <img alt="." src="assets/img/wave.svg" class="hero-img">
-    </div-->
 
+
+    <div *ngIf="!typewriter" class="hero-medium">
+      Handle large datasets easily
+    </div>
+    <div *ngIf="!typewriter" class="hero-medium">
+      Fully-featured and <br>highly customizable data grid
+    </div>
+    <div *ngIf="!typewriter" class="hero-medium">
+      Outstanding performance & <br>no third-party dependencies
+    </div>
   </div>
 </section>
 <div class="hero-scroll-down">
@@ -173,7 +164,6 @@
 </div>
 
 
-
 <section class="ge-table-header-bg min-height-100vh padding-top radial-circle dark">
   <div class="ge-padding">
     <h2>Demo</h2>
@@ -218,6 +208,7 @@
   <div class="ge-padding">
     <h2>Get Started - Choose your framework:</h2>
     <div class="gap"></div>
+    <a id="getstarted"></a>
 
     <div class="getstarted-grid get-started-div">
       <div>

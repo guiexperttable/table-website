@@ -64,6 +64,10 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     this.observer?.disconnect();
   }
 
+  scrollTo(sel:string){
+    document.querySelector(`${sel}`)?.scrollIntoView({behavior:'smooth'});
+  }
+
   private onScroll(){
     const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
     const offsetHeight = this.nativeElement.offsetHeight + scrollbarWidth;
