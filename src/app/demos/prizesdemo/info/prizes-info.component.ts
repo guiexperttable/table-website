@@ -10,7 +10,6 @@ import { ChangeDetectionStrategy, Component } from "@angular/core";
 export class PrizesInfoComponent {
 
   tag = `<guiexpert-table
-  [tableIf]="!!tableModel"
   [tableModel]="tableModel"
   [tableOptions]="tableOptions"
 ></guiexpert-table>`;
