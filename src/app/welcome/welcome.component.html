@@ -4,8 +4,8 @@
 
     <div class="hero-big">
       Enhance
-      <div class="ge-primary-color">Data Visualization</div>
-      <div> with </div>
+      <div class="ge-secondary-color">Data Visualization</div>
+      <div> with</div>
       <span class="animated-shadow">GuiExpert Table</span>
       <br>
       <br>
@@ -15,7 +15,6 @@
       <ge-typewriter
         *ngIf="typewriter" class="hero-medium"></ge-typewriter>
     </div>
-
 
 
     <div *ngIf="!typewriter" class="hero-medium">
@@ -136,32 +135,6 @@
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 <div style="clear: both"></div>
-
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features">
-    <div class="feature-box">
-      <!--div class="left text-div">
-        <h2>Usability</h2>
-        <ul>
-          <li>Copy</li>
-          <li>Row and Column Spanning</li>
-          <li>Fixed Columns (Left and Right)</li>
-        </ul>
-      </div-->
-      <div class="left text-div">
-        <h2>License</h2>
-        <ul>
-          <li>Open source</li>
-          <li>Free for individuals and non-commercial users</li>
-          <li>For our valued business customers, we offer highly attractive licensing terms.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
-</div>
 
 
 <section class="ge-table-header-bg min-height-100vh padding-top radial-circle dark">
@@ -313,26 +286,45 @@
     </div>
   </div>
 </section>
+<div class="hero-scroll-down">
+  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+</div>
 
 
 <section class="ge-padding padding-top center-all radial-circle dark">
-  <div>
-    <a href="#" mat-list-item routerLink="/law/imprint">
-      <mat-icon>import_contacts</mat-icon>
-      Imprint<!-- Impressum-->
-    </a>
+  <div class="features">
+    <div class="feature-box">
+      <div class="left text-div">
+        <h2>License</h2>
+        <ul>
+          <li>Open source</li>
+          <li>Free for individuals and non-commercial users</li>
+          <li>For our valued business customers, we offer highly attractive licensing terms.</li>
+        </ul>
 
-    <a
-      href="#"
-      mat-list-item
-      routerLink="/law/cou">
-      <mat-icon>gavel</mat-icon>
-      Conditions of Use<!-- Nutzungbedingungen-->
-    </a>
+        <div class="law-div">
+          <mat-nav-list>
+            <a href="#" routerLink="/law/imprint" mat-list-item>
+              <mat-icon>import_contacts</mat-icon>
+              <span class="ge-secondary-color">Imprint</span>
+            </a>
 
-    <a href="#" mat-list-item routerLink="/law/privacy">
-      <mat-icon>sentiment_satisfied_alt</mat-icon>
-      Privacy Notice<!-- Datenschutz-->
-    </a>
+            <a href="#" routerLink="/law/cou" mat-list-item>
+              <mat-icon>gavel</mat-icon>
+              <span class="ge-secondary-color">Conditions of Use</span>
+            </a>
+
+            <a href="#" routerLink="/law/privacy" mat-list-item>
+              <mat-icon>sentiment_satisfied_alt</mat-icon>
+              <span class="ge-secondary-color">Privacy Notice</span>
+            </a>
+          </mat-nav-list>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+<div class="hero-scroll-down">
+  <mat-icon (click)="scroll2Top()">expand_less</mat-icon>
+</div>
+

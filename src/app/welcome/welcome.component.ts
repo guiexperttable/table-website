@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, ElementRef, Inject, OnDestroy, OnIn
 import { DOCUMENT } from "@angular/common";
 
 
-
 @Component({
   selector: "app-doc-welcome",
   templateUrl: "./welcome.component.html",
@@ -32,7 +31,14 @@ export class WelcomeComponent implements OnInit, OnDestroy {
       left: 0,
       behavior: "smooth"
     });
+  }
 
+  scroll2Top() {
+    this.nativeElement.scrollBy({
+      top: -99999,
+      left: 0,
+      behavior: "smooth"
+    });
   }
 
   openCustomThemePicker() {
@@ -64,11 +70,11 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     this.observer?.disconnect();
   }
 
-  scrollTo(sel:string){
-    document.querySelector(`${sel}`)?.scrollIntoView({behavior:'smooth'});
+  scrollTo(sel: string) {
+    document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
   }
 
-  private onScroll(){
+  private onScroll() {
     const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
     const offsetHeight = this.nativeElement.offsetHeight + scrollbarWidth;
 
