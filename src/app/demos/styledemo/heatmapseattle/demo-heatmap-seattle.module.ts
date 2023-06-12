@@ -4,6 +4,7 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { RouterModule } from "@angular/router";
 import { DemoHeatmapSeattleInfoComponent } from "./demo-heatmap-seattle-info.component";
 import { DemoHeatmapSeattleComponent } from "./demo-heatmap-seattle.component";
+import { NgIf } from "@angular/common";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DemoHeatmapSeattleComponent } from "./demo-heatmap-seattle.component";
         path: "heatmapseattle/info",
         component: DemoHeatmapSeattleInfoComponent
       }
-    ])
+    ]),
+    NgIf
   ]
 })
 export class DemoHeatmapSeattleModule {

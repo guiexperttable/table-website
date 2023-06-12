@@ -11,6 +11,7 @@ import { DemoHeatmapInfoComponent } from "./heatmap/demo-heatmap-info.component"
 import { DemoHeatmapSeattleInfoComponent } from "./heatmapseattle/demo-heatmap-seattle-info.component";
 import { DemoHeatmapSeattleComponent } from "./heatmapseattle/demo-heatmap-seattle.component";
 import { DemoHeatmapSeattleModule } from "./heatmapseattle/demo-heatmap-seattle.module";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { DemoHeatmapSeattleModule } from "./heatmapseattle/demo-heatmap-seattle.
         path: "ultra/info",
         component: DemoUltraInfoComponent
       }
-    ])
+    ]),
+    NgIf
   ]
 })
 export class DemoStyleModule {

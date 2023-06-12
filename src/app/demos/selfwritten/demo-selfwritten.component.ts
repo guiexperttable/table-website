@@ -1,8 +1,5 @@
 import { Component } from "@angular/core";
 import {
-  AbstractAreaModel,
-  AreaModelArrayOfArrays,
-  AreaModelIf,
   TableModelFactory,
   TableModelIf
 } from "@guiexpert/table";
@@ -12,7 +9,9 @@ import { SelfwrittenAreaModel } from "./selfwritten-area-model";
 @Component({
   selector: "demo-self-written",
   template: `
-    <guiexpert-table  [tableModel]="tableModel"></guiexpert-table>`,
+    <guiexpert-table
+      *ngIf="tableModel"
+      [tableModel]="tableModel"></guiexpert-table>`,
 
   styles: [`
     :host {

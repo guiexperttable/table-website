@@ -5,6 +5,7 @@ import { DemoSimpleComponent } from "./demo-simple.component";
 import { DemoSimpleInfoComponent } from "./demo-simple-info.component";
 import { SourceCodeModule } from "../../common/code/source-code.module";
 import { CircleLetterModule } from "../../common/circle-letter.module";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CircleLetterModule } from "../../common/circle-letter.module";
       }
     ]),
     SourceCodeModule,
-    CircleLetterModule
+    CircleLetterModule,
+    NgIf
   ]
 })
 export class DemoSimpleModule {

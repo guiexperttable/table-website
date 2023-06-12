@@ -5,6 +5,7 @@ import { DemoSelfwrittenComponent } from "./demo-selfwritten.component";
 import { DemoSelfwrittenInfoComponent } from "./demo-selfwritten-info.component";
 import { SourceCodeModule } from "../../common/code/source-code.module";
 import { CircleLetterModule } from "../../common/circle-letter.module";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CircleLetterModule } from "../../common/circle-letter.module";
       }
     ]),
     SourceCodeModule,
-    CircleLetterModule
+    CircleLetterModule,
+    NgIf
   ]
 })
 export class DemoSelfwrittenModule {

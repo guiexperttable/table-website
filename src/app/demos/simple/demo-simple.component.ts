@@ -8,6 +8,7 @@ import { SyncCssService } from "../../common/syncdata/sync-css.service";
   selector: "demo-simple",
   template: `
     <guiexpert-table
+      *ngIf="tableModel"
       [tableModel]="tableModel"
       (tableReady)="onTableReady($event)"></guiexpert-table>`,
 

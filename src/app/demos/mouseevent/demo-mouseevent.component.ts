@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDe
 import { GeMouseEvent, TableApi, TableModelFactory, TableModelIf } from "@guiexpert/table";
 import { DemoMouseeventAreaModel } from "./demo-mouseevent-area-model";
 import { SyncCssService } from "../../common/syncdata/sync-css.service";
+import * as trace_events from "trace_events";
 
 @Component({
   selector: "demo-mouseevent",

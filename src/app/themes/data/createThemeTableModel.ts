@@ -1,5 +1,7 @@
 import {
+  AreaModelObjectArrayWithColumndefs,
   CheckboxBooleanPropertyCellRenderer,
+  CheckedType,
   ColumnDef,
   ColumnDefIf,
   px50,
@@ -156,25 +158,6 @@ export const COLOR_VARS_LIGHT = `
 `;
 
 
-// export class OkLchCellRenderer implements CellRendererIf {
-//
-//   render(
-//     cellDiv: HTMLDivElement,
-//     _rowIndex: number,
-//     _columnIndex: number,
-//     _areaIdent: AreaIdent,
-//     _areaModel: AreaModelIf,
-//     cellValue: any,
-//     _domService: DomServiceIf): RendererCleanupFnType | undefined {
-//     if (cellValue) {
-//       cellDiv.innerText = (cellValue as OkLch).toCssString();
-//     }
-//     return undefined;
-//   }
-//
-// }
-
-
 export function createColumnDefs(
   bigScreen: boolean = true
 ): ColumnDefIf[] {
@@ -265,15 +248,23 @@ export function createThemeTableModel(
   const rows: ThemeRowIf[] = createTableRows(dark);
   const columnDefs: ColumnDefIf[] = createColumnDefs(bigScreen);
 
-  if (!bigScreen){
+  if (!bigScreen) {
     tableOptions.defaultRowHeights.header = 0;
   }
-  return TableModelFactory.buildByTypedRowsParam({
+  let tableModel = TableModelFactory.buildByTypedRowsParam({
     rows,
     columnDefs,
     tableOptions,
-    fixedLeftColumnCount: bigScreen?1:0
+    fixedLeftColumnCount: bigScreen ? 1 : 0
   });
+  let bodyModel = tableModel.getBodyModel() as AreaModelObjectArrayWithColumndefs<ThemeRowIf>;
+  bodyModel.isRowChecked = (rowIndex: number): CheckedType | undefined => {
+    const sel = bodyModel.getValueAt(rowIndex, 0);
+    console.info("isRowChecked  sel", sel);
+    console.info(bodyModel.getRowByIndex(rowIndex));
+    return sel ? "full" : "none";
+  };
+  return tableModel;
 }
 
 

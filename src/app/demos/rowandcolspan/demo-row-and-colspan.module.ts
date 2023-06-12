@@ -3,6 +3,7 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { DemoRowAndColspanComponent } from "./demo-row-and-colspan.component";
 import { RouterModule } from "@angular/router";
 import { DemoRowAndColspanInfoComponent } from "./info/demo-row-and-colspan-info.component";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [DemoRowAndColspanComponent, DemoRowAndColspanInfoComponent],
@@ -17,7 +18,8 @@ import { DemoRowAndColspanInfoComponent } from "./info/demo-row-and-colspan-info
         path: "info",
         component: DemoRowAndColspanInfoComponent
       }
-    ])
+    ]),
+    NgIf
   ]
 })
 export class DemoRowAndColspanModule {

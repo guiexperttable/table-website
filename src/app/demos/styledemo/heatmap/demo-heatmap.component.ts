@@ -6,7 +6,9 @@ import { createHeatMapModel } from "@guiexpert/demo-table-models";
 @Component({
   selector: "demo-heatmap",
   template: `
-    <guiexpert-table [tableModel]="tableModel"></guiexpert-table>`,
+    <guiexpert-table
+      *ngIf="tableModel"
+      [tableModel]="tableModel"></guiexpert-table>`,
   styles: [`
     :host {
       display: grid;

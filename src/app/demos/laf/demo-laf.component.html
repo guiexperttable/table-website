@@ -16,5 +16,6 @@
 </div>
 
 <guiexpert-table
+  *ngIf="tableModel"
   [tableModel]="tableModel"
   (tableReady)="onTableReady($event)"></guiexpert-table>

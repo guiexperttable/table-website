@@ -4,6 +4,7 @@ import { TableComponent } from "@guiexpert/angular-table";
 import { DemoMouseeventComponent } from "./demo-mouseevent.component";
 import { RouterModule } from "@angular/router";
 import { DemoMouseeventInfoComponent } from "./info/demo-mouseevent-info.component";
+import { NgIf } from "@angular/common";
 
 @NgModule({
   declarations: [DemoMouseeventComponent, DemoMouseeventInfoComponent],
@@ -18,7 +19,8 @@ import { DemoMouseeventInfoComponent } from "./info/demo-mouseevent-info.compone
         path: "info",
         component: DemoMouseeventInfoComponent
       }
-    ])
+    ]),
+    NgIf
   ]
 })
 export class DemoMouseeventModule {
