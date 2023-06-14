@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
   ColumnDefIf,
+  Factory,
   GeFilterService,
   px100,
   px120,
@@ -12,7 +13,6 @@ import {
   px60,
   SelectionModel,
   TableApi,
-  TableModelFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
@@ -116,7 +116,7 @@ export class CryptoTop100Component implements OnInit, OnDestroy {
   }
 
 
-  private onDataLoaded(data: CryptoTopIf[]) {
+  private onDataLoaded(rows: CryptoTopIf[]) {
     // Column model:
     const changePercentageRenderer = new ChangePercentageRenderer();
     const usdRenderer = new UsdRenderer();
@@ -178,10 +178,11 @@ export class CryptoTop100Component implements OnInit, OnDestroy {
     ];
     columnDefs.forEach(cd => cd.sortable = () => true);
 
-    this.tableModel = TableModelFactory.buildByTypedRows<CryptoTopIf>(
-      data,
+    this.tableModel = Factory.createTableModel({
+      rows,
       columnDefs,
-      this.tableOptions);
+      tableOptions: this.tableOptions
+    });
     this.cdr.detectChanges();
   }
 

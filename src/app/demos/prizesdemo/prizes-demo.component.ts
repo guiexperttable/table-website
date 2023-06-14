@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
 import {
   ColumnDef,
-  ColumnDefIf, TableApi,
+  ColumnDefIf, Factory, TableApi,
   TableModelFactory,
   TableModelIf,
   TableOptions,
@@ -86,9 +86,9 @@ export class PrizesDemoComponent implements OnInit, OnDestroy {
       })
     ];
 
-    this.tableModel = TableModelFactory.createByObjectArrayParam<SimplePrize>({
+    this.tableModel = Factory.createTableModel({
       columnDefs: columnDefs,
-      header: [
+      headerData: [
         ["Year", "Category", "Laureate", "", "Motivation"],
         ["", "", "Firstname", "Surname", ""]
       ],

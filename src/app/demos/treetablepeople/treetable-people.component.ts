@@ -13,7 +13,9 @@ import {
   CellRange,
   ColumnDef,
   ColumnDefIf,
-  DateToIntlDDMMYYYYCellRenderer, editInputPipeForNumber,
+  DateToIntlDDMMYYYYCellRenderer,
+  editInputPipeForNumber,
+  Factory,
   FalseFn,
   GeModelChangeEvent,
   MaleFemaleToIconCellRenderer,
@@ -187,13 +189,13 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
 
   private onDataLoaded(data: PersonIf[]) {
     const tree = TableModelFactory.buildTreeRows<PersonIf>(data, "friends");
-    this.tableModel = TableModelFactory.buildByTypedRows<TreeRow<PersonIf>>(
-      tree,
-      this.columnDefs,
-      this.tableOptions,
-      1,
-      1
-    );
+    this.tableModel = Factory.createTableModel({
+      rows: tree,
+      columnDefs: this.columnDefs,
+      tableOptions: this.tableOptions,
+      fixedLeftColumnCount: 1,
+      fixedRightColumnCount: 1
+    });
     // if (this.tableModel) {
     //   this.tableModel.getBodyModel().setValue = this.setValue.bind(this);
     // }

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
-import { GeMouseEvent, TableApi, TableModelFactory, TableModelIf } from "@guiexpert/table";
+import { Factory, GeMouseEvent, TableApi, TableModelFactory, TableModelIf } from "@guiexpert/table";
 import { DemoMouseeventAreaModel } from "./demo-mouseevent-area-model";
 import { SyncCssService } from "../../common/syncdata/sync-css.service";
 import * as trace_events from "trace_events";
@@ -28,7 +28,7 @@ export class DemoMouseeventComponent implements OnInit, OnDestroy {
     for (let i = 0; i < this.colCount; i++) {
       columnSizes.push(60 + (4 * i) % 60);
     }
-    this.tableModel = TableModelFactory.createByAreaModelsParam({
+    this.tableModel = Factory.createTableModel({
       headerAreaModel: new DemoMouseeventAreaModel(2, columnSizes.length),
       bodyAreaModel: new DemoMouseeventAreaModel(200, columnSizes.length),
       footerAreaModel: new DemoMouseeventAreaModel(2, columnSizes.length),

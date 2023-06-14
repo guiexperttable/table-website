@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
   ColumnDefIf,
+  Factory,
   GeFilterService,
   px100,
   px200,
@@ -10,7 +11,6 @@ import {
   px80,
   SelectionModel,
   TableApi,
-  TableModelFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
@@ -117,9 +117,9 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
      */
   }
 
-  private onDataLoaded(data: OlympicIf[]) {
+  private onDataLoaded(rows: OlympicIf[]) {
     let rid = 0;
-    data.forEach(o => o.rid = rid++);
+    rows.forEach(o => o.rid = rid++);
 
     // Column model:
     const columnDefs: ColumnDefIf[] = [
@@ -134,10 +134,11 @@ export class DemoOlympicComponent implements OnInit, OnDestroy {
       new ColumnDef("Medal", "Medal", px100)
     ];
 
-    this.tableModel = TableModelFactory.buildByTypedRows<OlympicIf>(
-      data,
+    this.tableModel = Factory.createTableModel({
+      rows,
       columnDefs,
-      this.tableOptions);
+      tableOptions: this.tableOptions
+    });
     this.cdr.detectChanges();
   }
 

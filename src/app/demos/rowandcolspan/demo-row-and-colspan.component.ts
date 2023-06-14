@@ -3,8 +3,9 @@ import {
   AreaModelArrayOfArrays,
   ColumnDef,
   ColumnDefIf,
-  Size, TableApi,
-  TableModelFactory,
+  Factory,
+  Size,
+  TableApi,
   TableModelIf
 } from "@guiexpert/table";
 import { DemoRowAndColspanAreaModel } from "./demo-row-and-colspan-area-model";
@@ -54,7 +55,7 @@ export class DemoRowAndColspanComponent implements OnInit, OnDestroy {
       }
     }
 
-    this.tableModel = TableModelFactory.createByAreaModelsParam({
+    this.tableModel = Factory.createTableModel({
       headerAreaModel: new AreaModelArrayOfArrays("header", [labels], 34),
       bodyAreaModel: new DemoRowAndColspanAreaModel("body", buf, 34),
       footerAreaModel: new AreaModelArrayOfArrays("footer", footer, 34),
@@ -76,7 +77,6 @@ export class DemoRowAndColspanComponent implements OnInit, OnDestroy {
   onTableReady(api: TableApi) {
     this.tableApi = api;
   }
-
 
 
 }
