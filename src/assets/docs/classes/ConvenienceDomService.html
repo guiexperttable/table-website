@@ -113,7 +113,7 @@
 <h5><span class="tsd-kind-parameter">areaIdent</span>: <a href="../types/AreaIdent.html" class="tsd-signature-type tsd-kind-type-alias">AreaIdent</a><span class="tsd-signature-symbol"> = &quot;body&quot;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:354</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:360</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addCheckboxToDiv" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Checkbox<wbr/>To<wbr/>Div</span><a href="#addCheckboxToDiv" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -132,7 +132,7 @@
 <h5><span class="tsd-kind-parameter">rowIndex</span>: <span class="tsd-signature-type">number</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:244</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:250</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addClass" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Class</span><a href="#addClass" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -166,7 +166,7 @@
 <section class="tsd-panel tsd-member"><a id="addColumnBorderDivs" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Column<wbr/>Border<wbr/>Divs</span><a href="#addColumnBorderDivs" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="addColumnBorderDivs.addColumnBorderDivs-1"><span class="tsd-kind-call-signature">add<wbr/>Column<wbr/>Border<wbr/>Divs</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">tableOptions</span>, <span class="tsd-kind-parameter">parent</span>, <span class="tsd-kind-parameter">geo</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">HTMLDivElement</span><a href="#addColumnBorderDivs.addColumnBorderDivs-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="addColumnBorderDivs.addColumnBorderDivs-1"><span class="tsd-kind-call-signature">add<wbr/>Column<wbr/>Border<wbr/>Divs</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">tableOptions</span>, <span class="tsd-kind-parameter">parent</span>, <span class="tsd-kind-parameter">geo</span>, <span class="tsd-kind-parameter">areaIdent</span>, <span class="tsd-kind-parameter">sideIdent</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">HTMLDivElement</span><a href="#addColumnBorderDivs.addColumnBorderDivs-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -176,14 +176,18 @@
 <li>
 <h5><span class="tsd-kind-parameter">parent</span>: <span class="tsd-signature-type ">HTMLDivElement</span></h5></li>
 <li>
-<h5><span class="tsd-kind-parameter">geo</span>: <a href="GeoData.html" class="tsd-signature-type tsd-kind-class">GeoData</a></h5></li></ul></div>
+<h5><span class="tsd-kind-parameter">geo</span>: <a href="GeoData.html" class="tsd-signature-type tsd-kind-class">GeoData</a></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">areaIdent</span>: <a href="../types/AreaIdent.html" class="tsd-signature-type tsd-kind-type-alias">AreaIdent</a></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">sideIdent</span>: <a href="../types/SideIdent.html" class="tsd-signature-type tsd-kind-type-alias">SideIdent</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:400</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:406</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addColumnDiv" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Column<wbr/>Div</span><a href="#addColumnDiv" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="addColumnDiv.addColumnDiv-1"><span class="tsd-kind-call-signature">add<wbr/>Column<wbr/>Div</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">parent</span>, <span class="tsd-kind-parameter">geo</span>, <span class="tsd-kind-parameter">rowIndex</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">columnIndex</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">areaIdent</span>, <span class="tsd-kind-parameter">text</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">treeArrow</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">tableOptions</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">checkedType</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">sortState</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">HTMLDivElement</span><a href="#addColumnDiv.addColumnDiv-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="addColumnDiv.addColumnDiv-1"><span class="tsd-kind-call-signature">add<wbr/>Column<wbr/>Div</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">parent</span>, <span class="tsd-kind-parameter">geo</span>, <span class="tsd-kind-parameter">rowIndex</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">columnIndex</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">areaIdent</span>, <span class="tsd-kind-parameter">sideIdent</span>, <span class="tsd-kind-parameter">text</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">treeArrow</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">tableOptions</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">checkedType</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">sortState</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">HTMLDivElement</span><a href="#addColumnDiv.addColumnDiv-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -199,6 +203,8 @@
 <li>
 <h5><span class="tsd-kind-parameter">areaIdent</span>: <a href="../types/AreaIdent.html" class="tsd-signature-type tsd-kind-type-alias">AreaIdent</a></h5></li>
 <li>
+<h5><span class="tsd-kind-parameter">sideIdent</span>: <a href="../types/SideIdent.html" class="tsd-signature-type tsd-kind-type-alias">SideIdent</a></h5></li>
+<li>
 <h5><span class="tsd-kind-parameter">text</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5></li>
 <li>
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">treeArrow</span>: <a href="../types/TreeArrowType.html" class="tsd-signature-type tsd-kind-type-alias">TreeArrowType</a></h5></li>
@@ -210,7 +216,7 @@
 <h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">sortState</span>: <a href="../types/SortState.html" class="tsd-signature-type tsd-kind-type-alias">SortState</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:191</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:194</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addDiv" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Div</span><a href="#addDiv" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -227,7 +233,7 @@
 <h5><span class="tsd-kind-parameter">clazz</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:499</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:514</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addFocusBorderDivs" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Focus<wbr/>Border<wbr/>Divs</span><a href="#addFocusBorderDivs" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -244,7 +250,7 @@
 <h5><span class="tsd-kind-parameter">style</span>: <a href="../types/HtmlStyle.html" class="tsd-signature-type tsd-kind-type-alias">HtmlStyle</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:429</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:443</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addHorizontalBorder" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Horizontal<wbr/>Border</span><a href="#addHorizontalBorder" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -258,10 +264,10 @@
 <li>
 <h5><span class="tsd-kind-parameter">parent</span>: <span class="tsd-signature-type ">HTMLDivElement</span></h5></li>
 <li>
-<h5><span class="tsd-kind-parameter">clazz</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ge-table-row-border&quot;</span></h5></li></ul></div>
+<h5><span class="tsd-kind-parameter">clazz</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ge-table-body-center-horizontal-border&quot;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:412</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:426</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addLabelDiv" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Label<wbr/>Div</span><a href="#addLabelDiv" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -284,11 +290,11 @@
 <h5><span class="tsd-kind-parameter">areaIdent</span>: <a href="../types/AreaIdent.html" class="tsd-signature-type tsd-kind-type-alias">AreaIdent</a><span class="tsd-signature-symbol"> = &quot;body&quot;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:268</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:274</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addRowDiv" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Row<wbr/>Div</span><a href="#addRowDiv" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="addRowDiv.addRowDiv-1"><span class="tsd-kind-call-signature">add<wbr/>Row<wbr/>Div</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">divScope</span>, <span class="tsd-kind-parameter">geo</span>, <span class="tsd-kind-parameter">rowIndex</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">areaIdent</span>, <span class="tsd-kind-parameter">text</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">HTMLDivElement</span><a href="#addRowDiv.addRowDiv-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="addRowDiv.addRowDiv-1"><span class="tsd-kind-call-signature">add<wbr/>Row<wbr/>Div</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">divScope</span>, <span class="tsd-kind-parameter">geo</span>, <span class="tsd-kind-parameter">rowIndex</span><span class="tsd-signature-symbol">?</span>, <span class="tsd-kind-parameter">areaIdent</span>, <span class="tsd-kind-parameter">sideIdent</span>, <span class="tsd-kind-parameter">text</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">HTMLDivElement</span><a href="#addRowDiv.addRowDiv-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -301,6 +307,8 @@
 <h5><span class="tsd-kind-parameter">rowIndex</span>: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = -1</span></h5></li>
 <li>
 <h5><span class="tsd-kind-parameter">areaIdent</span>: <a href="../types/AreaIdent.html" class="tsd-signature-type tsd-kind-type-alias">AreaIdent</a></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">sideIdent</span>: <a href="../types/SideIdent.html" class="tsd-signature-type tsd-kind-type-alias">SideIdent</a></h5></li>
 <li>
 <h5><span class="tsd-kind-parameter">text</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&quot;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
@@ -324,7 +332,7 @@
 <h5><span class="tsd-kind-parameter">columnIndex</span>: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = -1</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:308</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:314</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="addVerticalBorder" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>add<wbr/>Vertical<wbr/>Border</span><a href="#addVerticalBorder" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -338,10 +346,10 @@
 <li>
 <h5><span class="tsd-kind-parameter">parent</span>: <span class="tsd-signature-type ">HTMLDivElement</span></h5></li>
 <li>
-<h5><span class="tsd-kind-parameter">clazz</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ge-table-column-border&quot;</span></h5></li></ul></div>
+<h5><span class="tsd-kind-parameter">clazz</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;ge-table-body-center-vertical-border&quot;</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:482</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:496</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="appendRelativeChildDiv" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>append<wbr/>Relative<wbr/>Child<wbr/>Div</span><a href="#appendRelativeChildDiv" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -509,7 +517,7 @@
 <h5><span class="tsd-kind-parameter">style</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:514</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:529</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="createAreaDivWithClass" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>create<wbr/>Area<wbr/>Div<wbr/>With<wbr/>Class</span><a href="#createAreaDivWithClass" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -558,7 +566,7 @@
 <h5><span class="tsd-kind-parameter">divScope</span>: <a href="../types/DivScope.html" class="tsd-signature-type tsd-kind-type-alias">DivScope</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">HTMLDivElement</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in lib/table/service/convenience-dom.service.ts:523</li></ul></aside></li></ul></section>
+<li>Defined in lib/table/service/convenience-dom.service.ts:538</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="setAttribute" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>set<wbr/>Attribute</span><a href="#setAttribute" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -658,6 +666,7 @@
 <li><a href="AreaObjectMap.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Area<wbr/>Object<wbr/>Map</span></a></li>
 <li><a href="AutoRestoreOptions.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Auto<wbr/>Restore<wbr/>Options</span></a></li>
 <li><a href="CellRange.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Cell<wbr/>Range</span></a></li>
+<li><a href="CheckboxBooleanPropertyCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Checkbox<wbr/>Boolean<wbr/>Property<wbr/>Cell<wbr/>Renderer</span></a></li>
 <li><a href="CheckboxCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Checkbox<wbr/>Cell<wbr/>Renderer</span></a></li>
 <li><a href="CheckboxColumn.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Checkbox<wbr/>Column</span></a></li>
 <li><a href="CheckboxModel.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Checkbox<wbr/>Model</span></a></li>
@@ -666,6 +675,7 @@
 <li><a href="ColorRgb.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Color<wbr/>Rgb</span></a></li>
 <li><a href="ColumnDef.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Column<wbr/>Def</span></a></li>
 <li><a href="ConvenienceDomService.html" class="current"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Convenience<wbr/>Dom<wbr/>Service</span></a></li>
+<li><a href="CssVars.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Css<wbr/>Vars</span></a></li>
 <li><a href="DateToIntlDDMMYYYYCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Date<wbr/>To<wbr/>IntlDDMMYYYYCell<wbr/>Renderer</span></a></li>
 <li><a href="DateToIsoCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Date<wbr/>To<wbr/>Iso<wbr/>Cell<wbr/>Renderer</span></a></li>
 <li><a href="DateToLocaleDateCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Date<wbr/>To<wbr/>Locale<wbr/>Date<wbr/>Cell<wbr/>Renderer</span></a></li>
@@ -687,6 +697,7 @@
 <li><a href="InputHandler.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Input<wbr/>Handler</span></a></li>
 <li><a href="MaleFemaleToIconCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Male<wbr/>Female<wbr/>To<wbr/>Icon<wbr/>Cell<wbr/>Renderer</span></a></li>
 <li><a href="MouseHandler.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Mouse<wbr/>Handler</span></a></li>
+<li><a href="MouseTargetData.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Mouse<wbr/>Target<wbr/>Data</span></a></li>
 <li><a href="NumberCellRenderer.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Number<wbr/>Cell<wbr/>Renderer</span></a></li>
 <li><a href="OsxShortcutActionIdMapping.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Osx<wbr/>Shortcut<wbr/>Action<wbr/>Id<wbr/>Mapping</span></a></li>
 <li><a href="Padding.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Padding</span></a></li>
@@ -705,13 +716,14 @@
 <li><a href="StoreStateSortingService.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Store<wbr/>State<wbr/>Sorting<wbr/>Service</span></a></li>
 <li><a href="TableApi.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Api</span></a></li>
 <li><a href="TableCellUpdateEvent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Cell<wbr/>Update<wbr/>Event</span></a></li>
+<li><a href="TableFactory.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Factory</span></a></li>
 <li><a href="TableModel.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Model</span></a></li>
 <li><a href="TableModelAndOptions.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Model<wbr/>And<wbr/>Options</span></a></li>
-<li><a href="TableModelFactory.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Model<wbr/>Factory</span></a></li>
 <li><a href="TableOptions.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Options</span></a></li>
 <li><a href="TableScope.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Table<wbr/>Scope</span></a></li>
 <li><a href="ThreeColorGradientArg.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Three<wbr/>Color<wbr/>Gradient<wbr/>Arg</span></a></li>
 <li><a href="TreeCheckboxModel.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Tree<wbr/>Checkbox<wbr/>Model</span></a></li>
+<li><a href="TreeFactory.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Tree<wbr/>Factory</span></a></li>
 <li><a href="TreeOptions.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Tree<wbr/>Options</span></a></li>
 <li><a href="TreeRow.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Tree<wbr/>Row</span></a></li>
 <li><a href="TreeRowService.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-128-path"></use><use href="#icon-128-text"></use></svg><span>Tree<wbr/>Row<wbr/>Service</span></a></li>
@@ -745,6 +757,7 @@
 <li><a href="../interfaces/TreeRowIf.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Tree<wbr/>Row<wbr/>If</span></a></li>
 <li><a href="../interfaces/TwoColorGradientArgIf.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Two<wbr/>Color<wbr/>Gradient<wbr/>Arg<wbr/>If</span></a></li>
 <li><a href="../interfaces/ValueLabelIf.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>Value<wbr/>Label<wbr/>If</span></a></li>
+<li><a href="../interfaces/editInputPipe.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-256-path"></use><use href="#icon-256-text"></use></svg><span>edit<wbr/>Input<wbr/>Pipe</span></a></li>
 <li><a href="../types/ActionId.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-type-alias)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-4194304-path"></rect><path d="M11.31 16V8.224H8.91V7.24H14.79V8.224H12.39V16H11.31Z" fill="var(--color-text)" id="icon-4194304-text"></path></svg><span>Action<wbr/>Id</span></a></li>
 <li><a href="../types/AreaIdent.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Area<wbr/>Ident</span></a></li>
 <li><a href="../types/AreaObjectMapType.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-4194304-path"></use><use href="#icon-4194304-text"></use></svg><span>Area<wbr/>Object<wbr/>Map<wbr/>Type</span></a></li>
@@ -806,6 +819,7 @@
 <li><a href="../variables/px90.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-32-path"></use><use href="#icon-32-text"></use></svg><span>px90</span></a></li>
 <li><a href="../functions/FalseFn.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-function)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-64-path"></rect><path d="M9.39 16V7.24H14.55V8.224H10.446V11.128H14.238V12.112H10.47V16H9.39Z" fill="var(--color-text)" id="icon-64-text"></path></svg><span>False<wbr/>Fn</span></a></li>
 <li><a href="../functions/TrueFn.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>True<wbr/>Fn</span></a></li>
+<li><a href="../functions/editInputPipeForNumber.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>edit<wbr/>Input<wbr/>Pipe<wbr/>For<wbr/>Number</span></a></li>
 <li><a href="../functions/getAreaIdentByString.html"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-64-path"></use><use href="#icon-64-text"></use></svg><span>get<wbr/>Area<wbr/>Ident<wbr/>By<wbr/>String</span></a></li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>

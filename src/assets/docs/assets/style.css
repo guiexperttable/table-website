@@ -1002,7 +1002,7 @@ ul.tsd-type-parameter-list h5 {
     left: 0;
     width: 100%;
     color: var(--color-text);
-    background: var(--color-background-secondary);
+    background: #fff;
     border-bottom: 1px var(--color-accent) solid;
     transition: transform 0.3s ease-in-out;
 }

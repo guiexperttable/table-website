@@ -1,24 +1,19 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
+
+export type LogoMode = "colored" | "monocolor-black" | "monocolor-white";
 
 @Component({
   selector: "guiexpert-logo",
   templateUrl: "./gui-expert-logo.component.html",
   styleUrls: ["./gui-expert-logo.component.scss"]
 })
-export class GuiExpertLogoComponent implements AfterViewInit {
+export class GuiExpertLogoComponent {
 
   @Input()
-  mode: "colored" | "monocolor-black" | "monocolor-white" = "colored";
+  mode: LogoMode = "colored";
 
   @Input()
   size = 40;
 
-  constructor(
-    private readonly cdr: ChangeDetectorRef
-  ) {
-  }
 
-  ngAfterViewInit(): void {
-    this.cdr.detach();
-  }
 }

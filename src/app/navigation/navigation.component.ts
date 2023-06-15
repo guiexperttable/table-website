@@ -5,6 +5,7 @@ import { map, shareReplay, takeWhile } from "rxjs/operators";
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { MatSidenav, MatSidenavContent } from "@angular/material/sidenav";
 import { environment } from "../../environments/environment";
+import { LogoMode } from "../ge-logo/gui-expert-logo.component";
 
 @Component({
   selector: "app-navigation",
@@ -65,14 +66,15 @@ export class NavigationComponent implements OnInit, OnDestroy {
   fadein = true;
   lawInSidenavVisible = true;
   footerVisible = true;
-  actionBarVisible = false;
-  toolbarVisible = false;
+  demoActionBarVisible = false;
   customHeaderVisible = true;
   customThemePickerButtonVisible = false;
 
   runLink = "";
   infoLink = "";
   menuForcedClosed = false;
+  light = false;
+  headerLogoMode: LogoMode = 'monocolor-white';
   picker = location.href.includes("/picker"); // Once a picker, always a picker.
   public closed = true;
 
@@ -135,6 +137,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
 
+        this.light =
+          evt.url.includes("/tsdoc");
+        this.headerLogoMode = this.light ? 'monocolor-black': 'monocolor-white';
+
         this.customHeaderVisible =
           evt.url ==='/'
           || evt.url.includes("/welcome")
@@ -148,10 +154,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
         console.info("evt.url", evt.url);
         console.info("this.title", this.title);
-        this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker");
-        // && !evt.url.includes("/welcome");
+        // this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker");
         this.menuForcedClosed = evt.url.includes("/themes/custom");
-        this.actionBarVisible = evt.url.includes("/demo/");
+
+        this.demoActionBarVisible = evt.url.includes("/demo/");
         this.customThemePickerButtonVisible = this.isCustomThemePickerVisible(evt.url);
 
         const p = evt.url.replace("info", "").replace("run", "");

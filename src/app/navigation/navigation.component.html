@@ -42,7 +42,7 @@
         API
       </a>
 
-      <a href="#" mat-list-item routerLink="/themes/custom">
+      <a href="/themes/custom" mat-list-item target="_blank">
         <mat-icon>palette</mat-icon>
         Themes
       </a>
@@ -108,7 +108,7 @@
   <mat-sidenav-content #matSidenavContent>
 
     <div
-      *ngIf="actionBarVisible"
+      *ngIf="demoActionBarVisible"
       class="ge-action-bar">
       <a
         [routerLink]="'/welcome'"
@@ -156,24 +156,18 @@
       <router-outlet></router-outlet>
     </div>
 
-    <button
-      class="side-nav-toggle-fab-btn"
-      (click)="drawer.toggle()"
-      *ngIf="!actionBarVisible && !picker && !toolbarVisible && (menuForcedClosed || (isHandset$ | async))"
-      aria-label="Toggle sidenav"
-      mat-mini-fab
-      color="primary"
-      type="button">
-      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-    </button>
-
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 
 <header
   *ngIf="customHeaderVisible"
-  [ngClass]="{'menu-closed': closed}">
+  [ngClass]="{
+    'menu-closed': closed,
+    'light': light,
+    'dark': !light
+  }">
+
   <button
     (click)="drawer.toggle()"
     aria-label="Toggle sidenav"
@@ -187,7 +181,7 @@
      [ngClass]="{'hidden': !closed}"
      routerLink="/welcome">
     <guiexpert-logo
-      [mode]="'monocolor-white'"
+      [mode]="headerLogoMode"
       [size]="30"></guiexpert-logo>
   </a>
   <div
