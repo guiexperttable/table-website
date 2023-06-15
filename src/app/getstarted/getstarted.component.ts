@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
 @Component({
-  selector: "app-get-started",
+  selector: "[appGetStarted]",
   templateUrl: "./getstarted.component.html",
   styleUrls: ["./getstarted.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush

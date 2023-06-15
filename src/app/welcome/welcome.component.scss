@@ -119,57 +119,6 @@
   justify-content: end;
 }
 
-.getstarted-grid {
-  display: grid;
-  gap: 1rem;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
-
-  > div {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    justify-content: space-between;
-
-    .mat-mdc-button:not(:disabled),
-    .mdc-button__label {
-      color: #fff;
-    }
-  }
-
-  .logo-outer {
-    text-align: center;
-    padding-left: 10px;
-
-    .logo {
-      width: 100px;
-      height: 100px;
-      background-color: currentColor;
-      border-color: currentColor;
-      border-radius: 50%;
-      overflow: clip;
-      display: grid;
-      place-items: center;
-
-      &:hover,
-      &:focus-visible {
-        transform: translateY(-0.75rem) scale(1.2);
-        transition: transform 250ms;
-        background-color: rgb(172, 126, 244);
-        // animation: size-animation 1s ease 1;
-      }
-
-      > a,
-      > a > *,
-      > a > * > svg {
-        display: block;
-        width: 80px;
-        height: 80px;
-      }
-    }
-  }
-}
-
 
 h2 {
   font-size: 22px;

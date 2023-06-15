@@ -1,103 +1,109 @@
-<section class="padding-top ge-padding radial-circle dark">
 
-  <div class="center">
-    <h2 class="sub-title">
-      Choose your framework:
-    </h2>
-  </div>
+<div class="ge-padding">
+  <h2>Get Started - Choose your framework:</h2>
+  <div class="gap"></div>
+  <a id="getstarted"></a>
 
-  <div class="get-started-div">
-    <div class="getstarted-grid">
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','angular']" href="#">
+  <div class="getstarted-grid get-started-div">
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','angular']" href="#">
+            <div style="transform: translateX(6px) translateY(4px);">
               <app-angular-logo />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','angular']" mat-button>Angular</button>
       </div>
+      <button [routerLink]="['/getstarted','angular']" mat-button>Angular</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','vue']" href="#">
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','vue']" href="#">
+            <div style="transform: scale(0.9) translateY(10px);">
               <app-vue-logo />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','vue']" mat-button>Vue</button>
       </div>
+      <button [routerLink]="['/getstarted','vue']" mat-button>Vue</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','react']" href="#">
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','react']" href="#">
+            <div style="transform: translateY(4px);">
               <app-react-logo />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','react']" mat-button>React</button>
       </div>
+      <button [routerLink]="['/getstarted','react']" mat-button>React</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','preact']" href="#">
-              <app-preact-logo />
-            </a>
-          </div>
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','preact']" href="#">
+            <app-preact-logo />
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','preact']" mat-button>Preact</button>
       </div>
+      <button [routerLink]="['/getstarted','preact']" mat-button>Preact</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','svelte']" href="#">
-              <app-svelte-logo />
-            </a>
-          </div>
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','svelte']" href="#">
+            <div style="transform: scale(0.8) translateY(-10px);">
+              <app-svelte-logo style="width: 30px;" />
+            </div>
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','svelte']" mat-button>Svelte</button>
       </div>
+      <button [routerLink]="['/getstarted','svelte']" mat-button>Svelte</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','solid']" href="#">
-              <app-solid-logo />
-            </a>
-          </div>
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','solid']" href="#">
+            <app-solid-logo />
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','solid']" mat-button>Solid</button>
       </div>
+      <button [routerLink]="['/getstarted','solid']" mat-button>Solid</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','webcomponent']" href="#">
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','webcomponent']" href="#">
+            <div style="transform: translateY(6px);">
               <app-web-component-logo />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','webcomponent']" mat-button>Web Component</button>
       </div>
+      <button [routerLink]="['/getstarted','webcomponent']" mat-button>Web Component</button>
+    </div>
 
-      <div>
-        <div class="logo-outer">
-          <div class="logo">
-            <a [routerLink]="['/getstarted','plainjs']" href="#">
+    <div>
+      <div class="logo-outer">
+        <div class="logo">
+          <a [routerLink]="['/getstarted','plainjs']" href="#">
+            <div style="transform: scale(0.8);">
               <app-js-logo />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-        <button [routerLink]="['/getstarted','plainjs']" mat-button>Plain JS</button>
       </div>
-
-
+      <button [routerLink]="['/getstarted','plainjs']" mat-button>Plain JS</button>
     </div>
   </div>
+</div>
 
-</section>

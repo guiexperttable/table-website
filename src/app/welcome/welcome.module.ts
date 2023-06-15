@@ -20,6 +20,7 @@ import { MatCheckboxModule } from "@angular/material/checkbox";
 import { FormsModule } from "@angular/forms";
 import { MatListModule } from "@angular/material/list";
 import {GeTypewriterModule} from "../common/ge-typewriter/ge-typewriter.module";
+import { GetstartedModule } from "../getstarted/getstarted.module";
 
 
 const routes: Routes = [
@@ -33,28 +34,29 @@ const routes: Routes = [
   declarations: [
     WelcomeComponent
   ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(routes),
-        GeLogoModule,
-        AngularLogoComponent,
-        VueLogoComponent,
-        PreactLogoComponent,
-        SvelteLogoComponent,
-        SolidLogoComponent,
-        WebComponentLogoComponent,
-        JsLogoComponent,
-        ReactLogoComponent,
-        TimetableDemoModule,
-        MatDividerModule,
-        MatButtonModule,
-        CryptoTop100Module,
-        MatIconModule,
-        MatCheckboxModule,
-        FormsModule,
-        MatListModule,
-        GeTypewriterModule
-    ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    GeLogoModule,
+    AngularLogoComponent,
+    VueLogoComponent,
+    PreactLogoComponent,
+    SvelteLogoComponent,
+    SolidLogoComponent,
+    WebComponentLogoComponent,
+    JsLogoComponent,
+    ReactLogoComponent,
+    TimetableDemoModule,
+    MatDividerModule,
+    MatButtonModule,
+    CryptoTop100Module,
+    MatIconModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatListModule,
+    GeTypewriterModule,
+    GetstartedModule
+  ],
   exports: [RouterModule]
 })
 export class WelcomeModule {

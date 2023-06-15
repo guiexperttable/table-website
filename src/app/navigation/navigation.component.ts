@@ -138,7 +138,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/demo");
 
         this.light =
-          evt.url.includes("/tsdoc");
+          evt.url.includes("/getstarted")
+          || evt.url.includes("/tsdoc");
         this.headerLogoMode = this.light ? 'monocolor-black': 'monocolor-white';
 
         this.customHeaderVisible =

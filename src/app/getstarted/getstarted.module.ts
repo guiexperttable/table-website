@@ -77,7 +77,7 @@ const routes: Routes = [
     MatDividerModule,
     MatButtonModule
   ],
-  exports: [RouterModule]
+  exports: [RouterModule, GetstartedComponent]
 })
 export class GetstartedModule {
 }
