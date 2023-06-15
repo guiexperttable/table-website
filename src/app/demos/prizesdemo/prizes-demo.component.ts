@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit } from "@angular/core";
 import {
   ColumnDef,
-  ColumnDefIf, Factory, TableApi,
-  TableModelFactory,
+  ColumnDefIf, TableFactory, TableApi,
+  TreeFactory,
   TableModelIf,
   TableOptions,
   TableOptionsIf
@@ -86,7 +86,7 @@ export class PrizesDemoComponent implements OnInit, OnDestroy {
       })
     ];
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       columnDefs: columnDefs,
       headerData: [
         ["Year", "Category", "Laureate", "", "Motivation"],

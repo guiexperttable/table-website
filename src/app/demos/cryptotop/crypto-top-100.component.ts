@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import {
   ColumnDef,
   ColumnDefIf,
-  Factory,
+  TableFactory,
   GeFilterService,
   px100,
   px120,
@@ -178,7 +178,7 @@ export class CryptoTop100Component implements OnInit, OnDestroy {
     ];
     columnDefs.forEach(cd => cd.sortable = () => true);
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       rows,
       columnDefs,
       tableOptions: this.tableOptions

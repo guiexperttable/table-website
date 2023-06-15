@@ -3,11 +3,11 @@ import {
   CheckboxBooleanPropertyCellRenderer,
   CheckedType,
   ColumnDef,
-  ColumnDefIf, Factory,
+  ColumnDefIf, TableFactory,
   px50,
   px60,
   Size,
-  TableModelFactory,
+  TreeFactory,
   TableModelIf,
   TableOptions
 } from "@guiexpert/table";
@@ -251,7 +251,7 @@ export function createThemeTableModel(
   if (!bigScreen) {
     tableOptions.defaultRowHeights.header = 0;
   }
-  let tableModel = Factory.createTableModel({
+  let tableModel = TableFactory.createTableModel({
     rows,
     columnDefs,
     tableOptions,

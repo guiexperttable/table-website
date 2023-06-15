@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Factory, TableModelIf } from "@guiexpert/table";
+import { TableFactory, TableModelIf } from "@guiexpert/table";
 import { SelfwrittenAreaModel } from "./selfwritten-area-model";
 
 
@@ -28,7 +28,7 @@ export class DemoSelfwrittenComponent {
   tableModel: TableModelIf;
 
   constructor() {
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       bodyAreaModel: new SelfwrittenAreaModel(),
       columnCount: 6,
       rowCheckboxVisible: false,

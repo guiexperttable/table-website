@@ -3,7 +3,7 @@ import {
   AreaModelArrayOfArrays,
   ColumnDef,
   ColumnDefIf,
-  Factory,
+  TableFactory,
   Size,
   TableApi,
   TableModelIf
@@ -55,7 +55,7 @@ export class DemoRowAndColspanComponent implements OnInit, OnDestroy {
       }
     }
 
-    this.tableModel = Factory.createTableModel({
+    this.tableModel = TableFactory.createTableModel({
       headerAreaModel: new AreaModelArrayOfArrays("header", [labels], 34),
       bodyAreaModel: new DemoRowAndColspanAreaModel("body", buf, 34),
       footerAreaModel: new AreaModelArrayOfArrays("footer", footer, 34),
