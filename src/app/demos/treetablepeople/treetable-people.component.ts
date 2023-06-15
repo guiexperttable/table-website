@@ -173,7 +173,6 @@ export class TreetablePeopleComponent implements OnInit, OnDestroy {
 
 
   onModelChanged(evt: GeModelChangeEvent) {
-    console.info(evt);
     if (evt.cells?.length) {
       for (let i = 0; i < evt.cells.length; i++) {
         const cell = evt.cells[i];
