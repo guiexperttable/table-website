@@ -7,7 +7,7 @@ export class DemoStyleAreaModel extends AbstractAreaModel<string[]> {
   constructor(
     private rowCount = 200,
     private columnCount = 200,
-    private defaultRowHeight: number = 40,
+    public override defaultRowHeight: number = 40,
     private cellRenderer: CellRendererIf
   ) {
     super("body", [], defaultRowHeight);
