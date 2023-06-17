@@ -1,8 +1,8 @@
 header {
-  left: 220px;
-  width: calc(100% - 220px);
+  left: var(--ge-sidenav-width);
+  width: calc(100% - var(--ge-sidenav-width));
 
-  height: 64px;
+  height: var(--ge-header-height);
   background: transparent;
   backdrop-filter: blur(23px);
   position: fixed;
@@ -15,21 +15,26 @@ header {
   grid-template-columns: auto  auto auto 1fr auto auto auto auto auto 50px  auto auto auto;
   font-size: 16px;
 
-  &.dark {
-    color: #fff;
-
-    a {
-      color: #fff;
-    }
+  color: var(--ge-main-color);
+  a {
+    color: var(--ge-main-color);
   }
+  border-bottom: solid 1px var(--ge-header-border-bottom);
 
-  &.light {
-    color: #000;
-
-    a {
-      color: #000;
-    }
-  }
+  //&.dark {
+  //  color: #fff;
+  //
+  //  a {
+  //    color: #fff;
+  //  }
+  //}
+  //&.light {
+  //  color: #000;
+  //
+  //  a {
+  //    color: #000;
+  //  }
+  //}
 
   &.menu-closed {
     left: 0;
@@ -46,7 +51,7 @@ header {
   }
 
   .guiexpert-table-title {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: bold;
   }
 }
@@ -61,7 +66,7 @@ header {
   height: 100%;
 
   .sidenav {
-    width: 220px;
+    width: var(--ge-sidenav-width);
 
     .mat-toolbar {
       background: inherit;

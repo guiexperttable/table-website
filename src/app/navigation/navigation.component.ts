@@ -73,8 +73,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
   runLink = "";
   infoLink = "";
   menuForcedClosed = false;
-  light = false;
-  headerLogoMode: LogoMode = 'monocolor-white';
+  light = true;
+  // headerLogoMode: LogoMode = 'monocolor-white';
   picker = location.href.includes("/picker"); // Once a picker, always a picker.
   public closed = true;
 
@@ -137,10 +137,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
           && !evt.url.includes("/themes")
           && !evt.url.includes("/demo");
 
-        this.light =
-          evt.url.includes("/getstarted")
-          || evt.url.includes("/tsdoc");
-        this.headerLogoMode = this.light ? 'monocolor-black': 'monocolor-white';
+        this.light = true;
+        //   evt.url.includes("/getstarted")
+        //   || evt.url.includes("/tsdoc");
+        // this.headerLogoMode = this.light ? 'monocolor-black': 'monocolor-white';
 
         this.customHeaderVisible =
           evt.url ==='/'

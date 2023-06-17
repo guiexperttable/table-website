@@ -5,7 +5,7 @@
   overflow-x: clip;
   height: 100vh;
   scroll-snap-type: y mandatory;
-  background-color: rgba(49, 58, 114, 1.0);
+  background-color: var(--ge-main-background);
 }
 
 
@@ -13,7 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #fff;
+  color: var(--ge-main-color);
   text-align: center;
 
   .hero-big {
@@ -23,15 +23,18 @@
     margin-bottom: 44px;
     font-weight: bold;
     opacity: 1;
-    color: #fff;
+    color: var(--ge-main-color);
     text-align: center;
     text-wrap: balance;
 
     .getstarted-button {
-      background-color: rgb(172, 126, 244);
-      color: #fff;
+      background-color: var(--ge-primary);
+      color: var(--ge-text-on-primary);
       font-size: 24px;
       height: 60px;
+    }
+    .ge-typewriter-div{
+      min-height: 90px;
     }
   }
 
@@ -74,9 +77,10 @@
 
     h2 {
       font-size: 40px;
+      font-weight: 300;
       margin-top: 20px;
       margin-bottom: 30px;
-      color: var(--ge-secondary);
+      color: var(--ge-main-color);
     }
 
     ul {
@@ -85,6 +89,7 @@
 
       li {
         font-size: 22px;
+        font-weight: 300;
         line-height: 22px;
         padding-bottom: 20px;
       }
@@ -208,19 +213,19 @@ section.show > * {
 
 
 .animated-shadow {
-  text-shadow: 0 0 50px #0f08,
-  0 0 50px #0f08,
-  0 0 100px #0f08,
-  0 0 150px #0f08,
-  0 0 200px #0f08,
-  0 0 250px #0f08;
+  text-shadow: 0 0 50px var(--ge-animated-shadow-color),
+  0 0 50px var(--ge-animated-shadow-color),
+  0 0 100px var(--ge-animated-shadow-color),
+  0 0 150px var(--ge-animated-shadow-color),
+  0 0 200px var(--ge-animated-shadow-color),
+  0 0 250px var(--ge-animated-shadow-color);
   animation: hue-animate 5s linear infinite;
-  //animation-play-state: paused;
+  animation-play-state: paused;
 }
 
-//.hero-big:hover .animated-shadow {
-//  animation-play-state: running;
-//}
+.hero-big:hover .animated-shadow {
+  animation-play-state: running;
+}
 
 @keyframes hue-animate {
   0% {
@@ -241,7 +246,7 @@ section.show > * {
   }
 }
 
-
+/*
 :host {
   --ge-table-bg: #121136;
   --ge-table-header-west-bg: #121136;
@@ -300,3 +305,4 @@ section.show > * {
   --ge-table-dragged-col-div-bg: #2c2e33;;
   --ge-table-drop-zone-bg: #121136;
 }
+*/

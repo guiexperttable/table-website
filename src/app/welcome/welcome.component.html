@@ -12,8 +12,9 @@
       <button mat-flat-button class="getstarted-button" (click)="scrollTo('#getstarted')">Get Started</button>
       <br>
       <br>
-      <ge-typewriter
-        *ngIf="typewriter" class="hero-medium"></ge-typewriter>
+      <div class="ge-typewriter-div">
+        <ge-typewriter *ngIf="typewriter" class="hero-medium"></ge-typewriter>
+      </div>
     </div>
 
 
@@ -138,6 +139,7 @@
 
 
 <section class="ge-table-header-bg min-height-100vh padding-top radial-circle dark">
+  <div class="header-height"></div>
   <div class="ge-padding">
     <h2>Demo</h2>
     <div class="demo-grid">

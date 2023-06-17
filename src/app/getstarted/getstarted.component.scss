@@ -12,7 +12,7 @@
 
     .mat-mdc-button:not(:disabled),
     .mdc-button__label {
-      color: #fff;
+      color: var(--ge-main-color);
     }
   }
 
@@ -23,8 +23,8 @@
     .logo {
       width: 100px;
       height: 100px;
-      background-color: currentColor;
-      border-color: currentColor;
+      background-color: var(--ge-decent-background);
+      border-color: var(--ge-decent-background);
       border-radius: 50%;
       overflow: clip;
       display: grid;

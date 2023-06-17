@@ -1,3 +1,6 @@
+@import "scss/vars";
+@import "scss/colors";
+@import "scss/animation";
 @import "scss/prism";
 @import "scss/fonts";
 @import "scss/ge-responsive";
@@ -5,50 +8,6 @@
 
 
 
-
-:root {
-  --ge-primary: rgb(172, 126, 244);
-  --ge-secondary: #0098db;
-  //--ge-tertiary: #ea53cc;
-  --ge-main-background: rgba(49, 58, 114, 1.0);
-  --ge-main-color: #fff;
-}
-
-.ge-main-background {
-  color: var(--ge-main-background);
-}
-
-.ge-main-color {
-  color: var(--ge-main-color);
-}
-
-.ge-main-bg {
-  background-color: var(--ge-main-color);
-}
-
-.ge-primary-color {
-  color: var(--ge-primary);
-}
-
-.ge-primary-bg {
-  background-color: var(--ge-primary);
-}
-
-.ge-secondary-color {
-  color: var(--ge-secondary);
-}
-
-.ge-secondary-bg {
-  background-color: var(--ge-secondary);
-}
-
-.ge-tertiary-color {
-  color: var(ge-tertiary);
-}
-
-.ge-tertiary-bg {
-  background-color: var(ge-tertiary);
-}
 
 /* You can add global styles to this file, and also import other style files */
 html, body {
@@ -59,60 +18,76 @@ html, body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.full-width-bg {
+  margin-bottom: 100vw;
+  width: 100vw;
+  margin-inline-start: 50%;
+  transform: translateX(-50%);
+}
+
+.header-height {
+  height: var(--ge-header-height);
+}
+
 section {
   scroll-snap-align: start;
+  min-height: 100vh;
 
-  &.min-height-100vh {
-    min-height: 100vh;
-  }
-
-  &.min-height {
-    min-height: calc(100vh - 64px);
-  }
-
-  &.padding-top {
-    padding-top: 64px;
-  }
+  //&.min-height-100vh {
+  //  min-height: 100vh;
+  //}
+  //
+  //&.min-height {
+  //  min-height: calc(100vh - 64px);
+  //}
+  //
+  //&.padding-top {
+  //  padding-top: 64px;
+  //}
 }
 
 
-section.dark {
-  min-height: calc(100vh - 64px);
-
-  background: #120029;;
-  color: #fff;
-
-  .mdc-checkbox,
-  label {
-    color: #fff;
-  }
-
-  .light {
-    background: #fff;
-    color: rgb(2, 0, 36);
-  }
-
-  &.radial-circle {
-    position: relative;
-    isolation: isolate;
-    &::after {
-      content: '';
-       //background: radial-gradient(at center, rgba(49, 58, 114, 1.0), rgba(2, 1, 32, 1.0));
-       //background: radial-gradient(at center, rgba(49, 58, 114, 1.0), rgb(38, 37, 70));
-
-      //background: radial-gradient(47.3% 43.8% at 50% 55.60000000000001%,#63008a 0%,rgba(29,0,41,0) 100%);
-      //background-image: radial-gradient(47.3% 43.8% at 50% 55.6%, rgb(99, 0, 138) 0%, rgba(29, 0, 41, 0) 100%);
-      z-index: -1;
-      position: absolute;
-      inset: 0;
-    }
-  }
-
-  a {
-    color: #0098db;
-    text-decoration: none;
-  }
-}
+//section.dark {
+//  min-height: calc(100vh - 64px);
+//
+//  background: #120029;;
+//  color: #fff;
+//
+//  .mdc-checkbox,
+//  label {
+//    color: #fff;
+//  }
+//
+//  .light {
+//    background: #fff;
+//    color: rgb(2, 0, 36);
+//  }
+//
+//  &.radial-circle {
+//    position: relative;
+//    isolation: isolate;
+//    &::after {
+//      content: '';
+//       //background: radial-gradient(at center, rgba(49, 58, 114, 1.0), rgba(2, 1, 32, 1.0));
+//       //background: radial-gradient(at center, rgba(49, 58, 114, 1.0), rgb(38, 37, 70));
+//
+//      //background: radial-gradient(47.3% 43.8% at 50% 55.60000000000001%,#63008a 0%,rgba(29,0,41,0) 100%);
+//      //background-image: radial-gradient(47.3% 43.8% at 50% 55.6%, rgb(99, 0, 138) 0%, rgba(29, 0, 41, 0) 100%);
+//      z-index: -1;
+//      position: absolute;
+//      inset: 0;
+//    }
+//  }
+//
+//  a {
+//    color: #0098db;
+//    text-decoration: none;
+//  }
+//}
 
 // ---------------------------------------------------
 .hero-scroll-down {
@@ -135,59 +110,6 @@ section.dark {
 @media (max-height: 660px) {
   .hero-scroll-down {
     display: none;
-  }
-}
-
-.shake-vertical {
-  -webkit-animation: shake-vertical 2.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-  animation: shake-vertical 2.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
-}
-
-@-webkit-keyframes shake-vertical {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    transform: translateY(-8px);
-  }
-  20%,
-  40%,
-  60% {
-    transform: translateY(8px);
-  }
-  80% {
-    transform: translateY(6.4px);
-  }
-  90% {
-    transform: translateY(-6.4px);
-  }
-}
-
-@keyframes shake-vertical {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  10%,
-  30%,
-  50%,
-  70% {
-    transform: translateY(-8px);
-  }
-  20%,
-  40%,
-  60% {
-    transform: translateY(8px);
-  }
-  80% {
-    transform: translateY(6.4px);
-  }
-  90% {
-    transform: translateY(-6.4px);
   }
 }
 
@@ -418,44 +340,4 @@ html {
 
 .mat-mdc-fab {
   background-color: #fff !important;
-}
-
-.fade-in {
-  -webkit-animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -o-animation: fadein 2s;
-  animation: fadein 2s;
-
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-moz-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-webkit-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @-ms-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
 }
