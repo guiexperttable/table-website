@@ -123,6 +123,7 @@
       <guiexpert-table
         *ngIf="tableModel"
         (tableReady)="onTableReady($event)"
+        (checkboxChanged)="onCheckboxChanged($event)"
         [tableModel]="tableModel"
         [tableOptions]="tableOptions"
       ></guiexpert-table>

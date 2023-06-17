@@ -153,11 +153,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
           || evt.url.includes("/pricing")
           || evt.url.includes("/getstarted");
 
-        console.info("evt.url", evt.url);
-        console.info("this.title", this.title);
-        // this.toolbarVisible = !!this.title && !evt.url.includes("/themes/custom/picker");
         this.menuForcedClosed = evt.url.includes("/themes/custom");
-
         this.demoActionBarVisible = evt.url.includes("/demo/");
         this.customThemePickerButtonVisible = this.isCustomThemePickerVisible(evt.url);
 

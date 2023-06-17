@@ -260,8 +260,6 @@ export function createThemeTableModel(
   let bodyModel = tableModel.getBodyModel() as AreaModelObjectArrayWithColumndefs<ThemeRowIf>;
   bodyModel.isRowChecked = (rowIndex: number): CheckedType | undefined => {
     const sel = bodyModel.getValueAt(rowIndex, 0);
-    console.info("isRowChecked  sel", sel);
-    console.info(bodyModel.getRowByIndex(rowIndex));
     return sel ? "full" : "none";
   };
   return tableModel;

@@ -381,4 +381,12 @@ export class CustomThemeComponent implements OnInit, OnDestroy {
       .filter(r => r.includes("--ge-table"))
       .map(r => r.split(": ").map(s => s.trim()));
   }
+
+  onCheckboxChanged(evt: any[]) {
+    if (this.tableModel) {
+      const m = this.tableModel.getBodyModel() as AreaModelObjectyArray<ThemeRowIf>;
+      this.selectedCount = m.getAllRows().filter(r => r.selected).length;
+      this.cdr.detectChanges();
+    }
+  }
 }
