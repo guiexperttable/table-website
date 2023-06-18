@@ -1,0 +1,25 @@
+
+.law-div {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(auto-fit, 1fr);
+
+  .mdc-list-item {
+    padding-left: 0;
+  }
+
+  a {
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .mat-icon {
+      display: inline-flex;
+      margin-right: 8px;
+      color: var(--ge-secondary);;
+    }
+
+    span {
+      padding-left: 12px;
+    }
+  }
+}

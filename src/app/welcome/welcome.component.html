@@ -1,196 +1,47 @@
-<section class="ge-padding padding-top center-all radial-circle dark hero-section">
-
-  <div class="hero-box">
-
-    <div class="hero-big">
-      Enhance
-      <div class="ge-secondary-color">Data Visualization</div>
-      <div> with</div>
-      <span class="animated-shadow">GuiExpert Table</span>
-      <br>
-      <br>
-      <button mat-flat-button class="getstarted-button" (click)="scrollTo('#getstarted')">Get Started</button>
-      <br>
-      <br>
-      <div class="ge-typewriter-div">
-        <ge-typewriter *ngIf="typewriter" class="hero-medium"></ge-typewriter>
-      </div>
-    </div>
-
-
-    <div *ngIf="!typewriter" class="hero-medium">
-      Handle large datasets easily
-    </div>
-    <div *ngIf="!typewriter" class="hero-medium">
-      Fully-featured and <br>highly customizable data grid
-    </div>
-    <div *ngIf="!typewriter" class="hero-medium">
-      Outstanding performance & <br>no third-party dependencies
-    </div>
-  </div>
-</section>
+<section appSectionHero class="ge-padding padding-top center-all hero-section"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
 
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features">
-
-    <div class="feature-box">
-      <div class="left text-div">
-        <h2>Features</h2>
-        <ul>
-          <li>Excellent performance for <strong>large</strong> tables by vertical
-            and horizontal <strong>virtual scrolling</strong>
-          </li>
-          <li>Column Interactions (resize, reorder)</li>
-          <li>Sorting Rows</li>
-          <li>Row, Column, and Range Selection</li>
-          <li>Single and Multi Selection</li>
-          <li>UI-agnostic</li>
-          <li>Row and Column Spanning</li>
-          <li>Fixed Columns (Left and Right)</li>
-        </ul>
-      </div>
-      <div class="right img-div">
-        <img alt="." src="assets/screens/tree.png">
-      </div>
-    </div>
-
-  </div>
-</section>
+<section appSectionFeatures class="ge-padding padding-top center-all"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
 
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features">
-
-    <div class="feature-box">
-      <div class="left text-div">
-        <h2>Interaction</h2>
-        <ul>
-          <li>Tree table (Hierarchical View)</li>
-          <!--        <li>Grouped Columns (Hierarchical Header)</li>-->
-          <li>Accessibility support: Keyboard Shortcuts</li>
-          <li>Custom Filtering</li>
-          <li>In-place Cell Editing</li>
-          <li>Userdefined Key and Mouse Events</li>
-        </ul>
-      </div>
-      <div class="right img-div">
-        <img alt="." src="assets/screens/edit.png">
-      </div>
-    </div>
-
-  </div>
-</section>
+<section appSectionInteraction class="ge-padding padding-top center-all"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
 
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features">
-
-    <div class="feature-box">
-      <div class="left text-div">
-        <h2>Usability</h2>
-        <ul>
-          <li>Customizable Look & Feel (via CSS variables)</li>
-          <li>Row sorting</li>
-          <li>Column Reordering (Drag and Drop)</li>
-          <li>State Persistence (Row Sorting, Column Order, Selection)</li>
-        </ul>
-      </div>
-      <div class="right img-div">
-        <img alt="." src="assets/screens/themecreator.png">
-      </div>
-    </div>
-
-  </div>
-</section>
+<section appSectionUsebility class="ge-padding padding-top center-all"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
 
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features">
-    <div class="feature-box">
-      <div class="left text-div">
-        <h2>Cell Layout</h2>
-        <ul>
-          <li>Customizable Cell Contents via Renderer for Header, Body and Footer</li>
-        </ul>
-      </div>
-      <div class="right img-div">
-        <img alt="." src="assets/screens/heatmap.png">
-      </div>
-    </div>
-  </div>
-</section>
+<section appSectionCellStyle class="ge-padding padding-top center-all"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 <div style="clear: both"></div>
 
 
-<section appWelcomeDemo class="ge-table-header-bg min-height-100vh padding-top">
-</section>
+<section appWelcomeDemo class="ge-table-header-bg min-height-100vh padding-top"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
 
-<section appGetStarted class="padding-top center-all radial-circle dark"></section>
+<section appGetStarted class="padding-top center-all"></section>
 <div class="hero-scroll-down">
   <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
 </div>
 
 
-<section class="ge-padding padding-top center-all radial-circle dark">
-  <div class="features">
-    <div class="feature-box">
-      <div class="left text-div">
-        <h2>License</h2>
-        <ul>
-          <li>Open source</li>
-          <li>Free for individuals and non-commercial users</li>
-          <li>For our valued business customers, we offer highly attractive licensing terms.</li>
-        </ul>
-
-        <div class="law-div">
-          <mat-nav-list>
-            <a href="#" routerLink="/license" mat-list-item>
-              <mat-icon>gavel</mat-icon>
-              <span class="ge-secondary-color">License</span>
-            </a>
-
-            <mat-divider></mat-divider>
-
-            <a href="#" routerLink="/law/imprint" mat-list-item>
-              <mat-icon>import_contacts</mat-icon>
-              <span class="ge-secondary-color">Imprint</span>
-            </a>
-
-            <a href="#" routerLink="/law/cou" mat-list-item>
-              <mat-icon>gavel</mat-icon>
-              <span class="ge-secondary-color">Conditions of Use</span>
-            </a>
-
-            <a href="#" routerLink="/law/privacy" mat-list-item>
-              <mat-icon>sentiment_satisfied_alt</mat-icon>
-              <span class="ge-secondary-color">Privacy Notice</span>
-            </a>
-          </mat-nav-list>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section appSectionLicense class="ge-padding padding-top center-all"></section>
 <div class="hero-scroll-down">
   <mat-icon (click)="scroll2Top()">expand_less</mat-icon>
 </div>

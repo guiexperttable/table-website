@@ -1,0 +1,57 @@
+.hero-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--ge-main-color);
+  text-align: center;
+
+  .hero-big {
+    max-width: 560px;
+    font-size: 66px;
+    line-height: 66px;
+    margin-bottom: 44px;
+    font-weight: bold;
+    opacity: 1;
+    color: var(--ge-main-color);
+    text-align: center;
+    text-wrap: balance;
+
+    .getstarted-button {
+      background-color: var(--ge-primary);
+      color: var(--ge-text-on-primary);
+      font-size: 24px;
+      height: 60px;
+    }
+
+    .ge-typewriter-div {
+      min-height: 90px;
+      font-weight: 300;
+    }
+
+  }
+
+  .hero-medium {
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  > .left {
+    flex: 0 1 150px;
+    margin: 5px;
+  }
+
+  > .right {
+    display: flex;
+    flex: 0 1 150px;
+    margin: 5px;
+    justify-content: flex-end;
+    justify-items: flex-end;
+  }
+
+  .hero-img {
+    margin-left: 30px;
+    width: 500px;
+    height: 450px;
+  }
+}

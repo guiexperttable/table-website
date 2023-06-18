@@ -5,7 +5,10 @@ import { DOCUMENT } from "@angular/common";
 @Component({
   selector: "app-doc-welcome",
   templateUrl: "./welcome.component.html",
-  styleUrls: ["./welcome.component.scss"],
+  styleUrls: [
+    "./welcome.component.scss",
+    "./feature-box.scss"
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WelcomeComponent implements OnInit, OnDestroy {

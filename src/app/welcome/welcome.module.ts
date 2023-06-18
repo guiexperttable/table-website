@@ -22,6 +22,12 @@ import { MatListModule } from "@angular/material/list";
 import {GeTypewriterModule} from "../common/ge-typewriter/ge-typewriter.module";
 import { GetstartedModule } from "../getstarted/getstarted.module";
 import { WelcomeDemoModule } from "./welcome-demo/welcome-demo.module";
+import { WelcomeSectionHeroComponent } from "./section-hero/welcome-section-hero.component";
+import { WelcomeSectionFeaturesComponent } from "./section-features/welcome-section-features.component";
+import { WelcomeSectionInteractionComponent } from "./section-interaction/welcome-section-interaction.component";
+import { WelcomeSectionUsabilityComponent } from "./section-usability/welcome-section-usability.component";
+import { WelcomeSectionCellStyleComponent } from "./section-cell-style/welcome-section-cell-style.component";
+import { WelcomeSectionLicenseComponent } from "./section-license/welcome-section-license.component";
 
 
 const routes: Routes = [
@@ -57,7 +63,13 @@ const routes: Routes = [
     MatListModule,
     GeTypewriterModule,
     GetstartedModule,
-    WelcomeDemoModule
+    WelcomeDemoModule,
+    WelcomeSectionHeroComponent,
+    WelcomeSectionFeaturesComponent,
+    WelcomeSectionInteractionComponent,
+    WelcomeSectionUsabilityComponent,
+    WelcomeSectionCellStyleComponent,
+    WelcomeSectionLicenseComponent
   ],
   exports: [RouterModule]
 })

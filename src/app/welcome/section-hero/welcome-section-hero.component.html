@@ -1,0 +1,28 @@
+<div class="hero-box">
+
+  <div class="hero-big">
+    Enhance
+    <div class="ge-secondary-color">Data Visualization</div>
+    <div> with</div>
+    <span class="animated-shadow">GuiExpert Table</span>
+    <br>
+    <br>
+    <button mat-flat-button class="getstarted-button" (click)="scrollTo('#getstarted')">Get Started</button>
+    <br>
+    <br>
+    <div class="ge-typewriter-div">
+      <ge-typewriter *ngIf="typewriter" class="hero-medium"></ge-typewriter>
+    </div>
+  </div>
+
+
+  <div *ngIf="!typewriter" class="hero-medium">
+    Handle large datasets easily
+  </div>
+  <div *ngIf="!typewriter" class="hero-medium">
+    Fully-featured and <br>highly customizable data grid
+  </div>
+  <div *ngIf="!typewriter" class="hero-medium">
+    Outstanding performance & <br>no third-party dependencies
+  </div>
+</div>
