@@ -1,5 +1,6 @@
 
 :host {
+  --ge-welcome-rotate: 0deg;
   --ge-welcome-img-width-number: 500;
   --ge-welcome-img-width: calc(var(--ge-welcome-img-width-number) * 1px);
   --ge-welcome-img-height: calc(var(--ge-welcome-img-width-number)/2 * 1px);
@@ -10,12 +11,14 @@
   overflow-y: scroll;
   overflow-x: clip;
   height: 100vh;
-  scroll-snap-type: y mandatory;
+  //scroll-snap-type: y mandatory;
   background-color: var(--ge-main-background);
 }
 
 section.big {
   height: 400vh;
+  min-height: 400vh;
+  max-height: 400vh;
 }
 
 //.center-all {
@@ -26,14 +29,15 @@ section.big {
 
 .scene {
   position: fixed;
-  top: var(--ge-header-height);
+  top: calc(50vh - var(--ge-welcome-img-height)/2);
+  left: calc(50vw - var(--ge-welcome-img-width)/2);
 
   perspective: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  height: var(--ge-welcome-img-height);
+  width: var(--ge-welcome-img-width);
   background: transparent;
   //background: url('https://i.imgur.com/2WQui47.jpg');
   //background-size: 100% 100%;
@@ -53,8 +57,10 @@ section.big {
   position: relative;
   width: var(--ge-welcome-img-width);
   height: var(--ge-welcome-img-height);
-  animation: rotate 10s ease-in-out infinite;
   transform-origin: center center;
+
+  transform: rotateY(var(--ge-welcome-rotate));
+  //animation: rotate 10s ease-in-out infinite;
 }
 
 

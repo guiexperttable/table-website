@@ -72,19 +72,18 @@ export class Welcome2Component implements OnInit, OnDestroy {
     const offsetHeight = this.nativeElement.offsetHeight + scrollbarWidth;
 
     // Rotation:
-    const rotH = 0.5 + ((this.nativeElement.scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
-    const rotateY = `${rotH * 180 - 180}deg`;
-    this.nativeElement.style.setProperty("--rotateY", rotateY);
+    const r = this.nativeElement.scrollTop * 360 /  (4*offsetHeight);
+    this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r}deg`);
 
     // Opacity:
-    let opacH = (((this.nativeElement.scrollTop + offsetHeight) % offsetHeight) / offsetHeight) % 1;
-    if (opacH < 0.5) {
-      opacH = 1 - opacH;
-    }
-    if (opacH === 0) opacH = 1;
-    opacH = (opacH - 1) * 2 + 1;
-    opacH = opacH * opacH;
-    const opacity = `${opacH}`;
-    this.nativeElement.style.setProperty("--opacity", opacity);
+    // let opacH = (((this.nativeElement.scrollTop + offsetHeight) % offsetHeight) / offsetHeight) % 1;
+    // if (opacH < 0.5) {
+    //   opacH = 1 - opacH;
+    // }
+    // if (opacH === 0) opacH = 1;
+    // opacH = (opacH - 1) * 2 + 1;
+    // opacH = opacH * opacH;
+    // const opacity = `${opacH}`;
+    // this.nativeElement.style.setProperty("--opacity", opacity);
   }
 }
