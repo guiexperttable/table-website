@@ -1,5 +1,11 @@
 
 :host {
+  --ge-welcome-img-width-number: 600;
+  --ge-welcome-img-width: 600px;
+  --ge-welcome-img-height: 300px;
+  --ge-welcome-img-transform: 300px;
+  --ge-welcome-img-transform-neg: -300px;
+
   margin: 0;
   overflow-y: scroll;
   overflow-x: clip;
@@ -16,20 +22,6 @@ section.big {
 //  display: grid;
 //  place-items: center;
 //}
-
-
-
-
-$size-px: 300px;
-$width-px: 600px;
-$transform: $width-px / 2;
-//$transform: $size-px / 2;
-
-:root {
-  --img-width: 600px;
-  --transform-x: 300px;
-}
-
 
 
 .scene {
@@ -59,16 +51,16 @@ $transform: $width-px / 2;
 .cube {
   transform-style: preserve-3d;
   position: relative;
-  width: $width-px;
-  height: $size-px;
+  width: var(--ge-welcome-img-width);
+  height: var(--ge-welcome-img-height);
   animation: rotate 10s ease-in-out infinite;
   transform-origin: center center;
 }
 
 .side {
   position: absolute;
-  width: $width-px;
-  height: $size-px;
+  width: var(--ge-welcome-img-width);
+  height: var(--ge-welcome-img-height);
   background-color: transparent;
   opacity: .95;
   background-size: cover;
@@ -79,19 +71,19 @@ $transform: $width-px / 2;
 
 
 .front {
-  transform: translateZ($transform);
+  transform: translateZ(var(--ge-welcome-img-transform));
   background-image: url(/assets/screens/tree.png);
 }
 .right {
-  transform: translateX($transform) rotateY(90deg);
+  transform: translateX(var(--ge-welcome-img-transform)) rotateY(90deg);
   background-image: url(/assets/screens/edit.png);
 }
 .back {
-  transform: translateZ(-#{$transform}) rotateX(180deg) rotateZ(180deg) ;
+  transform: translateZ(var(--ge-welcome-img-transform-neg)) rotateX(180deg) rotateZ(180deg) ;
   background-image: url(/assets/screens/themecreator.png);
 }
 .left {
-  transform: translateX(-#{$transform}) rotateY(90deg) scaleX(-1);
+  transform: translateX(var(--ge-welcome-img-transform-neg)) rotateY(90deg) scaleX(-1);
   background-image: url(/assets/screens/heatmap.png);
 }
 
