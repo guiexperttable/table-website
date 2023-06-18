@@ -1,6 +1,6 @@
 
 :host {
-  --ge-welcome-img-width-number: 600;
+  --ge-welcome-img-width-number: 500;
   --ge-welcome-img-width: calc(var(--ge-welcome-img-width-number) * 1px);
   --ge-welcome-img-height: calc(var(--ge-welcome-img-width-number)/2 * 1px);
   --ge-welcome-img-transform: var(--ge-welcome-img-height);
@@ -57,16 +57,16 @@ section.big {
   transform-origin: center center;
 }
 
+
 .side {
   position: absolute;
   width: var(--ge-welcome-img-width);
   height: var(--ge-welcome-img-height);
   background-color: transparent;
-  opacity: .95;
+  opacity: 1;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 
 
