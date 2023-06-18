@@ -21,6 +21,7 @@ import { FormsModule } from "@angular/forms";
 import { MatListModule } from "@angular/material/list";
 import {GeTypewriterModule} from "../common/ge-typewriter/ge-typewriter.module";
 import { GetstartedModule } from "../getstarted/getstarted.module";
+import { WelcomeDemoModule } from "./welcome-demo/welcome-demo.module";
 
 
 const routes: Routes = [
@@ -55,7 +56,8 @@ const routes: Routes = [
     FormsModule,
     MatListModule,
     GeTypewriterModule,
-    GetstartedModule
+    GetstartedModule,
+    WelcomeDemoModule
   ],
   exports: [RouterModule]
 })

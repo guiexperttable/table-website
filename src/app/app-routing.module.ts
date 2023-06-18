@@ -11,8 +11,8 @@ const routes: Routes = [
       import("./welcome/welcome.module").then(m => m.WelcomeModule)
   },
   {
-    path: "welcome2", loadChildren: () =>
-      import("./welcome2/welcome2.module").then(m => m.Welcome2Module)
+    path: "welcome-alt", loadChildren: () =>
+      import("./welcome/welcome-alt/welcome2.module").then(m => m.Welcome2Module)
   },
   {
     path: "api", loadChildren: () =>

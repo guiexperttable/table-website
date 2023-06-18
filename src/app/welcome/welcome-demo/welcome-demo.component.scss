@@ -1,0 +1,24 @@
+
+
+.demo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+
+h2 {
+  font-size: 22px;
+  margin: 40px 0 20px 0;
+}
+
+.height-50-vh {
+  height: 50vh;
+}
+
+.mat-primary.mat-mdc-button-base {
+  background: var(--ge-table-doc-primary-color);
+  color: var(--ge-table-doc-dark-color);
+  margin-right: 16px;
+}
+

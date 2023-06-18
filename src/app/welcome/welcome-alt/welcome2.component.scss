@@ -11,23 +11,19 @@
   overflow-y: scroll;
   overflow-x: clip;
   height: 100vh;
-  //scroll-snap-type: y mandatory;
-  background-color: var(--ge-main-background);
+  scroll-snap-type: y mandatory;
+  background-color: transparent;
 }
 
 section.big {
   height: 400vh;
   min-height: 400vh;
   max-height: 400vh;
+  background: transparent;
 }
 
-//.center-all {
-//  display: grid;
-//  place-items: center;
-//}
-
-
 .scene {
+  z-index: -3;
   position: fixed;
   top: calc(50vh - var(--ge-welcome-img-height)/2);
   left: calc(50vw - var(--ge-welcome-img-width)/2);
@@ -39,17 +35,6 @@ section.big {
   height: var(--ge-welcome-img-height);
   width: var(--ge-welcome-img-width);
   background: transparent;
-  //background: url('https://i.imgur.com/2WQui47.jpg');
-  //background-size: 100% 100%;
-  //background-position: center;
-  //background-repeat: no-repeat;
-
-  //&:hover {
-  //  transform: scale(1.5);
-  //  .side {
-  //    opacity: 1;
-  //  }
-  //}
 }
 
 .cube {
@@ -59,7 +44,8 @@ section.big {
   height: var(--ge-welcome-img-height);
   transform-origin: center center;
 
-  transform: rotateY(var(--ge-welcome-rotate));
+  transform: scale(var(--ge-welcome-zoom)) rotateY(var(--ge-welcome-rotate));
+
   //animation: rotate 10s ease-in-out infinite;
 }
 
@@ -102,4 +88,101 @@ section.big {
   50% { transform: rotateY(-180deg)}
   75% { transform: rotateY(-270deg)}
   100% { transform: rotateY(-360deg)}
+}
+
+.demo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.height-50-vh {
+  height: 50vh;
+}
+
+
+
+
+
+.feature-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+  > .left {
+    flex: 0 1 400px;
+    margin-right: 20px;
+
+    h2 {
+      font-size: 40px;
+      font-weight: 300;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      color: var(--ge-main-color);
+    }
+
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+
+      li {
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 22px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  > .right {
+    display: flex;
+    flex: 0 1 400px;
+    margin: 5px;
+    padding-top: 16px;
+    perspective: 600px;
+
+    > img {
+      transform: rotateY(var(--rotateY));
+      opacity: var(--opacity);
+      width: 400px;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+
+
+
+div.box {
+  scroll-snap-align: start;
+  min-height: 50vh;
+  padding: 0;
+
+  .text-div {
+    padding: 0 16px;
+    min-height: 25vh;
+  }
+  .img-div {
+    padding: 0 16px 16px 0;
+    height: 25vh;
+    overflow: clip;
+    > div {
+      height: min(25vh, 100%);
+      width: 100%;
+    }
+
+    img {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      max-width: min(25vh, 100%);
+    }
+  }
+
+  h2 {
+    margin-top: 16px;
+  }
+
+  ul {
+    padding-left: 12px;
+  }
 }

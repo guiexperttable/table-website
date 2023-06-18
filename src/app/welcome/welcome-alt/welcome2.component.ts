@@ -3,15 +3,15 @@ import { DOCUMENT } from "@angular/common";
 
 
 @Component({
-  selector: "app-doc-welcome",
+  selector: "app-doc-welcome-2",
   templateUrl: "./welcome2.component.html",
   styleUrls: ["./welcome2.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Welcome2Component implements OnInit, OnDestroy {
 
-
-  private observer?: IntersectionObserver;
+  public freezeUi = false;
+  // private observer?: IntersectionObserver;
   private nativeElement: HTMLDivElement;
 
   constructor(
@@ -22,27 +22,10 @@ export class Welcome2Component implements OnInit, OnDestroy {
     this.nativeElement.addEventListener("scroll", this.onScroll.bind(this), false);
   }
 
-  // scrollDown() {
-  //   const h = document.body.offsetHeight;
-  //   this.nativeElement.scrollBy({
-  //     top: h,
-  //     left: 0,
-  //     behavior: "smooth"
-  //   });
-  // }
-  //
-  // scroll2Top() {
-  //   this.nativeElement.scrollBy({
-  //     top: -99999,
-  //     left: 0,
-  //     behavior: "smooth"
-  //   });
-  // }
-  //
-  // scrollTo(sel: string) {
-  //   document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
-  // }
 
+  scrollTo(sel: string) {
+    document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
+  }
 
 
   ngOnInit(): void {
@@ -66,14 +49,42 @@ export class Welcome2Component implements OnInit, OnDestroy {
   }
 
 
+  scrollDown() {
+    const h = document.body.offsetHeight;
+    this.nativeElement.scrollBy({
+      top: h,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
+  scroll2Top() {
+    this.nativeElement.scrollBy({
+      top: -99999,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
+  openCustomThemePicker() {
+    window.open(
+      "http://localhost:4200/themes/custom/picker#welcome",
+      "_blank",
+      "left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0");
+  }
 
   private onScroll() {
     const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
     const offsetHeight = this.nativeElement.offsetHeight + scrollbarWidth;
 
     // Rotation:
-    const r = this.nativeElement.scrollTop * 360 /  (4*offsetHeight);
-    this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r}deg`);
+    const r0 = this.nativeElement.scrollTop * 360 / (4 * offsetHeight);
+    const r1 = Math.min(270, r0);
+    const zoom = r0 <= 270 ? 1 : (r0 - r1) / 4;
+    this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
+    this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);
+
+    document.title = this.nativeElement.scrollTop + ", " + r1;
 
     // Opacity:
     // let opacH = (((this.nativeElement.scrollTop + offsetHeight) % offsetHeight) / offsetHeight) % 1;
