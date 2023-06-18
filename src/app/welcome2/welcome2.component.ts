@@ -4,14 +4,12 @@ import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: "app-doc-welcome",
-  templateUrl: "./welcome.component.html",
-  styleUrls: ["./welcome.component.scss"],
+  templateUrl: "./welcome2.component.html",
+  styleUrls: ["./welcome2.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WelcomeComponent implements OnInit, OnDestroy {
+export class Welcome2Component implements OnInit, OnDestroy {
 
-  public freezeUi = false;
-  public typewriter = true;
 
   private observer?: IntersectionObserver;
   private nativeElement: HTMLDivElement;
@@ -24,55 +22,50 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     this.nativeElement.addEventListener("scroll", this.onScroll.bind(this), false);
   }
 
-  scrollDown() {
-    const h = document.body.offsetHeight;
-    this.nativeElement.scrollBy({
-      top: h,
-      left: 0,
-      behavior: "smooth"
-    });
-  }
+  // scrollDown() {
+  //   const h = document.body.offsetHeight;
+  //   this.nativeElement.scrollBy({
+  //     top: h,
+  //     left: 0,
+  //     behavior: "smooth"
+  //   });
+  // }
+  //
+  // scroll2Top() {
+  //   this.nativeElement.scrollBy({
+  //     top: -99999,
+  //     left: 0,
+  //     behavior: "smooth"
+  //   });
+  // }
+  //
+  // scrollTo(sel: string) {
+  //   document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
+  // }
 
-  scroll2Top() {
-    this.nativeElement.scrollBy({
-      top: -99999,
-      left: 0,
-      behavior: "smooth"
-    });
-  }
 
-  openCustomThemePicker() {
-    window.open(
-      "http://localhost:4200/themes/custom/picker#welcome",
-      "_blank",
-      "left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0");
-  }
 
   ngOnInit(): void {
-    this.observer = new IntersectionObserver(entries =>
-      entries
-        .forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            } else {
-              entry.target.classList.remove("show");
-            }
-          }
-        ));
-
-    this.document
-      .querySelectorAll("section")
-      .forEach(el => this.observer?.observe(el));
-
+    // this.observer = new IntersectionObserver(entries =>
+    //   entries
+    //     .forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //           entry.target.classList.add("show");
+    //         } else {
+    //           entry.target.classList.remove("show");
+    //         }
+    //       }
+    //     ));
+    // this.document
+    //   .querySelectorAll("section")
+    //   .forEach(el => this.observer?.observe(el));
   }
 
   ngOnDestroy(): void {
-    this.observer?.disconnect();
+    // this.observer?.disconnect();
   }
 
-  scrollTo(sel: string) {
-    document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
-  }
+
 
   private onScroll() {
     const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
