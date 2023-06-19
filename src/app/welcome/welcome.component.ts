@@ -13,9 +13,6 @@ import { DOCUMENT } from "@angular/common";
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
 
-
-  public typewriter = true;
-
   private observer?: IntersectionObserver;
   private nativeElement: HTMLDivElement;
 
@@ -45,16 +42,21 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.observer = new IntersectionObserver(entries =>
-      entries
-        .forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("show");
-            } else {
-              entry.target.classList.remove("show");
+    const options = {
+      threshold: 0.5
+    };
+    this.observer = new IntersectionObserver(
+      entries =>
+        entries
+          .forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+              } else {
+                entry.target.classList.remove("show");
+              }
             }
-          }
-        ));
+          ),
+      options);
 
     this.document
       .querySelectorAll("section")
@@ -66,9 +68,6 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     this.observer?.disconnect();
   }
 
-  scrollTo(sel: string) {
-    document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
-  }
 
   private onScroll() {
     const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
@@ -77,7 +76,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     // Rotation:
     const rotH = 0.5 + ((this.nativeElement.scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
     const rotateY = `${rotH * 180 - 180}deg`;
-    this.nativeElement.style.setProperty("--rotateY", rotateY);
+    this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
 
     // Opacity:
     let opacH = (((this.nativeElement.scrollTop + offsetHeight) % offsetHeight) / offsetHeight) % 1;

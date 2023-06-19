@@ -8,10 +8,9 @@ import { DOCUMENT } from "@angular/common";
   styleUrls: ["./welcome2.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Welcome2Component implements OnInit, OnDestroy {
+export class Welcome2Component {
 
-  public freezeUi = false;
-  // private observer?: IntersectionObserver;
+
   private nativeElement: HTMLDivElement;
 
   constructor(
@@ -26,28 +25,6 @@ export class Welcome2Component implements OnInit, OnDestroy {
   scrollTo(sel: string) {
     document.querySelector(`${sel}`)?.scrollIntoView({ behavior: "smooth" });
   }
-
-
-  ngOnInit(): void {
-    // this.observer = new IntersectionObserver(entries =>
-    //   entries
-    //     .forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //           entry.target.classList.add("show");
-    //         } else {
-    //           entry.target.classList.remove("show");
-    //         }
-    //       }
-    //     ));
-    // this.document
-    //   .querySelectorAll("section")
-    //   .forEach(el => this.observer?.observe(el));
-  }
-
-  ngOnDestroy(): void {
-    // this.observer?.disconnect();
-  }
-
 
   scrollDown() {
     const h = document.body.offsetHeight;
@@ -66,35 +43,32 @@ export class Welcome2Component implements OnInit, OnDestroy {
     });
   }
 
-  openCustomThemePicker() {
-    window.open(
-      "http://localhost:4200/themes/custom/picker#welcome",
-      "_blank",
-      "left=100,top=100,width=720,height=755,location=0,scrollbars=0,status=0");
-  }
 
   private onScroll() {
     const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
     const offsetHeight = this.nativeElement.offsetHeight + scrollbarWidth;
 
     // Rotation:
-    const r0 = this.nativeElement.scrollTop * 360 / (4 * offsetHeight);
+    const scrollTop = this.nativeElement.scrollTop;
+    const r0 = scrollTop * 360 / (4 * offsetHeight);
     const r1 = Math.min(270, r0);
-    const zoom = r0 <= 270 ? 1 : (r0 - r1) / 4;
+
+    // Zoom:
+    let zoom = r0 <= 275 ? 1 : ((r0 - 275)/4);
+    if (zoom < 1) {
+      zoom = 1;
+    }
+    zoom = Math.min(10, zoom);
+
+    const opacity = scrollTop > 3700 ? 0 : 1;
+
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);
+    this.nativeElement.style.setProperty("--ge-welcome-opacity", `${opacity}`);
 
-    document.title = this.nativeElement.scrollTop + ", " + r1;
-
-    // Opacity:
-    // let opacH = (((this.nativeElement.scrollTop + offsetHeight) % offsetHeight) / offsetHeight) % 1;
-    // if (opacH < 0.5) {
-    //   opacH = 1 - opacH;
-    // }
-    // if (opacH === 0) opacH = 1;
-    // opacH = (opacH - 1) * 2 + 1;
-    // opacH = opacH * opacH;
-    // const opacity = `${opacH}`;
-    // this.nativeElement.style.setProperty("--opacity", opacity);
+    // Rotation of feature images:
+    const rotH = 0.5 + ((scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
+    const rotateY = `${rotH * 180 - 180}deg`;
+    this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
   }
 }

@@ -37,7 +37,7 @@
     perspective: 600px;
 
     > img {
-      transform: rotateY(var(--rotateY));
+      transform: rotateY(var(--ge-welcome-rotate-feature-img));
       opacity: var(--opacity);
       width: 400px;
       aspect-ratio: 1;
