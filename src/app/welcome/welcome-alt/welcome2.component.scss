@@ -58,6 +58,8 @@ section.big {
   opacity: 1;
   background-size: cover;
   background-repeat: no-repeat;
+  border: 1px solid var(--ge-header-border-bottom);
+  border-radius: 10px;
 }
 
 

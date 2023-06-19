@@ -7,14 +7,3 @@
   scroll-snap-type: y mandatory;
   background-color: var(--ge-main-background);
 }
-
-
-
-section + .hero-scroll-down {
-  opacity: 0;
-  transition: ease-in-out 600ms;
-}
-
-section.show + .hero-scroll-down {
-  opacity: 1;
-}

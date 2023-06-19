@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Inject, OnDestroy, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ElementRef, Inject } from "@angular/core";
 import { DOCUMENT } from "@angular/common";
 
 
@@ -54,17 +54,19 @@ export class Welcome2Component {
     const r1 = Math.min(270, r0);
 
     // Zoom:
-    let zoom = r0 <= 275 ? 1 : ((r0 - 275)/4);
+    let zoom = r0 <= 275 ? 1 : ((r0 - 275) / 4);
     if (zoom < 1) {
       zoom = 1;
     }
     zoom = Math.min(10, zoom);
 
     const opacity = scrollTop > 3700 ? 0 : 1;
+    const display = ((this.nativeElement.scrollHeight - scrollTop) <= (1.5 * offsetHeight)) ? "none" : "";
 
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);
     this.nativeElement.style.setProperty("--ge-welcome-opacity", `${opacity}`);
+    this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `${display}`);
 
     // Rotation of feature images:
     const rotH = 0.5 + ((scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;

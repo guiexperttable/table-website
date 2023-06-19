@@ -52,6 +52,14 @@ section {
   overflow: visible;
   width: 0;
   height: 0;
+  z-index: 4;
+
+  &.fix {
+    top:inherit;
+    position: fixed;
+    bottom: 50px;
+    display: var(--ge-welcome-scrolldown-display);
+  }
 
   .mat-icon {
     font-size: 40px;
@@ -60,6 +68,14 @@ section {
     height: 40px;
     cursor: pointer;
   }
+}
+section + .hero-scroll-down {
+  opacity: 0;
+  transition: ease-in-out 600ms;
+}
+
+section.show + .hero-scroll-down {
+  opacity: 1;
 }
 
 @media (max-height: 660px) {
