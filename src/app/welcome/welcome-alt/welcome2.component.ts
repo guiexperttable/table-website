@@ -66,9 +66,7 @@ export class Welcome2Component {
     }
     zoom = Math.min(10, zoom);
     const headlinesIdx = Math.min(this.headlines.length - 1, Math.round(scrollTop / offsetHeight));
-    document.title = headlinesIdx + "";
     const opacity = scrollTop > 3700 ? 0 : 1;
-    //const display = ((this.nativeElement.scrollHeight - scrollTop) <= (1.5 * offsetHeight)) ? "none" : "";
     const displayHeroText = zoom > 2 ? "none" : "grid";
 
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
