@@ -6,6 +6,8 @@
   --ge-welcome-img-height: calc(var(--ge-welcome-img-width-number)/2 * 1px);
   --ge-welcome-img-transform: var(--ge-welcome-img-height);
   --ge-welcome-img-transform-neg: calc(-1 * var(--ge-welcome-img-width-number) / 2 * 1px);
+  --ge-headline-hero-super-content: 'Excellent performance';
+  --ge-headline-hero-super-display: grid;
 
   margin: 0;
   overflow-y: scroll;
@@ -14,6 +16,50 @@
   scroll-snap-type: y proximity;
   background-color: transparent;
 }
+
+.hero-text {
+  position: fixed;
+  top: calc(50vh - var(--ge-welcome-img-height)/2 - 220px);
+  left: 0;
+  height: 100px;
+  width: 100%;
+  place-items: center;
+  background: transparent;
+  color: var(--ge-main-color);
+  font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+  display: var(--ge-headline-hero-super-display);
+
+  .guiexpert-table-title {
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin-bottom: 12px;
+  }
+  .headline-hero-super {
+    font-size: 66px;
+    letter-spacing: -1px;
+  }
+  .headline-hero-super::after {
+    content: var(--ge-headline-hero-super-content);
+  }
+}
+
+
+.hero-action {
+  position: fixed;
+  top: calc(50vh + var(--ge-welcome-img-height)/2 + 60px);
+  left: 0;
+  height: 100px;
+  width: 100%;
+  display: var(--ge-headline-hero-super-display);
+  place-items: center;
+  background: transparent;
+}
+
+.hidden-1 {display: block;}
+.hidden-2 {display: none;}
+.hidden-3 {display: none;}
+.hidden-3 {display: none;}
 
 section.big {
   height: 400vh;

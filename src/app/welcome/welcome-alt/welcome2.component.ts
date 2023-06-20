@@ -12,6 +12,12 @@ export class Welcome2Component {
 
 
   private nativeElement: HTMLDivElement;
+  private headlines = [
+    "Excellent performance",
+    "High Interactivity",
+    "Extreme Customizable",
+    "Open Source"
+  ];
 
   constructor(
     private readonly elementRef: ElementRef,
@@ -59,14 +65,18 @@ export class Welcome2Component {
       zoom = 1;
     }
     zoom = Math.min(10, zoom);
-
+    const headlinesIdx = Math.min(this.headlines.length - 1, Math.round(scrollTop / offsetHeight));
+    document.title = headlinesIdx + "";
     const opacity = scrollTop > 3700 ? 0 : 1;
-    const display = ((this.nativeElement.scrollHeight - scrollTop) <= (1.5 * offsetHeight)) ? "none" : "";
+    //const display = ((this.nativeElement.scrollHeight - scrollTop) <= (1.5 * offsetHeight)) ? "none" : "";
+    const displayHeroText = zoom > 2 ? "none" : "grid";
 
+    this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);
     this.nativeElement.style.setProperty("--ge-welcome-opacity", `${opacity}`);
-    this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `${display}`);
+    this.nativeElement.style.setProperty("--ge-headline-hero-super-content", "'" + this.headlines[headlinesIdx] + "'");
+    this.nativeElement.style.setProperty("--ge-headline-hero-super-display", displayHeroText);
 
     // Rotation of feature images:
     const rotH = 0.5 + ((scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
