@@ -220,14 +220,20 @@ guiexpert-table-doc-root .ge-footer {
   line-height: 20px;
 }
 
-.mat-mdc-unelevated-button.mat-primary {
-  --mdc-filled-button-container-color: rgba(249, 58, 6, 0.1) !important;
-  --mdc-filled-button-label-text-color: #000 !important;
-}
 
-.mat-mdc-outlined-button:not(:disabled) {
-  --mdc-outlined-button-label-text-color: #F93A06 !important;
-}
+//button.getstarted-button {
+//  background-color: var(--ge-primary);
+//  color: var(--ge-text-on-primary);
+//  font-size: 24px;
+//  height: 60px;
+//}
+//.mat-mdc-unelevated-button:not(:disabled) {
+//  background-color: var(--ge-primary);
+//}
+//
+//.mat-mdc-outlined-button:not(:disabled) {
+//  --mdc-outlined-button-label-text-color: #F93A06 !important;
+//}
 
 .mat-mdc-unelevated-button,
 .mat-button, .mat-icon-button, .mat-stroked-button, .mat-raised-button, .mat-flat-button {
@@ -322,4 +328,9 @@ html {
 
 .mat-mdc-fab {
   background-color: #fff !important;
+}
+
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color: var(--ge-primary);
+  --mdc-filled-button-label-text-color: var(--ge-text-on-primar);
 }

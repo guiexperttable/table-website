@@ -9,10 +9,14 @@
 </div>
 
 <div class="hero-action">
-  <button mat-flat-button class="getstarted-button" (click)="scrollTo('#getstarted')">Get Started</button>
+  <button
+    mat-flat-button
+    class="getstarted-button"
+    color="primary"
+    (click)="scrollTo('#getstarted')">Get Started</button>
 </div>
 
-<section class="big">
+<section class="transparent">
   <div class="scene">
     <div class="cube">
       <div class="side back"></div>
@@ -22,6 +26,9 @@
     </div>
   </div>
 </section>
+<section class="transparent"></section>
+<section class="transparent"></section>
+<section class="transparent"></section>
 
 <section appSectionFeatures class="ge-padding padding-top center-all ge-main-background"></section>
 
@@ -35,6 +42,7 @@
 
 <section appWelcomeDemo class="ge-table-header-bg min-height-100vh padding-top ge-main-background"></section>
 
+<a id="getstarted"></a>
 <section appGetStarted class="padding-top center-all ge-main-background"></section>
 
 <section appSectionLicense class="ge-padding padding-top center-all ge-main-background"></section>
