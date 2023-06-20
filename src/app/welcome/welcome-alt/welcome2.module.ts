@@ -27,6 +27,7 @@ import { WelcomeSectionFeaturesComponent } from "../section-features/welcome-sec
 import { WelcomeSectionInteractionComponent } from "../section-interaction/welcome-section-interaction.component";
 import { WelcomeSectionLicenseComponent } from "../section-license/welcome-section-license.component";
 import { WelcomeSectionUsabilityComponent } from "../section-usability/welcome-section-usability.component";
+import { WelcomeSectionSummarizeComponent } from "../section-summarize/welcome-section-summarize.component";
 
 
 const routes: Routes = [
@@ -67,7 +68,8 @@ const routes: Routes = [
     WelcomeSectionFeaturesComponent,
     WelcomeSectionInteractionComponent,
     WelcomeSectionLicenseComponent,
-    WelcomeSectionUsabilityComponent
+    WelcomeSectionUsabilityComponent,
+    WelcomeSectionSummarizeComponent
   ],
   exports: [RouterModule]
 })

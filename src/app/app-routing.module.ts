@@ -4,15 +4,15 @@ import { RouterModule, Routes } from "@angular/router";
 const routes: Routes = [
   {
     path: "", loadChildren: () =>
-      import("./welcome/welcome.module").then(m => m.WelcomeModule)
+      import("./welcome/welcome-alt/welcome2.module").then(m => m.Welcome2Module)
   },
   {
     path: "welcome", loadChildren: () =>
-      import("./welcome/welcome.module").then(m => m.WelcomeModule)
+      import("./welcome/welcome-alt/welcome2.module").then(m => m.Welcome2Module)
   },
   {
     path: "welcome-alt", loadChildren: () =>
-      import("./welcome/welcome-alt/welcome2.module").then(m => m.Welcome2Module)
+      import("./welcome/welcome.module").then(m => m.WelcomeModule)
   },
   {
     path: "api", loadChildren: () =>

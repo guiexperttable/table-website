@@ -43,6 +43,17 @@ section {
   min-height: 100vh;
 }
 
+section h2.feature,
+h2.feature {
+  font-size: 40px;
+  font-weight: 300;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: var(--ge-main-color);
+  &.no-margin {
+    margin: 0 !important;
+  }
+}
 
 // ---------------------------------------------------
 .hero-scroll-down {
