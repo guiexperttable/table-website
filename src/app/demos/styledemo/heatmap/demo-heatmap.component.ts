@@ -27,7 +27,7 @@ export class DemoHeatmapComponent {
   tableModel: TableModelIf = createHeatMapModel();
 
   constructor() {
-    console.info(this.tableModel)// TODO del
+    console.info(this.tableModel);
   }
 }
 

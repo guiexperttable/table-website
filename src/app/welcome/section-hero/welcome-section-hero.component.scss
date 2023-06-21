@@ -55,3 +55,39 @@
     height: 450px;
   }
 }
+
+
+.animated-shadow {
+  text-shadow: 0 0 50px var(--ge-animated-shadow-color),
+  0 0 50px var(--ge-animated-shadow-color),
+  0 0 100px var(--ge-animated-shadow-color),
+  0 0 150px var(--ge-animated-shadow-color),
+  0 0 200px var(--ge-animated-shadow-color),
+  0 0 250px var(--ge-animated-shadow-color);
+  animation: hue-animate 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.hero-big:hover .animated-shadow {
+  animation-play-state: running;
+}
+
+@keyframes hue-animate {
+  0% {
+    filter: hue-rotate(0deg)
+  }
+  100% {
+    filter: hue-rotate(360deg)
+  }
+}
+
+
+@keyframes size-animation {
+  0% {
+    transform: scale(1)
+  }
+  100% {
+    transform: scale(1.2)
+  }
+}
+
