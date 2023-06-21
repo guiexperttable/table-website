@@ -1,9 +1,10 @@
 
-:root {
+html {
   --ge-header-height: 64px;
   --ge-sidenav-width: 220px;
   --ge-welcome-zoom: 1;
-  --ge-welcome-scrolldown-display: '';
+  --ge-welcome-scrolldown-display: 'block';
+  --ge-welcome-scrolldown-display-else: 'none';
 }
 
 html {

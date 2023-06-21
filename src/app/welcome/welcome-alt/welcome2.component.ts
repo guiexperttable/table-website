@@ -25,6 +25,9 @@ export class Welcome2Component {
   ) {
     this.nativeElement = this.elementRef.nativeElement;
     this.nativeElement.addEventListener("scroll", this.onScroll.bind(this), false);
+
+    this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `block`);
+    this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display-else", `none`);
   }
 
 
@@ -49,10 +52,18 @@ export class Welcome2Component {
     });
   }
 
+  scroll2Bottom() {
+    this.nativeElement.scrollBy({
+      top: 99999,
+      left: 0,
+      behavior: "smooth"
+    });
+  }
+
 
   private onScroll() {
-    const scrollbarWidth = this.nativeElement.offsetWidth - this.nativeElement.clientWidth;
-    const offsetHeight = this.nativeElement.offsetHeight + scrollbarWidth;
+    const offsetHeight = this.nativeElement.clientHeight;
+    const scrollHeight = this.nativeElement.scrollHeight;
 
     // Rotation:
     const scrollTop = this.nativeElement.scrollTop;
@@ -69,10 +80,14 @@ export class Welcome2Component {
     const opacity = scrollTop > 3700 ? 0 : 1;
     const displayHeroText = zoom > 2 ? "none" : "grid";
 
-    this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
+    const displayScrollDown = (scrollTop > scrollHeight - offsetHeight * 1.9) ? "none" : "block";
+    const displayScrollDownElse = (displayScrollDown === "block") ? "none" : "block";
+
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);
     this.nativeElement.style.setProperty("--ge-welcome-opacity", `${opacity}`);
+    this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `${displayScrollDown}`);
+    this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display-else", `${displayScrollDownElse}`);
     this.nativeElement.style.setProperty("--ge-headline-hero-super-content", "'" + this.headlines[headlinesIdx] + "'");
     this.nativeElement.style.setProperty("--ge-headline-hero-super-display", displayHeroText);
 

@@ -69,7 +69,14 @@ h2.feature {
     top:inherit;
     position: fixed;
     bottom: 50px;
-    display: var(--ge-welcome-scrolldown-display);
+    .mat-icon {
+      &.display{
+        display: var(--ge-welcome-scrolldown-display);
+      }
+      &.display-else {
+        display: var(--ge-welcome-scrolldown-display-else) !important;
+      }
+    }
   }
 
   .mat-icon {

@@ -1,6 +1,12 @@
 
 <div class="hero-scroll-down fix">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+  <mat-icon
+    class="display shake-vertical"
+    (click)="scrollDown()"
+    (dblclick)="scroll2Bottom()">expand_more</mat-icon>
+  <mat-icon
+    class="display-else"
+    (click)="scroll2Top()">expand_less</mat-icon>
 </div>
 
 <div class="hero-text">
