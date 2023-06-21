@@ -1,48 +1,57 @@
-<section appSectionHero class="ge-padding padding-top center-all hero-section"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+
+<div class="hero-scroll-down fix">
+  <mat-icon
+    class="display shake-vertical"
+    (click)="scrollDown()"
+    (dblclick)="scroll2Bottom()">expand_more</mat-icon>
+  <mat-icon
+    class="display-else"
+    (click)="scroll2Top()">expand_less</mat-icon>
 </div>
 
-
-<section appSectionFeatures class="ge-padding padding-top center-all"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+<div class="hero-text ge-display-none-lt-sm">
+  <div class="guiexpert-table-title">GuiExpert Table</div>
+  <div class="headline-hero-super"></div>
 </div>
 
-
-<section appSectionInteraction class="ge-padding padding-top center-all"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
+<div class="hero-action ge-display-none-lt-sm">
+  <button
+    mat-flat-button
+    class="getstarted-button"
+    color="primary"
+    (click)="scrollTo('#getstarted')">Get Started</button>
 </div>
 
+<section class="transparent ge-display-none-lt-sm">
+  <div class="scene">
+    <div class="cube">
+      <div class="side back"></div>
+      <div class="side left"></div>
+      <div class="side front"></div>
+      <div class="side right"></div>
+    </div>
+  </div>
+</section>
+<section class="transparent ge-display-none-lt-sm"></section>
+<section class="transparent ge-display-none-lt-sm"></section>
+<section class="transparent ge-display-none-lt-sm"></section>
 
-<section appSectionUsebility class="ge-padding padding-top center-all"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
-</div>
+<section appSectionHero class="ge-padding padding-top center-all hero-section ge-display-none-gt-xs"></section>
 
+<section appSectionFeatures class="ge-padding padding-top center-all ge-main-background"></section>
 
-<section appSectionCellStyle class="ge-padding padding-top center-all"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
-</div>
-<div style="clear: both"></div>
+<section appSectionInteraction class="ge-padding padding-top center-all ge-main-background"></section>
 
+<section appSectionUsebility class="ge-padding padding-top center-all ge-main-background"></section>
 
-<section appWelcomeDemo class="ge-table-header-bg min-height-100vh padding-top"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
-</div>
+<section appSectionCellStyle class="ge-padding padding-top center-all ge-main-background"></section>
 
+<section appSectionSummarize class="ge-padding padding-top center-all ge-main-background"></section>
 
-<section appGetStarted class="padding-top center-all"></section>
-<div class="hero-scroll-down">
-  <mat-icon class="shake-vertical" (click)="scrollDown()">expand_more</mat-icon>
-</div>
+<section appWelcomeDemo class="ge-table-header-bg min-height-100vh padding-top ge-main-background"></section>
 
+<a id="getstarted"></a>
+<section appGetStarted class="padding-top center-all ge-main-background"></section>
 
-<section appSectionLicense class="ge-padding padding-top center-all"></section>
-<div class="hero-scroll-down">
-  <mat-icon (click)="scroll2Top()">expand_less</mat-icon>
-</div>
+<section appSectionLicense class="ge-padding padding-top center-all ge-main-background"></section>
 
