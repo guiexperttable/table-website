@@ -93,7 +93,7 @@ export class WelcomeComponent {
 
     // Rotation of feature images:
     const rotH = 0.5 + ((scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
-    const rotateY = `${rotH * 180 - 180}deg`;
+    const rotateY = `${-(rotH * 180 - 180)}deg`;
     this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
   }
 }
