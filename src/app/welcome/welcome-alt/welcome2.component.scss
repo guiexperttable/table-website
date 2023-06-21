@@ -20,9 +20,9 @@
 .hero-text {
   position: fixed;
   top: calc(50vh - var(--ge-welcome-img-height)/2 - 220px);
-  left: 0;
+  left: calc(50vw - 300px);
   height: 100px;
-  width: 100%;
+  width: 600px;
   place-items: center;
   background: transparent;
   color: var(--ge-main-color);
