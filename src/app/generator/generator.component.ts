@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { GenerateClassesService } from "./generate-classes.service";
+import { debounceTime, Subject } from "rxjs";
+import { takeWhile } from "rxjs/operators";
 
 @Component({
   selector: "app-generator",
@@ -8,13 +10,14 @@ import { GenerateClassesService } from "./generate-classes.service";
   styleUrls: ["./generator.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GeneratorComponent implements OnInit {
+export class GeneratorComponent implements OnInit, OnDestroy {
 
   out = "";
-
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ["", Validators.required]
   });
+
+  private input$ = new Subject<number>();
 
   private oo = {
     name: "John Doe",
@@ -26,6 +29,7 @@ export class GeneratorComponent implements OnInit {
       country: "USA"
     }
   };
+  private alive = true;
 
   constructor(
     private readonly generateClassesService: GenerateClassesService,
@@ -43,11 +47,21 @@ export class GeneratorComponent implements OnInit {
 
   set text(value: string) {
     this._text = value;
-    this.generateInterfaces();
+    this.input$.next(Date.now());
   }
 
   ngOnInit(): void {
-    this.generateInterfaces();
+    this.input$
+      .pipe(
+        takeWhile(() => this.alive),
+        debounceTime(1000)
+      )
+      .subscribe(this.generateInterfaces.bind(this));
+    this.input$.next(Date.now());
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
   }
 
   private generateInterfaces() {
