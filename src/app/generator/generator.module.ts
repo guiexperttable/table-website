@@ -8,8 +8,9 @@ import { MatListModule } from "@angular/material/list";
 import { MatButtonModule } from "@angular/material/button";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatStepperModule } from "@angular/material/stepper";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
+import { GenerateClassesService } from "./generate-classes.service";
 
 
 const routes: Routes = [
@@ -33,9 +34,15 @@ const routes: Routes = [
     MatTabsModule,
     MatStepperModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
-  exports: [RouterModule]
+  providers: [
+    GenerateClassesService
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class GeneratorModule {
 }

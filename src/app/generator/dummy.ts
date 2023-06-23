@@ -63,14 +63,4 @@ const jsonData: JSONData = {
   },
 };
 
-// Generate TypeScript interfaces
-const interfaces = generateTypeScriptInterfaces(jsonData, 'MyInterface');
 
-// Generate TypeScript code
-const tsCode = generateTypeScriptCode(interfaces);
-
-// Save the generated TypeScript code to a file
-// writeFileSync('output.d.ts', tsCode, 'utf-8');
-//
-// console.log('Interfaces generated and saved to output.d.ts');
-console.info(tsCode);
