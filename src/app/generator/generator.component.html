@@ -7,14 +7,14 @@
 
     <mat-step [stepControl]="firstFormGroup">
       <ng-template matStepLabel>Insert JSON data</ng-template>
-      <textarea [(ngModel)]="text" rows="5" cols="60"></textarea>
+      <textarea [(ngModel)]="text" rows="5" cols="60" class="step-height"></textarea>
       <!--      <button mat-button matStepperPrevious>Back</button>-->
       <!--      <button mat-button matStepperNext>Next</button>-->
     </mat-step>
 
     <mat-step>
       <ng-template matStepLabel>Configure</ng-template>
-      <div>
+      <div class="step-height" style="background-color: yellow">
         Conf
       </div>
     </mat-step>
@@ -22,17 +22,21 @@
 
     <mat-step>
       <ng-template matStepLabel>Resulting Table</ng-template>
-      <p>TABLE</p>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+      <div class="step-height" style="background-color: lightcyan">
+        <p>TABLE</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
       </div>
+
+
     </mat-step>
 
 
     <mat-step>
       <ng-template matStepLabel>Export Code</ng-template>
-      <source-code *ngIf="out" [text]="out"></source-code>
+      <source-code *ngIf="out" [text]="out" class="step-height"></source-code>
     </mat-step>
   </mat-stepper>
 
