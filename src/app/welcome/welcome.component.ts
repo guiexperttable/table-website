@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Inject } from "@angular/core";
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Inject, OnInit } from "@angular/core";
 import { DOCUMENT } from "@angular/common";
 
 
@@ -8,7 +8,7 @@ import { DOCUMENT } from "@angular/common";
   styleUrls: ["./welcome.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit{
 
 
   private nativeElement: HTMLDivElement;
@@ -28,6 +28,13 @@ export class WelcomeComponent {
 
     this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `block`);
     this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display-else", `none`);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(_event?:Event) {
+    let s = Math.min(this.nativeElement.clientWidth/2, this.nativeElement.clientHeight/2);
+    s = Math.min(400, Math.max(200, s));
+    this.nativeElement.style.setProperty("--ge-welcome-img-width-number", `${s}`);
   }
 
 
@@ -95,5 +102,9 @@ export class WelcomeComponent {
     const rotH = 0.5 + ((scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
     const rotateY = `${-(rotH * 180 - 180)}deg`;
     this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
+  }
+
+  ngOnInit(): void {
+    this.onResize();
   }
 }
