@@ -8,8 +8,8 @@
     <mat-step [stepControl]="firstFormGroup">
       <ng-template matStepLabel>Insert JSON data</ng-template>
       <textarea [(ngModel)]="text" rows="5" cols="60"></textarea>
-<!--      <button mat-button matStepperPrevious>Back</button>-->
-<!--      <button mat-button matStepperNext>Next</button>-->
+      <!--      <button mat-button matStepperPrevious>Back</button>-->
+      <!--      <button mat-button matStepperNext>Next</button>-->
     </mat-step>
 
     <mat-step>
@@ -32,7 +32,7 @@
 
     <mat-step>
       <ng-template matStepLabel>Export Code</ng-template>
-      <p>cccc</p>
+      <source-code *ngIf="out" [text]="out"></source-code>
     </mat-step>
   </mat-stepper>
 

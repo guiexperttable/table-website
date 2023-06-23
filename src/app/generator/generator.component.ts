@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { GenerateClassesService } from "./generate-classes.service";
 
@@ -8,7 +8,9 @@ import { GenerateClassesService } from "./generate-classes.service";
   styleUrls: ["./generator.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GeneratorComponent {
+export class GeneratorComponent implements OnInit {
+
+  out = "";
 
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ["", Validators.required]
@@ -27,8 +29,10 @@ export class GeneratorComponent {
 
   constructor(
     private readonly generateClassesService: GenerateClassesService,
-    private _formBuilder: FormBuilder
+    private readonly cdr: ChangeDetectorRef,
+    private readonly _formBuilder: FormBuilder
   ) {
+
   }
 
   private _text = JSON.stringify(this.oo, null, 4);
@@ -39,13 +43,29 @@ export class GeneratorComponent {
 
   set text(value: string) {
     this._text = value;
+    this.generateInterfaces();
+  }
+
+  ngOnInit(): void {
+    this.generateInterfaces();
+  }
+
+  private generateInterfaces() {
+    // Reset source-code component:
+    this.out = "";
+    this.cdr.detectChanges();
+
     try {
       const o = JSON.parse(this._text);
       const typeScriptInterfaces = this.generateClassesService.generateTypeScriptInterfaces(o);
-      const code = this.generateClassesService.generateTypeScriptCode(typeScriptInterfaces);
-      console.info(code); // TODO weg
+      this.out = this.generateClassesService.generateTypeScriptCode(typeScriptInterfaces);
+      console.info(this.out); // TODO weg
+      this.cdr.detectChanges();
+
     } catch (e) {
       console.warn(e);
+      this.out = "";
+      this.cdr.detectChanges();
     }
   }
 }

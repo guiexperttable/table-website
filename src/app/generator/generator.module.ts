@@ -11,6 +11,7 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { GenerateClassesService } from "./generate-classes.service";
+import { SourceCodeModule } from "../common/code/source-code.module";
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
     MatStepperModule,
     ReactiveFormsModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    SourceCodeModule
   ],
   providers: [
     GenerateClassesService
