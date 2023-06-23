@@ -262,7 +262,7 @@ guiexpert-table-doc-root .ge-footer {
 
 .doc-content > * + *,
 .doc-content > * + * + * {
-  min-height: calc(100vh - 64px) !important;
+  min-height: calc(100vh - var(--ge-header-height)) !important;
   width: 100%;
   display: block;
 }

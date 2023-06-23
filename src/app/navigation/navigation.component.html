@@ -36,6 +36,10 @@
         Documentation
       </a>
 
+      <a href="#" mat-list-item routerLink="/generator">
+        <mat-icon>factory</mat-icon>
+        Generator
+      </a>
 
       <a href="#" mat-list-item routerLink="/api">
         <mat-icon>api</mat-icon>
@@ -105,7 +109,8 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content #matSidenavContent>
+  <mat-sidenav-content
+    #matSidenavContent>
 
     <div
       *ngIf="demoActionBarVisible"
@@ -163,9 +168,7 @@
 <header
   *ngIf="customHeaderVisible"
   [ngClass]="{
-    'menu-closed': closed,
-    'light': light,
-    'dark': !light
+    'menu-closed': closed
   }">
 
   <button
@@ -180,7 +183,6 @@
      class="ge-display-none-lt-sm"
      [ngClass]="{'hidden': !closed}"
      routerLink="/welcome">
-
     <guiexpert-logo [mode]="'monocolor-black'" [size]="30"></guiexpert-logo>
   </a>
   <div
@@ -209,6 +211,11 @@
     <mat-icon class="ge-display-none-gt-xs">api</mat-icon>
     <span class="ge-display-none-lt-sm">API</span>
   </a>
+
+  <!--a href="#" routerLink="/generator">
+    <mat-icon class="ge-display-none-gt-xs">factory</mat-icon>
+    <span class="ge-display-none-lt-sm">Generator</span>
+  </a-->
 
   <a href="#" routerLink="/license">
     <mat-icon class="ge-display-none-gt-xs">gavel</mat-icon>

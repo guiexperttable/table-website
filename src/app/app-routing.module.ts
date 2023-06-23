@@ -31,6 +31,10 @@ const routes: Routes = [
       import("./demos/demos.module").then(m => m.DemosModule)
   },
   {
+    path: "generator", loadChildren: () =>
+      import("./generator/generator.module").then(m => m.GeneratorModule)
+  },
+  {
     path: "license", loadChildren: () =>
       import("./license/license.module").then(m => m.LicenseModule)
   },

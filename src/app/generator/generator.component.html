@@ -1,0 +1,47 @@
+<section class="">
+  <div class="header-height"></div>
+
+
+  <mat-stepper labelPosition="bottom" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>Intro</ng-template>
+      <div>
+        A
+      </div>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Insert JSON data</ng-template>
+      <p>ins</p>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </mat-step>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>Configure</ng-template>
+      <div>
+        Conf
+      </div>
+    </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Resulting Table</ng-template>
+      <p>TABLE</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+
+
+    <mat-step>
+      <ng-template matStepLabel>Export Code</ng-template>
+      <p>cccc</p>
+    </mat-step>
+  </mat-stepper>
+
+
+</section>
+

@@ -5,7 +5,6 @@ import { map, shareReplay, takeWhile } from "rxjs/operators";
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { MatSidenav, MatSidenavContent } from "@angular/material/sidenav";
 import { environment } from "../../environments/environment";
-import { LogoMode } from "../ge-logo/gui-expert-logo.component";
 
 @Component({
   selector: "app-navigation",
@@ -15,47 +14,6 @@ import { LogoMode } from "../ge-logo/gui-expert-logo.component";
 })
 export class NavigationComponent implements OnInit, OnDestroy {
 
-  private static readonly config = {
-    routeTitles: {
-      home: "",
-      welcome: "",
-      angular: "Get Started Angular",
-      vue: "Get Started Vue3",
-      svelte: "Get Started Svelte",
-      preact: "Get Started Preact",
-      react: "Get Started React",
-      solid: "Get Started Solid",
-      plainjs: "Get Started Plain JS",
-      webcomponent: "Get Started Web Component",
-      getstarted: "Get Started",
-      demosimple: "Demo Simpe Model",
-      demoprizes: "Demo Nobel Prices",
-      demomouseevent: "Demo Mouse Events ",
-      demostyledemosimple: "Demo Simpe Cell Renderer",
-      demostyledemoheatmaptemp: "Demo Temperature Heatmap",
-      demostyledemoheatmapseattle: "Demo Seattle Annual Temperatures",
-      demorowandcolspan: "Demo Colspan & Rowspan",
-      demotimetable: "Demo Time Table",
-      demotreepeople: "Demo People Tree Table",
-      demolaf: "Demo Look and Feel (CSS)",
-      demoidfilter: "Demo Slider Filter",
-      demoolympic: "Demo Input Filter",
-      democrypto: "Demo Crypto Table",
-      demoheaderdblclick: "Demo Sorting Rows",
-
-      demos: "",
-      demo: "Demo",
-      api: "API",
-      doc: "Documentation",
-      privacy: "Privacy Policy",
-      cou: "Conditions of Use",
-      imprint: "Imprint",
-      license: "License",
-      pricing: "Pricing",
-      custom: "Custom Theme Generator"
-    },
-    titleFadeIn: true
-  };
 
   @ViewChild("drawer", { static: true }) mainNav?: MatSidenav;
   @ViewChild("matSidenavContent", { static: true }) matSidenavContent?: MatSidenavContent;
@@ -65,7 +23,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
   title = "";
   fadein = true;
   lawInSidenavVisible = true;
-  footerVisible = true;
   demoActionBarVisible = false;
   customHeaderVisible = true;
   customThemePickerButtonVisible = false;
@@ -73,8 +30,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
   runLink = "";
   infoLink = "";
   menuForcedClosed = false;
-  light = true;
-  // headerLogoMode: LogoMode = 'monocolor-white';
   picker = location.href.includes("/picker"); // Once a picker, always a picker.
   public closed = true;
 
@@ -119,7 +74,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.calcTitle(this.router.url);
+    // this.calcTitle(this.router.url);
 
     this.router.events.pipe(takeWhile(() => this.alive)).subscribe(evt => {
       if (evt instanceof NavigationStart) {
@@ -128,22 +83,9 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
       } else if (evt instanceof NavigationEnd) {
         this.matSidenavContent?.scrollTo({ top: 0, left: 0 });
-        this.calcTitle(evt.url);
-
         this.lawInSidenavVisible = evt.url === "/" || evt.url.includes("/welcome") || evt.url.includes("/law");
-        this.footerVisible =
-          !evt.url.includes("/tsdoc")
-          && !evt.url.includes("/getstarted")
-          && !evt.url.includes("/themes")
-          && !evt.url.includes("/demo");
-
-        this.light = true;
-        //   evt.url.includes("/getstarted")
-        //   || evt.url.includes("/tsdoc");
-        // this.headerLogoMode = this.light ? 'monocolor-black': 'monocolor-white';
-
         this.customHeaderVisible =
-          evt.url ==='/'
+          evt.url === "/"
           || evt.url.includes("/welcome")
           || evt.url.includes("/demos")
           || evt.url.includes("/license")
@@ -151,6 +93,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
           || evt.url.includes("/api")
           || evt.url.includes("/law")
           || evt.url.includes("/pricing")
+          || evt.url.includes("/generator")
           || evt.url.includes("/getstarted");
 
         this.menuForcedClosed = evt.url.includes("/themes/custom");
@@ -165,25 +108,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     });
   }
 
-  calcTitle(url: string) {
-    const routeTitles = NavigationComponent.config.routeTitles;
-    url = url.replace(/\//g, "");
-    const keys = Object.keys(routeTitles);
-    for (const key of keys) {
-      if (url.indexOf(key) > -1) {
-        // @ts-ignore
-        this.setTitle(routeTitles[key]);
-        return;
-      }
-    }
-    this.setTitle("");
-  }
-
-  setTitle(title: string) {
-    this.title = title;
-    this.fadein = NavigationComponent.config.titleFadeIn;
-    this.cdr.detectChanges();
-  }
 
   openCustomThemePicker() {
     const m = location.pathname.match(/\/demo\/(.*?)\/run/);
