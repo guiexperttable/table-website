@@ -39,8 +39,8 @@ div.content {
       &:focus-visible {
         transform: translateY(-0.75rem) scale(1.2);
         transition: transform 250ms;
-        background-color: rgb(172, 126, 244);
-        // animation: size-animation 1s ease 1;
+        background-color: var(--ge-primary);
+        animation: size-animation 1s ease 1;
       }
 
       > a,

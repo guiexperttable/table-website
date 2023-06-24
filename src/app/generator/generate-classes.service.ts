@@ -20,6 +20,7 @@ export class GenerateClassesService {
   json2Ts(json: string): string {
     const o = JSON.parse(json);
     const typeScriptInterfaces = this.generateTypeScriptInterfaces(o);
+    console.info(typeScriptInterfaces);
     return this.generateTypeScriptCode(typeScriptInterfaces);
   }
 
