@@ -27,7 +27,21 @@ export class GeneratorComponent implements OnInit, OnDestroy {
       street: "123 Main St",
       city: "New York",
       country: "USA"
-    }
+    },
+    books: [
+      {
+        title:'titel 1',
+        isbn: 23456
+      },
+      {
+        title:'titel 2',
+        isbn: 1234
+      },
+      {
+        title:'titel 5',
+        isbn: 8765
+      }
+    ]
   };
   private alive = true;
 
