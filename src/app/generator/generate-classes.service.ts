@@ -18,51 +18,55 @@ import { TypeScriptInterface } from "./data/type-script.interface";
 export class GenerateClassesService {
 
 
-
   generateTypeScriptInterfaces(
     json: JSONData,
-    interfaceName: string = 'MyInterface'
+    interfaceName: string = "RootIf"
   ): TypeScriptInterface[] {
     const interfaces: TypeScriptInterface[] = [];
-
-    const processProperty = (propertyName: string, propertyValue: any): string => {
-      if (Array.isArray(propertyValue)) {
-        const arrayType = processProperty(propertyName, propertyValue[0]);
-        return `${propertyName}: ${arrayType}[];`;
-      }
-
-      if (typeof propertyValue === 'object' && propertyValue !== null) {
-        const nestedInterfaceName = `${interfaceName}_${propertyName}`;
-        const nestedInterface = this.generateTypeScriptInterfaces(propertyValue, nestedInterfaceName);
-        interfaces.push(...nestedInterface);
-        return `${propertyName}: ${nestedInterfaceName};`;
-      }
-
-      const propertyType = typeof propertyValue;
-      return `${propertyName}: ${propertyType};`;
-    };
-
-    const interfaceProperties = Object.entries(json).map(([key, value]) => processProperty(key, value));
-
+    const interfaceProperties = Object.entries(json).map(([key, value]) => this.processProperty(key, value, interfaces));
     interfaces.push({
       name: interfaceName,
-      properties: interfaceProperties,
+      properties: interfaceProperties
     });
-
     return interfaces;
   }
 
   generateTypeScriptCode(interfaces: TypeScriptInterface[]): string {
-    let tsCode = '';
+    let tsCode: string[] = [];
 
     for (const { name, properties } of interfaces) {
-      tsCode += `interface ${name} {\n`;
-      tsCode += properties.map((property) => `  ${property}`).join('\n');
-      tsCode += '\n}\n\n';
+      tsCode.push(`interface ${name} {\n`);
+      tsCode.push(properties.map((property) => `  ${property}`).join("\n"));
+      tsCode.push("\n}\n\n");
     }
 
-    return tsCode;
+    return tsCode.join("");
   }
 
+  private processProperty(
+    propertyName: string,
+    propertyValue: any,
+    interfaces: TypeScriptInterface[]): string {
+
+    if (Array.isArray(propertyValue)) {
+      const arrayType = this.processProperty(propertyName, propertyValue[0], interfaces);
+      return `${propertyName}: ${arrayType}[];`;
+    }
+
+    if (typeof propertyValue === "object" && propertyValue !== null) {
+      // const nestedInterfaceName = `${interfaceName}_${propertyName}`;
+      const nestedInterfaceName = this.capitalizeFirstLetter(`${propertyName}If`);
+      const nestedInterface = this.generateTypeScriptInterfaces(propertyValue, nestedInterfaceName);
+      interfaces.push(...nestedInterface);
+      return `${propertyName}: ${nestedInterfaceName};`;
+    }
+
+    const propertyType = typeof propertyValue;
+    return `${propertyName}: ${propertyType};`;
+  };
+
+  private capitalizeFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
 }
