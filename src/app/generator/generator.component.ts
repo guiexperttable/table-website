@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, ValidationErrors } from "@angular/forms";
 import { GenerateClassesService } from "./generate-classes.service";
 import { debounceTime, Subject } from "rxjs";
 import { takeWhile } from "rxjs/operators";
@@ -12,43 +12,81 @@ import { takeWhile } from "rxjs/operators";
 })
 export class GeneratorComponent implements OnInit, OnDestroy {
 
+  error = "";
   out = "";
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ["", Validators.required]
+
+  firstFormGroup = this.formBuilder.group({
+    firstCtrl: [
+      "",
+      (_control: AbstractControl): ValidationErrors | null => {
+        if (this.error) {
+          return {
+            jsonError: this.error
+          };
+        }
+        return null;
+      }
+    ]
   });
 
   private input$ = new Subject<number>();
 
-  private oo = {
-    name: "John Doe",
-    age: 30,
-    email: "johndoe@example.com",
-    address: {
-      street: "123 Main St",
-      city: "New York",
-      country: "USA"
+  private oo = [
+    {
+      name: "John Doe",
+      age: 30,
+      email: "johndoe@example.com",
+      address: {
+        street: "123 Main St",
+        city: "New York",
+        country: "USA"
+      },
+      books: [
+        {
+          title: "titel 1",
+          isbn: 23456
+        },
+        {
+          title: "titel 2",
+          isbn: 1234
+        },
+        {
+          title: "titel 5",
+          isbn: 8765
+        }
+      ]
     },
-    books: [
-      {
-        title:'titel 1',
-        isbn: 23456
+    {
+      name: "John Doe2",
+      age: 32,
+      email: "johndoe@example.com",
+      address: {
+        street: "123 Main St",
+        city: "New York",
+        country: "USA"
       },
-      {
-        title:'titel 2',
-        isbn: 1234
-      },
-      {
-        title:'titel 5',
-        isbn: 8765
-      }
-    ]
-  };
+      books: [
+        {
+          title: "titel 1",
+          isbn: 23456
+        },
+        {
+          title: "titel 2",
+          isbn: 1234
+        },
+        {
+          title: "titel 5",
+          isbn: 8765
+        }
+      ]
+    }
+  ];
   private alive = true;
 
   constructor(
     private readonly generateClassesService: GenerateClassesService,
     private readonly cdr: ChangeDetectorRef,
-    private readonly _formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder
   ) {
 
   }
@@ -79,20 +117,19 @@ export class GeneratorComponent implements OnInit, OnDestroy {
   }
 
   private generateInterfaces() {
+    this.error = "";
     // Reset source-code component:
     this.out = "";
     this.cdr.detectChanges();
 
     try {
-      const o = JSON.parse(this._text);
-      const typeScriptInterfaces = this.generateClassesService.generateTypeScriptInterfaces(o);
-      this.out = this.generateClassesService.generateTypeScriptCode(typeScriptInterfaces);
-      console.info(this.out); // TODO weg
-      this.cdr.detectChanges();
+      this.out = this.generateClassesService.json2Ts(this._text);
 
     } catch (e) {
-      console.warn(e);
+      this.error = `${e}`;
       this.out = "";
+
+    } finally {
       this.cdr.detectChanges();
     }
   }

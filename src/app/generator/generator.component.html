@@ -4,9 +4,12 @@
 
   <mat-stepper orientation="vertical" labelPosition="bottom" #stepper>
 
-
     <mat-step [stepControl]="firstFormGroup">
-      <ng-template matStepLabel>Insert JSON data</ng-template>
+      <ng-template matStepLabel>
+        <span [ngClass]="{error:error!==''}">
+          {{error ? error : 'Insert JSON data'}}
+        </span>
+      </ng-template>
       <textarea [(ngModel)]="text" rows="5" cols="60" class="step-height"></textarea>
       <!--      <button mat-button matStepperPrevious>Back</button>-->
       <!--      <button mat-button matStepperNext>Next</button>-->

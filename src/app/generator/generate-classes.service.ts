@@ -17,12 +17,31 @@ import { TypeScriptInterface } from "./data/type-script.interface";
 })
 export class GenerateClassesService {
 
+  json2Ts(json: string): string {
+    const o = JSON.parse(json);
+    const typeScriptInterfaces = this.generateTypeScriptInterfaces(o);
+    return this.generateTypeScriptCode(typeScriptInterfaces);
+  }
 
-  generateTypeScriptInterfaces(
+  private generateTypeScriptInterfaces(
     json: JSONData,
     interfaceName: string = "RootIf"
   ): TypeScriptInterface[] {
     const interfaces: TypeScriptInterface[] = [];
+
+
+    if (Array.isArray(json)) {
+      interfaces.push({
+        name: interfaceName,
+        properties: ['items: ' + interfaceName+'Item[];']
+      });
+      const interfaceProperties = Object.entries(json[0]).map(([key, value]) => this.processProperty(key, value, interfaces));
+      interfaces.push({
+        name: interfaceName+'Item',
+        properties: interfaceProperties
+      });
+      return interfaces;
+    }
     const interfaceProperties = Object.entries(json).map(([key, value]) => this.processProperty(key, value, interfaces));
     interfaces.push({
       name: interfaceName,
@@ -31,7 +50,7 @@ export class GenerateClassesService {
     return interfaces;
   }
 
-  generateTypeScriptCode(interfaces: TypeScriptInterface[]): string {
+  private generateTypeScriptCode(interfaces: TypeScriptInterface[]): string {
     let tsCode: string[] = [];
 
     for (const { name, properties } of interfaces) {
@@ -49,7 +68,7 @@ export class GenerateClassesService {
     interfaces: TypeScriptInterface[]): string {
 
     if (Array.isArray(propertyValue)) {
-      const arrayType = this.processProperty(propertyName, propertyValue[0], interfaces);
+      const arrayType = this.processProperty(propertyName, propertyValue[0], interfaces).split(' ')[1].replace(/;/g, '');
       return `${propertyName}: ${arrayType}[];`;
     }
 
