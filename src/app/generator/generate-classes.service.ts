@@ -29,12 +29,15 @@ export class GenerateClassesService {
           [new Property("items", arrayPropType, true)]
         )
       );
-      interfaces.push(
-        new TypeScriptInterface(
-          arrayPropType,
-          Object.entries(json[0]).map(([key, value]) => this.processProperty(key, value, interfaces))
-        )
+      const typeScriptInterface = new TypeScriptInterface(
+        arrayPropType,
+        Object.entries(json[0]).map(([key, value]) => this.processProperty(key, value, interfaces))
       );
+      // typeScriptInterface.properties.forEach(prop => this.checkFlags(prop, json));
+      interfaces.push(
+        typeScriptInterface
+      );
+
       return interfaces;
     }
 
@@ -55,7 +58,9 @@ export class GenerateClassesService {
     array: boolean = false): Property {
 
     if (Array.isArray(propertyValue)) {
-      return this.processProperty(propertyName, propertyValue[0], interfaces, true);
+      const property = this.processProperty(propertyName, propertyValue[0], interfaces, true);
+      // this.checkFlags(property, propertyValue);
+      return property;
     }
 
     if (typeof propertyValue === "object" && propertyValue !== null) {
@@ -68,6 +73,20 @@ export class GenerateClassesService {
     const propertyType = typeof propertyValue;
     return new Property(propertyName, propertyType, array);
   };
+
+  // private checkFlags(property: Property, arr: any[]) {
+  //   console.info(property, arr)
+  //   for (let i = 0; i < arr.length; i++) {
+  //     const arrElement = arr[i];
+  //     if (arrElement[property.name] === undefined) {
+  //       property.undefinedable = true;
+  //     }
+  //     if (arrElement[property.name] === null) {
+  //       property.nullable = true;
+  //     }
+  //     if (property.undefinedable && property.nullable) return;
+  //   }
+  // }
 
 
   private generateTypeScriptCode(interfaces: TypeScriptInterface[]): string {
@@ -83,5 +102,6 @@ export class GenerateClassesService {
   private capitalizeFirstLetter(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+
 
 }

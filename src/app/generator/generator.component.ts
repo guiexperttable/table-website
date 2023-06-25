@@ -51,6 +51,13 @@ export class GeneratorComponent implements OnInit, OnDestroy {
           isbn: 1234
         },
         {
+          title: "titel 3"
+        },
+        {
+          title: "titel 4",
+          isbn: null
+        },
+        {
           title: "titel 5",
           isbn: 8765
         }
