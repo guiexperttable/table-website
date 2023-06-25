@@ -128,6 +128,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     } catch (e) {
       this.error = `${e}`;
       this.out = "";
+      console.error(e); // TODO del
 
     } finally {
       this.cdr.detectChanges();

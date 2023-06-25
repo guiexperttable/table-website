@@ -1,5 +1,9 @@
+import { Property } from "./property";
 
-export interface TypeScriptInterface {
-  name: string;
-  properties: string[];
+export class TypeScriptInterface {
+  constructor(
+    public name: string,
+    public properties: Property[]
+  ) {
+  }
 }
