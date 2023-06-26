@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { SourceCodeModule } from "../common/code/source-code.module";
 import { GenerateHierarchyService } from "./generate-hierarchy.service";
+import { HttpClientModule } from "@angular/common/http";
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatInputModule,
     FormsModule,
+    HttpClientModule,
     SourceCodeModule
   ],
   providers: [

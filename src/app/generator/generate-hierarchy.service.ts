@@ -12,7 +12,16 @@ export class GenerateHierarchyService {
     const o = JSON.parse(json);
     const classScope = new ClassScope();
     classScope.classHierarchy = this.prop2Hierarchy("root", o, classScope);
-    classScope.classesFlat = classScope.classesFlat.filter(c => c.name === "root" || c.type.match(/[A-Z]+.*/));
+    classScope.classesFlat = classScope.classesFlat
+      .filter(c => c.name === "root" || c.type.match(/[A-Z]+.*/))
+      .filter((value: ClassHierarchy, index: number, self: ClassHierarchy[]) =>
+          index === self.findIndex((t) => (
+            t.type === value.type && t.name === value.name
+          ))
+      );
+    // TODO remove (filter) opjects with same properties
+
+
     classScope.ts = this.classHierarchy2TypeScript(classScope.classesFlat);
     console.info(classScope);
     return classScope;

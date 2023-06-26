@@ -3,6 +3,8 @@ import { AbstractControl, FormBuilder, ValidationErrors } from "@angular/forms";
 import { debounceTime, Subject } from "rxjs";
 import { takeWhile } from "rxjs/operators";
 import { GenerateHierarchyService } from "./generate-hierarchy.service";
+import { PersonIf } from "../demos/treetablepeople/data/person.if";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-generator",
@@ -93,10 +95,13 @@ export class GeneratorComponent implements OnInit, OnDestroy {
   constructor(
     private readonly generateHierarchyService: GenerateHierarchyService,
     private readonly cdr: ChangeDetectorRef,
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private readonly http: HttpClient
   ) {
 
   }
+
+
 
   private _text = JSON.stringify(this.oo, null, 4);
 
@@ -110,6 +115,10 @@ export class GeneratorComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.http
+      .get<PersonIf[]>("/assets/demo/tree-persons.json")
+      .subscribe(o => this.text = JSON.stringify(o, null, 2)); // TODO delete fetch
+
     this.input$
       .pipe(
         takeWhile(() => this.alive),
