@@ -42,7 +42,10 @@ export class GenerateHierarchyService {
       classScope.classesFlat.push(ret);
       return ret;
     }
-    const propertyType = typeof propertyValue as PropertyType;
+    let propertyType = typeof propertyValue as PropertyType;
+    if (propertyType === "undefined" || propertyType === "object") {
+      propertyType = "any";
+    }
     const ret = new ClassHierarchy(propertyName, propertyType);
     classScope.classesFlat.push(ret);
     return ret;
