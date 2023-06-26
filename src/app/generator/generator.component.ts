@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
 import { AbstractControl, FormBuilder, ValidationErrors } from "@angular/forms";
-import { GenerateClassesService } from "./generate-classes.service";
 import { debounceTime, Subject } from "rxjs";
 import { takeWhile } from "rxjs/operators";
+import { GenerateHierarchyService } from "./generate-hierarchy.service";
 
 @Component({
   selector: "app-generator",
@@ -91,7 +91,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
   private alive = true;
 
   constructor(
-    private readonly generateClassesService: GenerateClassesService,
+    private readonly generateHierarchyService: GenerateHierarchyService,
     private readonly cdr: ChangeDetectorRef,
     private readonly formBuilder: FormBuilder
   ) {
@@ -130,7 +130,8 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     this.cdr.detectChanges();
 
     try {
-      this.out = this.generateClassesService.json2Ts(this._text);
+      let classScope = this.generateHierarchyService.json2Hierarchy(this._text);
+      this.out = classScope.ts;
 
     } catch (e) {
       this.error = `${e}`;

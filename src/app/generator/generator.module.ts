@@ -10,8 +10,8 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatStepperModule } from "@angular/material/stepper";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
-import { GenerateClassesService } from "./generate-classes.service";
 import { SourceCodeModule } from "../common/code/source-code.module";
+import { GenerateHierarchyService } from "./generate-hierarchy.service";
 
 
 const routes: Routes = [
@@ -40,7 +40,7 @@ const routes: Routes = [
     SourceCodeModule
   ],
   providers: [
-    GenerateClassesService
+    GenerateHierarchyService
   ],
   exports: [
     RouterModule
