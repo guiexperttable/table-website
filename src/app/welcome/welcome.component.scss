@@ -6,7 +6,7 @@
   --ge-welcome-img-height: calc(var(--ge-welcome-img-width-number)/2 * 1px);
   --ge-welcome-img-transform: var(--ge-welcome-img-height);
   --ge-welcome-img-transform-neg: calc(-1 * var(--ge-welcome-img-width-number) / 2 * 1px);
-  --ge-headline-hero-super-content: 'Excellent performance';
+  --ge-headline-hero-super-content: 'Enhance Data Visualization';
   --ge-headline-hero-super-display: grid;
 
   margin: 0;
@@ -20,9 +20,9 @@
 .hero-text {
   position: fixed;
   top: max(80px, calc(50vh - var(--ge-welcome-img-height)/2 - 220px));
-  left: calc(50vw - 300px);
+  left: calc(50vw - 400px);
   height: 100px;
-  width: 600px;
+  width: 800px;
   place-items: center;
   background: transparent;
   color: var(--ge-main-color);

@@ -1,20 +1,4 @@
 
 .features {
   height: calc(100vh - var(--ge-header-height));
-
-  &.colored {
-    background-image: url("/assets/img/bg-quantum-gradient-01.svg");
-    //background-image: url('/assets/img/bg-quantum-gradient-02.svg');
-    //background-image: url('/assets/img/bg-liquid-cheese.svg');
-    background-size: cover;
-    color: #fff;
-
-    .hero-big {
-      color: #fff;
-    }
-
-    .feature-box > .left > h2 {
-      color: #fff;
-    }
-  }
 }

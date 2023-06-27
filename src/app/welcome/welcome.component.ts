@@ -13,6 +13,7 @@ export class WelcomeComponent implements OnInit{
 
   private nativeElement: HTMLDivElement;
   private headlines = [
+    "Enhance Data Visualization",
     "Excellent performance",
     "High Interactivity",
     "Extreme Customizable",
@@ -72,13 +73,13 @@ export class WelcomeComponent implements OnInit{
   private onScroll() {
     const offsetHeight = this.nativeElement.clientHeight;
     const scrollHeight = this.nativeElement.scrollHeight;
+    const scrollTop = this.nativeElement.scrollTop;
 
     // Rotation:
-    const scrollTop = this.nativeElement.scrollTop;
-    const r0 = scrollTop * 360 / (4 * offsetHeight);
+    const r0 = (scrollTop - offsetHeight) * 360 / (4 * offsetHeight);
     const r1 = Math.min(270, r0);
 
-    // scrool cicle indicator:
+    // scroll circle indicator:
     const dashBoardOffset = (283 * (1.001 -(scrollTop / (scrollHeight - offsetHeight))));
 
     // Zoom:
@@ -88,7 +89,8 @@ export class WelcomeComponent implements OnInit{
     }
     zoom = Math.min(10, zoom);
     const headlinesIdx = Math.min(this.headlines.length - 1, Math.round(scrollTop / offsetHeight));
-    const opacity = scrollTop > 3700 ? 0 : 1;
+    console.info(headlinesIdx)
+    const opacity = scrollTop > (3700 + offsetHeight) ? 0 : 1;
     const displayHeroText = zoom > 2 ? "none" : "grid";
 
     const displayScrollDown = (scrollTop > scrollHeight - offsetHeight * 1.9) ? "none" : "block";

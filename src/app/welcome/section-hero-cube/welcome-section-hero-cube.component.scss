@@ -1,0 +1,11 @@
+.hero-box {
+  height: calc(100vh - var(--ge-header-height));
+  background-image: url("/assets/img/bg-quantum-gradient-01.svg");
+  background-size: cover;
+  color: #fff;
+
+  .ge-typewriter-div{
+    font-size: 60px;
+  }
+}
+

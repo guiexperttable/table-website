@@ -29,6 +29,7 @@ import { WelcomeSectionUsabilityComponent } from "./section-usability/welcome-se
 import { WelcomeSectionCellStyleComponent } from "./section-cell-style/welcome-section-cell-style.component";
 import { WelcomeSectionLicenseComponent } from "./section-license/welcome-section-license.component";
 import { WelcomeSectionSummarizeComponent } from "./section-summarize/welcome-section-summarize.component";
+import { WelcomeSectionHeroCubeComponent } from "./section-hero-cube/welcome-section-hero-cube.component";
 
 
 const routes: Routes = [
@@ -71,7 +72,8 @@ const routes: Routes = [
     WelcomeSectionUsabilityComponent,
     WelcomeSectionCellStyleComponent,
     WelcomeSectionLicenseComponent,
-    WelcomeSectionSummarizeComponent
+    WelcomeSectionSummarizeComponent,
+    WelcomeSectionHeroCubeComponent
   ],
   exports: [RouterModule]
 })
