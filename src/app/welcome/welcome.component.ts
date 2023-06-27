@@ -77,14 +77,9 @@ export class WelcomeComponent implements OnInit{
     const scrollTop = this.nativeElement.scrollTop;
     const r0 = scrollTop * 360 / (4 * offsetHeight);
     const r1 = Math.min(270, r0);
-    console.info('offsetHeight', offsetHeight)
-    console.info('scrollHeight', scrollHeight)
-    console.info('scrollTop', scrollTop)
-    console.info('f', (scrollTop / (scrollHeight - offsetHeight)))
 
     // scrool cicle indicator:
     const dashBoardOffset = (283 * (1.001 -(scrollTop / (scrollHeight - offsetHeight))));
-    console.info('dashBoardOffset', dashBoardOffset);
 
     // Zoom:
     let zoom = r0 <= 275 ? 1 : ((r0 - 275) / 4);
