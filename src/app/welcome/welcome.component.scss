@@ -156,3 +156,67 @@ section.xxx {
 .height-50-vh {
   height: 50vh;
 }
+
+
+
+
+
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #f0f0f0;
+  z-index: 9999;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+/* progress circle */
+
+.progress-circle-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  opacity: 0.5;
+}
+
+.progress-circle {
+  width: 80px;
+  height: 80px;
+}
+
+.progress-circle-bar {
+  fill: none;
+  stroke: black;
+  stroke-width: 5;
+  stroke-dasharray: 283;
+  stroke-dashoffset: var(--ge-stroke-dashoffset, 283);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+
+.progress-background {
+  fill: transparent;
+  stroke: #ededed;
+  stroke-width: 5;
+  stroke-dasharray: none;
+}
+

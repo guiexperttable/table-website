@@ -28,6 +28,7 @@ export class WelcomeComponent implements OnInit{
 
     this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `block`);
     this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display-else", `none`);
+    this.nativeElement.style.setProperty("--ge-stroke-dashoffset", '283');
   }
 
   @HostListener('window:resize', ['$event'])
@@ -76,6 +77,14 @@ export class WelcomeComponent implements OnInit{
     const scrollTop = this.nativeElement.scrollTop;
     const r0 = scrollTop * 360 / (4 * offsetHeight);
     const r1 = Math.min(270, r0);
+    console.info('offsetHeight', offsetHeight)
+    console.info('scrollHeight', scrollHeight)
+    console.info('scrollTop', scrollTop)
+    console.info('f', (scrollTop / (scrollHeight - offsetHeight)))
+
+    // scrool cicle indicator:
+    const dashBoardOffset = (283 * (1.001 -(scrollTop / (scrollHeight - offsetHeight))));
+    console.info('dashBoardOffset', dashBoardOffset);
 
     // Zoom:
     let zoom = r0 <= 275 ? 1 : ((r0 - 275) / 4);
@@ -90,6 +99,7 @@ export class WelcomeComponent implements OnInit{
     const displayScrollDown = (scrollTop > scrollHeight - offsetHeight * 1.9) ? "none" : "block";
     const displayScrollDownElse = (displayScrollDown === "block") ? "none" : "block";
 
+    this.nativeElement.style.setProperty("--ge-stroke-dashoffset", `${dashBoardOffset}`);
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);
     this.nativeElement.style.setProperty("--ge-welcome-opacity", `${opacity}`);
