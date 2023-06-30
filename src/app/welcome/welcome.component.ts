@@ -77,7 +77,7 @@ export class WelcomeComponent implements OnInit{
 
     // Rotation:
     const r0 = (scrollTop - offsetHeight) * 360 / (4 * offsetHeight);
-    const r1 = Math.min(270, r0);
+    const r1 = Math.max(-270, Math.min(270, r0));
 
     // scroll circle indicator:
     const dashBoardOffset = (283 * (1.001 -(scrollTop / (scrollHeight - offsetHeight))));
@@ -89,13 +89,15 @@ export class WelcomeComponent implements OnInit{
     }
     zoom = Math.min(10, zoom);
     const headlinesIdx = Math.min(this.headlines.length - 1, Math.round(scrollTop / offsetHeight));
-    console.info(headlinesIdx)
-    const opacity = scrollTop > (3700 + offsetHeight) ? 0 : 1;
+    const opacity = scrollTop > (4.5 * offsetHeight) ? 0 : 1;
     const displayHeroText = zoom > 2 ? "none" : "grid";
 
     const displayScrollDown = (scrollTop > scrollHeight - offsetHeight * 1.9) ? "none" : "block";
     const displayScrollDownElse = (displayScrollDown === "block") ? "none" : "block";
 
+    const heroTextColor = scrollTop > (0.5 * offsetHeight) ? '#000': '#fff';
+
+    this.nativeElement.style.setProperty("--ge-hero-text-color", `${heroTextColor}`);
     this.nativeElement.style.setProperty("--ge-stroke-dashoffset", `${dashBoardOffset}`);
     this.nativeElement.style.setProperty("--ge-welcome-rotate", `${-r1}deg`);
     this.nativeElement.style.setProperty("--ge-welcome-zoom", `${zoom}`);

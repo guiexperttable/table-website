@@ -8,6 +8,7 @@
   --ge-welcome-img-transform-neg: calc(-1 * var(--ge-welcome-img-width-number) / 2 * 1px);
   --ge-headline-hero-super-content: 'Enhance Data Visualization';
   --ge-headline-hero-super-display: grid;
+  --ge-hero-text-color: #fff;
 
   margin: 0;
   overflow-y: scroll;
@@ -25,7 +26,8 @@
   width: 800px;
   place-items: center;
   background: transparent;
-  color: var(--ge-main-color);
+  // color: var(--ge-main-color);
+  color: var(--ge-hero-text-color);
   font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
   display: var(--ge-headline-hero-super-display);
 
