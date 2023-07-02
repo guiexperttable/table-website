@@ -118,24 +118,24 @@ export class WelcomeComponent implements OnInit {
     this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
 
 
-    //   const addClass = function (ele:Element, clazz:string, add:boolean) {
-    //     if (ele.classList.contains(clazz)) {
-    //       if (!add) ele.classList.remove(clazz)
-    //     } else {
-    //       if (add) ele.classList.add(clazz);
-    //     }
+    // const wbas = document.querySelectorAll(".willBeAnimated");
+    // const limit = window.innerHeight * 0.9;
+    // for (let i = 0; i < wbas.length; i++) {
+    //   const r = wbas[i].getBoundingClientRect();
+    //   if (r.top < limit) {
+    //     this.addClass(wbas[i], "willBeAnimated", false);
+    //     this.addClass(wbas[i], "animated", true);
+    //     this.addClass(wbas[i], "fadeInUp", true);
     //   }
-    //   let wbas = document.querySelectorAll('.willBeAnimated');
-    //   let limit = window.innerHeight * 0.9;
-    //   for (let i = 0; i < wbas.length; i++) {
-    //     let r = wbas[i].getBoundingClientRect();
-    //     //if (r.top >= 0) {
-    //     if (r.top < limit) {
-    //       addClass(wbas[i], 'willBeAnimated', false);
-    //       addClass(wbas[i], 'animated', true);
-    //       addClass(wbas[i], 'fadeInUp', true);
-    //     }
-    //     //}
-    //   }
+    // }
   }
+
+  // addClass(ele: Element, clazz: string, add: boolean) {
+  //   if (ele.classList.contains(clazz)) {
+  //     if (!add) ele.classList.remove(clazz);
+  //   } else {
+  //     if (add) ele.classList.add(clazz);
+  //   }
+  // }
+
 }
