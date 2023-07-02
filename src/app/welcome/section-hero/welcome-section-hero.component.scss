@@ -2,8 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: var(--ge-main-color);
+  height: calc(100vh - var(--ge-header-height));
   text-align: center;
+
+  background-image: url("/assets/img/bg-quantum-gradient-01.svg");
+  background-size: cover;
+  color: #fff;
+  padding-top: 66px;
 
   .hero-big {
     max-width: 560px;
@@ -12,7 +17,7 @@
     margin-bottom: 44px;
     font-weight: bold;
     opacity: 1;
-    color: var(--ge-main-color);
+    color: #fff;
     text-align: center;
     text-wrap: balance;
 
