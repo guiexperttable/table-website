@@ -95,7 +95,8 @@ export class WelcomeComponent implements OnInit{
     const displayScrollDown = (scrollTop > scrollHeight - offsetHeight * 1.9) ? "none" : "block";
     const displayScrollDownElse = (displayScrollDown === "block") ? "none" : "block";
 
-    const heroTextColor = scrollTop > (0.5 * offsetHeight) ? '#000': '#fff';
+    const oklchPerc = 100 - Math.min(100, Math.max(scrollTop/offsetHeight, 0)) * 100;
+    const heroTextColor = `oklch(${oklchPerc}% 0 0)`; // oklch(100% 0 0) = #fff,  oklch(0% 0 0) = #000
 
     this.nativeElement.style.setProperty("--ge-hero-text-color", `${heroTextColor}`);
     this.nativeElement.style.setProperty("--ge-stroke-dashoffset", `${dashBoardOffset}`);
@@ -109,7 +110,8 @@ export class WelcomeComponent implements OnInit{
 
     // Rotation of feature images:
     const rotH = 0.5 + ((scrollTop + offsetHeight / 2) % offsetHeight) / offsetHeight;
-    const rotateY = `${-(rotH * 180 - 180)}deg`;
+    const rotDeg = -(rotH * 180 - 180);
+    const rotateY = `${rotDeg}deg`;
     this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
   }
 
