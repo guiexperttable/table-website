@@ -4,8 +4,15 @@
   background-size: cover;
   color: #fff;
 
-  .ge-typewriter-div{
+  display: grid;
+  place-items: center;
+  align-items: start;
+
+  .ge-typewriter-div {
+    margin-top: 330px;
+    padding: 0 40px;
     font-size: 60px;
+    line-height: 70px;
   }
 }
 
