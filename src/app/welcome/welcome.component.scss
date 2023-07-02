@@ -6,7 +6,7 @@
   --ge-welcome-img-height: calc(var(--ge-welcome-img-width-number)/2 * 1px);
   --ge-welcome-img-transform: var(--ge-welcome-img-height);
   --ge-welcome-img-transform-neg: calc(-1 * var(--ge-welcome-img-width-number) / 2 * 1px);
-  --ge-headline-hero-super-content: 'Enhance Data Visualization';
+  --ge-headline-hero-super-content: ' ';
   --ge-headline-hero-super-display: grid;
   --ge-hero-text-color: #fff;
 
@@ -226,5 +226,5 @@ section.xxx {
   background-color: var(--ge-primary);
   color: var(--ge-text-on-primary, #fff);
   font-size: 24px;
-  height: 60px;
+  height: 50px;
 }

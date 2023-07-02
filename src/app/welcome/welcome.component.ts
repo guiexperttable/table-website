@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
 
   private nativeElement: HTMLDivElement;
   private headlines = [
-    "Enhance Data Visualization",
+    " ",
     "Excellent performance",
     "High Interactivity",
     "Extreme Customizable",

@@ -11,8 +11,10 @@ export class GeTypewriterComponent implements AfterViewInit {
 
   @Input()
   public toRotate: string[] = [
+    "Enhance Data Visualization",
     "Handle large datasets easily",
-    "Fully-featured (advanced sorting and filtering)",
+    "Fully-featured",
+    "Advanced sorting and filtering",
     "Highly customizable data grid",
     "Outstanding performance",
     "No third-party dependencies",
