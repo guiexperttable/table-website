@@ -8,7 +8,7 @@ import { DOCUMENT } from "@angular/common";
   styleUrls: ["./welcome.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WelcomeComponent implements OnInit{
+export class WelcomeComponent implements OnInit {
 
 
   private nativeElement: HTMLDivElement;
@@ -29,12 +29,12 @@ export class WelcomeComponent implements OnInit{
 
     this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display", `block`);
     this.nativeElement.style.setProperty("--ge-welcome-scrolldown-display-else", `none`);
-    this.nativeElement.style.setProperty("--ge-stroke-dashoffset", '283');
+    this.nativeElement.style.setProperty("--ge-stroke-dashoffset", "283");
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(_event?:Event) {
-    let s = Math.min(this.nativeElement.clientWidth/2, this.nativeElement.clientHeight/2);
+  @HostListener("window:resize", ["$event"])
+  onResize(_event?: Event) {
+    let s = Math.min(this.nativeElement.clientWidth / 2, this.nativeElement.clientHeight / 2);
     s = Math.min(400, Math.max(200, s));
     this.nativeElement.style.setProperty("--ge-welcome-img-width-number", `${s}`);
   }
@@ -69,6 +69,9 @@ export class WelcomeComponent implements OnInit{
     });
   }
 
+  ngOnInit(): void {
+    this.onResize();
+  }
 
   private onScroll() {
     const offsetHeight = this.nativeElement.clientHeight;
@@ -80,7 +83,7 @@ export class WelcomeComponent implements OnInit{
     const r1 = Math.max(-270, Math.min(270, r0));
 
     // scroll circle indicator:
-    const dashBoardOffset = (283 * (1.001 -(scrollTop / (scrollHeight - offsetHeight))));
+    const dashBoardOffset = (283 * (1.001 - (scrollTop / (scrollHeight - offsetHeight))));
 
     // Zoom:
     let zoom = r0 <= 275 ? 1 : ((r0 - 275) / 4);
@@ -95,7 +98,7 @@ export class WelcomeComponent implements OnInit{
     const displayScrollDown = (scrollTop > scrollHeight - offsetHeight * 1.9) ? "none" : "block";
     const displayScrollDownElse = (displayScrollDown === "block") ? "none" : "block";
 
-    const oklchPerc = 100 - Math.min(100, Math.max(scrollTop/offsetHeight, 0)) * 100;
+    const oklchPerc = 100 - Math.min(100, Math.max(scrollTop / offsetHeight, 0)) * 100;
     const heroTextColor = `oklch(${oklchPerc}% 0 0)`; // oklch(100% 0 0) = #fff,  oklch(0% 0 0) = #000
 
     this.nativeElement.style.setProperty("--ge-hero-text-color", `${heroTextColor}`);
@@ -113,9 +116,26 @@ export class WelcomeComponent implements OnInit{
     const rotDeg = -(rotH * 180 - 180);
     const rotateY = `${rotDeg}deg`;
     this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
-  }
 
-  ngOnInit(): void {
-    this.onResize();
+
+    //   const addClass = function (ele:Element, clazz:string, add:boolean) {
+    //     if (ele.classList.contains(clazz)) {
+    //       if (!add) ele.classList.remove(clazz)
+    //     } else {
+    //       if (add) ele.classList.add(clazz);
+    //     }
+    //   }
+    //   let wbas = document.querySelectorAll('.willBeAnimated');
+    //   let limit = window.innerHeight * 0.9;
+    //   for (let i = 0; i < wbas.length; i++) {
+    //     let r = wbas[i].getBoundingClientRect();
+    //     //if (r.top >= 0) {
+    //     if (r.top < limit) {
+    //       addClass(wbas[i], 'willBeAnimated', false);
+    //       addClass(wbas[i], 'animated', true);
+    //       addClass(wbas[i], 'fadeInUp', true);
+    //     }
+    //     //}
+    //   }
   }
 }
