@@ -1,18 +1,37 @@
 .hero-box {
   height: calc(100vh - var(--ge-header-height));
-  background-image: url("/assets/img/bg-quantum-gradient-01.svg");
-  background-size: cover;
-  color: #fff;
+  //background-image: url("/assets/img/bg-quantum-gradient-01.svg");
+  //background-size: cover;
 
+  //background-color: rgba(70,79,171,.9);
+  //background-image: linear-gradient(90deg,#1e0061,#1d46f3 27%,#c364ff 77%,#ff4173);
+
+
+  background: #fff;
+  width: 100%;
   display: grid;
   place-items: center;
   align-items: start;
 
-  .ge-typewriter-div {
-    margin-top: 330px;
-    padding: 0 40px;
-    font-size: 60px;
-    line-height: 70px;
+  > div {
+    --heroHeight: calc(50vh + var(--ge-welcome-img-height) / 2 + 100px);
+    width: 100%;
+    height: min(100%, var(--heroHeight));
+    color: #fff;
+    background-color: rgba(70,79,171,.9);
+    background-image: linear-gradient(90deg,#1e0061,#1d46f3 27%,#c364ff 77%,#ff4173);
+    display: grid;
+    place-items: center;
+    align-items: start;
+
+    .ge-typewriter-div {
+      margin-top: calc(var(--heroHeight)/2 - 50px);
+      padding: 0 40px;
+      font-size: 60px;
+      line-height: 70px;
+    }
   }
+
+
 }
 

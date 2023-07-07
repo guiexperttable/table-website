@@ -342,3 +342,57 @@ html {
   --mdc-filled-button-container-color: var(--ge-primary);
   --mdc-filled-button-label-text-color: var(--ge-text-on-primar);
 }
+
+
+
+// ++++++++++++++++++++++++++ test only ++++++++++++++++++++++++++++++++++++
+
+.text-gradient {
+  background-image: -webkit-gradient(linear, left top, right top, from(#1e0061), color-stop(27%, #1d46f3), color-stop(77%, #c364ff), to(#ff4173));
+  background-image: linear-gradient(90deg, #1e0061, #1d46f3 27%, #c364ff 77%, #ff4173);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button.highlight {
+  -webkit-text-fill-color: inherit;
+  background-image: linear-gradient(104deg,rgba(20,0,65,.59),#1e4bff 35%,#c364ff 68%,#ff4173);
+  background-position: 0 0;
+  background-clip: border-box;
+  border-style: none;
+  justify-content: center;
+  align-items: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  transition-duration: .4s;
+  display: inline-block;
+  overflow: hidden;
+  box-shadow: inset 0 0 9px rgba(30,75,255,0),0 1px 1px transparent
+}
+
+.button.highlight:hover {
+  box-shadow: inset 0 0 9px 1000px #1e4bff,0 1px 1px transparent
+}
+
+.cta-ribbon {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(70,79,171,.9);
+  background-image: linear-gradient(90deg,#1e0061,#1d46f3 27%,#c364ff 77%,#ff4173);
+  border: 1px #fff;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-decoration: none;
+  transition: all .3s;
+  display: flex
+}
+.cta-ribbon:hover {
+  opacity: .9
+}
