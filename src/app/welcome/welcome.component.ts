@@ -116,7 +116,8 @@ export class WelcomeComponent implements OnInit {
     const rotDeg = -(rotH * 180 - 180);
     const rotateY = `${rotDeg}deg`;
     this.nativeElement.style.setProperty("--ge-welcome-rotate-feature-img", rotateY);
-
+    // console.info(rotDeg)
+    // console.info('opax ',  1.5 -  (rotDeg+90)/180)
 
     // const wbas = document.querySelectorAll(".willBeAnimated");
     // const limit = window.innerHeight * 0.9;
