@@ -118,17 +118,17 @@ section.show + .hero-scroll-down {
   padding-top: 9px;
 }
 
-:root {
-  --ge-table-doc-primary-color: rgb(172, 126, 244);
-  //--ge-table-doc-primary-color: #00ee4d;
-  //--ge-table-doc-api-color: #EFF0F1;
-  //--ge-table-doc-doc-color: #0035ee;
-  //--ge-table-doc-demo-color: #f9ed06;
-  //--ge-table-doc-custom-color: #000;
-  //--ge-table-doc-dark-color: #000;
-  //--ge-table-doc-light-color: #fff;
-  //--ge-table-doc-gray-color: #aaa;
-}
+//:root {
+//  //--ge-table-doc-primary-color: rgb(172, 126, 244);
+//  //--ge-table-doc-primary-color: #00ee4d;
+//  //--ge-table-doc-api-color: #EFF0F1;
+//  //--ge-table-doc-doc-color: #0035ee;
+//  //--ge-table-doc-demo-color: #f9ed06;
+//  //--ge-table-doc-custom-color: #000;
+//  //--ge-table-doc-dark-color: #000;
+//  //--ge-table-doc-light-color: #fff;
+//  //--ge-table-doc-gray-color: #aaa;
+//}
 
 :root {
   --mdc-theme-primary: var(--ge-tertiary);
@@ -348,8 +348,8 @@ html {
 // ++++++++++++++++++++++++++ test only ++++++++++++++++++++++++++++++++++++
 
 .text-gradient {
-  background-image: -webkit-gradient(linear, left top, right top, from(#1e0061), color-stop(27%, #1d46f3), color-stop(77%, #c364ff), to(#ff4173));
-  background-image: linear-gradient(90deg, #1e0061, #1d46f3 27%, #c364ff 77%, #ff4173);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--gradient-1)), color-stop(27%, var(--gradient-2)), color-stop(77%, var(--gradient-3)), to(var(--gradient-4)));
+  background-image: linear-gradient(90deg,var(--gradient-1),var(--gradient-2) 27%,var(--gradient-3) 77%,var(--gradient-4));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -371,9 +371,13 @@ html {
 }
 
 .button.highlight:hover {
-  box-shadow: inset 0 0 9px 1000px #1e4bff,0 1px 1px transparent
+  box-shadow: inset 0 0 9px 1000px var(--gradient-2),0 1px 1px transparent
 }
 
+.ge-linear-gradient-bg {
+  background-image: linear-gradient(90deg,var(--gradient-1),var(--gradient-2) 27%,var(--gradient-3) 77%,var(--gradient-4));
+}
+/*
 .cta-ribbon {
   width: 100%;
   height: auto;
@@ -383,7 +387,7 @@ html {
   color: #fff;
   cursor: pointer;
   background-color: rgba(70,79,171,.9);
-  background-image: linear-gradient(90deg,#1e0061,#1d46f3 27%,#c364ff 77%,#ff4173);
+  background-image: linear-gradient(90deg,var(--gradient-1),var(--gradient-2) 27%,var(--gradient-3) 77%,var(--gradient-4));
   border: 1px #fff;
   justify-content: space-between;
   align-items: center;
@@ -396,3 +400,4 @@ html {
 .cta-ribbon:hover {
   opacity: .9
 }
+*/
