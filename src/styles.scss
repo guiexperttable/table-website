@@ -168,7 +168,7 @@ guiexpert-table-doc-root {
     }
 
     .doc-content a:-webkit-any-link {
-      color: #0098db !important;
+      color: var(--ge-primary) !important;
       text-decoration: none;
     }
   }
@@ -181,7 +181,7 @@ guiexpert-table-doc-root {
     }
 
     .doc-content a:-webkit-any-link {
-      color: #0098db !important;
+      color: var(--ge-primary) !important;
       text-decoration: none;
     }
   }
