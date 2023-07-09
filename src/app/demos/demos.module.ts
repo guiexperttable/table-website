@@ -12,6 +12,10 @@ const routes: Routes = [
       import("../demos/rowandcolspan/demo-row-and-colspan.module").then(m => m.DemoRowAndColspanModule)
   },
   {
+    path: "cellgroup", loadChildren: () =>
+      import("../demos/cellgroup/demo-cellgroup.module").then(m => m.DemoCellgroupModule)
+  },
+  {
     path: "simple", loadChildren: () =>
       import("../demos/simple/demo-simple.module").then(m => m.DemoSimpleModule)
   },
